@@ -6,6 +6,9 @@
 //  Copyright (c) 2015 Randy McMillan. All rights reserved.
 //
 
+
+//https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Strings/Articles/CreatingStrings.html#//apple_ref/doc/uid/20000148-CJBCJHHI
+
 #import "ViewController.h"
 
 @implementation ViewController
@@ -20,6 +23,9 @@
     [super setRepresentedObject:representedObject];
 
     // Update the view, if already loaded.
+    
+
+
 }
 
 @end

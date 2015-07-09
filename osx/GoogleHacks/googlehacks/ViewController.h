@@ -7,8 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "DataObjects.h"
-
 
 
 @interface ViewController : NSViewController
