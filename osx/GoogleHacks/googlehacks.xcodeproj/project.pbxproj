@@ -12,9 +12,13 @@
 		489552591B4F148700CA90B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552581B4F148700CA90B6 /* ViewController.m */; };
 		4895525C1B4F148700CA90B6 /* GoogleHacks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4895525A1B4F148700CA90B6 /* GoogleHacks.xcdatamodeld */; };
 		4895525E1B4F148700CA90B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4895525D1B4F148700CA90B6 /* Images.xcassets */; };
-		489552611B4F148700CA90B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4895525F1B4F148700CA90B6 /* Main.storyboard */; };
 		4895526D1B4F148700CA90B6 /* GoogleHacksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4895526C1B4F148700CA90B6 /* GoogleHacksTests.m */; };
 		489552781B4F153800CA90B6 /* DataObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552771B4F153800CA90B6 /* DataObjects.m */; };
+		489552901B4F3C5600CA90B6 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4895528E1B4F3C5600CA90B6 /* MyViewController.m */; };
+		489552911B4F3C5600CA90B6 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4895528F1B4F3C5600CA90B6 /* MyViewController.xib */; };
+		489552941B4F3C6200CA90B6 /* MyCustomAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552931B4F3C6200CA90B6 /* MyCustomAnimator.m */; };
+		489552971B4F3CDA00CA90B6 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552961B4F3CDA00CA90B6 /* MyView.m */; };
+		489552991B4F3F9200CA90B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489552981B4F3F9200CA90B6 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,12 +41,19 @@
 		489552581B4F148700CA90B6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4895525B1B4F148700CA90B6 /* GoogleHacks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoogleHacks.xcdatamodel; sourceTree = "<group>"; };
 		4895525D1B4F148700CA90B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		489552601B4F148700CA90B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		489552661B4F148700CA90B6 /* GoogleHacksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleHacksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4895526B1B4F148700CA90B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4895526C1B4F148700CA90B6 /* GoogleHacksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoogleHacksTests.m; sourceTree = "<group>"; };
 		489552761B4F153800CA90B6 /* DataObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataObjects.h; sourceTree = "<group>"; };
 		489552771B4F153800CA90B6 /* DataObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataObjects.m; sourceTree = "<group>"; };
+		4895528D1B4F3C5600CA90B6 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		4895528E1B4F3C5600CA90B6 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
+		4895528F1B4F3C5600CA90B6 /* MyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
+		489552921B4F3C6200CA90B6 /* MyCustomAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomAnimator.h; sourceTree = "<group>"; };
+		489552931B4F3C6200CA90B6 /* MyCustomAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomAnimator.m; sourceTree = "<group>"; };
+		489552951B4F3CDA00CA90B6 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		489552961B4F3CDA00CA90B6 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		489552981B4F3F9200CA90B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +95,13 @@
 		4895524F1B4F148700CA90B6 /* GoogleHacks */ = {
 			isa = PBXGroup;
 			children = (
+				489552921B4F3C6200CA90B6 /* MyCustomAnimator.h */,
+				489552931B4F3C6200CA90B6 /* MyCustomAnimator.m */,
+				4895528D1B4F3C5600CA90B6 /* MyViewController.h */,
+				4895528E1B4F3C5600CA90B6 /* MyViewController.m */,
+				489552951B4F3CDA00CA90B6 /* MyView.h */,
+				489552961B4F3CDA00CA90B6 /* MyView.m */,
+				4895528F1B4F3C5600CA90B6 /* MyViewController.xib */,
 				489552521B4F148700CA90B6 /* AppDelegate.h */,
 				489552531B4F148700CA90B6 /* AppDelegate.m */,
 				489552571B4F148700CA90B6 /* ViewController.h */,
@@ -91,7 +109,7 @@
 				489552761B4F153800CA90B6 /* DataObjects.h */,
 				489552771B4F153800CA90B6 /* DataObjects.m */,
 				4895525D1B4F148700CA90B6 /* Images.xcassets */,
-				4895525F1B4F148700CA90B6 /* Main.storyboard */,
+				489552981B4F3F9200CA90B6 /* Main.storyboard */,
 				4895525A1B4F148700CA90B6 /* GoogleHacks.xcdatamodeld */,
 				489552501B4F148700CA90B6 /* Supporting Files */,
 			);
@@ -204,8 +222,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				489552991B4F3F9200CA90B6 /* Main.storyboard in Resources */,
 				4895525E1B4F148700CA90B6 /* Images.xcassets in Resources */,
-				489552611B4F148700CA90B6 /* Main.storyboard in Resources */,
+				489552911B4F3C5600CA90B6 /* MyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,11 +242,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				489552901B4F3C5600CA90B6 /* MyViewController.m in Sources */,
 				489552591B4F148700CA90B6 /* ViewController.m in Sources */,
 				489552561B4F148700CA90B6 /* main.m in Sources */,
 				489552541B4F148700CA90B6 /* AppDelegate.m in Sources */,
+				489552971B4F3CDA00CA90B6 /* MyView.m in Sources */,
 				4895525C1B4F148700CA90B6 /* GoogleHacks.xcdatamodeld in Sources */,
 				489552781B4F153800CA90B6 /* DataObjects.m in Sources */,
+				489552941B4F3C6200CA90B6 /* MyCustomAnimator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,17 +270,6 @@
 			targetProxy = 489552671B4F148700CA90B6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		4895525F1B4F148700CA90B6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				489552601B4F148700CA90B6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4895526E1B4F148800CA90B6 /* Debug */ = {
@@ -425,6 +436,7 @@
 				489552721B4F148800CA90B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		489552731B4F148800CA90B6 /* Build configuration list for PBXNativeTarget "GoogleHacksTests" */ = {
 			isa = XCConfigurationList;
@@ -433,6 +445,7 @@
 				489552751B4F148800CA90B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

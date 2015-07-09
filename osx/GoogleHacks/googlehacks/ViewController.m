@@ -10,6 +10,9 @@
 //https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Strings/Articles/CreatingStrings.html#//apple_ref/doc/uid/20000148-CJBCJHHI
 
 #import "ViewController.h"
+#import "MyViewController.h"
+#import "MyCustomAnimator.h"
+
 
 @implementation ViewController
 
@@ -17,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Presenting ViewController";
 
     // Do any additional setup after loading the view.
 }
