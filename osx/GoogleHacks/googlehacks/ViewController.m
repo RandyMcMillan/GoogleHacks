@@ -13,6 +13,8 @@
 
 @implementation ViewController
 
+@synthesize data_object;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 

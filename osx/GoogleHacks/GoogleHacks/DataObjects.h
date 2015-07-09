@@ -71,8 +71,6 @@
 @property (nonatomic, readwrite) BOOL *StaticText6;
 @property (nonatomic, readwrite) BOOL *StaticText7;
 
-
-
 /*
  
  
@@ -142,4 +140,9 @@
 
  
  */
+
+
+- (id) init:(NSObject *) object;
+
+
 @end

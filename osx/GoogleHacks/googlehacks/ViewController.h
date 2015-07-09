@@ -7,10 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "DataObjects.h"
 
 
 @interface ViewController : NSViewController
 
+@property (nonatomic, readwrite) DataObjects *data_object;
 
 
 @end
