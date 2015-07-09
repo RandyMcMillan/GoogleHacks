@@ -7,438 +7,439 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		48B43519152E5E3500906A36 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B43518152E5E3500906A36 /* Cocoa.framework */; };
-		48B43525152E5E3500906A36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B43524152E5E3500906A36 /* main.m */; };
-		48B43536152E5E4100906A36 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B43535152E5E4100906A36 /* WebKit.framework */; };
-		48B43538152E5E6B00906A36 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 48B43537152E5E6B00906A36 /* www */; };
-		7E4C0B0916EAA4EB00542982 /* Cordova.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E4C0B0416EAA3CF00542982 /* Cordova.framework */; };
-		7E4C0B0D16EAA6A700542982 /* Cordova.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E4C0B0416EAA3CF00542982 /* Cordova.framework */; };
-		7E545ABE17175CEF006EEBC6 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 7E545ABD17175CEF006EEBC6 /* README */; };
-		7E608F2B16E7D9B00018F512 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7E608F2A16E7D9B00018F512 /* config.xml */; };
-		7E608F3C16E7EE8D0018F512 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E608F3416E7EE8D0018F512 /* AppDelegate.m */; };
-		7E608F4816E7EE970018F512 /* googlehacks.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7E608F4116E7EE970018F512 /* googlehacks.icns */; };
-		7E608F4916E7EE970018F512 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7E608F4216E7EE970018F512 /* Credits.rtf */; };
-		7E608F4A16E7EE970018F512 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E608F4416E7EE970018F512 /* InfoPlist.strings */; };
-		7E608F4B16E7EE970018F512 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E608F4616E7EE970018F512 /* MainViewController.xib */; };
-		7E608F8216E7F0880018F512 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E608F8116E7F0880018F512 /* MainViewController.m */; };
-		7E79276A16E7C900002E20B9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E79276916E7C8FF002E20B9 /* SystemConfiguration.framework */; };
+		489552541B4F148700CA90B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552531B4F148700CA90B6 /* AppDelegate.m */; };
+		489552561B4F148700CA90B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552551B4F148700CA90B6 /* main.m */; };
+		489552591B4F148700CA90B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552581B4F148700CA90B6 /* ViewController.m */; };
+		4895525C1B4F148700CA90B6 /* GoogleHacks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4895525A1B4F148700CA90B6 /* GoogleHacks.xcdatamodeld */; };
+		4895525E1B4F148700CA90B6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4895525D1B4F148700CA90B6 /* Images.xcassets */; };
+		489552611B4F148700CA90B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4895525F1B4F148700CA90B6 /* Main.storyboard */; };
+		4895526D1B4F148700CA90B6 /* GoogleHacksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4895526C1B4F148700CA90B6 /* GoogleHacksTests.m */; };
+		489552781B4F153800CA90B6 /* DataObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552771B4F153800CA90B6 /* DataObjects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7E4C0B0316EAA3CF00542982 /* PBXContainerItemProxy */ = {
+		489552671B4F148700CA90B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7E4C0AFE16EAA3CF00542982 /* CordovaFramework.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E4C0A7016EAA1C600542982;
-			remoteInfo = Cordova;
-		};
-		7E4C0B0516EAA3CF00542982 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E4C0AFE16EAA3CF00542982 /* CordovaFramework.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 7E4C0A8816EAA1C600542982;
-			remoteInfo = CordovaFrameworkTests;
-		};
-		7E4C0B0716EAA4C500542982 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7E4C0AFE16EAA3CF00542982 /* CordovaFramework.xcodeproj */;
+			containerPortal = 489552451B4F148700CA90B6 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7E4C0A6F16EAA1C600542982;
-			remoteInfo = Cordova;
+			remoteGlobalIDString = 4895524C1B4F148700CA90B6;
+			remoteInfo = GoogleHacks;
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		7E4C0B0B16EAA68E00542982 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				7E4C0B0D16EAA6A700542982 /* Cordova.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		48B43514152E5E3500906A36 /* googlehacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = googlehacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		48B43518152E5E3500906A36 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		48B4351B152E5E3500906A36 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		48B4351C152E5E3500906A36 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		48B4351D152E5E3500906A36 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		48B43524152E5E3500906A36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = googlehacks/main.m; sourceTree = "<group>"; };
-		48B43526152E5E3500906A36 /* googlehacks-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "googlehacks-Prefix.pch"; path = "googlehacks/googlehacks-Prefix.pch"; sourceTree = "<group>"; };
-		48B43535152E5E4100906A36 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		48B43537152E5E6B00906A36 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
-		7E4C0AFE16EAA3CF00542982 /* CordovaFramework.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaFramework.xcodeproj; path = "CordovaFramework/CordovaFramework.xcodeproj"; sourceTree = "<group>"; };
-		7E545ABD17175CEF006EEBC6 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		7E608F2A16E7D9B00018F512 /* config.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = config.xml; path = googlehacks/config.xml; sourceTree = "<group>"; };
-		7E608F3316E7EE8D0018F512 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		7E608F3416E7EE8D0018F512 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7E608F4116E7EE970018F512 /* googlehacks.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = googlehacks.icns; sourceTree = "<group>"; };
-		7E608F4316E7EE970018F512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		7E608F4516E7EE970018F512 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		7E608F4716E7EE970018F512 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
-		7E608F8016E7F0880018F512 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		7E608F8116E7F0880018F512 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		7E608F8316E7F6940018F512 /* googlehacks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "googlehacks-Info.plist"; path = "googlehacks/googlehacks-Info.plist"; sourceTree = SOURCE_ROOT; };
-		7E79276916E7C8FF002E20B9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4895524D1B4F148700CA90B6 /* GoogleHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		489552511B4F148700CA90B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		489552521B4F148700CA90B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		489552531B4F148700CA90B6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		489552551B4F148700CA90B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		489552571B4F148700CA90B6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		489552581B4F148700CA90B6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4895525B1B4F148700CA90B6 /* GoogleHacks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GoogleHacks.xcdatamodel; sourceTree = "<group>"; };
+		4895525D1B4F148700CA90B6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		489552601B4F148700CA90B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		489552661B4F148700CA90B6 /* GoogleHacksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleHacksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4895526B1B4F148700CA90B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4895526C1B4F148700CA90B6 /* GoogleHacksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoogleHacksTests.m; sourceTree = "<group>"; };
+		489552761B4F153800CA90B6 /* DataObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataObjects.h; sourceTree = "<group>"; };
+		489552771B4F153800CA90B6 /* DataObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataObjects.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		48B43511152E5E3500906A36 /* Frameworks */ = {
+		4895524A1B4F148700CA90B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E4C0B0916EAA4EB00542982 /* Cordova.framework in Frameworks */,
-				7E79276A16E7C900002E20B9 /* SystemConfiguration.framework in Frameworks */,
-				48B43536152E5E4100906A36 /* WebKit.framework in Frameworks */,
-				48B43519152E5E3500906A36 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		489552631B4F148700CA90B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		48B43509152E5E3500906A36 = {
+		489552441B4F148700CA90B6 = {
 			isa = PBXGroup;
 			children = (
-				7E608F2A16E7D9B00018F512 /* config.xml */,
-				48B43537152E5E6B00906A36 /* www */,
-				7E4C0AFE16EAA3CF00542982 /* CordovaFramework.xcodeproj */,
-				7E608F4016E7EE970018F512 /* Resources */,
-				7E608F3216E7EE8D0018F512 /* Classes */,
-				7E545ABC17175CEF006EEBC6 /* Plugins */,
-				7E608F2E16E7EC900018F512 /* Other Sources */,
-				48B43517152E5E3500906A36 /* Frameworks */,
-				48B43515152E5E3500906A36 /* Products */,
+				4895524F1B4F148700CA90B6 /* GoogleHacks */,
+				489552691B4F148700CA90B6 /* GoogleHacksTests */,
+				4895524E1B4F148700CA90B6 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		48B43515152E5E3500906A36 /* Products */ = {
+		4895524E1B4F148700CA90B6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				48B43514152E5E3500906A36 /* googlehacks.app */,
+				4895524D1B4F148700CA90B6 /* GoogleHacks.app */,
+				489552661B4F148700CA90B6 /* GoogleHacksTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		48B43517152E5E3500906A36 /* Frameworks */ = {
+		4895524F1B4F148700CA90B6 /* GoogleHacks */ = {
 			isa = PBXGroup;
 			children = (
-				48B4351B152E5E3500906A36 /* AppKit.framework */,
-				48B4351C152E5E3500906A36 /* CoreData.framework */,
-				48B4351D152E5E3500906A36 /* Foundation.framework */,
-				7E79276916E7C8FF002E20B9 /* SystemConfiguration.framework */,
-				48B43535152E5E4100906A36 /* WebKit.framework */,
-				48B43518152E5E3500906A36 /* Cocoa.framework */,
+				489552521B4F148700CA90B6 /* AppDelegate.h */,
+				489552531B4F148700CA90B6 /* AppDelegate.m */,
+				489552571B4F148700CA90B6 /* ViewController.h */,
+				489552581B4F148700CA90B6 /* ViewController.m */,
+				489552761B4F153800CA90B6 /* DataObjects.h */,
+				489552771B4F153800CA90B6 /* DataObjects.m */,
+				4895525D1B4F148700CA90B6 /* Images.xcassets */,
+				4895525F1B4F148700CA90B6 /* Main.storyboard */,
+				4895525A1B4F148700CA90B6 /* GoogleHacks.xcdatamodeld */,
+				489552501B4F148700CA90B6 /* Supporting Files */,
 			);
-			name = Frameworks;
+			path = GoogleHacks;
 			sourceTree = "<group>";
 		};
-		7E4C0AFF16EAA3CF00542982 /* Products */ = {
+		489552501B4F148700CA90B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7E4C0B0416EAA3CF00542982 /* Cordova.framework */,
-				7E4C0B0616EAA3CF00542982 /* CordovaFrameworkTests.octest */,
+				489552511B4F148700CA90B6 /* Info.plist */,
+				489552551B4F148700CA90B6 /* main.m */,
 			);
-			name = Products;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7E545ABC17175CEF006EEBC6 /* Plugins */ = {
+		489552691B4F148700CA90B6 /* GoogleHacksTests */ = {
 			isa = PBXGroup;
 			children = (
-				7E545ABD17175CEF006EEBC6 /* README */,
+				4895526C1B4F148700CA90B6 /* GoogleHacksTests.m */,
+				4895526A1B4F148700CA90B6 /* Supporting Files */,
 			);
-			name = Plugins;
-			path = googlehacks/Plugins;
+			path = GoogleHacksTests;
 			sourceTree = "<group>";
 		};
-		7E608F2E16E7EC900018F512 /* Other Sources */ = {
+		4895526A1B4F148700CA90B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				48B43524152E5E3500906A36 /* main.m */,
-				48B43526152E5E3500906A36 /* googlehacks-Prefix.pch */,
+				4895526B1B4F148700CA90B6 /* Info.plist */,
 			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		7E608F3216E7EE8D0018F512 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				7E608F4616E7EE970018F512 /* MainViewController.xib */,
-				7E608F3316E7EE8D0018F512 /* AppDelegate.h */,
-				7E608F3416E7EE8D0018F512 /* AppDelegate.m */,
-				7E608F8016E7F0880018F512 /* MainViewController.h */,
-				7E608F8116E7F0880018F512 /* MainViewController.m */,
-			);
-			name = Classes;
-			path = googlehacks/Classes;
-			sourceTree = "<group>";
-		};
-		7E608F4016E7EE970018F512 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				7E608F8316E7F6940018F512 /* googlehacks-Info.plist */,
-				7E608F4116E7EE970018F512 /* googlehacks.icns */,
-				7E608F4216E7EE970018F512 /* Credits.rtf */,
-				7E608F4416E7EE970018F512 /* InfoPlist.strings */,
-			);
-			name = Resources;
-			path = "googlehacks/Resources";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		48B43513152E5E3500906A36 /* googlehacks */ = {
+		4895524C1B4F148700CA90B6 /* GoogleHacks */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48B43532152E5E3600906A36 /* Build configuration list for PBXNativeTarget "googlehacks" */;
+			buildConfigurationList = 489552701B4F148800CA90B6 /* Build configuration list for PBXNativeTarget "GoogleHacks" */;
 			buildPhases = (
-				48B43510152E5E3500906A36 /* Sources */,
-				48B43511152E5E3500906A36 /* Frameworks */,
-				48B43512152E5E3500906A36 /* Resources */,
-				7E4C0B0B16EAA68E00542982 /* CopyFiles */,
+				489552491B4F148700CA90B6 /* Sources */,
+				4895524A1B4F148700CA90B6 /* Frameworks */,
+				4895524B1B4F148700CA90B6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7E4C0B0816EAA4C500542982 /* PBXTargetDependency */,
 			);
-			name = googlehacks;
-			productName = googlehacks;
-			productReference = 48B43514152E5E3500906A36 /* googlehacks.app */;
+			name = GoogleHacks;
+			productName = GoogleHacks;
+			productReference = 4895524D1B4F148700CA90B6 /* GoogleHacks.app */;
 			productType = "com.apple.product-type.application";
+		};
+		489552651B4F148700CA90B6 /* GoogleHacksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 489552731B4F148800CA90B6 /* Build configuration list for PBXNativeTarget "GoogleHacksTests" */;
+			buildPhases = (
+				489552621B4F148700CA90B6 /* Sources */,
+				489552631B4F148700CA90B6 /* Frameworks */,
+				489552641B4F148700CA90B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				489552681B4F148700CA90B6 /* PBXTargetDependency */,
+			);
+			name = GoogleHacksTests;
+			productName = GoogleHacksTests;
+			productReference = 489552661B4F148700CA90B6 /* GoogleHacksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		48B4350B152E5E3500906A36 /* Project object */ = {
+		489552451B4F148700CA90B6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = CDV;
-				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = OpenOSX.org;
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Randy McMillan";
+				TargetAttributes = {
+					4895524C1B4F148700CA90B6 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					489552651B4F148700CA90B6 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 4895524C1B4F148700CA90B6;
+					};
+				};
 			};
-			buildConfigurationList = 48B4350E152E5E3500906A36 /* Build configuration list for PBXProject "googlehacks" */;
+			buildConfigurationList = 489552481B4F148700CA90B6 /* Build configuration list for PBXProject "GoogleHacks" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = 48B43509152E5E3500906A36;
-			productRefGroup = 48B43515152E5E3500906A36 /* Products */;
+			mainGroup = 489552441B4F148700CA90B6;
+			productRefGroup = 4895524E1B4F148700CA90B6 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 7E4C0AFF16EAA3CF00542982 /* Products */;
-					ProjectRef = 7E4C0AFE16EAA3CF00542982 /* CordovaFramework.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
-				48B43513152E5E3500906A36 /* googlehacks */,
+				4895524C1B4F148700CA90B6 /* GoogleHacks */,
+				489552651B4F148700CA90B6 /* GoogleHacksTests */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		7E4C0B0416EAA3CF00542982 /* Cordova.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Cordova.framework;
-			remoteRef = 7E4C0B0316EAA3CF00542982 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		7E4C0B0616EAA3CF00542982 /* CordovaFrameworkTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CordovaFrameworkTests.octest;
-			remoteRef = 7E4C0B0516EAA3CF00542982 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
-		48B43512152E5E3500906A36 /* Resources */ = {
+		4895524B1B4F148700CA90B6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48B43538152E5E6B00906A36 /* www in Resources */,
-				7E608F2B16E7D9B00018F512 /* config.xml in Resources */,
-				7E608F4816E7EE970018F512 /* googlehacks.icns in Resources */,
-				7E608F4916E7EE970018F512 /* Credits.rtf in Resources */,
-				7E608F4A16E7EE970018F512 /* InfoPlist.strings in Resources */,
-				7E608F4B16E7EE970018F512 /* MainViewController.xib in Resources */,
-				7E545ABE17175CEF006EEBC6 /* README in Resources */,
+				4895525E1B4F148700CA90B6 /* Images.xcassets in Resources */,
+				489552611B4F148700CA90B6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		489552641B4F148700CA90B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		48B43510152E5E3500906A36 /* Sources */ = {
+		489552491B4F148700CA90B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48B43525152E5E3500906A36 /* main.m in Sources */,
-				7E608F3C16E7EE8D0018F512 /* AppDelegate.m in Sources */,
-				7E608F8216E7F0880018F512 /* MainViewController.m in Sources */,
+				489552591B4F148700CA90B6 /* ViewController.m in Sources */,
+				489552561B4F148700CA90B6 /* main.m in Sources */,
+				489552541B4F148700CA90B6 /* AppDelegate.m in Sources */,
+				4895525C1B4F148700CA90B6 /* GoogleHacks.xcdatamodeld in Sources */,
+				489552781B4F153800CA90B6 /* DataObjects.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		489552621B4F148700CA90B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4895526D1B4F148700CA90B6 /* GoogleHacksTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7E4C0B0816EAA4C500542982 /* PBXTargetDependency */ = {
+		489552681B4F148700CA90B6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Cordova;
-			targetProxy = 7E4C0B0716EAA4C500542982 /* PBXContainerItemProxy */;
+			target = 4895524C1B4F148700CA90B6 /* GoogleHacks */;
+			targetProxy = 489552671B4F148700CA90B6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7E608F4216E7EE970018F512 /* Credits.rtf */ = {
+		4895525F1B4F148700CA90B6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7E608F4316E7EE970018F512 /* en */,
+				489552601B4F148700CA90B6 /* Base */,
 			);
-			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		7E608F4416E7EE970018F512 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7E608F4516E7EE970018F512 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		7E608F4616E7EE970018F512 /* MainViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7E608F4716E7EE970018F512 /* en */,
-			);
-			name = MainViewController.xib;
-			path = ../Resources;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		48B43530152E5E3600906A36 /* Debug */ = {
+		4895526E1B4F148800CA90B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INSTALL_PATH = "";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = "";
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
-		48B43531152E5E3600906A36 /* Release */ = {
+		4895526F1B4F148800CA90B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INSTALL_PATH = "";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		48B43533152E5E3600906A36 /* Debug */ = {
+		489552711B4F148800CA90B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "googlehacks/googlehacks-Prefix.pch";
-				INFOPLIST_FILE = "googlehacks/googlehacks-Info.plist";
-				INSTALL_PATH = "";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				INFOPLIST_FILE = GoogleHacks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = "";
-				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		48B43534152E5E3600906A36 /* Release */ = {
+		489552721B4F148800CA90B6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "googlehacks/googlehacks-Prefix.pch";
-				INFOPLIST_FILE = "googlehacks/googlehacks-Info.plist";
-				INSTALL_PATH = "";
-				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				INFOPLIST_FILE = GoogleHacks/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = "";
-				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		489552741B4F148800CA90B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GoogleHacksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoogleHacks.app/Contents/MacOS/GoogleHacks";
+			};
+			name = Debug;
+		};
+		489552751B4F148800CA90B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GoogleHacksTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoogleHacks.app/Contents/MacOS/GoogleHacks";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		48B4350E152E5E3500906A36 /* Build configuration list for PBXProject "googlehacks" */ = {
+		489552481B4F148700CA90B6 /* Build configuration list for PBXProject "GoogleHacks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				48B43530152E5E3600906A36 /* Debug */,
-				48B43531152E5E3600906A36 /* Release */,
+				4895526E1B4F148800CA90B6 /* Debug */,
+				4895526F1B4F148800CA90B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48B43532152E5E3600906A36 /* Build configuration list for PBXNativeTarget "googlehacks" */ = {
+		489552701B4F148800CA90B6 /* Build configuration list for PBXNativeTarget "GoogleHacks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				48B43533152E5E3600906A36 /* Debug */,
-				48B43534152E5E3600906A36 /* Release */,
+				489552711B4F148800CA90B6 /* Debug */,
+				489552721B4F148800CA90B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+		};
+		489552731B4F148800CA90B6 /* Build configuration list for PBXNativeTarget "GoogleHacksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				489552741B4F148800CA90B6 /* Debug */,
+				489552751B4F148800CA90B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4895525A1B4F148700CA90B6 /* GoogleHacks.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4895525B1B4F148700CA90B6 /* GoogleHacks.xcdatamodel */,
+			);
+			currentVersion = 4895525B1B4F148700CA90B6 /* GoogleHacks.xcdatamodel */;
+			path = GoogleHacks.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = 48B4350B152E5E3500906A36 /* Project object */;
+	rootObject = 489552451B4F148700CA90B6 /* Project object */;
 }
