@@ -195,15 +195,27 @@
     
     NSWorkspace * ws = [NSWorkspace sharedWorkspace];
     //NSURL *url = [NSURL URLWithString:@"http://theocacao.com/"];
-//    NSURL *url = [NSURL URLWithString:self.data_object.full_search_str];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithString:[self.searchTextField stringValue]]];//self.data_object.full_search_str];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithString:[self.searchTextField stringValue]]];
 
-    NSLog(@"TEST%@", url);
+    NSLog(@"url = %@", url);
 
    // NSURL *url = [NSURL URLWithString:[self.searchTextField stringValue]];
     NSLog(@"%@", [self.searchTextField stringValue]);
 
-    [ws openURL: url];
+    // open local urls in our app, and external in default browser
+    NSString *scheme = [url scheme];
+    if ([scheme isEqualToString:@"file"])
+    {
+        //[listener use];
+    }
+    else
+    {
+        //[listener ignore];
+        [ws openURL: url];
+    }
+    
+    
+    //[ws openURL: url];
     
     
    // NSURL *url = [NSURL URLWithString:[self.searchTextField stringValue]];
