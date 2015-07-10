@@ -15,10 +15,14 @@
 @interface MyViewController : NSViewController {
 
 IBOutlet id webView;
+    IBOutlet NSURL *baseURL;
+    IBOutlet NSURL *url;
 
 }
 
 @property (nonatomic,retain) WebView *webView;
+@property (nonatomic,retain) NSURL *baseURL;
+@property (nonatomic,retain) NSURL *url;
 
 - (NSString *)appURL;
 - (IBAction)changeGreeting:(id)sender;

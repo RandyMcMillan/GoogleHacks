@@ -13,12 +13,11 @@
 
 @implementation MyViewController {}
 
-@synthesize webView;
+@synthesize webView,baseURL,url;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Presented ViewController";
-    
     [self.webView setMainFrameURL:[self appURL]];
 
 }
@@ -48,12 +47,13 @@
 
     
     
-    NSURL *baseURL = [NSURL URLWithString:@"file:///path/to/web_root/"];
-    NSURL *url = [NSURL URLWithString:@"folder/file.html" relativeToURL:baseURL];
-    NSURL *absURL = [url absoluteURL];
+    self.baseURL = [NSURL URLWithString:@"file:///path/to/web_root/"];
+    self.url = [NSURL URLWithString:@"folder/file.html" relativeToURL:self.baseURL];
+    NSURL *absURL = [self.url absoluteURL];
     NSLog(@"absURL = %@", absURL);
     NSString *getURL = [NSString stringWithContentsOfURL:absURL encoding:1000 error:nil];
-    
+    //self.title = [NSString stringWithContentsOfURL:absURL encoding:1000 error:nil];;
+
     return getURL;
     
 }
