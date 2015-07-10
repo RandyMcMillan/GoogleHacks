@@ -85,8 +85,8 @@
 
      //self.avi_check = FALSE;
      //Search String
-     self.search_str = @"Search String";
-     self.full_search_str = @"Full Search String";
+     self.search_str = @"http://google.com";
+     self.full_search_str = @"http://google.com";
      self.types_str = @"";
      
      //Audio Files
