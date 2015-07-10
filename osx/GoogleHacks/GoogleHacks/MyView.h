@@ -8,6 +8,19 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MyView : NSView
+@interface MyView : NSView {
+
+    
+    IBOutlet id webView;
+
+    
+}
+
+//- (IBAction)bringMainWindowToFront:(id)sender;
+- (void)changeIcon:(NSString *)iconName;
+- (NSString *)appURL;
+- (IBAction)changeGreeting:(id)sender;
+
+
 
 @end
