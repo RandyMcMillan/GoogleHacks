@@ -35,20 +35,34 @@
     
     //Audio Files
     self.data_object.mp3_check = FALSE;
+    NSLog(@"VALUE IS : %@", (self.data_object.mp3_check == TRUE) ? @"TRUE" : @"FALSE");
+
     self.data_object.wma_check = FALSE;
+    NSLog(@"VALUE IS : %@", (self.data_object.wma_check == TRUE) ? @"TRUE" : @"FALSE");
+
     self.data_object.ogg_check = FALSE;
-    
+    NSLog(@"VALUE IS : %@", (self.data_object.ogg_check == TRUE) ? @"TRUE" : @"FALSE");
     //Documents
     self.data_object.pdf_check = FALSE;
+    NSLog(@"VALUE IS : %@", (self.data_object.pdf_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.txt_check = FALSE;
+    NSLog(@"VALUE IS : %@", (self.data_object.txt_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.lit_check = FALSE;
+    NSLog(@"VALUE IS : %@", (self.data_object.lit_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.rar_check = FALSE;
+    NSLog(@"VALUE IS : %@", (self.data_object.rar_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.doc_check = FALSE;
+    NSLog(@"VALUE IS : %@", (self.data_object.doc_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.rtf_check = FALSE;
+    NSLog(@"VALUE IS : %@", (self.data_object.rtf_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.pps_check = FALSE;
+    NSLog(@"VALUE IS : %@", (self.data_object.pps_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.chm_check = FALSE;
+    NSLog(@"VALUE IS : %@", (self.data_object.chm_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.zip1_check = FALSE;
+    NSLog(@"VALUE IS : %@", (self.data_object.zip1_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.odt_check = FALSE;
+    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
     
     //Video
     self.data_object.mpg_check = FALSE;
