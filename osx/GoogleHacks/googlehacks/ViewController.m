@@ -29,7 +29,7 @@
     //Search String
     //self.data_object.search_str = @"Search String";
     //self.searchField. = self.data_object.search_str;
-    [self.searchTextField setStringValue:self.data_object.search_str];
+    //[self.searchTextField setStringValue:self.data_object.search_str];
     //self.data_object.full_search_str = @"Full Search String";
     self.data_object.types_str = @"";
     
@@ -200,7 +200,10 @@
     else
     {
         //[listener ignore];
-        [ws openURL: url];
+       // [ws openURL: url];
+        [self openURL:url inBackground:YES];
+        
+        
     }
     
     NSLog(@"__________getSearchField_________");
@@ -218,6 +221,23 @@
 
     return modifiedURL;
 }
+
+
+
+ 
+// http://zachwaugh.me/posts/opening-links-in-background-with-cocoa/
+ 
+ // Opens a URL in the default browser in background or foreground
+ - (void)openURL:(NSURL *)url inBackground:(BOOL)background
+ {
+ if (background) {
+ NSArray* urls = [NSArray arrayWithObject:url];
+ [[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+ } else {
+ [[NSWorkspace sharedWorkspace] openURL:url];
+ }
+ }
+ 
 
 
 @end

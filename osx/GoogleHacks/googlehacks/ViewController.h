@@ -19,6 +19,7 @@
 
 -(IBAction)getSearchField:(id)sender;
 - (NSURL *)modifiedURL;
+- (void)openURL:(NSURL *)url inBackground:(BOOL)background;
 
 @property (nonatomic, readwrite) DataObjects *data_object;
 @property (nonatomic, readwrite) NSTextField *searchTextField;
