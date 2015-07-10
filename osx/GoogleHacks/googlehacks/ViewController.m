@@ -178,11 +178,63 @@
 }
 
 - (void)getSearchField:(id)sender {
+    //http://stackoverflow.com/questions/16704156/how-to-open-external-links-to-safari-chrome-browser-in-cocoa
+
+    //http://theocacao.com/document.page/183
+    
+    //NSWorkspace * ws = [NSWorkspace sharedWorkspace];
+    //NSArray * apps = [ws launchedApplications];
+    //NSLog (@"%@", apps);
+    
+    
+ //   NSWorkspace * ws = [NSWorkspace sharedWorkspace];
+   // BOOL result = [ws launchApplication:@"Safari"];
+    // NSArray * apps;
+    //apps = [ws valueForKeyPath:@"launchedApplications.NSApplicationName"];
+    //NSLog (@"%@", apps);
+    
+    NSWorkspace * ws = [NSWorkspace sharedWorkspace];
+    //NSURL *url = [NSURL URLWithString:@"http://theocacao.com/"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithString:[self.searchTextField stringValue]]];
+
+    NSLog(@"url = %@", url);
+
+   // NSURL *url = [NSURL URLWithString:[self.searchTextField stringValue]];
+    NSLog(@"%@", [self.searchTextField stringValue]);
+
+    // open local urls in our app, and external in default browser
+    NSString *scheme = [url scheme];
+    if ([scheme isEqualToString:@"file"])
+    {
+        //[listener use];
+    }
+    else
+    {
+        //[listener ignore];
+        [ws openURL: url];
+    }
+    
+    
+    //[ws openURL: url];
+    
+    
+   // NSURL *url = [NSURL URLWithString:[self.searchTextField stringValue]];
+    //NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    //[[NSWorkspace sharedWorkspace] openURL:[request URL]];
+    
+
+    
     
     NSLog(@"__________getSearchField_________");
     NSLog(@"%@", [self.searchTextField stringValue]);
+    
+
+    
+    
 
 }
+
+
 
 
 @end
