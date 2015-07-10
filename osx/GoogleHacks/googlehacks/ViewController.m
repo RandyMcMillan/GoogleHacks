@@ -30,10 +30,10 @@
     //self.data_object.search_str = @"Search String";
     //self.searchField. = self.data_object.search_str;
     [self.searchTextField setStringValue:self.data_object.search_str];
-    self.data_object.full_search_str = @"Full Search String";
+    //self.data_object.full_search_str = @"Full Search String";
     self.data_object.types_str = @"";
     
-#ifdef DEBUG
+#ifndef DEBUG
     NSLog(self.data_object.search_str);
     NSLog(self.data_object.full_search_str);
     NSLog(self.data_object.types_str);
@@ -42,11 +42,11 @@
     
     
     //Audio Files
-    self.data_object.mp3_check = FALSE;
+    self.data_object.mp3_check = TRUE;
     self.data_object.wma_check = FALSE;
     self.data_object.ogg_check = FALSE;
     
-#ifdef DEBUG
+#ifndef DEBUG
     NSLog(@"self.data_object.mp3_check IS : %@", (self.data_object.mp3_check == TRUE) ? @"TRUE" : @"FALSE");
     NSLog(@"self.data_object.wma_check IS : %@", (self.data_object.wma_check == TRUE) ? @"TRUE" : @"FALSE");
     NSLog(@"self.data_object.ogg_check IS : %@", (self.data_object.ogg_check == TRUE) ? @"TRUE" : @"FALSE");
@@ -80,7 +80,7 @@
 #endif
     
     //Video
-    self.data_object.mpg_check = FALSE;
+    self.data_object.mpg_check = TRUE;
     self.data_object.avi_check = FALSE;
     self.data_object.wmv_check = FALSE;
     self.data_object.divx_check = FALSE;
