@@ -15,7 +15,6 @@
 		4895526D1B4F148700CA90B6 /* GoogleHacksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4895526C1B4F148700CA90B6 /* GoogleHacksTests.m */; };
 		489552781B4F153800CA90B6 /* DataObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552771B4F153800CA90B6 /* DataObjects.m */; };
 		489552901B4F3C5600CA90B6 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4895528E1B4F3C5600CA90B6 /* MyViewController.m */; };
-		489552911B4F3C5600CA90B6 /* MyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4895528F1B4F3C5600CA90B6 /* MyViewController.xib */; };
 		489552941B4F3C6200CA90B6 /* MyCustomAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552931B4F3C6200CA90B6 /* MyCustomAnimator.m */; };
 		489552971B4F3CDA00CA90B6 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552961B4F3CDA00CA90B6 /* MyView.m */; };
 		489552991B4F3F9200CA90B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489552981B4F3F9200CA90B6 /* Main.storyboard */; };
@@ -49,7 +48,6 @@
 		489552771B4F153800CA90B6 /* DataObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataObjects.m; sourceTree = "<group>"; };
 		4895528D1B4F3C5600CA90B6 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
 		4895528E1B4F3C5600CA90B6 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
-		4895528F1B4F3C5600CA90B6 /* MyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyViewController.xib; sourceTree = "<group>"; };
 		489552921B4F3C6200CA90B6 /* MyCustomAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomAnimator.h; sourceTree = "<group>"; };
 		489552931B4F3C6200CA90B6 /* MyCustomAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomAnimator.m; sourceTree = "<group>"; };
 		489552951B4F3CDA00CA90B6 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 				4895528E1B4F3C5600CA90B6 /* MyViewController.m */,
 				489552951B4F3CDA00CA90B6 /* MyView.h */,
 				489552961B4F3CDA00CA90B6 /* MyView.m */,
-				4895528F1B4F3C5600CA90B6 /* MyViewController.xib */,
 				489552521B4F148700CA90B6 /* AppDelegate.h */,
 				489552531B4F148700CA90B6 /* AppDelegate.m */,
 				489552571B4F148700CA90B6 /* ViewController.h */,
@@ -228,7 +225,6 @@
 			files = (
 				489552991B4F3F9200CA90B6 /* Main.storyboard in Resources */,
 				4895525E1B4F148700CA90B6 /* Images.xcassets in Resources */,
-				489552911B4F3C5600CA90B6 /* MyViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
