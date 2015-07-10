@@ -10,10 +10,17 @@
 #import "DataObjects.h"
 
 
-@interface ViewController : NSViewController
+@interface ViewController : NSViewController {
+
+
+    IBOutlet NSTextField *searchTextField;
+
+}
+
+-(IBAction)getSearchField:(id)sender;
 
 @property (nonatomic, readwrite) DataObjects *data_object;
-
+@property (nonatomic, readwrite) NSTextField *searchField;
 
 @end
 
