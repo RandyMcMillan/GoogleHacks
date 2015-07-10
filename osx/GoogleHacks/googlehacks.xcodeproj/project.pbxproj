@@ -19,6 +19,7 @@
 		489552941B4F3C6200CA90B6 /* MyCustomAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552931B4F3C6200CA90B6 /* MyCustomAnimator.m */; };
 		489552971B4F3CDA00CA90B6 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552961B4F3CDA00CA90B6 /* MyView.m */; };
 		489552991B4F3F9200CA90B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489552981B4F3F9200CA90B6 /* Main.storyboard */; };
+		4895529F1B4F444A00CA90B6 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4895529E1B4F444A00CA90B6 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		489552951B4F3CDA00CA90B6 /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
 		489552961B4F3CDA00CA90B6 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		489552981B4F3F9200CA90B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4895529E1B4F444A00CA90B6 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4895529F1B4F444A00CA90B6 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +122,7 @@
 		489552501B4F148700CA90B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4895529E1B4F444A00CA90B6 /* WebKit.framework */,
 				489552511B4F148700CA90B6 /* Info.plist */,
 				489552551B4F148700CA90B6 /* main.m */,
 			);
