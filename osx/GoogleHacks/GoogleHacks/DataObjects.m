@@ -12,8 +12,7 @@
 //https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Strings/Articles/CreatingStrings.html#//apple_ref/doc/uid/20000148-CJBCJHHI
 
 
-@implementation DataObjects
-
+@implementation DataObjects 
 
  //Search String
  @synthesize search_str;
@@ -78,15 +77,13 @@
  @synthesize StaticText5;
  @synthesize StaticText6;
  @synthesize StaticText7;
+    
 
-- (id) init:(NSObject *) object
+
+- (id) loadValues:(NSObject *)object
 {
 
-    //self.avi_check = FALSE;
-    
-    
-     
-     
+     //self.avi_check = FALSE;
      //Search String
      self.search_str = @"Search String";
      self.full_search_str = @"Full Search String";
@@ -154,6 +151,13 @@
     NSLog(@"DataObject init");
     return NO;
 
+}
+
++ (void)initialize {
+
+    NSLog(@"DataObjects initialize");
+   //[self init];
+    
 }
 
 

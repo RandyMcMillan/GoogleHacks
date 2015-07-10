@@ -24,11 +24,11 @@
     [super viewDidLoad];
     self.title = @"Presenting ViewController";
     [self.data_object = [DataObjects alloc]init];
-    [self.data_object init];
+    [self.data_object loadValues:nil];
     
     //Search String
-    self.data_object.search_str = @"Search String";
-   // self.searchField. = self.data_object.search_str;
+    //self.data_object.search_str = @"Search String";
+    //self.searchField. = self.data_object.search_str;
     [self.searchTextField setStringValue:self.data_object.search_str];
     self.data_object.full_search_str = @"Full Search String";
     self.data_object.types_str = @"";
@@ -166,30 +166,22 @@
     
 #endif
     
-    
     // Do any additional setup after loading the view.
+
 }
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
 
-    [self getSearchField:self];
-    
     // Update the view, if already loaded.
     
-
-
 }
 
 - (void)getSearchField:(id)sender {
-    //    [self.searchField setStringValue:self.data_object.search_str];
-
-
+    
     NSLog(@"__________getSearchField_________");
-    
-    //NSLog(@"This is it: %@",kMyString);
     NSLog(@"%@", [self.searchTextField stringValue]);
-    
+
 }
 
 
