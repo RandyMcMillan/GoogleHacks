@@ -14,12 +14,14 @@
 
 
     IBOutlet NSTextField *searchTextField;
+    IBOutlet NSButton *show;
 
 }
 
 -(IBAction)getSearchField:(id)sender;
 - (NSURL *)modifiedURL;
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background;
+-(IBAction)openURLFromButton:(id)sender;
 
 @property (nonatomic, readwrite) DataObjects *data_object;
 @property (nonatomic, readwrite) NSTextField *searchTextField;

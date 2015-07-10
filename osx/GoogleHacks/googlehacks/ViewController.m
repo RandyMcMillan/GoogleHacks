@@ -209,8 +209,8 @@
     NSLog(@"__________getSearchField_________");
     NSLog(@"BASE_URL = %@",BASE_URL);
 
-    self.data_object.full_search_str = [self.data_object.search_str stringByAppendingString:BASE_URL];
-    NSLog(@"self.data_object.full_search_str = %@",self.data_object.full_search_str);
+    //self.data_object.full_search_str = [self.data_object.search_str stringByAppendingString:BASE_URL];
+    //NSLog(@"self.data_object.full_search_str = %@",self.data_object.full_search_str);
 
 
 }
@@ -222,6 +222,14 @@
     return modifiedURL;
 }
 
+-(IBAction)openURLFromButton:(id)sender
+{
+
+    //self.data_object.full_search_str = [self.data_object.search_str stringByAppendingString:nil];
+
+    [self openURL:[NSURL URLWithString:self.data_object.full_search_str] inBackground:YES];
+
+}
 
 
  
