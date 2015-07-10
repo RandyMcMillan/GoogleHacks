@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.WebKitIBPlugin" version="7706"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -797,22 +798,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button horizontalHuggingPriority="1000" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EyK-nD-Klc">
-                                <rect key="frame" x="196" y="163" width="89" height="32"/>
-                                <buttonCell key="cell" type="push" title="Dismiss" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QrY-PI-Zd6">
+                            <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="koN-u1-9M5">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO"/>
+                            </webView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-u3-0GW">
+                                <rect key="frame" x="197" y="18" width="116" height="25"/>
+                                <buttonCell key="cell" type="roundTextured" title="Round Textured" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oMk-9m-zK9">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
+                                    <connections>
+                                        <action selector="dismiss:" target="bp4-oP-OFF" id="I5C-AG-e6A"/>
+                                    </connections>
                                 </buttonCell>
-                                <connections>
-                                    <action selector="dismiss:" target="bp4-oP-OFF" id="XUy-16-Lqk"/>
-                                </connections>
                             </button>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="EyK-nD-Klc" secondAttribute="centerY" id="1ws-nr-Znr"/>
-                            <constraint firstAttribute="centerX" secondItem="EyK-nD-Klc" secondAttribute="centerX" id="Okc-Eb-MuD"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="view" destination="7eW-ts-DI0" id="eoO-J7-CrH"/>
+                        <outlet property="webView" destination="koN-u1-9M5" id="qaH-iT-iE8"/>
+                    </connections>
                 </viewController>
                 <customObject id="Fii-g5-G37" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

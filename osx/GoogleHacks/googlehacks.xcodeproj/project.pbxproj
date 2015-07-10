@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		483E64FB1B4F575A00E4EA6C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 483E64FA1B4F575A00E4EA6C /* index.html */; };
 		489552541B4F148700CA90B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552531B4F148700CA90B6 /* AppDelegate.m */; };
 		489552561B4F148700CA90B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552551B4F148700CA90B6 /* main.m */; };
 		489552591B4F148700CA90B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552581B4F148700CA90B6 /* ViewController.m */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		483E64FA1B4F575A00E4EA6C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		4895524D1B4F148700CA90B6 /* GoogleHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489552511B4F148700CA90B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		489552521B4F148700CA90B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		4895524F1B4F148700CA90B6 /* GoogleHacks */ = {
 			isa = PBXGroup;
 			children = (
+				483E64FA1B4F575A00E4EA6C /* index.html */,
 				489552921B4F3C6200CA90B6 /* MyCustomAnimator.h */,
 				489552931B4F3C6200CA90B6 /* MyCustomAnimator.m */,
 				4895528D1B4F3C5600CA90B6 /* MyViewController.h */,
@@ -223,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				483E64FB1B4F575A00E4EA6C /* index.html in Resources */,
 				489552991B4F3F9200CA90B6 /* Main.storyboard in Resources */,
 				4895525E1B4F148700CA90B6 /* Images.xcassets in Resources */,
 			);
