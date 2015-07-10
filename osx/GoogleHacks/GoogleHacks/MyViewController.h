@@ -8,12 +8,16 @@
 
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
+#import "DataObjects.h"
+
+
 
 @interface MyViewController : NSViewController {
 
 IBOutlet id webView;
 
 }
+
 
 - (NSString *)appURL;
 - (IBAction)changeGreeting:(id)sender;
