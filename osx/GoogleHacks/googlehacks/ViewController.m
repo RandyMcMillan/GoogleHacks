@@ -42,7 +42,7 @@
     
     
     //Audio Files
-    self.data_object.mp3_check = YES;
+    self.data_object.mp3_check = TRUE;
     self.data_object.wma_check = FALSE;
     self.data_object.ogg_check = FALSE;
     
