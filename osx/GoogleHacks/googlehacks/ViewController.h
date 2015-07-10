@@ -18,6 +18,7 @@
 }
 
 -(IBAction)getSearchField:(id)sender;
+- (NSURL *)modifiedURL;
 
 @property (nonatomic, readwrite) DataObjects *data_object;
 @property (nonatomic, readwrite) NSTextField *searchTextField;

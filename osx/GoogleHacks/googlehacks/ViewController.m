@@ -13,7 +13,7 @@
 #import "MyViewController.h"
 #import "MyCustomAnimator.h"
 #import "DataObjects.h"
-
+#include "Constants.h"
 
 @implementation ViewController
 
@@ -178,20 +178,9 @@
 }
 
 - (void)getSearchField:(id)sender {
+    
     //http://stackoverflow.com/questions/16704156/how-to-open-external-links-to-safari-chrome-browser-in-cocoa
-
     //http://theocacao.com/document.page/183
-    
-    //NSWorkspace * ws = [NSWorkspace sharedWorkspace];
-    //NSArray * apps = [ws launchedApplications];
-    //NSLog (@"%@", apps);
-    
-    
- //   NSWorkspace * ws = [NSWorkspace sharedWorkspace];
-   // BOOL result = [ws launchApplication:@"Safari"];
-    // NSArray * apps;
-    //apps = [ws valueForKeyPath:@"launchedApplications.NSApplicationName"];
-    //NSLog (@"%@", apps);
     
     NSWorkspace * ws = [NSWorkspace sharedWorkspace];
     //NSURL *url = [NSURL URLWithString:@"http://theocacao.com/"];
@@ -214,27 +203,20 @@
         [ws openURL: url];
     }
     
-    
-    //[ws openURL: url];
-    
-    
-   // NSURL *url = [NSURL URLWithString:[self.searchTextField stringValue]];
-    //NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    //[[NSWorkspace sharedWorkspace] openURL:[request URL]];
-    
-
-    
-    
     NSLog(@"__________getSearchField_________");
-    NSLog(@"%@", [self.searchTextField stringValue]);
-    
+    NSLog(@"BASE_URL = %@",BASE_URL);
 
     
     
 
 }
 
+- (NSURL *)modifiedURL{
 
+    NSURL *modifiedURL = nil;
+
+    return modifiedURL;
+}
 
 
 @end

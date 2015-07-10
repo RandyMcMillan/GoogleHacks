@@ -11,6 +11,8 @@
 @interface DataObjects : NSObject
 
 //Search String
+
+
 @property (nonatomic, retain) NSString *search_str;
 @property (nonatomic, retain) NSString *full_search_str;
 @property (nonatomic, retain) NSString *types_str;

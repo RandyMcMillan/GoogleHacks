@@ -56,6 +56,7 @@
 		489552961B4F3CDA00CA90B6 /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		489552981B4F3F9200CA90B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4895529E1B4F444A00CA90B6 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		48CC88F91B508168004C4D90 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +111,7 @@
 				489552571B4F148700CA90B6 /* ViewController.h */,
 				489552581B4F148700CA90B6 /* ViewController.m */,
 				489552761B4F153800CA90B6 /* DataObjects.h */,
+				48CC88F91B508168004C4D90 /* Constants.h */,
 				489552771B4F153800CA90B6 /* DataObjects.m */,
 				4895525D1B4F148700CA90B6 /* Images.xcassets */,
 				489552981B4F3F9200CA90B6 /* Main.storyboard */,
