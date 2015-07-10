@@ -7,6 +7,7 @@
 //
 
 #import "DataObjects.h"
+#include "Constants.h"
 
 
 //https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Strings/Articles/CreatingStrings.html#//apple_ref/doc/uid/20000148-CJBCJHHI

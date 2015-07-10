@@ -99,6 +99,7 @@
 		4895524F1B4F148700CA90B6 /* GoogleHacks */ = {
 			isa = PBXGroup;
 			children = (
+				48CC88F91B508168004C4D90 /* Constants.h */,
 				483E64FA1B4F575A00E4EA6C /* index.html */,
 				489552921B4F3C6200CA90B6 /* MyCustomAnimator.h */,
 				489552931B4F3C6200CA90B6 /* MyCustomAnimator.m */,
@@ -111,7 +112,6 @@
 				489552571B4F148700CA90B6 /* ViewController.h */,
 				489552581B4F148700CA90B6 /* ViewController.m */,
 				489552761B4F153800CA90B6 /* DataObjects.h */,
-				48CC88F91B508168004C4D90 /* Constants.h */,
 				489552771B4F153800CA90B6 /* DataObjects.m */,
 				4895525D1B4F148700CA90B6 /* Images.xcassets */,
 				489552981B4F3F9200CA90B6 /* Main.storyboard */,

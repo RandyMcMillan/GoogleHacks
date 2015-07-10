@@ -206,8 +206,9 @@
     NSLog(@"__________getSearchField_________");
     NSLog(@"BASE_URL = %@",BASE_URL);
 
-    
-    
+    self.data_object.full_search_str = [self.data_object.search_str stringByAppendingString:BASE_URL];
+    NSLog(@"self.data_object.full_search_str = %@",self.data_object.full_search_str);
+
 
 }
 
