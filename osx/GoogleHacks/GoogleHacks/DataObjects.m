@@ -85,12 +85,12 @@
 
      //self.avi_check = FALSE;
      //Search String
-     self.search_str = @"LOAD Search String";
-     self.full_search_str = @"LOAD Full Search String";
+     self.search_str = @"Search String";
+     self.full_search_str = @"Full Search String";
      self.types_str = @"";
      
      //Audio Files
-     self.mp3_check = NO;
+     self.mp3_check = FALSE;
      self.wma_check = FALSE;
      self.ogg_check = FALSE;
      
