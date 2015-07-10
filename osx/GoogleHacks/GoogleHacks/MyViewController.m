@@ -9,19 +9,17 @@
 #import "MyViewController.h"
 
 
+@interface MyViewController () @end
 
-@interface MyViewController ()
+@implementation MyViewController {}
 
-@end
-
-
-@implementation MyViewController
+@synthesize webView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Presented ViewController";
     
-    [webView setMainFrameURL:[self appURL]];
+    [self.webView setMainFrameURL:[self appURL]];
 
 }
 
@@ -45,7 +43,19 @@
 // Here we grab the URL to the bundled index.html document.
 // Normally it would be the URL to your web app such as @"http://example.com".
 - (NSString *)appURL {
-    return [[[NSBundle mainBundle] URLForResource:@"index" withExtension:@"html"] absoluteString];
+    
+    //return [[[NSBundle mainBundle] URLForResource:@"http://www.google" withExtension:@"html"] absoluteString];
+
+    
+    
+    NSURL *baseURL = [NSURL URLWithString:@"file:///path/to/web_root/"];
+    NSURL *url = [NSURL URLWithString:@"folder/file.html" relativeToURL:baseURL];
+    NSURL *absURL = [url absoluteURL];
+    NSLog(@"absURL = %@", absURL);
+    NSString *getURL = [NSString stringWithContentsOfURL:absURL encoding:1000 error:nil];
+    
+    return getURL;
+    
 }
 
 

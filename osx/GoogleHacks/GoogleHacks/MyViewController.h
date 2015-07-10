@@ -18,6 +18,7 @@ IBOutlet id webView;
 
 }
 
+@property (nonatomic,retain) WebView *webView;
 
 - (NSString *)appURL;
 - (IBAction)changeGreeting:(id)sender;
