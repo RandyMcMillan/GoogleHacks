@@ -20,7 +20,7 @@
 -(IBAction)getSearchField:(id)sender;
 
 @property (nonatomic, readwrite) DataObjects *data_object;
-@property (nonatomic, readwrite) NSTextField *searchField;
+@property (nonatomic, readwrite) NSTextField *searchTextField;
 
 @end
 

@@ -12,57 +12,72 @@
 #import "ViewController.h"
 #import "MyViewController.h"
 #import "MyCustomAnimator.h"
+#import "DataObjects.h"
 
 
 @implementation ViewController
 
 @synthesize data_object;
-@synthesize searchField;
+@synthesize searchTextField;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Presenting ViewController";
+    [self.data_object = [DataObjects alloc]init];
     [self.data_object init];
-
     
     //Search String
     self.data_object.search_str = @"Search String";
    // self.searchField. = self.data_object.search_str;
-
-    
+    [self.searchTextField setStringValue:self.data_object.search_str];
     self.data_object.full_search_str = @"Full Search String";
-    self.data_object .types_str = @"";
+    self.data_object.types_str = @"";
+    
+#ifdef DEBUG
+    NSLog(self.data_object.search_str);
+    NSLog(self.data_object.full_search_str);
+    NSLog(self.data_object.types_str);
+
+#endif
+    
     
     //Audio Files
     self.data_object.mp3_check = FALSE;
-    NSLog(@"VALUE IS : %@", (self.data_object.mp3_check == TRUE) ? @"TRUE" : @"FALSE");
-
     self.data_object.wma_check = FALSE;
-    NSLog(@"VALUE IS : %@", (self.data_object.wma_check == TRUE) ? @"TRUE" : @"FALSE");
-
     self.data_object.ogg_check = FALSE;
-    NSLog(@"VALUE IS : %@", (self.data_object.ogg_check == TRUE) ? @"TRUE" : @"FALSE");
+    
+#ifdef DEBUG
+    NSLog(@"self.data_object.mp3_check IS : %@", (self.data_object.mp3_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.wma_check IS : %@", (self.data_object.wma_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.ogg_check IS : %@", (self.data_object.ogg_check == TRUE) ? @"TRUE" : @"FALSE");
+#endif
+    
+    
     //Documents
     self.data_object.pdf_check = FALSE;
-    NSLog(@"VALUE IS : %@", (self.data_object.pdf_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.txt_check = FALSE;
-    NSLog(@"VALUE IS : %@", (self.data_object.txt_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.lit_check = FALSE;
-    NSLog(@"VALUE IS : %@", (self.data_object.lit_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.rar_check = FALSE;
-    NSLog(@"VALUE IS : %@", (self.data_object.rar_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.doc_check = FALSE;
-    NSLog(@"VALUE IS : %@", (self.data_object.doc_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.rtf_check = FALSE;
-    NSLog(@"VALUE IS : %@", (self.data_object.rtf_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.pps_check = FALSE;
-    NSLog(@"VALUE IS : %@", (self.data_object.pps_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.chm_check = FALSE;
-    NSLog(@"VALUE IS : %@", (self.data_object.chm_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.zip1_check = FALSE;
-    NSLog(@"VALUE IS : %@", (self.data_object.zip1_check == TRUE) ? @"TRUE" : @"FALSE");
     self.data_object.odt_check = FALSE;
-    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
+    
+    
+#ifndef DEBUG
+    NSLog(@"self.data_object.pdf_check IS : %@", (self.data_object.pdf_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.txt_check IS : %@", (self.data_object.txt_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.lit_check IS : %@", (self.data_object.lit_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.rar_check IS : %@", (self.data_object.rar_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.doc_check IS : %@", (self.data_object.doc_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.rtf_check IS : %@", (self.data_object.rtf_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.pps_check IS : %@", (self.data_object.pps_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.chm_check IS : %@", (self.data_object.chm_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.zip1_check IS : %@", (self.data_object.zip1_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.odt_check IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
+#endif
     
     //Video
     self.data_object.mpg_check = FALSE;
@@ -70,6 +85,14 @@
     self.data_object.wmv_check = FALSE;
     self.data_object.divx_check = FALSE;
     self.data_object.flv_check = FALSE;
+    
+#ifndef DEBUG
+    NSLog(@"self.data_object.mpg_check IS : %@", (self.data_object.mpg_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.avi_check IS : %@", (self.data_object.avi_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.wmv_check IS : %@", (self.data_object.wmv_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.divx_check IS : %@", (self.data_object.divx_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.flv_check IS : %@", (self.data_object.flv_check == TRUE) ? @"TRUE" : @"FALSE");
+#endif
     
     //Passwords
     self.data_object.pass_check = FALSE;
@@ -106,7 +129,43 @@
     self.data_object.StaticText6 = FALSE;
     self.data_object.StaticText7 = FALSE;
     
+    
+    
+#ifndef DEBUG
+//    #ifndef DEBUG
 
+    
+    NSLog(@"VALUE IS : %@", (self.data_object.wma_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.ogg_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.pdf_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.txt_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.lit_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.rar_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.doc_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.rtf_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.pps_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.chm_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.zip1_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
+
+    NSLog(@"VALUE IS : %@", (self.data_object.mpg_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.avi_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.wmv_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.divx_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.flv_check == TRUE) ? @"TRUE" : @"FALSE");
+    
+    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
+
+    
+#endif
+    
     
     // Do any additional setup after loading the view.
 }
@@ -114,6 +173,8 @@
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
 
+    [self getSearchField:self];
+    
     // Update the view, if already loaded.
     
 
@@ -121,9 +182,13 @@
 }
 
 - (void)getSearchField:(id)sender {
+    //    [self.searchField setStringValue:self.data_object.search_str];
 
 
-    NSLog(@"getSearchField");
+    NSLog(@"__________getSearchField_________");
+    
+    //NSLog(@"This is it: %@",kMyString);
+    NSLog(@"%@", [self.searchTextField stringValue]);
     
 }
 

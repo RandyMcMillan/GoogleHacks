@@ -151,7 +151,7 @@
      self.StaticText6 = FALSE;
      self.StaticText7 = FALSE;
      
-
+    NSLog(@"DataObject init");
     return NO;
 
 }

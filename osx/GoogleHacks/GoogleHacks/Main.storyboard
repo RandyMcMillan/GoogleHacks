@@ -790,11 +790,15 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="getSearchField:" target="XfG-lQ-9wD" id="1gw-ni-0Og"/>
+                                </connections>
                             </textField>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="searchTextField" destination="4b6-s8-AX9" id="wfo-NE-v1D"/>
+                        <outlet property="searchTextField" destination="4b6-s8-AX9" id="fd9-as-jr0"/>
+                        <outlet property="sourceItemView" destination="R1N-Y8-GxT" id="I2A-zF-IVK"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -811,7 +815,9 @@
                         <subviews>
                             <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="koN-u1-9M5">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
-                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO"/>
+                                <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO">
+                                    <nil key="identifier"/>
+                                </webPreferences>
                             </webView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-u3-0GW">
                                 <rect key="frame" x="197" y="18" width="116" height="25"/>

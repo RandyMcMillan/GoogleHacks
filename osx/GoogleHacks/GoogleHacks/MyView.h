@@ -8,12 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface MyView : NSView {
-
-    
-
-    
-}
+@interface MyView : NSView {}
 
 
 @end
