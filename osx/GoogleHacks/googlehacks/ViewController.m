@@ -160,6 +160,7 @@
     NSButtonCell *selCell = [sender selectedCell];
     NSLog(@"Selected cell is %ld", (long)[selCell tag]);
     NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+    NSLog(@"Selected cell title is %@", (id)[selCell title]);
 
     
     if ([selCell tag]== 0){
