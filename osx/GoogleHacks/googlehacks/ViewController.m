@@ -47,16 +47,6 @@
 
 
     
-    //Passwords
-    self.data_object.pass_check = FALSE;
-    self.data_object.pass_text = FALSE;
-    
-    self.data_object.pass_1 = FALSE;
-    self.data_object.pass_5 = FALSE;
-    self.data_object.pass_2 = FALSE;
-    self.data_object.pass_6 = FALSE;
-    self.data_object.pass_3 = FALSE;
-    self.data_object.pass_4 = FALSE;
     
     //Methods
     self.data_object.method1_check = FALSE;
@@ -70,11 +60,7 @@
     self.data_object.StaticText2 = FALSE;
     self.data_object.StaticText3 = FALSE;
     
-    // archives
-    self.data_object.exe_check = FALSE;
-    self.data_object.rar_check1 = FALSE;
-    self.data_object.zip_check = FALSE;
-    self.data_object.ddl_check = FALSE;
+
     
     // text
     self.data_object.StaticText4 = FALSE;
@@ -83,41 +69,6 @@
     self.data_object.StaticText7 = FALSE;
     
     
-    
-#ifndef DEBUG
-//    #ifndef DEBUG
-
-    
-    NSLog(@"VALUE IS : %@", (self.data_object.wma_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.ogg_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.pdf_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.txt_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.lit_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.rar_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.doc_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.rtf_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.pps_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.chm_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.zip1_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
-
-    NSLog(@"VALUE IS : %@", (self.data_object.mpg_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.avi_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.wmv_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.divx_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.flv_check == TRUE) ? @"TRUE" : @"FALSE");
-    
-    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"VALUE IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
-
-    
-#endif
     
     // Do any additional setup after loading the view.
 
@@ -681,14 +632,14 @@
                                 }else{NSLog(@"Error");}
     
 #ifndef DEBUG
-    NSLog(@"self.data_object.pdf_check IS : %@", (self.data_object.pass_check == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"self.data_object.txt_check IS : %@", (self.data_object.pass_text == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"self.data_object.lit_check IS : %@", (self.data_object.pass_1 == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"self.data_object.rar_check IS : %@", (self.data_object.pass_2 == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"self.data_object.doc_check IS : %@", (self.data_object.pass_3 == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"self.data_object.rtf_check IS : %@", (self.data_object.pass_4 == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"self.data_object.pps_check IS : %@", (self.data_object.pass_5 == TRUE) ? @"TRUE" : @"FALSE");
-    NSLog(@"self.data_object.chm_check IS : %@", (self.data_object.pass_6 == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.pass_check IS : %@", (self.data_object.pass_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.pass_text IS : %@", (self.data_object.pass_text == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.pass_1 IS : %@", (self.data_object.pass_1 == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.pass_2 IS : %@", (self.data_object.pass_2 == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.pass_3 IS : %@", (self.data_object.pass_3 == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.pass_4 IS : %@", (self.data_object.pass_4 == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.pass_5 IS : %@", (self.data_object.pass_5 == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.pass_6 IS : %@", (self.data_object.pass_6 == TRUE) ? @"TRUE" : @"FALSE");
 #endif
 
 
@@ -699,18 +650,65 @@
     NSButtonCell *selCell = [sender selectedCell];
     NSLog(@"Selected cell is %ld", (long)[selCell tag]);
     
-    if ([selCell tag]== 0){}else if ([selCell tag]== 0){}else
-        if ([selCell tag]== 0){}else
-            if ([selCell tag]== 0){}else
-                if ([selCell tag]== 0){}else
-                    if ([selCell tag]== 0){}else
-                        if ([selCell tag]== 0){}else
-                            if ([selCell tag]== 0){}else
-                                if ([selCell tag]== 0){}else
-                                    if ([selCell tag]== 0){}else
-                                        if ([selCell tag]== 0){}else{NSLog(@"Error");}
+    if ([selCell tag]== 0){
+    
+        // file ext
+        self.data_object.exe_check = FALSE;
+        self.data_object.rar_check1 = FALSE;
+        self.data_object.zip_check = FALSE;
+        self.data_object.ddl_check = FALSE;
 
+    
+    }else if ([selCell tag]== 1){
+    
+        // file ext
+        self.data_object.exe_check = TRUE;
+        self.data_object.rar_check1 = FALSE;
+        self.data_object.zip_check = FALSE;
+        self.data_object.ddl_check = FALSE;
 
+    
+    }else
+        if ([selCell tag]== 2){
+        
+            // file ext
+            self.data_object.exe_check = FALSE;
+            self.data_object.rar_check1 = TRUE;
+            self.data_object.zip_check = FALSE;
+            self.data_object.ddl_check = FALSE;
+
+        
+        }else
+            if ([selCell tag]== 3){
+            
+                // file ext
+                self.data_object.exe_check = FALSE;
+                self.data_object.rar_check1 = FALSE;
+                self.data_object.zip_check = TRUE;
+                self.data_object.ddl_check = FALSE;
+
+            
+            } if ([selCell tag]== 4){
+                
+                // file ext
+                self.data_object.exe_check = FALSE;
+                self.data_object.rar_check1 = FALSE;
+                self.data_object.zip_check = FALSE;
+                self.data_object.ddl_check = TRUE;
+                
+                
+            }else{NSLog(@"Error");}
+    
+#ifndef DEBUG
+    NSLog(@"self.data_object.exe_check IS : %@", (self.data_object.exe_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.rar_check1 IS : %@", (self.data_object.rar_check1 == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.zip_check IS : %@", (self.data_object.zip_check == TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"self.data_object.ddl_check IS : %@", (self.data_object.ddl_check == TRUE) ? @"TRUE" : @"FALSE");
+#endif
+    
+    
+
+    
 }
 - (IBAction)linkQuery:(id)sender{
 
