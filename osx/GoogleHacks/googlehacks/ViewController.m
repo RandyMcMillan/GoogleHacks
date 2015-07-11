@@ -739,8 +739,25 @@
 
 - (void)assembleTypesString{
 
+    self.data_object.types_str = @"";
 
-    //NSLog(@"assembleTypesString");
+    if (self.data_object.mp3_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".mp3%7C"];
+    }
+    
+    if (self.data_object.wma_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".wma%7C"];
+    }
+    
+    if (self.data_object.ogg_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".ogg%7C"];
+    }
+    
+
+    
+    
+    NSLog(@"assembleTypesString");
+    NSLog(@"self.data_object.types_str = %@",self.data_object.types_str);
 
 
 }

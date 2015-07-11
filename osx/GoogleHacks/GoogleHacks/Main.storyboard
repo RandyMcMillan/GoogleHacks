@@ -911,7 +911,7 @@
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="flv" imagePosition="left" alignment="left" tag="3" inset="2" id="G6U-gQ-yWh">
+                                        <buttonCell type="radio" title="ogg" imagePosition="left" alignment="left" tag="3" inset="2" id="G6U-gQ-yWh">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
