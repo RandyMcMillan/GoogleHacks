@@ -687,7 +687,7 @@
                                 </connections>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKe-5m-kVo">
-                                <rect key="frame" x="178" y="273" width="111" height="25"/>
+                                <rect key="frame" x="178" y="283" width="111" height="25"/>
                                 <buttonCell key="cell" type="squareTextured" title="Search" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gj3-1g-1zQ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -697,9 +697,9 @@
                                 </connections>
                             </button>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zbY-Zx-kix">
-                                <rect key="frame" x="86" y="60" width="58" height="198"/>
+                                <rect key="frame" x="86" y="60" width="49" height="218"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                <size key="cellSize" width="49" height="18"/>
+                                <size key="cellSize" width="53" height="18"/>
                                 <size key="intercellSpacing" width="4" height="2"/>
                                 <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="iFG-RH-nqQ">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -707,43 +707,47 @@
                                 </buttonCell>
                                 <cells>
                                     <column>
-                                        <buttonCell type="radio" title="pdf" imagePosition="left" alignment="left" state="on" inset="2" id="PTI-hj-i7V">
+                                        <buttonCell type="radio" title="none" imagePosition="left" alignment="left" state="on" inset="2" id="PTI-hj-i7V">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="txt" imagePosition="left" alignment="left" tag="1" inset="2" id="api-xQ-rln">
+                                        <buttonCell type="radio" title="pdf" imagePosition="left" alignment="left" tag="1" inset="2" id="api-xQ-rln">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="lit" imagePosition="left" alignment="left" tag="2" inset="2" id="4sR-yY-Clu">
+                                        <buttonCell type="radio" title="txt" imagePosition="left" alignment="left" tag="2" inset="2" id="4sR-yY-Clu">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="rar" imagePosition="left" alignment="left" tag="3" inset="2" id="SZ7-DA-t45">
+                                        <buttonCell type="radio" title="lit" imagePosition="left" alignment="left" tag="3" inset="2" id="SZ7-DA-t45">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="doc" imagePosition="left" alignment="left" tag="4" inset="2" id="oFN-1A-sUg">
+                                        <buttonCell type="radio" title="rar" imagePosition="left" alignment="left" tag="4" inset="2" id="oFN-1A-sUg">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="rtf" imagePosition="left" alignment="left" tag="5" inset="2" id="Ciw-ZX-trs">
+                                        <buttonCell type="radio" title="doc" imagePosition="left" alignment="left" tag="5" inset="2" id="Ciw-ZX-trs">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="pps" imagePosition="left" alignment="left" tag="6" inset="2" id="fiY-UG-VzZ">
+                                        <buttonCell type="radio" title="rtf" imagePosition="left" alignment="left" tag="6" inset="2" id="fiY-UG-VzZ">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="chm" imagePosition="left" alignment="left" tag="7" inset="2" id="eRF-R3-4a1">
+                                        <buttonCell type="radio" title="pps" imagePosition="left" alignment="left" tag="7" inset="2" id="eRF-R3-4a1">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="zip1" imagePosition="left" alignment="left" tag="8" inset="2" id="CFX-bP-X1J">
+                                        <buttonCell type="radio" title="chm" imagePosition="left" alignment="left" tag="8" inset="2" id="CFX-bP-X1J">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="odt" imagePosition="left" alignment="left" tag="9" inset="2" id="XQH-UN-6Vs">
+                                        <buttonCell type="radio" title="zip1" imagePosition="left" alignment="left" tag="9" inset="2" id="XQH-UN-6Vs">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="ogt" imagePosition="left" alignment="left" tag="10" inset="2" id="ADY-bk-MF2">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -754,9 +758,9 @@
                                 </connections>
                             </matrix>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" selectionByRect="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mrt-a2-etm">
-                                <rect key="frame" x="20" y="60" width="58" height="98"/>
+                                <rect key="frame" x="20" y="60" width="51" height="118"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                <size key="cellSize" width="51" height="18"/>
+                                <size key="cellSize" width="53" height="18"/>
                                 <size key="intercellSpacing" width="4" height="2"/>
                                 <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="0lM-80-Bky">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -764,23 +768,27 @@
                                 </buttonCell>
                                 <cells>
                                     <column>
-                                        <buttonCell type="radio" title="mpg" imagePosition="left" alignment="left" state="on" inset="2" id="bm7-jq-znZ">
+                                        <buttonCell type="radio" title="none" imagePosition="left" alignment="left" state="on" inset="2" id="bm7-jq-znZ">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="avi" imagePosition="left" alignment="left" tag="1" inset="2" id="kZW-XN-38g">
+                                        <buttonCell type="radio" title="mpg" imagePosition="left" alignment="left" tag="1" inset="2" id="kZW-XN-38g">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="wmv" imagePosition="left" alignment="left" tag="2" inset="2" id="9vK-0s-bbt">
+                                        <buttonCell type="radio" title="avi" imagePosition="left" alignment="left" tag="2" inset="2" id="9vK-0s-bbt">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="divx" imagePosition="left" alignment="left" tag="3" inset="2" id="Kiw-aK-CVg">
+                                        <buttonCell type="radio" title="wmv" imagePosition="left" alignment="left" tag="3" inset="2" id="Kiw-aK-CVg">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="flv" imagePosition="left" alignment="left" tag="4" inset="2" id="Bah-2P-hav">
+                                        <buttonCell type="radio" title="divx" imagePosition="left" alignment="left" tag="4" inset="2" id="Bah-2P-hav">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="flv" imagePosition="left" alignment="left" tag="5" inset="2" id="S2z-hg-L7R">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -791,7 +799,7 @@
                                 </connections>
                             </matrix>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8NJ-kM-SuZ">
-                                <rect key="frame" x="152" y="100" width="94" height="158"/>
+                                <rect key="frame" x="152" y="100" width="92" height="178"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="92" height="18"/>
                                 <size key="intercellSpacing" width="4" height="2"/>
@@ -801,35 +809,39 @@
                                 </buttonCell>
                                 <cells>
                                     <column>
-                                        <buttonCell type="radio" title="pass check" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="Rm9-No-Ef3">
+                                        <buttonCell type="radio" title="none" imagePosition="left" alignment="left" state="on" inset="2" id="Rm9-No-Ef3">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="pass text" imagePosition="left" alignment="left" inset="2" id="fBG-WU-drU">
+                                        <buttonCell type="radio" title="pass check" imagePosition="left" alignment="left" tag="1" inset="2" id="fBG-WU-drU">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="pass 1" imagePosition="left" alignment="left" inset="2" id="NYu-Kq-5La">
+                                        <buttonCell type="radio" title="pass text" imagePosition="left" alignment="left" tag="2" inset="2" id="NYu-Kq-5La">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="pass 2" imagePosition="left" alignment="left" inset="2" id="izd-SQ-a6B">
+                                        <buttonCell type="radio" title="pass 1" imagePosition="left" alignment="left" tag="3" inset="2" id="izd-SQ-a6B">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="pass 3" imagePosition="left" alignment="left" inset="2" id="U3f-bF-M8Z">
+                                        <buttonCell type="radio" title="pass 2" imagePosition="left" alignment="left" tag="4" inset="2" id="U3f-bF-M8Z">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="pass 4" imagePosition="left" alignment="left" inset="2" id="TfV-Kz-OeF">
+                                        <buttonCell type="radio" title="pass 3" imagePosition="left" alignment="left" tag="5" inset="2" id="TfV-Kz-OeF">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="pass 5" imagePosition="left" alignment="left" inset="2" id="WxS-mR-l9f">
+                                        <buttonCell type="radio" title="pass 4" imagePosition="left" alignment="left" tag="6" inset="2" id="WxS-mR-l9f">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="pass 6" imagePosition="left" alignment="left" inset="2" id="36F-Ht-SSb">
+                                        <buttonCell type="radio" title="pass 5" imagePosition="left" alignment="left" tag="7" inset="2" id="36F-Ht-SSb">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="pass 6" imagePosition="left" alignment="left" tag="8" inset="2" id="Yyu-6r-Jeg">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -840,7 +852,7 @@
                                 </connections>
                             </matrix>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2fv-hg-czD">
-                                <rect key="frame" x="254" y="180" width="71" height="78"/>
+                                <rect key="frame" x="254" y="180" width="65" height="98"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="65" height="18"/>
                                 <size key="intercellSpacing" width="4" height="2"/>
@@ -850,19 +862,23 @@
                                 </buttonCell>
                                 <cells>
                                     <column>
-                                        <buttonCell type="radio" title="link" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="L6U-md-1c2">
+                                        <buttonCell type="radio" title="none" imagePosition="left" alignment="left" state="on" inset="2" id="L6U-md-1c2">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="add url" imagePosition="left" alignment="left" inset="2" id="y29-Cu-Wtl">
+                                        <buttonCell type="radio" title="link" imagePosition="left" alignment="left" tag="1" inset="2" id="y29-Cu-Wtl">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="related" imagePosition="left" alignment="left" inset="2" id="XCX-2E-iYH">
+                                        <buttonCell type="radio" title="add url" imagePosition="left" alignment="left" tag="2" inset="2" id="XCX-2E-iYH">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="tools" imagePosition="left" alignment="left" inset="2" id="q2f-h6-QOJ">
+                                        <buttonCell type="radio" title="related" imagePosition="left" alignment="left" tag="3" inset="2" id="q2f-h6-QOJ">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="tools" imagePosition="left" alignment="left" tag="4" inset="2" id="clx-3d-eXQ">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -872,43 +888,10 @@
                                     <action selector="linkQuery:" target="XfG-lQ-9wD" id="LBG-nl-fPc"/>
                                 </connections>
                             </matrix>
-                            <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yte-9D-hsw">
-                                <rect key="frame" x="254" y="94" width="58" height="78"/>
-                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                <size key="cellSize" width="48" height="18"/>
-                                <size key="intercellSpacing" width="4" height="2"/>
-                                <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="9aw-GB-YeJ">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <cells>
-                                    <column>
-                                        <buttonCell type="radio" title="exe" imagePosition="left" alignment="left" state="on" tag="1" inset="2" id="uND-fN-Hry">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <buttonCell type="radio" title="rar" imagePosition="left" alignment="left" inset="2" id="9RD-MY-i9S">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <buttonCell type="radio" title="zip2" imagePosition="left" alignment="left" inset="2" id="K2x-bd-lT0">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <buttonCell type="radio" title="ddl" imagePosition="left" alignment="left" inset="2" id="fef-w8-tDW">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </column>
-                                </cells>
-                                <connections>
-                                    <action selector="fileExtension:" target="XfG-lQ-9wD" id="oaa-xK-ade"/>
-                                </connections>
-                            </matrix>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jfn-HP-15v">
-                                <rect key="frame" x="17" y="200" width="58" height="58"/>
+                                <rect key="frame" x="17" y="200" width="52" height="78"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                <size key="cellSize" width="52" height="18"/>
+                                <size key="cellSize" width="53" height="18"/>
                                 <size key="intercellSpacing" width="4" height="2"/>
                                 <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="AVL-7v-kWu">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -916,15 +899,19 @@
                                 </buttonCell>
                                 <cells>
                                     <column>
-                                        <buttonCell type="radio" title="mp3" imagePosition="left" alignment="left" state="on" inset="2" id="fGe-Q1-aLH">
+                                        <buttonCell type="radio" title="none" imagePosition="left" alignment="left" state="on" inset="2" id="fGe-Q1-aLH">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="wma" imagePosition="left" alignment="left" tag="1" inset="2" id="J7n-dD-gKp">
+                                        <buttonCell type="radio" title="mp3" imagePosition="left" alignment="left" tag="1" inset="2" id="J7n-dD-gKp">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <buttonCell type="radio" title="flv" imagePosition="left" alignment="left" tag="2" inset="2" id="SMq-fh-zov">
+                                        <buttonCell type="radio" title="wma" imagePosition="left" alignment="left" tag="2" inset="2" id="SMq-fh-zov">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="flv" imagePosition="left" alignment="left" tag="3" inset="2" id="G6U-gQ-yWh">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -932,6 +919,43 @@
                                 </cells>
                                 <connections>
                                     <action selector="audioExtension:" target="XfG-lQ-9wD" id="N9K-XC-Fw0"/>
+                                </connections>
+                            </matrix>
+                            <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yte-9D-hsw">
+                                <rect key="frame" x="254" y="60" width="48" height="98"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                <size key="cellSize" width="53" height="18"/>
+                                <size key="intercellSpacing" width="4" height="2"/>
+                                <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="9aw-GB-YeJ">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <cells>
+                                    <column>
+                                        <buttonCell type="radio" title="none" imagePosition="left" alignment="left" state="on" inset="2" id="uND-fN-Hry">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="exe" imagePosition="left" alignment="left" tag="1" inset="2" id="9RD-MY-i9S">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="rar" imagePosition="left" alignment="left" tag="2" inset="2" id="K2x-bd-lT0">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="zip2" imagePosition="left" alignment="left" tag="3" inset="2" id="fef-w8-tDW">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <buttonCell type="radio" title="ddl" imagePosition="left" alignment="left" tag="4" inset="2" id="gOK-HJ-oyf">
+                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </column>
+                                </cells>
+                                <connections>
+                                    <action selector="fileExtension:" target="XfG-lQ-9wD" id="oaa-xK-ade"/>
                                 </connections>
                             </matrix>
                         </subviews>
