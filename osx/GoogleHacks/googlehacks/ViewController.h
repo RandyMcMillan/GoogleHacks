@@ -28,6 +28,7 @@
 - (IBAction)passwordQuery:(id)sender;
 - (IBAction)fileExtension:(id)sender;
 - (IBAction)linkQuery:(id)sender;
+- (void)assembleTypesString;
 
 @property (nonatomic, readwrite) DataObjects *data_object;
 @property (nonatomic, readwrite) NSTextField *searchTextField;
