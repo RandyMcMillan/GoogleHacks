@@ -159,7 +159,8 @@
 - (IBAction)audioExtension:(id)sender { // sender is NSMatrix object
     NSButtonCell *selCell = [sender selectedCell];
     NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    
+    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+
     
     if ([selCell tag]== 0){
     
@@ -496,7 +497,9 @@
 - (IBAction)passwordQuery:(id)sender{
 
     NSButtonCell *selCell = [sender selectedCell];
-    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+    NSLog(@"Selected cell tag is %ld", (long)[selCell tag]);
+    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+
     
     if ([selCell tag]== 0){
     

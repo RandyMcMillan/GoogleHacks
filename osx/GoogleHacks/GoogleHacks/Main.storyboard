@@ -899,7 +899,7 @@
                                 </buttonCell>
                                 <cells>
                                     <column>
-                                        <buttonCell type="radio" title="none" imagePosition="left" alignment="left" state="on" inset="2" id="fGe-Q1-aLH">
+                                        <buttonCell type="radio" title="none" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="fGe-Q1-aLH">
                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
@@ -958,6 +958,16 @@
                                     <action selector="fileExtension:" target="XfG-lQ-9wD" id="oaa-xK-ade"/>
                                 </connections>
                             </matrix>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oBu-p2-gqP">
+                                <rect key="frame" x="176" y="18" width="62" height="18"/>
+                                <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="qHT-tf-woy">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="audioExtension:" target="XfG-lQ-9wD" id="CYz-eD-Xor"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
