@@ -22,6 +22,12 @@
 - (NSURL *)modifiedURL;
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background;
 -(IBAction)openURLFromButton:(id)sender;
+- (IBAction)audioExtension:(id)sender;
+- (IBAction)videoExtension:(id)sender;
+- (IBAction)documentExtension:(id)sender;
+- (IBAction)passwordQuery:(id)sender;
+- (IBAction)fileExtension:(id)sender;
+- (IBAction)linkQuery:(id)sender;
 
 @property (nonatomic, readwrite) DataObjects *data_object;
 @property (nonatomic, readwrite) NSTextField *searchTextField;

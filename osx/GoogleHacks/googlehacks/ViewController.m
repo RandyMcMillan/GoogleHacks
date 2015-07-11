@@ -245,7 +245,43 @@
  [[NSWorkspace sharedWorkspace] openURL:url];
  }
  }
- 
 
+
+//https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Button/Articles/QueryMatrixButtons.html
+- (IBAction)audioExtension:(id)sender { // sender is NSMatrix object
+    NSButtonCell *selCell = [sender selectedCell];
+    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+
+}
+
+- (IBAction)videoExtension:(id)sender{
+
+    NSButtonCell *selCell = [sender selectedCell];
+    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+
+}
+- (IBAction)documentExtension:(id)sender{
+
+    NSButtonCell *selCell = [sender selectedCell];
+    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+
+}
+- (IBAction)passwordQuery:(id)sender{
+
+    NSButtonCell *selCell = [sender selectedCell];
+    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+
+}
+- (IBAction)fileExtension:(id)sender{
+
+    NSButtonCell *selCell = [sender selectedCell];
+    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+
+}
+- (IBAction)linkQuery:(id)sender{
+
+    NSButtonCell *selCell = [sender selectedCell];
+    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+}
 
 @end
