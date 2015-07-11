@@ -177,14 +177,25 @@
     
 }
 
+
+
 - (void)getSearchField:(id)sender {
     
     //http://stackoverflow.com/questions/16704156/how-to-open-external-links-to-safari-chrome-browser-in-cocoa
     //http://theocacao.com/document.page/183
     
     
+    //TODO handle white spaces
+    //http://stackoverflow.com/questions/7628470/remove-all-whitespaces-from-nsstring
+    //[self.data_object.full_search_str  stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    
     self.data_object.full_search_str = [BASE_URL stringByAppendingString:[self.searchTextField stringValue]];
-
+    
+    //http://stackoverflow.com/questions/3439853/replace-occurances-of-space-in-url
+    //NSString *urlString;//your url string.
+    
+    self.data_object.full_search_str  = [self.data_object.full_search_str  stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    
     NSURL *url = [NSURL URLWithString:[NSString stringWithString:self.data_object.full_search_str]];
     NSLog(@"url = %@", url);
 
@@ -200,7 +211,6 @@
     {
         //[listener ignore];
         [self openURL:url inBackground:YES];
-        
         
     }
     
