@@ -225,7 +225,7 @@
 -(IBAction)openURLFromButton:(id)sender
 {
 
-    //self.data_object.full_search_str = [self.data_object.search_str stringByAppendingString:nil];
+    self.data_object.full_search_str = [BASE_URL stringByAppendingString:self.data_object.search_str];
 
     [self openURL:[NSURL URLWithString:self.data_object.full_search_str] inBackground:YES];
 
