@@ -49,7 +49,9 @@
     
     
     //Methods
+    //http://www.google.com/translate?hl=&sl=en&tl=en&u=%20randymcmillan.net&sandbox=1
     self.data_object.method1_check = FALSE;
+    //http://www.google.com/gwt/n?u=http%3A%2F%2Frandymcmillan.net
     self.data_object.method2_check = FALSE;
     
     //Links
