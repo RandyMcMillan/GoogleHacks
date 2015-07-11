@@ -40,29 +40,43 @@
 
 #endif
     
+    //images
+    //????
     
     
-    
-    
+    //https://support.google.com/websearch/answer/2466433?hl=en
 
 
     
     
     //Methods
     //http://www.google.com/translate?hl=&sl=en&tl=en&u=%20randymcmillan.net&sandbox=1
+    //http://www.google.com/translate?hl=&sl=da&tl=de&u=%20randymcmillan.net&sandbox=1
     self.data_object.method1_check = FALSE;
     //http://www.google.com/gwt/n?u=http%3A%2F%2Frandymcmillan.net
     self.data_object.method2_check = FALSE;
     
     //Links
+    //site
+    //http://www.google.com/search?q=site%3A
+
     self.data_object.link_check = FALSE;
+    
+    //Add url
+    //http://www.google.com/addurl?q="+ search_str +"&hl=en&dqq=
     self.data_object.addurl_check = FALSE;
+    
+    //related
+    //http://www.google.com/search?q=related%3Arandy+mcmillan
     self.data_object.related_check = FALSE;
     self.data_object.tools_text = FALSE;
     self.data_object.StaticText2 = FALSE;
     self.data_object.StaticText3 = FALSE;
+    //map
+    //http://www.google.com/search?q=view%3Amap+
+    //https://maps.google.com/
+    //https://www.google.com/maps/@37.0625,-95.677068,4z
     
-
     
     // text
     self.data_object.StaticText4 = FALSE;
