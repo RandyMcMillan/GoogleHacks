@@ -98,6 +98,7 @@
 }
 
 
+//full_search_str ="http://www.google.com/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28" +types+ "%29+%22"+search_str+"%22"
 
 - (void)getSearchField:(id)sender {
     
@@ -109,28 +110,31 @@
     //http://stackoverflow.com/questions/7628470/remove-all-whitespaces-from-nsstring
     //[self.data_object.full_search_str  stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     
+    self.searchTextField.stringValue  = [[self.searchTextField stringValue]  stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+
     self.data_object.full_search_str = [BASE_URL stringByAppendingString:[self.searchTextField stringValue]];
     
     //http://stackoverflow.com/questions/3439853/replace-occurances-of-space-in-url
-    //NSString *urlString;//your url string.
-    
+    //strip spaces from user before direct manipulation
     self.data_object.full_search_str  = [self.data_object.full_search_str  stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithString:self.data_object.full_search_str]];
-    //NSLog(@"url = %@", url);
-
-    //NSLog(@"self.data_object.full_search_str = %@",self.data_object.full_search_str);
-
-    // open local urls in our app, and external in default browser
+ 
     NSString *scheme = [url scheme];
-    if ([scheme isEqualToString:@"file"])
+    if ([scheme isEqualToString:@"file"]){}else
     {
-        //[listener use];
-    }
-    else
-    {
-        //[listener ignore];
-        [self openURL:url inBackground:YES];
+        if (![self.data_object.types_str  isEqualToString:@""]) {
+            
+            [self openURL:url inBackground:YES];
+
+        }else{
+        //append with types
+
+            
+            
+            //open afgter append
+            [self openURL:url inBackground:YES];
+        }
         
     }
     
@@ -148,6 +152,9 @@
 
 -(IBAction)openURLFromButton:(id)sender
 {
+
+    
+    //tle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28" +types+ "%29+%22"+search_str+"%22"
 
     //self.data_object.full_search_str = [BASE_URL stringByAppendingString:self.data_object.search_str];
     [self getSearchField:nil];
