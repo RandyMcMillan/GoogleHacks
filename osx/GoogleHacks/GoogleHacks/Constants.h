@@ -35,6 +35,6 @@
 
 
 
-#define BASE_URL                 @ "http://www.google.com"
+#define BASE_URL                 @ "https://www.google.com/search?q="
 
 

@@ -182,14 +182,13 @@
     //http://stackoverflow.com/questions/16704156/how-to-open-external-links-to-safari-chrome-browser-in-cocoa
     //http://theocacao.com/document.page/183
     
-    NSWorkspace * ws = [NSWorkspace sharedWorkspace];
-    //NSURL *url = [NSURL URLWithString:@"http://theocacao.com/"];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithString:[self.searchTextField stringValue]]];
+    
+    self.data_object.full_search_str = [BASE_URL stringByAppendingString:[self.searchTextField stringValue]];
 
+    NSURL *url = [NSURL URLWithString:[NSString stringWithString:self.data_object.full_search_str]];
     NSLog(@"url = %@", url);
 
-   // NSURL *url = [NSURL URLWithString:[self.searchTextField stringValue]];
-    NSLog(@"%@", [self.searchTextField stringValue]);
+    NSLog(@"self.data_object.full_search_str = %@",self.data_object.full_search_str);
 
     // open local urls in our app, and external in default browser
     NSString *scheme = [url scheme];
@@ -200,7 +199,6 @@
     else
     {
         //[listener ignore];
-       // [ws openURL: url];
         [self openURL:url inBackground:YES];
         
         
@@ -225,8 +223,8 @@
 -(IBAction)openURLFromButton:(id)sender
 {
 
-    self.data_object.full_search_str = [BASE_URL stringByAppendingString:self.data_object.search_str];
-
+    //self.data_object.full_search_str = [BASE_URL stringByAppendingString:self.data_object.search_str];
+    [self getSearchField:nil];
     [self openURL:[NSURL URLWithString:self.data_object.full_search_str] inBackground:YES];
 
 }
