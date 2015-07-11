@@ -159,7 +159,6 @@
 - (IBAction)audioExtension:(id)sender { // sender is NSMatrix object
     NSButtonCell *selCell = [sender selectedCell];
     NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
     NSLog(@"Selected cell title is %@", (id)[selCell title]);
 
     
@@ -209,7 +208,8 @@
 
     NSButtonCell *selCell = [sender selectedCell];
     NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    
+    NSLog(@"Selected cell title is %@", (id)[selCell title]);
+
     if ([selCell tag]== 0){
     
         
@@ -302,7 +302,8 @@
 
     NSButtonCell *selCell = [sender selectedCell];
     NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    
+    NSLog(@"Selected cell title is %@", (id)[selCell title]);
+
     if ([selCell tag]== 0){
     
         //Documents
@@ -500,6 +501,7 @@
     NSButtonCell *selCell = [sender selectedCell];
     NSLog(@"Selected cell tag is %ld", (long)[selCell tag]);
     NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+    NSLog(@"Selected cell title is %@", (id)[selCell title]);
 
     
     if ([selCell tag]== 0){
@@ -657,7 +659,8 @@
 
     NSButtonCell *selCell = [sender selectedCell];
     NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    
+    NSLog(@"Selected cell title is %@", (id)[selCell title]);
+
     if ([selCell tag]== 0){
     
         // file ext
@@ -723,7 +726,8 @@
 
     NSButtonCell *selCell = [sender selectedCell];
     NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    
+    NSLog(@"Selected cell title is %@", (id)[selCell title]);
+
     if ([selCell tag]== 0){}else if ([selCell tag]== 0){}else
         if ([selCell tag]== 0){}else
             if ([selCell tag]== 0){}else
@@ -744,7 +748,7 @@
 - (void)assembleTypesString{
 
     self.data_object.types_str = @"";
-
+//Audio
     if (self.data_object.mp3_check == TRUE) {
         self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".mp3%7C"];
     }
@@ -756,6 +760,112 @@
     if (self.data_object.ogg_check == TRUE) {
         self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".ogg%7C"];
     }
+//Docs
+    if (self.data_object.pdf_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".pdf%7C"];
+    }
+    
+    if (self.data_object.txt_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".txt%7C"];
+    }
+    
+    if (self.data_object.lit_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".lit%7C"];
+    }
+    
+    if (self.data_object.rar_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".rar%7C"];
+    }
+    
+    if (self.data_object.doc_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".doc%7C"];
+    }
+    
+    if (self.data_object.rtf_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".rtf%7C"];
+    }
+    
+    if (self.data_object.pps_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".pps%7C"];
+    }
+    
+    if (self.data_object.chm_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".chm%7C"];
+    }
+    
+    if (self.data_object.zip1_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".zip1%7C"];
+    }
+    
+    if (self.data_object.odt_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".odt%7C"];
+    }
+   //Video
+    if (self.data_object.mpg_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".mpg%7C"];
+    }
+    
+    if (self.data_object.avi_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".avi%7C"];
+    }
+    
+    if (self.data_object.wmv_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".wmv%7C"];
+    }
+    
+    if (self.data_object.divx_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".divx%7C"];
+    }
+    
+    if (self.data_object.flv_check == TRUE) {
+        self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".flv%7C"];
+    }
+    
+  
+    
+    //Passwords
+    
+    if (self.data_object.pass_check == TRUE) {
+        self.data_object.full_search_str = @"";
+    }
+    if (self.data_object.pass_text == TRUE) {
+        self.data_object.full_search_str = @"";
+    }
+    if (self.data_object.pass_1 == TRUE) {
+        self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
+    }
+    if (self.data_object.pass_2 == TRUE) {
+        self.data_object.full_search_str = @"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt";
+    }
+    if (self.data_object.pass_3 == TRUE) {
+        self.data_object.full_search_str = @"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search";
+    }
+    
+    if (self.data_object.pass_4 == TRUE) {
+        self.data_object.full_search_str = @"http://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd";
+    }
+    
+    if (self.data_object.pass_5 == TRUE) {
+        self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php";
+    }
+    
+    if (self.data_object.pass_6 == TRUE) {
+        self.data_object.full_search_str = @"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22";
+    }
+    
+    
+    /*
+    if (self.data_object.@@ == TRUE) {
+        self.data_object.full_search_str = @"";
+    }
+    
+    if (self.data_object.@@ == TRUE) {
+        self.data_object.full_search_str = @"";
+    }
+    */
+
+    
+    
     
 
     
