@@ -20,6 +20,9 @@
 @synthesize data_object;
 @synthesize searchTextField;
 
+
+#pragma mark ViewController viewDidLoad
+
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
@@ -36,7 +39,10 @@
 
 - (NSString *)returnSearchString:(NSString *)searchString {
 
-   	NSURL *url = [self modifiedURL:nil];
+    
+#pragma mark ViewController figureOutTheLogicHere
+
+   	NSURL *url = [self modifyURL:nil];
     NSLog(@"url = %@", url);
     NSString *scheme = [url scheme];
     
@@ -53,6 +59,14 @@
         }
     }
  
+   	// self.data_object.search_str = [self returnSearchField];
+    //modString = [BASE_URL stringByAppendingString:@"q="];
+    //NSLog(@"%@", modString);
+    //modString = [modString stringByAppendingString:[self returnSearchField]];
+    //NSLog(@"%@", modString);
+    
+    // modString = [modString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    // NSLog(@"%@",modString);
     
     
     
@@ -72,21 +86,10 @@
 	return returnSearchField;
 }
 
-- (NSURL *)modifiedURL:(NSString *)modString
+- (NSURL *)modifyURL:(NSString *)modString
 {
 	NSLog(@"%@", modString);// null
-
-	// self.data_object.search_str = [self returnSearchField];
-	modString = [BASE_URL stringByAppendingString:@"q="];
-	NSLog(@"%@", modString);
-	modString = [modString stringByAppendingString:[self returnSearchField]];
-	NSLog(@"%@", modString);
-
-	// modString = [modString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-	// NSLog(@"%@",modString);
-
 	NSURL *modifiedURL = [NSURL URLWithString:modString];
-
 	return modifiedURL;
 }
 
@@ -105,7 +108,6 @@
 	}
 }
 
-// https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Button/Articles/QueryMatrixButtons.html
 - (IBAction)audioExtension:(id)sender	// sender is NSMatrix object
 {
 	NSButtonCell *selCell = [sender selectedCell];

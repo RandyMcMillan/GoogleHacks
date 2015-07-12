@@ -693,7 +693,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="openURLFromButton:" target="XfG-lQ-9wD" id="LHX-4V-oxG"/>
+                                    <action selector="openURLFromButton:" target="XfG-lQ-9wD" id="GQL-ca-GGg"/>
                                 </connections>
                             </button>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zbY-Zx-kix">

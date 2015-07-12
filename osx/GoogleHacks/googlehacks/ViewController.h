@@ -16,7 +16,7 @@
 
 - (IBAction)getSearchField:(id)sender;
 - (NSString *)returnSearchString:(NSString *)searchString;
-- (NSURL *)modifiedURL:(NSString *)modString;
+- (NSURL *)modifyURL:(NSString *)modString;
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background;
 - (IBAction)openURLFromButton:(id)sender;
 - (IBAction)audioExtension:(id)sender;

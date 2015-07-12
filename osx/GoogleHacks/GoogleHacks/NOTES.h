@@ -48,9 +48,11 @@
  // Opens a URL in the default browser in background or foreground
 
  
- 
- // http://www.tutorialspoint.com/objective_c/objective_c_strings.htm
+ // https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Button/Articles/QueryMatrixButtons.html
 
+ 
+ 
+ 
 */
 
 #endif
