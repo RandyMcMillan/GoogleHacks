@@ -9,19 +9,15 @@
 #import <Cocoa/Cocoa.h>
 #import "DataObjects.h"
 
-
 @interface ViewController : NSViewController {
-
-
-    IBOutlet NSTextField *searchTextField;
-    IBOutlet NSButton *show;
-
+	IBOutlet NSTextField	*searchTextField;
+	IBOutlet NSButton		*show;
 }
 
--(IBAction)getSearchField:(id)sender;
+- (IBAction)getSearchField:(id)sender;
 - (NSURL *)modifiedURL;
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background;
--(IBAction)openURLFromButton:(id)sender;
+- (IBAction)openURLFromButton:(id)sender;
 - (IBAction)audioExtension:(id)sender;
 - (IBAction)videoExtension:(id)sender;
 - (IBAction)documentExtension:(id)sender;
@@ -29,9 +25,8 @@
 - (IBAction)fileExtension:(id)sender;
 - (IBAction)linkQuery:(id)sender;
 - (void)assembleTypesString;
-
-@property (nonatomic, readwrite) DataObjects *data_object;
-@property (nonatomic, readwrite) NSTextField *searchTextField;
+- (NSString *)truncateString:(NSString *)string toCharacterCount:(NSUInteger)count;
+@property (nonatomic, readwrite) DataObjects	*data_object;
+@property (nonatomic, readwrite) NSTextField	*searchTextField;
 
 @end
-

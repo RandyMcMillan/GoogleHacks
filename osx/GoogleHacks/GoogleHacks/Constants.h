@@ -34,7 +34,7 @@
 #define MOST_BASIC_URL @"https://www.google.com/search?q=-inurl:(htm%7Chtml%7Cphp)+intitle:%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B(%22+.m4v+%7C+.avi+%7C+.wmv+%7C+.flv+%7C+.jpg+%7C+.nzb%22)+%22%22+yay++%22%22&ie=UTF-8&oe=UTF-8"
 
 
-
-#define BASE_URL                 @ "https://www.google.com/search?q="
+#define Q_EQUALS
+#define BASE_URL                 @ "https://www.google.com/search?"
 
 
