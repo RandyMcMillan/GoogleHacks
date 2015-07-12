@@ -15,6 +15,7 @@
 }
 
 - (IBAction)getSearchField:(id)sender;
+- (NSString *)returnSearchField;
 - (NSURL *)modifiedURL;
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background;
 - (IBAction)openURLFromButton:(id)sender;
