@@ -27,85 +27,43 @@
 	[self.data_object = [DataObjects alloc] init];
 	[self.data_object loadValues:nil];
 
-	// images
-	// ????
-
-	// https://support.google.com/websearch/answer/2466433?hl=en
-	// Methods
-	// http://www.google.com/translate?hl=&sl=en&tl=en&u=%20randymcmillan.net&sandbox=1
-	// http://www.google.com/translate?hl=&sl=da&tl=de&u=%20randymcmillan.net&sandbox=1
-	self.data_object.method1_check = FALSE;
-	// http://www.google.com/gwt/n?u=http%3A%2F%2Frandymcmillan.net
-	self.data_object.method2_check = FALSE;
-
-	// Links
-	// site
-	// http://www.google.com/search?q=site%3A
-
-	self.data_object.link_check = FALSE;
-
-	// Add url
-	// http://www.google.com/addurl?q="+ search_str +"&hl=en&dqq=
-	self.data_object.addurl_check = FALSE;
-
-	// related
-	// http://www.google.com/search?q=related%3Arandy+mcmillan
-	self.data_object.related_check	= FALSE;
-	self.data_object.tools_text		= FALSE;
-	self.data_object.StaticText2	= FALSE;
-	self.data_object.StaticText3	= FALSE;
-	// map
-	// http://www.google.com/search?q=view%3Amap+
-	// https://maps.google.com/
-	// https://www.google.com/maps/@37.0625,-95.677068,4z
-
-	// text
-	self.data_object.StaticText4	= FALSE;
-	self.data_object.StaticText5	= FALSE;
-	self.data_object.StaticText6	= FALSE;
-	self.data_object.StaticText7	= FALSE;
-
-	// Do any additional setup after loading the view.
 }
 
 - (void)setRepresentedObject:(id)representedObject
 {
 	[super setRepresentedObject:representedObject];
-
-	// Update the view, if already loaded.
 }
 
-// full_search_str ="http://www.google.com/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28" +types+ "%29+%22"+search_str+"%22"
+- (NSString *)returnSearchString:(NSString *)searchString {
 
-- (void)getSearchField:(id)sender
-{
-	// http://stackoverflow.com/questions/16704156/how-to-open-external-links-to-safari-chrome-browser-in-cocoa
-	// http://theocacao.com/document.page/183
-	// TODO handle white spaces
-	// http://stackoverflow.com/questions/7628470/remove-all-whitespaces-from-nsstring
-	// [self.data_object.full_search_str  stringByReplacingOccurrencesOfString:@" " withString:@"+"];
-	// http://stackoverflow.com/questions/3439853/replace-occurances-of-space-in-url
-	// strip spaces from user before direct manipulation
-
-	NSURL *url = [self modifiedURL:nil];
-
-	NSLog(@"url = %@", url);
-	NSString *scheme = [url scheme];
-
-	if ([scheme isEqualToString:@"file"]) {} else {
-		[self assembleTypesString];
-		NSLog(@"before else... = %@", self.data_object.types_str);
-		NSLog(@"%@", self.data_object.types_str);
-
-		if ([self.data_object.types_str isEqualToString:@""]) {
-			[self openURL:url inBackground:YES];
-		} else {
-			NSLog(@"after else... = %@", self.data_object.types_str);
-			[self openURL:url inBackground:YES];
-		}
-	}
+   	NSURL *url = [self modifiedURL:nil];
+    NSLog(@"url = %@", url);
+    NSString *scheme = [url scheme];
+    
+    if ([scheme isEqualToString:@"file"]) {} else {
+        [self assembleTypesString];
+        NSLog(@"before else... = %@", self.data_object.types_str);
+        NSLog(@"%@", self.data_object.types_str);
+        
+        if ([self.data_object.types_str isEqualToString:@""]) {
+            [self openURL:url inBackground:YES];
+        } else {
+            NSLog(@"after else... = %@", self.data_object.types_str);
+            [self openURL:url inBackground:YES];
+        }
+    }
+ 
+    
+    
+    
+    return searchString;
 }
 
+- (IBAction)getSearchField:(id)sender{
+
+    NSLog(@"%@",[[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
+
+}
 - (NSString *)returnSearchField
 {
 	NSString *returnSearchField = nil;
@@ -134,19 +92,9 @@
 
 - (IBAction)openURLFromButton:(id)sender
 {
-	// tle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28" +types+ "%29+%22"+search_str+"%22"
-
-	// self.data_object.full_search_str = [BASE_URL stringByAppendingString:self.data_object.search_str];
-	[self getSearchField:nil];
 	[self openURL:[NSURL URLWithString:self.data_object.full_search_str] inBackground:YES];
 }
 
-// TODO open in tor
-// org.mozilla.tor browser
-
-// http://zachwaugh.me/posts/opening-links-in-background-with-cocoa/
-
-// Opens a URL in the default browser in background or foreground
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background
 {
 	if (background) {
@@ -766,18 +714,6 @@
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
-
-	/*
-	 *   if (self.data_object.@@ == TRUE) {
-	 *    self.data_object.full_search_str = @"";
-	 *   }
-	 *
-	 *   if (self.data_object.@@ == TRUE) {
-	 *    self.data_object.full_search_str = @"";
-	 *   }
-	 */
-
-	// http://www.tutorialspoint.com/objective_c/objective_c_strings.htm
 
 	if ([self.data_object.types_str length] <= 7) {
 		NSLog(@"less than = 7");

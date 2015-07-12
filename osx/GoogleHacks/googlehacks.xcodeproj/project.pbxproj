@@ -34,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		483E64FA1B4F575A00E4EA6C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		4879F62E1B532B2D009A5585 /* NOTES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NOTES.h; sourceTree = "<group>"; };
 		4895524D1B4F148700CA90B6 /* GoogleHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489552511B4F148700CA90B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		489552521B4F148700CA90B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		4895524F1B4F148700CA90B6 /* GoogleHacks */ = {
 			isa = PBXGroup;
 			children = (
+				4879F62E1B532B2D009A5585 /* NOTES.h */,
 				483E64FA1B4F575A00E4EA6C /* index.html */,
 				489552921B4F3C6200CA90B6 /* MyCustomAnimator.h */,
 				489552931B4F3C6200CA90B6 /* MyCustomAnimator.m */,
@@ -204,7 +206,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 489552481B4F148700CA90B6 /* Build configuration list for PBXProject "GoogleHacks" */;
+			buildConfigurationList = 489552481B4F148700CA90B6 /* Build configuration list for PBXProject "googlehacks" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -426,7 +428,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		489552481B4F148700CA90B6 /* Build configuration list for PBXProject "GoogleHacks" */ = {
+		489552481B4F148700CA90B6 /* Build configuration list for PBXProject "googlehacks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4895526E1B4F148800CA90B6 /* Debug */,
