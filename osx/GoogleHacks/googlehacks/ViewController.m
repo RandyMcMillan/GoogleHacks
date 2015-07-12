@@ -105,16 +105,16 @@
 
 	self.data_object.full_search_str = [BASE_URL stringByAppendingString:@"q="];
 	NSLog(@"full_search_str = %@", self.data_object.full_search_str);
-
-	self.data_object.full_search_str = [BASE_URL stringByAppendingString:[self.searchTextField stringValue]];
+	self.data_object.full_search_str = [self.data_object.full_search_str stringByAppendingString:self.data_object.search_str];
+    NSLog(@"full_search_str = %@", self.data_object.full_search_str);
 
 	// http://stackoverflow.com/questions/3439853/replace-occurances-of-space-in-url
 	// strip spaces from user before direct manipulation
-
+    
 	self.data_object.full_search_str = [self.data_object.full_search_str stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 
 	NSURL *url = [NSURL URLWithString:[NSString stringWithString:self.data_object.full_search_str]];
-
+    NSLog(@"url = %@",url);
 	NSString *scheme = [url scheme];
 
 	if ([scheme isEqualToString:@"file"]) {} else {
