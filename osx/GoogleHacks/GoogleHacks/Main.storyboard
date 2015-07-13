@@ -1010,7 +1010,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="passwordQuery:" target="XfG-lQ-9wD" id="Z75-aG-KNN"/>
+                                    <action selector="passwordQuery:" target="XfG-lQ-9wD" id="ahJ-gh-Sue"/>
                                 </connections>
                             </button>
                             <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBa-4z-SYw">
@@ -1020,7 +1020,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="passwordQuery:" target="XfG-lQ-9wD" id="AIj-eo-ntZ"/>
+                                    <action selector="passwordQuery:" target="XfG-lQ-9wD" id="QWr-BC-qgm"/>
                                 </connections>
                             </button>
                             <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1P-vV-IeF">
