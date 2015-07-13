@@ -174,7 +174,8 @@
 	self.pass_5_str,
 	self.pass_6_str
 	];
-
+*/
+    
 	// Methods
 	self.method1_check	= FALSE;
 	self.method2_check	= FALSE;

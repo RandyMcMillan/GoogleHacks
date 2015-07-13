@@ -29,7 +29,6 @@
 	[self.data_object = [DataObjects alloc] init];
 	[self.data_object loadValues:nil];
 	self.urls = [NSMutableArray arrayWithCapacity:100];
-	[self openPasswordQueries];
 	self.ws = [NSWorkspace sharedWorkspace];
 }
 
@@ -88,18 +87,49 @@
 
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background
 {
+    
+    
+    if ([self.data_object.passWordLinkArray isNotEqualTo:nil]) {
+        
+#pragma mark ViewController openPasswordQueries open
+        
+        
+        
+        // With a traditional for loop
+        //for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
+          //  NSLog(@"self.data_object.passWordLinkArray[%d]: %@", i, self.data_object.passWordLinkArray[i]);
+            //[self.ws openURLs:self.data_object.passWordLinkArray withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+        //}
+        
+        
+        //for (int i = 0; i < [self.urls count]; i++) {}
+        
+        
+        // Index checking
+        NSUInteger index = [self.data_object.passWordLinkArray indexOfObject:@"BMW"];
+        if (index == NSNotFound) {
+            NSLog(@"Well that's not quite right...");
+        } else {
+            NSLog(@"BMW is a German auto maker and is at index %ld", index);
+        }
+        
+        
+        
+    }
+    /*
 	if (background) {
 		NSArray *urls = [NSArray arrayWithObject:url];
 		[self.ws openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
 	} else {
 		[[NSWorkspace sharedWorkspace] openURL:url];
 	}
-
-	[self openPasswordQueries];
+*/
+    
+	//[self openPasswordQueries];
 	// gotta remove objects and revuild every time
-	NSLog(@"self.urls count = %ld", [self.urls count]);
+	//NSLog(@"self.urls count = %ld", [self.urls count]);
 
-	[[NSWorkspace sharedWorkspace] openURLs:[self.urls arrayByAddingObjectsFromArray:self.data_object.passWordLinkArray] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+	//[[NSWorkspace sharedWorkspace] openURLs:[self.urls arrayByAddingObjectsFromArray:self.data_object.passWordLinkArray] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
 
 	// for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
 	//   [[NSWorkspace sharedWorkspace] openURLs:[NSURL URLWithString:self.data_object.passWordLinkArray[i]] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
@@ -371,7 +401,7 @@
 		}
 	}
 
-#ifndef DEBUG
+#ifdef DEBUG
 		NSLog(@"self.data_object.pass_check IS : %@", (self.data_object.pass_check == TRUE) ? @"TRUE" : @"FALSE");
 		NSLog(@"self.data_object.pass_text IS : %@", (self.data_object.pass_text == TRUE) ? @"TRUE" : @"FALSE");
 		NSLog(@"self.data_object.pass_1 IS : %@", (self.data_object.pass_1 == TRUE) ? @"TRUE" : @"FALSE");
@@ -562,8 +592,10 @@
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	NSLog(@"%@", self.data_object.types_str);
-
+    
+    
+    
+    
 	if ([self.data_object.types_str length] <= 7) {
 		NSLog(@"less than = 7");
 		// http://borkware.com/quickies/one?topic=NSString
@@ -577,6 +609,9 @@
 		self.data_object.types_str = [self truncateString:self.data_object.types_str toCharacterCount:5];
 	}
 
+    
+    
+    
     NSLog(@"assembleTypesString");
 	NSLog(@"self.data_object.types_str = %@", self.data_object.types_str);
 }
@@ -596,14 +631,15 @@
 	return trunc;
 }	// truncateString
 
+
+#pragma mark ViewController openPasswordQueries
+
 - (void)openPasswordQueries
 {
 	if (self.data_object.pass_1 == TRUE) {
 		self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
 		[self.urls addObject:self.data_object.full_search_str];
 
-		// NSLog(@"0 %@",self.urls[0]);
-		// With a traditional for loop
 		for (int i = 0; i < [self.urls count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
@@ -613,7 +649,6 @@
 		self.data_object.full_search_str = @"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt";
 		[self.urls addObject:self.data_object.full_search_str];
 
-		// NSLog(@"1 %@",self.urls[1]);
 		for (int i = 0; i < [self.urls count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
@@ -623,9 +658,6 @@
 		self.data_object.full_search_str = @"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search";
 		[self.urls addObject:self.data_object.full_search_str];
 
-		// NSLog(@"2 %@",self.urls[2]);
-		// [[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-		//  self.data_object.pass_3 == FALSE;
 		for (int i = 0; i < [self.urls count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
@@ -660,12 +692,14 @@
 		}
 	}
 
-	// With a traditional for loop
-	for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
-		NSLog(@"self.data_object.passWordLinkArray[%d]: %@", i, self.data_object.passWordLinkArray[i]);
-	}
+    
+    
 
-	for (int i = 0; i < [self.urls count]; i++) {}
+
+
+
+
+
 }
 
 @end
