@@ -89,6 +89,11 @@
 	return modifiedURL;
 }
 
+
+
+#pragma mark ViewController handle password logic
+
+
 - (IBAction)openURLFromButton:(id)sender
 {
     [self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:YES];
@@ -321,114 +326,61 @@
 
 - (IBAction)passwordQuery:(id)sender
 {
-	NSButtonCell *selCell = [sender selectedCell];
-
-	NSLog(@"Selected cell tag is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
-	NSLog(@"Selected cell title is %@", (id)[selCell title]);
-
-	if ([selCell tag] == 0) {
-		// Passwords
-		self.data_object.pass_check = FALSE;
-		self.data_object.pass_text	= FALSE;
-
-		self.data_object.pass_1 = FALSE;
-		self.data_object.pass_2 = FALSE;
-		self.data_object.pass_3 = FALSE;
-		self.data_object.pass_4 = FALSE;
-		self.data_object.pass_5 = FALSE;
-		self.data_object.pass_6 = FALSE;
-	} else if ([selCell tag] == 1) {
-		// Passwords
-		self.data_object.pass_check = TRUE;
-		self.data_object.pass_text	= FALSE;
-
-		self.data_object.pass_1 = FALSE;
-		self.data_object.pass_2 = FALSE;
-		self.data_object.pass_3 = FALSE;
-		self.data_object.pass_4 = FALSE;
-		self.data_object.pass_5 = FALSE;
-		self.data_object.pass_6 = FALSE;
-	} else if ([selCell tag] == 2) {
-		// Passwords
-		self.data_object.pass_check = FALSE;
-		self.data_object.pass_text	= TRUE;
-
-		self.data_object.pass_1 = FALSE;
-		self.data_object.pass_2 = FALSE;
-		self.data_object.pass_3 = FALSE;
-		self.data_object.pass_4 = FALSE;
-		self.data_object.pass_5 = FALSE;
-		self.data_object.pass_6 = FALSE;
-	} else if ([selCell tag] == 3) {
-		// Passwords
-		self.data_object.pass_check = FALSE;
-		self.data_object.pass_text	= FALSE;
-
-		self.data_object.pass_1 = TRUE;
-		self.data_object.pass_2 = FALSE;
-		self.data_object.pass_3 = FALSE;
-		self.data_object.pass_4 = FALSE;
-		self.data_object.pass_5 = FALSE;
-		self.data_object.pass_6 = FALSE;
-	} else if ([selCell tag] == 4) {
-		// Passwords
-		self.data_object.pass_check = FALSE;
-		self.data_object.pass_text	= FALSE;
-
-		self.data_object.pass_1 = FALSE;
-		self.data_object.pass_2 = TRUE;
-		self.data_object.pass_3 = FALSE;
-		self.data_object.pass_4 = FALSE;
-		self.data_object.pass_5 = FALSE;
-		self.data_object.pass_6 = FALSE;
-	} else if ([selCell tag] == 5) {
-		// Passwords
-		self.data_object.pass_check = FALSE;
-		self.data_object.pass_text	= FALSE;
-
-		self.data_object.pass_1 = FALSE;
-		self.data_object.pass_2 = FALSE;
-		self.data_object.pass_3 = TRUE;
-		self.data_object.pass_4 = FALSE;
-		self.data_object.pass_5 = FALSE;
-		self.data_object.pass_6 = FALSE;
-	} else if ([selCell tag] == 6) {
-		// Passwords
-		self.data_object.pass_check = FALSE;
-		self.data_object.pass_text	= FALSE;
-
-		self.data_object.pass_1 = FALSE;
-		self.data_object.pass_2 = FALSE;
-		self.data_object.pass_3 = FALSE;
-		self.data_object.pass_4 = TRUE;
-		self.data_object.pass_5 = FALSE;
-		self.data_object.pass_6 = FALSE;
-	} else if ([selCell tag] == 7) {
-		// Passwords
-		self.data_object.pass_check = FALSE;
-		self.data_object.pass_text	= FALSE;
-
-		self.data_object.pass_1 = FALSE;
-		self.data_object.pass_2 = FALSE;
-		self.data_object.pass_3 = FALSE;
-		self.data_object.pass_4 = FALSE;
-		self.data_object.pass_5 = TRUE;
-		self.data_object.pass_6 = FALSE;
-	} else if ([selCell tag] == 8) {
-		// Passwords
-		self.data_object.pass_check = FALSE;
-		self.data_object.pass_text	= FALSE;
-
-		self.data_object.pass_1 = FALSE;
-		self.data_object.pass_2 = FALSE;
-		self.data_object.pass_3 = FALSE;
-		self.data_object.pass_4 = FALSE;
-		self.data_object.pass_5 = FALSE;
-		self.data_object.pass_6 = TRUE;
-	} else {							// NSLog(@"Error");
-	}
-
+	   NSButtonCell *selCell = [sender selectedCell];
+    
+    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+    NSLog(@"Selected cell title is %ld", (long)[selCell title]);
+    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+    
+    
+    
+    if ([[selCell title] isEqualToString:@"pass 1"]) {
+        if ([selCell state] == 0) {
+            self.data_object.pass_1	= FALSE;
+        } else {
+            self.data_object.pass_1	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"pass 2"]) {
+        if ([selCell state] == 0) {
+            self.data_object.pass_2	= FALSE;
+        } else {
+            self.data_object.pass_2	= TRUE;
+        }
+    }
+    if ([[selCell title] isEqualToString:@"pass 3"]) {
+        if ([selCell state] == 0) {
+            self.data_object.pass_3	= FALSE;
+        } else {
+            self.data_object.pass_3	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"pass 4"]) {
+        if ([selCell state] == 0) {
+            self.data_object.pass_4	= FALSE;
+        } else {
+            self.data_object.pass_4	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"pass 5"]) {
+        if ([selCell state] == 0) {
+            self.data_object.pass_5	= FALSE;
+        } else {
+            self.data_object.pass_5	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"pass 6"]) {
+        if ([selCell state] == 0) {
+            self.data_object.pass_6	= FALSE;
+        } else {
+            self.data_object.pass_6	= TRUE;
+        }
+    }
+    
 #ifndef DEBUG
 		// NSLog(@"self.data_object.pass_check IS : %@", (self.data_object.pass_check == TRUE) ? @"TRUE" : @"FALSE");
 		// NSLog(@"self.data_object.pass_text IS : %@", (self.data_object.pass_text == TRUE) ? @"TRUE" : @"FALSE");
