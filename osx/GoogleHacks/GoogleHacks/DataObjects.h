@@ -17,13 +17,13 @@
 @property (nonatomic, retain) NSString	*types_str;
 
 // Audio Files
-@property (nonatomic,retain) NSArray *audioArray;
+@property (nonatomic, retain) NSArray	*audioArray;
 @property (nonatomic, readwrite) BOOL	*mp3_check;
 @property (nonatomic, readwrite) BOOL	*wma_check;
 @property (nonatomic, readwrite) BOOL	*ogg_check;
 
 // Documents
-@property (nonatomic,retain) NSArray *documentArray;
+@property (nonatomic, retain) NSArray	*documentArray;
 @property (nonatomic, readwrite) BOOL	*pdf_check;
 @property (nonatomic, readwrite) BOOL	*txt_check;
 @property (nonatomic, readwrite) BOOL	*lit_check;
@@ -36,7 +36,7 @@
 @property (nonatomic, readwrite) BOOL	*odt_check;
 
 // Video
-@property (nonatomic,retain) NSArray *videoArray;
+@property (nonatomic, retain) NSArray	*videoArray;
 @property (nonatomic, readwrite) BOOL	*mpg_check;
 @property (nonatomic, readwrite) BOOL	*avi_check;
 @property (nonatomic, readwrite) BOOL	*wmv_check;
@@ -44,7 +44,7 @@
 @property (nonatomic, readwrite) BOOL	*flv_check;
 
 // Passwords
-@property (nonatomic,retain) NSArray *passWordArray;
+@property (nonatomic, retain) NSArray	*passWordArray;
 @property (nonatomic, readwrite) BOOL	*pass_check;
 @property (nonatomic, readwrite) BOOL	*pass_text;
 @property (nonatomic, readwrite) BOOL	*pass_1;
@@ -53,7 +53,7 @@
 @property (nonatomic, readwrite) BOOL	*pass_4;
 @property (nonatomic, readwrite) BOOL	*pass_5;
 @property (nonatomic, readwrite) BOOL	*pass_6;
-@property (nonatomic,retain) NSArray *passWordLinkArray;
+@property (nonatomic, retain) NSArray	*passWordLinkArray;
 @property (nonatomic, readwrite) NSURL	*pass_1_str;
 @property (nonatomic, readwrite) NSURL	*pass_2_str;
 @property (nonatomic, readwrite) NSURL	*pass_3_str;
@@ -80,7 +80,6 @@
 @property (nonatomic, readwrite) BOOL	*StaticText5;
 @property (nonatomic, readwrite) BOOL	*StaticText6;
 @property (nonatomic, readwrite) BOOL	*StaticText7;
-
 
 - (id)loadValues:(NSObject *)object;
 

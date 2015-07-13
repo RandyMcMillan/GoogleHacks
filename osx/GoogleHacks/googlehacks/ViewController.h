@@ -10,7 +10,7 @@
 #import "DataObjects.h"
 
 @interface ViewController : NSViewController {
-    IBOutlet NSTextField	*searchTextField;
+	IBOutlet NSTextField	*searchTextField;
 	IBOutlet NSButton		*show;
 }
 
@@ -31,6 +31,6 @@
 @property (nonatomic, readwrite) DataObjects	*data_object;
 @property (nonatomic, readwrite) NSTextField	*searchTextField;
 @property (nonatomic, readwrite) NSMutableArray *urls;
-@property (nonatomic,strong) NSWorkspace *ws;
+@property (nonatomic, strong) NSWorkspace		*ws;
 
 @end

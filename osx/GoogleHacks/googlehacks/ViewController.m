@@ -18,7 +18,7 @@
 @implementation ViewController
 
 @synthesize data_object;
-@synthesize searchTextField, urls,ws;
+@synthesize searchTextField, urls, ws;
 
 #pragma mark ViewController viewDidLoad
 
@@ -29,8 +29,8 @@
 	[self.data_object = [DataObjects alloc] init];
 	[self.data_object loadValues:nil];
 	self.urls = [NSMutableArray arrayWithCapacity:100];
-    [self openPasswordQueries];
-    self.ws = [NSWorkspace sharedWorkspace];
+	[self openPasswordQueries];
+	self.ws = [NSWorkspace sharedWorkspace];
 }
 
 - (void)setRepresentedObject:(id)representedObject
@@ -63,8 +63,8 @@
 
 - (NSString *)returnSearchField
 {
-	
-    NSString *returnSearchField = nil;
+	NSString *returnSearchField = nil;
+
 	returnSearchField = [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 	NSLog(@"returnSearchField = %@", returnSearchField);
 
@@ -73,45 +73,40 @@
 
 - (NSURL *)modifyURL:(NSString *)modString
 {
-	
-    NSLog(@"%@", modString);// null
+	NSLog(@"%@", modString);// null
 	NSURL *modifiedURL = [NSURL URLWithString:modString];
-	
-    return modifiedURL;
+
+	return modifiedURL;
 }
 
 #pragma mark ViewController handle password logic
 
 - (IBAction)openURLFromButton:(id)sender
 {
-	
-    [self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:YES];
-
+	[self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:YES];
 }
 
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background
 {
-	
-	   if (background) {
-	    NSArray *urls = [NSArray arrayWithObject:url];
-	    [self.ws openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-	   } else {
-	    [[NSWorkspace sharedWorkspace] openURL:url];
-	   }
-	 
-	    [self openPasswordQueries];
-	    // gotta remove objects and revuild every time
-	    NSLog(@"self.urls count = %ld", [self.urls count]);
-	 
-       [[NSWorkspace sharedWorkspace] openURLs:[self.urls arrayByAddingObjectsFromArray:self.data_object.passWordLinkArray] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
- 
-	    //for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
-          //   [[NSWorkspace sharedWorkspace] openURLs:[NSURL URLWithString:self.data_object.passWordLinkArray[i]] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-	    //}
-    NSLog(@"self.urls count = %ld", [self.urls count]);
- 
-	    [self.urls removeAllObjects];
-	 
+	if (background) {
+		NSArray *urls = [NSArray arrayWithObject:url];
+		[self.ws openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+	} else {
+		[[NSWorkspace sharedWorkspace] openURL:url];
+	}
+
+	[self openPasswordQueries];
+	// gotta remove objects and revuild every time
+	NSLog(@"self.urls count = %ld", [self.urls count]);
+
+	[[NSWorkspace sharedWorkspace] openURLs:[self.urls arrayByAddingObjectsFromArray:self.data_object.passWordLinkArray] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+
+	// for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
+	//   [[NSWorkspace sharedWorkspace] openURLs:[NSURL URLWithString:self.data_object.passWordLinkArray[i]] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+	// }
+	NSLog(@"self.urls count = %ld", [self.urls count]);
+
+	[self.urls removeAllObjects];
 }
 
 #pragma mark ViewController audioExtention
@@ -652,13 +647,10 @@
 
 	// With a traditional for loop
 	for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
-	
-        NSLog(@"self.data_object.passWordLinkArray[%d]: %@", i, self.data_object.passWordLinkArray[i]);
-	
-    }
+		NSLog(@"self.data_object.passWordLinkArray[%d]: %@", i, self.data_object.passWordLinkArray[i]);
+	}
 
 	for (int i = 0; i < [self.urls count]; i++) {}
-    
 }
 
 - (NSString *)	truncateString	:(NSString *)string
