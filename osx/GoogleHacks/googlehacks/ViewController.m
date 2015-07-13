@@ -69,6 +69,7 @@
 - (IBAction)getSearchField:(id)sender{
 
     NSLog(@"%@",[[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
+    [self openURLFromButton:(id)sender];
 
 }
 - (NSString *)returnSearchField
