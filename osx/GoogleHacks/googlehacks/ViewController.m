@@ -18,7 +18,7 @@
 @implementation ViewController
 
 @synthesize data_object;
-@synthesize searchTextField, urls;
+@synthesize searchTextField, urls,ws;
 
 #pragma mark ViewController viewDidLoad
 
@@ -28,8 +28,9 @@
 	self.title = @"Presenting ViewController";
 	[self.data_object = [DataObjects alloc] init];
 	[self.data_object loadValues:nil];
-	[self.urls addObject:@"TEST123123"];
 	self.urls = [NSMutableArray arrayWithCapacity:100];
+    [self openPasswordQueries];
+    self.ws = [NSWorkspace sharedWorkspace];
 }
 
 - (void)setRepresentedObject:(id)representedObject
@@ -90,24 +91,27 @@
 
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background
 {
-	/*
-	 *   if (background) {
-	 *    NSArray *urls = [NSArray arrayWithObject:url];
-	 *    [[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-	 *   } else {
-	 *    [[NSWorkspace sharedWorkspace] openURL:url];
-	 *   }
-	 *
-	 *   [self openPasswordQueries];
-	 *   // gotta remove objects and revuild every time
-	 *   NSLog(@"self.urls count = %ld", [self.urls count]);
-	 *
-	 *   for (int i = 0; i < [self.urls count]; i++) {
-	 *    [[NSWorkspace sharedWorkspace] openURLs:self.urls[i] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-	 *   }
-	 *
-	 *   [self.urls removeAllObjects];
-	 */
+	
+	   if (background) {
+	    NSArray *urls = [NSArray arrayWithObject:url];
+	    [self.ws openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+	   } else {
+	    [[NSWorkspace sharedWorkspace] openURL:url];
+	   }
+	 
+	    [self openPasswordQueries];
+	    // gotta remove objects and revuild every time
+	    NSLog(@"self.urls count = %ld", [self.urls count]);
+	 
+       [[NSWorkspace sharedWorkspace] openURLs:[self.urls arrayByAddingObjectsFromArray:self.data_object.passWordLinkArray] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+ 
+	    //for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
+          //   [[NSWorkspace sharedWorkspace] openURLs:[NSURL URLWithString:self.data_object.passWordLinkArray[i]] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+	    //}
+    NSLog(@"self.urls count = %ld", [self.urls count]);
+ 
+	    [self.urls removeAllObjects];
+	 
 }
 
 #pragma mark ViewController audioExtention
@@ -641,23 +645,20 @@
 		self.data_object.full_search_str = @"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22";
 		[self.urls addObject:self.data_object.full_search_str];
 
-		// NSLog(@"5 %@",self.urls[5]);
 		for (int i = 0; i < [self.urls count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
 	}
 
 	// With a traditional for loop
-	for (int i = 0; i < [self.urls count]; i++) {
-		NSLog(@"%d: %@", i, self.urls[i]);
-		// [[NSWorkspace sharedWorkspace] openURLs:self.urls[i] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-	}
+	for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
+	
+        NSLog(@"self.data_object.passWordLinkArray[%d]: %@", i, self.data_object.passWordLinkArray[i]);
+	
+    }
 
-	for (int i = 0; i < [self.urls count]; i++) {
-		// NSLog(@"%d: %@", i, self.urls[i]);
-		// [self.urls removeLastObject];
-		// [[NSWorkspace sharedWorkspace] openURLs:self.urls[i] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-	}
+	for (int i = 0; i < [self.urls count]; i++) {}
+    
 }
 
 - (NSString *)	truncateString	:(NSString *)string

@@ -96,26 +96,47 @@
 	self.types_str			= @"";
 
 	// Audio Files
-	self.audioArray = @[@".mp3", @".wma", @".ogg"];
+	self.audioArray = @[@".mp3",
+	@".wma",
+	@".ogg"
+	];
+
 	self.mp3_check	= FALSE;
 	self.wma_check	= FALSE;
 	self.ogg_check	= FALSE;
 
 	// Documents
-	self.documentArray	= @[@".pdf", @".txt", @".lit", @".rar", @".doc", @".rtf", @".pps", @".chm", @".zip1", @".odt", ];
-	self.pdf_check		= FALSE;
-	self.txt_check		= FALSE;
-	self.lit_check		= FALSE;
-	self.rar_check		= FALSE;
-	self.doc_check		= FALSE;
-	self.rtf_check		= FALSE;
-	self.pps_check		= FALSE;
-	self.chm_check		= FALSE;
-	self.zip1_check		= FALSE;
-	self.odt_check		= FALSE;
+	self.documentArray = @[@".pdf",
+	@".txt",
+	@".lit",
+	@".rar",
+	@".doc",
+	@".rtf",
+	@".pps",
+	@".chm",
+	@".zip1",
+	@".odt"
+	];
+
+	self.pdf_check	= FALSE;
+	self.txt_check	= FALSE;
+	self.lit_check	= FALSE;
+	self.rar_check	= FALSE;
+	self.doc_check	= FALSE;
+	self.rtf_check	= FALSE;
+	self.pps_check	= FALSE;
+	self.chm_check	= FALSE;
+	self.zip1_check = FALSE;
+	self.odt_check	= FALSE;
 
 	// Video
-	self.videoArray = @[@".mpg", @".avi", @".wmv", @".divx", @".flv", ];
+	self.videoArray = @[@".mpg",
+	@".avi",
+	@".wmv",
+	@".divx",
+	@".flv"
+	];
+
 	self.mpg_check	= FALSE;
 	self.avi_check	= FALSE;
 	self.wmv_check	= FALSE;
@@ -123,9 +144,16 @@
 	self.flv_check	= FALSE;
 
 	// Passwords
-	self.passWordArray	= @[@"", @"", @"", @"", @"", @"", ];
-	self.pass_check		= FALSE;
-	self.pass_text		= FALSE;
+	self.passWordArray = @[@"pass 1",
+	@"pass 2",
+	@"pass 3",
+	@"pass 4",
+	@"pass 5",
+	@"pass 6"
+	];
+
+	self.pass_check = FALSE;
+	self.pass_text	= FALSE;
 
 	self.pass_1		= FALSE;
 	self.pass_5		= FALSE;
@@ -133,20 +161,20 @@
 	self.pass_6		= FALSE;
 	self.pass_3		= FALSE;
 	self.pass_4		= FALSE;
-	self.pass_1_str =
-		@"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
-	self.pass_2_str =
-		@"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt";
-	self.pass_3_str =
-		@"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search";
-	self.pass_4_str =
-		@"ttp://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd";
-	self.pass_5_str =
-		@"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php";
-	self.pass_6_str =
-		@"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22";
+	self.pass_1_str = [NSURL URLWithString:PASS_1_STR];
+	self.pass_2_str = [NSURL URLWithString:PASS_2_STR];
+	self.pass_3_str = [NSURL URLWithString:PASS_3_STR];
+	self.pass_4_str = [NSURL URLWithString:PASS_4_STR];
+	self.pass_5_str = [NSURL URLWithString:PASS_5_STR];
+	self.pass_6_str = [NSURL URLWithString:PASS_6_STR];
 
-	self.passWordLinkArray = @[self.pass_1_str, self.pass_2_str, self.pass_3_str, self.pass_4_str, self.pass_5_str, self.pass_6_str, ];
+	self.passWordLinkArray = @[self.pass_1_str,
+	self.pass_2_str,
+	self.pass_3_str,
+	self.pass_4_str,
+	self.pass_5_str,
+	self.pass_6_str
+	];
 
 	// Methods
 	self.method1_check	= FALSE;
@@ -161,7 +189,12 @@
 	self.StaticText3	= FALSE;
 
 	// archives
-	self.videoArray = @[@".exe", @".rar", @".zip", @".ddl"];
+	self.videoArray = @[@".exe",
+	@".rar",
+	@".zip",
+	@".ddl"
+	];
+
 	self.exe_check	= FALSE;
 	self.rar_check1 = FALSE;
 	self.zip_check	= FALSE;

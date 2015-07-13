@@ -30,3 +30,12 @@
 #define DESCRIPTION @"description"
 #define SIZE @"size"
 #define BASE_URL			@ "https://www.google.com/search?"
+
+#define PASS_1_STR @"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified"
+#define PASS_2_STR @"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt"
+#define PASS_3_STR @"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search"
+#define PASS_4_STR @"ttp://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd"
+#define PASS_5_STR @"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php"
+#define PASS_6_STR @"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22"
+
+

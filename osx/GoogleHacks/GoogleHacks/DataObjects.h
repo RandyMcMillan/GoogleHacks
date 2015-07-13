@@ -54,12 +54,12 @@
 @property (nonatomic, readwrite) BOOL	*pass_5;
 @property (nonatomic, readwrite) BOOL	*pass_6;
 @property (nonatomic,retain) NSArray *passWordLinkArray;
-@property (nonatomic, readwrite) NSString	*pass_1_str;
-@property (nonatomic, readwrite) NSString	*pass_2_str;
-@property (nonatomic, readwrite) NSString	*pass_3_str;
-@property (nonatomic, readwrite) NSString	*pass_4_str;
-@property (nonatomic, readwrite) NSString	*pass_5_str;
-@property (nonatomic, readwrite) NSString	*pass_6_str;
+@property (nonatomic, readwrite) NSURL	*pass_1_str;
+@property (nonatomic, readwrite) NSURL	*pass_2_str;
+@property (nonatomic, readwrite) NSURL	*pass_3_str;
+@property (nonatomic, readwrite) NSURL	*pass_4_str;
+@property (nonatomic, readwrite) NSURL	*pass_5_str;
+@property (nonatomic, readwrite) NSURL	*pass_6_str;
 
 @property (nonatomic, readwrite) BOOL	*method1_check;
 @property (nonatomic, readwrite) BOOL	*method2_check;
@@ -80,6 +80,7 @@
 @property (nonatomic, readwrite) BOOL	*StaticText5;
 @property (nonatomic, readwrite) BOOL	*StaticText6;
 @property (nonatomic, readwrite) BOOL	*StaticText7;
+
 
 - (id)loadValues:(NSObject *)object;
 

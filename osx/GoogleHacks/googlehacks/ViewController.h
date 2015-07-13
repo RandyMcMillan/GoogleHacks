@@ -31,5 +31,6 @@
 @property (nonatomic, readwrite) DataObjects	*data_object;
 @property (nonatomic, readwrite) NSTextField	*searchTextField;
 @property (nonatomic, readwrite) NSMutableArray *urls;
+@property (nonatomic,strong) NSWorkspace *ws;
 
 @end
