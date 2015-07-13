@@ -26,6 +26,7 @@
 - (IBAction)fileExtension:(id)sender;
 - (IBAction)linkQuery:(id)sender;
 - (void)assembleTypesString;
+- (void)openPasswordQueries;
 - (NSString *)truncateString:(NSString *)string toCharacterCount:(NSUInteger)count;
 @property (nonatomic, readwrite) DataObjects	*data_object;
 @property (nonatomic, readwrite) NSTextField	*searchTextField;

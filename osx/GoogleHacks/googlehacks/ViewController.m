@@ -381,18 +381,17 @@
         }
     }
     
-#ifndef DEBUG
-		// NSLog(@"self.data_object.pass_check IS : %@", (self.data_object.pass_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.pass_text IS : %@", (self.data_object.pass_text == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.pass_1 IS : %@", (self.data_object.pass_1 == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.pass_2 IS : %@", (self.data_object.pass_2 == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.pass_3 IS : %@", (self.data_object.pass_3 == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.pass_4 IS : %@", (self.data_object.pass_4 == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.pass_5 IS : %@", (self.data_object.pass_5 == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.pass_6 IS : %@", (self.data_object.pass_6 == TRUE) ? @"TRUE" : @"FALSE");
+#ifdef DEBUG
+		 NSLog(@"self.data_object.pass_check IS : %@", (self.data_object.pass_check == TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.pass_text IS : %@", (self.data_object.pass_text == TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.pass_1 IS : %@", (self.data_object.pass_1 == TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.pass_2 IS : %@", (self.data_object.pass_2 == TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.pass_3 IS : %@", (self.data_object.pass_3 == TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.pass_4 IS : %@", (self.data_object.pass_4 == TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.pass_5 IS : %@", (self.data_object.pass_5 == TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.pass_6 IS : %@", (self.data_object.pass_6 == TRUE) ? @"TRUE" : @"FALSE");
 #endif
 
-	[self assembleTypesString];
 }
 
 - (IBAction)fileExtension:(id)sender
@@ -574,6 +573,30 @@
 
 	NSLog(@"%@", self.data_object.types_str);
 
+
+	NSLog(@"%@", self.data_object.types_str);
+
+	if ([self.data_object.types_str length] <= 7) {
+		NSLog(@"less than = 7");
+		// http://borkware.com/quickies/one?topic=NSString
+
+		self.data_object.types_str = [self truncateString:self.data_object.types_str toCharacterCount:4];
+
+		// https://bdpuqvsqmphctrcs.onion.to/data/
+	}
+
+	NSLog(@"assembleTypesString");
+	NSLog(@"self.data_object.types_str = %@", self.data_object.types_str);
+
+	// NSWorkspace * ws = [NSWorkspace sharedWorkspace];
+	// NSArray * apps = [ws launchedApplications];
+	// NSLog (@"%@", apps);
+}
+
+-(void)openPasswordQueries {
+
+
+    
 	// Passwords
 
 	if (self.data_object.pass_check == TRUE) {
@@ -620,26 +643,58 @@
 
 	if (self.data_object.pass_6 == TRUE) {
 		self.data_object.full_search_str = @"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22";
-	}
+    }	// Passwords
+    
+    if (self.data_object.pass_check == TRUE) {
+        self.data_object.full_search_str = @"";
+    }
+    
+    NSLog(@"%@", self.data_object.types_str);
+    
+    if (self.data_object.pass_text == TRUE) {
+        self.data_object.full_search_str = @"";
+    }
+    
+    NSLog(@"%@", self.data_object.types_str);
+    
+    if (self.data_object.pass_1 == TRUE) {
+        self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
+    }
+    
+    NSLog(@"%@", self.data_object.types_str);
+    
+    if (self.data_object.pass_2 == TRUE) {
+        self.data_object.full_search_str = @"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt";
+    }
+    
+    NSLog(@"%@", self.data_object.types_str);
+    
+    if (self.data_object.pass_3 == TRUE) {
+        self.data_object.full_search_str = @"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search";
+    }
+    
+    NSLog(@"%@", self.data_object.types_str);
+    
+    if (self.data_object.pass_4 == TRUE) {
+        self.data_object.full_search_str = @"http://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd";
+    }
+    
+    NSLog(@"%@", self.data_object.types_str);
+    
+    if (self.data_object.pass_5 == TRUE) {
+        self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php";
+    }
+    
+    NSLog(@"%@", self.data_object.types_str);
+    
+    if (self.data_object.pass_6 == TRUE) {
+        self.data_object.full_search_str = @"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22";
+    }
 
-	NSLog(@"%@", self.data_object.types_str);
 
-	if ([self.data_object.types_str length] <= 7) {
-		NSLog(@"less than = 7");
-		// http://borkware.com/quickies/one?topic=NSString
 
-		self.data_object.types_str = [self truncateString:self.data_object.types_str toCharacterCount:4];
-
-		// https://bdpuqvsqmphctrcs.onion.to/data/
-	}
-
-	NSLog(@"assembleTypesString");
-	NSLog(@"self.data_object.types_str = %@", self.data_object.types_str);
-
-	// NSWorkspace * ws = [NSWorkspace sharedWorkspace];
-	// NSArray * apps = [ws launchedApplications];
-	// NSLog (@"%@", apps);
 }
+
 
 - (NSString *)	truncateString	:(NSString *)string
 				toCharacterCount:(NSUInteger)count
