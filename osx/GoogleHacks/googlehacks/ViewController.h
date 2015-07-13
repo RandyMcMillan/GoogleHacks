@@ -10,7 +10,7 @@
 #import "DataObjects.h"
 
 @interface ViewController : NSViewController {
-	IBOutlet NSTextField	*searchTextField;
+    IBOutlet NSTextField	*searchTextField;
 	IBOutlet NSButton		*show;
 }
 

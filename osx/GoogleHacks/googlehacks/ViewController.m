@@ -68,7 +68,7 @@
 
 - (IBAction)enterFromSearchField:(id)sender{
 
-    NSLog(@"%@",[[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
+    NSLog(@"searchTextField = %@",[[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
     [self openURLFromButton:(id)sender];
 
 }
@@ -77,6 +77,7 @@
 	NSString *returnSearchField = nil;
 
 	returnSearchField = [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+    
     NSLog(@"returnSearchField = %@",returnSearchField);
     return returnSearchField;
 }
