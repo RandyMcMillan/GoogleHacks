@@ -19,11 +19,13 @@
 @synthesize types_str;
 
 // Audio Files
+@synthesize audioArray;
 @synthesize mp3_check;
 @synthesize wma_check;
 @synthesize ogg_check;
 
 // Documents
+@synthesize documentArray;
 @synthesize pdf_check;
 @synthesize txt_check;
 @synthesize lit_check;
@@ -36,6 +38,7 @@
 @synthesize odt_check;
 
 // Video
+@synthesize videoArray;
 @synthesize mpg_check;
 @synthesize avi_check;
 @synthesize wmv_check;
@@ -43,15 +46,22 @@
 @synthesize flv_check;
 
 // Passwords
+@synthesize passWordArray;
 @synthesize pass_check;
 @synthesize pass_text;
-
 @synthesize pass_1;
 @synthesize pass_5;
 @synthesize pass_2;
 @synthesize pass_6;
 @synthesize pass_3;
 @synthesize pass_4;
+@synthesize passWordLinkArray;
+@synthesize pass_1_str;
+@synthesize pass_2_str;
+@synthesize pass_3_str;
+@synthesize pass_4_str;
+@synthesize pass_5_str;
+@synthesize pass_6_str;
 
 // Methods
 @synthesize method1_check;
@@ -86,11 +96,13 @@
 	self.types_str			= @"";
 
 	// Audio Files
+    self.audioArray = @[@".mp3",@".wma",@".ogg"];
 	self.mp3_check	= FALSE;
 	self.wma_check	= FALSE;
 	self.ogg_check	= FALSE;
 
 	// Documents
+    self.documentArray = @[@".pdf",@".txt",@".lit",@".rar",@".doc",@".rtf",@".pps",@".chm",@".zip1",@".odt",];
 	self.pdf_check	= FALSE;
 	self.txt_check	= FALSE;
 	self.lit_check	= FALSE;
@@ -103,6 +115,7 @@
 	self.odt_check	= FALSE;
 
 	// Video
+    self.videoArray = @[@".mpg",@".avi",@".wmv",@".divx",@".flv",];
 	self.mpg_check	= FALSE;
 	self.avi_check	= FALSE;
 	self.wmv_check	= FALSE;
@@ -110,6 +123,7 @@
 	self.flv_check	= FALSE;
 
 	// Passwords
+    self.passWordArray = @[@"",@"",@"",@"",@"",@"",];
 	self.pass_check = FALSE;
 	self.pass_text	= FALSE;
 
@@ -119,6 +133,14 @@
 	self.pass_6 = FALSE;
 	self.pass_3 = FALSE;
 	self.pass_4 = FALSE;
+    self.pass_1_str = @"";
+    self.pass_2_str = @"";
+    self.pass_3_str = @"";
+    self.pass_4_str = @"";
+    self.pass_5_str = @"";
+    self.pass_6_str = @"";
+
+    self.passWordLinkArray = @[@"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified",@"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt",@"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search",@"ttp://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd",@"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php",@"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22",];
 
 	// Methods
 	self.method1_check	= FALSE;
