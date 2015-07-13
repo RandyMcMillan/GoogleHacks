@@ -104,32 +104,44 @@
 	}
 }
 
+
+#pragma mark ViewController audioExtention
+
 - (IBAction)audioExtension:(id)sender	// sender is NSMatrix object
 {
 	NSButtonCell *selCell = [sender selectedCell];
 
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell title is %@", (id)[selCell title]);
-
-	if ([selCell tag] == 0) {
-		self.data_object.mp3_check	= FALSE;
-		self.data_object.wma_check	= FALSE;
-		self.data_object.ogg_check	= FALSE;
-	} else if ([selCell tag] == 1) {
-		self.data_object.mp3_check	= TRUE;
-		self.data_object.wma_check	= FALSE;
-		self.data_object.ogg_check	= FALSE;
-	} else if ([selCell tag] == 2) {
-		self.data_object.mp3_check	= FALSE;
-		self.data_object.wma_check	= TRUE;
-		self.data_object.ogg_check	= FALSE;
-	} else if ([selCell tag] == 3) {
-		self.data_object.mp3_check	= FALSE;
-		self.data_object.wma_check	= FALSE;
-		self.data_object.ogg_check	= TRUE;
-	} else {// NSLog(@"Error");
-	}
-
+	NSLog(@"Selected cell title is %ld", (long)[selCell title]);
+	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+    
+    
+    
+    if ([[selCell title] isEqualToString:@"mp3"]) {
+    	if ([selCell state] == 0) {
+    		self.data_object.mp3_check	= FALSE;
+    	} else {
+    		self.data_object.mp3_check	= TRUE;
+    	}
+    }
+   
+    if ([[selCell title] isEqualToString:@"wma"]) {
+        if ([selCell state] == 0) {
+            self.data_object.wma_check	= FALSE;
+        } else {
+            self.data_object.wma_check	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"ogg"]) {
+        if ([selCell state] == 0) {
+            self.data_object.ogg_check	= FALSE;
+        } else {
+            self.data_object.ogg_check	= TRUE;
+        }
+    }
+    
+    
 #ifndef DEBUG
 		// NSLog(@"self.data_object.mp3_check IS : %@", (self.data_object.mp3_check == TRUE) ? @"TRUE" : @"FALSE");
 		// NSLog(@"self.data_object.wma_check IS : %@", (self.data_object.wma_check == TRUE) ? @"TRUE" : @"FALSE");
@@ -141,56 +153,54 @@
 
 - (IBAction)videoExtension:(id)sender
 {
-	NSButtonCell *selCell = [sender selectedCell];
 
-	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell title is %@", (id)[selCell title]);
-
-	if ([selCell tag] == 0) {
-		// Video
-		self.data_object.mpg_check	= FALSE;
-		self.data_object.avi_check	= FALSE;
-		self.data_object.wmv_check	= FALSE;
-		self.data_object.divx_check = FALSE;
-		self.data_object.flv_check	= FALSE;
-	} else if ([selCell tag] == 1) {
-		// Video
-		self.data_object.mpg_check	= TRUE;
-		self.data_object.avi_check	= FALSE;
-		self.data_object.wmv_check	= FALSE;
-		self.data_object.divx_check = FALSE;
-		self.data_object.flv_check	= FALSE;
-	} else if ([selCell tag] == 2) {
-		// Video
-		self.data_object.mpg_check	= FALSE;
-		self.data_object.avi_check	= TRUE;
-		self.data_object.wmv_check	= FALSE;
-		self.data_object.divx_check = FALSE;
-		self.data_object.flv_check	= FALSE;
-	} else if ([selCell tag] == 3) {
-		// Video
-		self.data_object.mpg_check	= FALSE;
-		self.data_object.avi_check	= FALSE;
-		self.data_object.wmv_check	= TRUE;
-		self.data_object.divx_check = FALSE;
-		self.data_object.flv_check	= FALSE;
-	} else if ([selCell tag] == 4) {
-		// Video
-		self.data_object.mpg_check	= FALSE;
-		self.data_object.avi_check	= FALSE;
-		self.data_object.wmv_check	= FALSE;
-		self.data_object.divx_check = TRUE;
-		self.data_object.flv_check	= FALSE;
-	} else if ([selCell tag] == 5) {
-		// Video
-		self.data_object.mpg_check	= FALSE;
-		self.data_object.avi_check	= FALSE;
-		self.data_object.wmv_check	= FALSE;
-		self.data_object.divx_check = FALSE;
-		self.data_object.flv_check	= TRUE;
-	} else {// NSLog(@"Error");
-	}
-
+    NSButtonCell *selCell = [sender selectedCell];
+    
+    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+    NSLog(@"Selected cell title is %ld", (long)[selCell title]);
+    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+    
+    
+    
+    if ([[selCell title] isEqualToString:@"mpg"]) {
+        if ([selCell state] == 0) {
+            self.data_object.mpg_check	= FALSE;
+        } else {
+            self.data_object.mpg_check	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"avi"]) {
+        if ([selCell state] == 0) {
+            self.data_object.avi_check	= FALSE;
+        } else {
+            self.data_object.avi_check	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"wmv"]) {
+        if ([selCell state] == 0) {
+            self.data_object.wmv_check	= FALSE;
+        } else {
+            self.data_object.wmv_check	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"divx"]) {
+        if ([selCell state] == 0) {
+            self.data_object.divx_check	= FALSE;
+        } else {
+            self.data_object.divx_check	= TRUE;
+        }
+    } if ([[selCell title] isEqualToString:@"flv"]) {
+        if ([selCell state] == 0) {
+            self.data_object.flv_check	= FALSE;
+        } else {
+            self.data_object.flv_check	= TRUE;
+        }
+    }
+    
+    
 #ifndef DEBUG
 		// NSLog(@"self.data_object.mpg_check IS : %@", (self.data_object.mpg_check == TRUE) ? @"TRUE" : @"FALSE");
 		// NSLog(@"self.data_object.avi_check IS : %@", (self.data_object.avi_check == TRUE) ? @"TRUE" : @"FALSE");
@@ -204,146 +214,95 @@
 
 - (IBAction)documentExtension:(id)sender
 {
-	NSButtonCell *selCell = [sender selectedCell];
-
-	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell title is %@", (id)[selCell title]);
-
-	if ([selCell tag] == 0) {
-		// Documents
-		self.data_object.pdf_check	= FALSE;
-		self.data_object.txt_check	= FALSE;
-		self.data_object.lit_check	= FALSE;
-		self.data_object.rar_check	= FALSE;
-		self.data_object.doc_check	= FALSE;
-		self.data_object.rtf_check	= FALSE;
-		self.data_object.pps_check	= FALSE;
-		self.data_object.chm_check	= FALSE;
-		self.data_object.zip1_check = FALSE;
-		self.data_object.odt_check	= FALSE;
-	} else if ([selCell tag] == 1) {
-		// Documents
-		self.data_object.pdf_check	= TRUE;
-		self.data_object.txt_check	= FALSE;
-		self.data_object.lit_check	= FALSE;
-		self.data_object.rar_check	= FALSE;
-		self.data_object.doc_check	= FALSE;
-		self.data_object.rtf_check	= FALSE;
-		self.data_object.pps_check	= FALSE;
-		self.data_object.chm_check	= FALSE;
-		self.data_object.zip1_check = FALSE;
-		self.data_object.odt_check	= FALSE;
-	} else if ([selCell tag] == 2) {
-		// Documents
-		self.data_object.pdf_check	= FALSE;
-		self.data_object.txt_check	= TRUE;
-		self.data_object.lit_check	= FALSE;
-		self.data_object.rar_check	= FALSE;
-		self.data_object.doc_check	= FALSE;
-		self.data_object.rtf_check	= FALSE;
-		self.data_object.pps_check	= FALSE;
-		self.data_object.chm_check	= FALSE;
-		self.data_object.zip1_check = FALSE;
-		self.data_object.odt_check	= FALSE;
-	} else if ([selCell tag] == 3) {
-		// Documents
-		self.data_object.pdf_check	= FALSE;
-		self.data_object.txt_check	= FALSE;
-		self.data_object.lit_check	= TRUE;
-		self.data_object.rar_check	= FALSE;
-		self.data_object.doc_check	= FALSE;
-		self.data_object.rtf_check	= FALSE;
-		self.data_object.pps_check	= FALSE;
-		self.data_object.chm_check	= FALSE;
-		self.data_object.zip1_check = FALSE;
-		self.data_object.odt_check	= FALSE;
-	} else if ([selCell tag] == 4) {
-		// Documents
-		self.data_object.pdf_check	= FALSE;
-		self.data_object.txt_check	= FALSE;
-		self.data_object.lit_check	= FALSE;
-		self.data_object.rar_check	= TRUE;
-		self.data_object.doc_check	= FALSE;
-		self.data_object.rtf_check	= FALSE;
-		self.data_object.pps_check	= FALSE;
-		self.data_object.chm_check	= FALSE;
-		self.data_object.zip1_check = FALSE;
-		self.data_object.odt_check	= FALSE;
-	} else if ([selCell tag] == 5) {
-		// Documents
-		self.data_object.pdf_check	= FALSE;
-		self.data_object.txt_check	= FALSE;
-		self.data_object.lit_check	= FALSE;
-		self.data_object.rar_check	= FALSE;
-		self.data_object.doc_check	= TRUE;
-		self.data_object.rtf_check	= FALSE;
-		self.data_object.pps_check	= FALSE;
-		self.data_object.chm_check	= FALSE;
-		self.data_object.zip1_check = FALSE;
-		self.data_object.odt_check	= FALSE;
-	} else if ([selCell tag] == 6) {
-		// Documents
-		self.data_object.pdf_check	= FALSE;
-		self.data_object.txt_check	= FALSE;
-		self.data_object.lit_check	= FALSE;
-		self.data_object.rar_check	= FALSE;
-		self.data_object.doc_check	= FALSE;
-		self.data_object.rtf_check	= TRUE;
-		self.data_object.pps_check	= FALSE;
-		self.data_object.chm_check	= FALSE;
-		self.data_object.zip1_check = FALSE;
-		self.data_object.odt_check	= FALSE;
-	} else if ([selCell tag] == 7) {
-		// Documents
-		self.data_object.pdf_check	= FALSE;
-		self.data_object.txt_check	= FALSE;
-		self.data_object.lit_check	= FALSE;
-		self.data_object.rar_check	= FALSE;
-		self.data_object.doc_check	= FALSE;
-		self.data_object.rtf_check	= FALSE;
-		self.data_object.pps_check	= TRUE;
-		self.data_object.chm_check	= FALSE;
-		self.data_object.zip1_check = FALSE;
-		self.data_object.odt_check	= FALSE;
-	} else if ([selCell tag] == 8) {
-		// Documents
-		self.data_object.pdf_check	= FALSE;
-		self.data_object.txt_check	= FALSE;
-		self.data_object.lit_check	= FALSE;
-		self.data_object.rar_check	= FALSE;
-		self.data_object.doc_check	= FALSE;
-		self.data_object.rtf_check	= FALSE;
-		self.data_object.pps_check	= FALSE;
-		self.data_object.chm_check	= TRUE;
-		self.data_object.zip1_check = FALSE;
-		self.data_object.odt_check	= FALSE;
-	} else if ([selCell tag] == 9) {
-		// Documents
-		self.data_object.pdf_check	= FALSE;
-		self.data_object.txt_check	= FALSE;
-		self.data_object.lit_check	= FALSE;
-		self.data_object.rar_check	= FALSE;
-		self.data_object.doc_check	= FALSE;
-		self.data_object.rtf_check	= FALSE;
-		self.data_object.pps_check	= FALSE;
-		self.data_object.chm_check	= FALSE;
-		self.data_object.zip1_check = TRUE;
-		self.data_object.odt_check	= FALSE;
-	} else if ([selCell tag] == 10) {
-		// Documents
-		self.data_object.pdf_check	= FALSE;
-		self.data_object.txt_check	= FALSE;
-		self.data_object.lit_check	= FALSE;
-		self.data_object.rar_check	= FALSE;
-		self.data_object.doc_check	= FALSE;
-		self.data_object.rtf_check	= FALSE;
-		self.data_object.pps_check	= FALSE;
-		self.data_object.chm_check	= FALSE;
-		self.data_object.zip1_check = FALSE;
-		self.data_object.odt_check	= TRUE;
-	} else {									// NSLog(@"Error");
-	}
-
+	   NSButtonCell *selCell = [sender selectedCell];
+    
+    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+    NSLog(@"Selected cell title is %ld", (long)[selCell title]);
+    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+    
+    
+    
+    if ([[selCell title] isEqualToString:@"pdf"]) {
+        if ([selCell state] == 0) {
+            self.data_object.pdf_check	= FALSE;
+        } else {
+            self.data_object.pdf_check	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"txt"]) {
+        if ([selCell state] == 0) {
+            self.data_object.txt_check	= FALSE;
+        } else {
+            self.data_object.txt_check	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"lit"]) {
+        if ([selCell state] == 0) {
+            self.data_object.lit_check	= FALSE;
+        } else {
+            self.data_object.lit_check	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"rar"]) {
+        if ([selCell state] == 0) {
+            self.data_object.rar_check	= FALSE;
+        } else {
+            self.data_object.rar_check	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"doc"]) {
+        if ([selCell state] == 0) {
+            self.data_object.doc_check	= FALSE;
+        } else {
+            self.data_object.doc_check	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"rtf"]) {
+        if ([selCell state] == 0) {
+            self.data_object.rtf_check	= FALSE;
+        } else {
+            self.data_object.rtf_check	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"pps"]) {
+        if ([selCell state] == 0) {
+            self.data_object.pps_check	= FALSE;
+        } else {
+            self.data_object.pps_check	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"chm"]) {
+        if ([selCell state] == 0) {
+            self.data_object.chm_check	= FALSE;
+        } else {
+            self.data_object.chm_check	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"zip1"]) {
+        if ([selCell state] == 0) {
+            self.data_object.zip1_check	= FALSE;
+        } else {
+            self.data_object.zip1_check	= TRUE;
+        }
+    }
+    
+    if ([[selCell title] isEqualToString:@"odt"]) {
+        if ([selCell state] == 0) {
+            self.data_object.odt_check	= FALSE;
+        } else {
+            self.data_object.odt_check	= TRUE;
+        }
+    }
+    
+	
 #ifndef DEBUG
 		// NSLog(@"self.data_object.pdf_check IS : %@", (self.data_object.pdf_check == TRUE) ? @"TRUE" : @"FALSE");
 		// NSLog(@"self.data_object.txt_check IS : %@", (self.data_object.txt_check == TRUE) ? @"TRUE" : @"FALSE");

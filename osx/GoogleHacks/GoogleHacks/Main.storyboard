@@ -686,7 +686,7 @@
                                 </connections>
                             </button>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zbY-Zx-kix">
-                                <rect key="frame" x="86" y="60" width="49" height="218"/>
+                                <rect key="frame" x="358" y="50" width="49" height="218"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 <size key="cellSize" width="53" height="18"/>
                                 <size key="intercellSpacing" width="4" height="2"/>
@@ -744,47 +744,6 @@
                                 </cells>
                                 <connections>
                                     <action selector="documentExtension:" target="XfG-lQ-9wD" id="IQr-hB-Swq"/>
-                                </connections>
-                            </matrix>
-                            <matrix verticalHuggingPriority="750" fixedFrame="YES" selectionByRect="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mrt-a2-etm">
-                                <rect key="frame" x="20" y="60" width="51" height="118"/>
-                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                <size key="cellSize" width="53" height="18"/>
-                                <size key="intercellSpacing" width="4" height="2"/>
-                                <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="0lM-80-Bky">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <cells>
-                                    <column>
-                                        <buttonCell type="radio" title="none" imagePosition="left" alignment="left" state="on" inset="2" id="bm7-jq-znZ">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <buttonCell type="radio" title="mpg" imagePosition="left" alignment="left" tag="1" inset="2" id="kZW-XN-38g">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <buttonCell type="radio" title="avi" imagePosition="left" alignment="left" tag="2" inset="2" id="9vK-0s-bbt">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <buttonCell type="radio" title="wmv" imagePosition="left" alignment="left" tag="3" inset="2" id="Kiw-aK-CVg">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <buttonCell type="radio" title="divx" imagePosition="left" alignment="left" tag="4" inset="2" id="Bah-2P-hav">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <buttonCell type="radio" title="flv" imagePosition="left" alignment="left" tag="5" inset="2" id="S2z-hg-L7R">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </column>
-                                </cells>
-                                <connections>
-                                    <action selector="videoExtension:" target="XfG-lQ-9wD" id="8q4-wy-Glq"/>
                                 </connections>
                             </matrix>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8NJ-kM-SuZ">
@@ -877,39 +836,6 @@
                                     <action selector="linkQuery:" target="XfG-lQ-9wD" id="LBG-nl-fPc"/>
                                 </connections>
                             </matrix>
-                            <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jfn-HP-15v">
-                                <rect key="frame" x="17" y="200" width="52" height="78"/>
-                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                <size key="cellSize" width="53" height="18"/>
-                                <size key="intercellSpacing" width="4" height="2"/>
-                                <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="AVL-7v-kWu">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <cells>
-                                    <column>
-                                        <buttonCell type="radio" title="none" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="fGe-Q1-aLH">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <buttonCell type="radio" title="mp3" imagePosition="left" alignment="left" tag="1" inset="2" id="J7n-dD-gKp">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <buttonCell type="radio" title="wma" imagePosition="left" alignment="left" tag="2" inset="2" id="SMq-fh-zov">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <buttonCell type="radio" title="ogg" imagePosition="left" alignment="left" tag="3" inset="2" id="G6U-gQ-yWh">
-                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                    </column>
-                                </cells>
-                                <connections>
-                                    <action selector="audioExtension:" target="XfG-lQ-9wD" id="N9K-XC-Fw0"/>
-                                </connections>
-                            </matrix>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yte-9D-hsw">
                                 <rect key="frame" x="254" y="60" width="48" height="98"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -948,13 +874,23 @@
                                 </connections>
                             </matrix>
                             <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oBu-p2-gqP">
-                                <rect key="frame" x="176" y="18" width="62" height="18"/>
-                                <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="qHT-tf-woy">
+                                <rect key="frame" x="20" y="262" width="50" height="18"/>
+                                <buttonCell key="cell" type="check" title="mp3" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="qHT-tf-woy">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="audioExtension:" target="XfG-lQ-9wD" id="CYz-eD-Xor"/>
+                                    <action selector="audioExtension:" target="XfG-lQ-9wD" id="2hP-1y-r4f"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NLc-CI-buq">
+                                <rect key="frame" x="20" y="242" width="52" height="18"/>
+                                <buttonCell key="cell" type="check" title="wma" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="3ze-pr-y95">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="audioExtension:" target="XfG-lQ-9wD" id="8tK-EH-LWy"/>
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4b6-s8-AX9">
@@ -968,6 +904,166 @@
                                     <action selector="enterFromSearchField:" target="XfG-lQ-9wD" id="gRu-m9-deo"/>
                                 </connections>
                             </textField>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pVa-2H-WJC">
+                                <rect key="frame" x="20" y="220" width="46" height="18"/>
+                                <buttonCell key="cell" type="check" title="ogg" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="nDq-cB-1Md">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="audioExtension:" target="XfG-lQ-9wD" id="3KN-qY-feQ"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I9u-cD-BSV">
+                                <rect key="frame" x="20" y="200" width="50" height="18"/>
+                                <buttonCell key="cell" type="check" title="mpg" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="b7V-h5-LJ7">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="videoExtension:" target="XfG-lQ-9wD" id="246-R6-chx"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-n9-xA5">
+                                <rect key="frame" x="21" y="171" width="40" height="18"/>
+                                <buttonCell key="cell" type="check" title="avi" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="QIK-Uk-DON">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="videoExtension:" target="XfG-lQ-9wD" id="isy-5f-TyG"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JcC-H4-oBm">
+                                <rect key="frame" x="22" y="142" width="51" height="18"/>
+                                <buttonCell key="cell" type="check" title="wmv" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="44e-Tn-ODN">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="videoExtension:" target="XfG-lQ-9wD" id="zsH-uq-6uh"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Bd-CE-a6f">
+                                <rect key="frame" x="22" y="116" width="48" height="18"/>
+                                <buttonCell key="cell" type="check" title="divx" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="vu5-SL-How">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="videoExtension:" target="XfG-lQ-9wD" id="6nx-4T-Kor"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4D5-Vc-zxf">
+                                <rect key="frame" x="22" y="85" width="36" height="18"/>
+                                <buttonCell key="cell" type="check" title="flv" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="AqA-kA-ahl">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="videoExtension:" target="XfG-lQ-9wD" id="LJv-Ua-bzf"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iec-UI-vx9">
+                                <rect key="frame" x="91" y="262" width="43" height="18"/>
+                                <buttonCell key="cell" type="check" title="pdf" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="qBn-TJ-kRT">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="documentExtension:" target="XfG-lQ-9wD" id="gqV-Bz-XG0"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QFn-5q-LIW">
+                                <rect key="frame" x="90" y="242" width="38" height="18"/>
+                                <buttonCell key="cell" type="check" title="txt" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="ojy-8F-cna">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="documentExtension:" target="XfG-lQ-9wD" id="yWk-XE-5cl"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6PX-Ql-P6s">
+                                <rect key="frame" x="92" y="222" width="33" height="18"/>
+                                <buttonCell key="cell" type="check" title="lit" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="HfR-1V-9TP">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="documentExtension:" target="XfG-lQ-9wD" id="8Z1-Rc-E0W"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R8I-l5-bzs">
+                                <rect key="frame" x="93" y="202" width="39" height="18"/>
+                                <buttonCell key="cell" type="check" title="rar" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="hIp-gA-EDR">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="documentExtension:" target="XfG-lQ-9wD" id="XK3-yE-DPb"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fzz-hg-Swk">
+                                <rect key="frame" x="93" y="182" width="46" height="18"/>
+                                <buttonCell key="cell" type="check" title="doc" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="7ab-js-l31">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="documentExtension:" target="XfG-lQ-9wD" id="MYa-fc-dAY"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c5l-bG-QbE">
+                                <rect key="frame" x="95" y="162" width="36" height="18"/>
+                                <buttonCell key="cell" type="check" title="rtf" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="Ubf-c0-P1d">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="documentExtension:" target="XfG-lQ-9wD" id="gcz-4t-Cud"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sFC-eu-f5v">
+                                <rect key="frame" x="94" y="142" width="46" height="18"/>
+                                <buttonCell key="cell" type="check" title="pps" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="2Bc-yU-eOa">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="documentExtension:" target="XfG-lQ-9wD" id="ovy-Hs-n3t"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uwJ-N2-1DL">
+                                <rect key="frame" x="100" y="122" width="49" height="18"/>
+                                <buttonCell key="cell" type="check" title="chm" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="qaY-eT-BZc">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="documentExtension:" target="XfG-lQ-9wD" id="6bl-lJ-i75"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-bG-rbN">
+                                <rect key="frame" x="103" y="102" width="48" height="18"/>
+                                <buttonCell key="cell" type="check" title="zip1" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="HeF-2x-NI4">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="documentExtension:" target="XfG-lQ-9wD" id="GAy-OG-Y6j"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nsy-Vm-AfO">
+                                <rect key="frame" x="92" y="82" width="43" height="18"/>
+                                <buttonCell key="cell" type="check" title="odt" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="vZQ-Fj-VXY">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="documentExtension:" target="XfG-lQ-9wD" id="Bbf-gE-roO"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
