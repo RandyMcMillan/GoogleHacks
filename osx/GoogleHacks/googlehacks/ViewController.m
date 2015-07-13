@@ -577,20 +577,7 @@
 		self.data_object.types_str = [self truncateString:self.data_object.types_str toCharacterCount:5];
 	}
 
-	NSInteger		*capacity	= (long *)[self.data_object.types_str length];
-    NSLog(@"capacity = %i",(int)capacity);
-	NSMutableString *temp		= [NSMutableString stringWithCapacity:(NSUInteger )capacity];
-	NSLog(@"temp.length = %lx", temp.length);
-	[temp setString:self.data_object.types_str];
-	[temp replaceCharactersInRange:NSMakeRange(0, 0)
-	withString:@"Exige"];
-	NSLog(@"%@", temp);									// Lotus Exige
-	[temp deleteCharactersInRange:NSMakeRange(0, 0)];
-	NSLog(@"%@", temp);									// Lotus
-
-	// [self.data_object.types_str deleteCharactersInRange:NSMakeRange(5, 6)];
-
-	NSLog(@"assembleTypesString");
+    NSLog(@"assembleTypesString");
 	NSLog(@"self.data_object.types_str = %@", self.data_object.types_str);
 }
 
