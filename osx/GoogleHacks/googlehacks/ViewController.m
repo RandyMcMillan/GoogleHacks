@@ -573,19 +573,41 @@
 		// https://bdpuqvsqmphctrcs.onion.to/data/
 	}
 
-    if ([self.data_object.types_str isEqualToString:@".divx%7C"]) {
-        
-        self.data_object.types_str = [self truncateString:self.data_object.types_str toCharacterCount:5];
-        
-    }
-    
+	if ([self.data_object.types_str isEqualToString:@".divx%7C"]) {
+		self.data_object.types_str = [self truncateString:self.data_object.types_str toCharacterCount:5];
+	}
+
+	NSInteger		*capacity	= (long *)[self.data_object.types_str length];
+    NSLog(@"capacity = %i",(int)capacity);
+	NSMutableString *temp		= [NSMutableString stringWithCapacity:(NSUInteger )capacity];
+	NSLog(@"temp.length = %lx", temp.length);
+	[temp setString:self.data_object.types_str];
+	[temp replaceCharactersInRange:NSMakeRange(0, 0)
+	withString:@"Exige"];
+	NSLog(@"%@", temp);									// Lotus Exige
+	[temp deleteCharactersInRange:NSMakeRange(0, 0)];
+	NSLog(@"%@", temp);									// Lotus
+
+	// [self.data_object.types_str deleteCharactersInRange:NSMakeRange(5, 6)];
+
 	NSLog(@"assembleTypesString");
 	NSLog(@"self.data_object.types_str = %@", self.data_object.types_str);
-
-	// NSWorkspace * ws = [NSWorkspace sharedWorkspace];
-	// NSArray * apps = [ws launchedApplications];
-	// NSLog (@"%@", apps);
 }
+
+- (NSString *)	truncateString	:(NSString *)string
+				toCharacterCount:(NSUInteger)count
+{
+	NSRange range = {0, MIN(string.length, count)};
+
+	range = [string rangeOfComposedCharacterSequencesForRange:range];
+	NSString *trunc = [string substringWithRange:range];
+
+	if (trunc.length < string.length) {
+		trunc = [trunc stringByAppendingString:@""];
+	}
+
+	return trunc;
+}	// truncateString
 
 - (void)openPasswordQueries
 {
@@ -658,20 +680,5 @@
 
 	for (int i = 0; i < [self.urls count]; i++) {}
 }
-
-- (NSString *)	truncateString	:(NSString *)string
-				toCharacterCount:(NSUInteger)count
-{
-	NSRange range = {0, MIN(string.length, count)};
-
-	range = [string rangeOfComposedCharacterSequencesForRange:range];
-	NSString *trunc = [string substringWithRange:range];
-
-	if (trunc.length < string.length) {
-		trunc = [trunc stringByAppendingString:@""];
-	}
-
-	return trunc;
-}	// truncateString
 
 @end
