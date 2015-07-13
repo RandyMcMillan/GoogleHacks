@@ -14,7 +14,7 @@
 	IBOutlet NSButton		*show;
 }
 
-- (IBAction)getSearchField:(id)sender;
+- (IBAction)enterFromSearchField:(id)sender;
 - (NSString *)returnSearchString:(NSString *)searchString;
 - (NSURL *)modifyURL:(NSString *)modString;
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background;
