@@ -89,33 +89,11 @@
 {
     
     
-    if ([self.data_object.passWordLinkArray isNotEqualTo:nil]) {
-        
 #pragma mark ViewController openPasswordQueries open
-        
-        
-        
-        // With a traditional for loop
-        //for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
-          //  NSLog(@"self.data_object.passWordLinkArray[%d]: %@", i, self.data_object.passWordLinkArray[i]);
-            //[self.ws openURLs:self.data_object.passWordLinkArray withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-        //}
-        
-        
-        //for (int i = 0; i < [self.urls count]; i++) {}
-        
-        
-        // Index checking
-        NSUInteger index = [self.data_object.passWordLinkArray indexOfObject:@"BMW"];
-        if (index == NSNotFound) {
-            NSLog(@"Well that's not quite right...");
-        } else {
-            NSLog(@"BMW is a German auto maker and is at index %ld", index);
-        }
-        
-        
-        
-    }
+    NSLog(@"[self.data_object.passWordLinkArray count] =  %lx",[self.data_object.passWordLinkArray count]);
+
+    
+
     /*
 	if (background) {
 		NSArray *urls = [NSArray arrayWithObject:url];
@@ -634,72 +612,60 @@
 
 #pragma mark ViewController openPasswordQueries
 
-- (void)openPasswordQueries
+- (NSMutableArray *)openPasswordQueries:(NSMutableArray *)mutableArray
 {
 	if (self.data_object.pass_1 == TRUE) {
-		self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
-		[self.urls addObject:self.data_object.full_search_str];
+        [self.data_object.passWordLinkArray addObject:self.data_object.pass_1_str];
 
-		for (int i = 0; i < [self.urls count]; i++) {
+		for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
 	}
 
 	if (self.data_object.pass_2 == TRUE) {
-		self.data_object.full_search_str = @"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt";
-		[self.urls addObject:self.data_object.full_search_str];
+        [self.data_object.passWordLinkArray addObject:self.data_object.pass_2_str];
 
-		for (int i = 0; i < [self.urls count]; i++) {
+        for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
 	}
 
 	if (self.data_object.pass_3 == TRUE) {
-		self.data_object.full_search_str = @"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search";
-		[self.urls addObject:self.data_object.full_search_str];
+        [self.data_object.passWordLinkArray addObject:self.data_object.pass_3_str];
 
-		for (int i = 0; i < [self.urls count]; i++) {
+        for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
 	}
 
 	if (self.data_object.pass_4 == TRUE) {
-		self.data_object.full_search_str = @"http://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd";
-		[self.urls addObject:self.data_object.full_search_str];
+        [self.data_object.passWordLinkArray addObject:self.data_object.pass_4_str];
 
-		// NSLog(@"3 %@",self.urls[3]);
-		for (int i = 0; i < [self.urls count]; i++) {
+        for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
 	}
 
 	if (self.data_object.pass_5 == TRUE) {
-		self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php";
-		[self.urls addObject:self.data_object.full_search_str];
+        [self.data_object.passWordLinkArray addObject:self.data_object.pass_5_str];
 
-		// NSLog(@"4 %@",self.urls[4]);
-		for (int i = 0; i < [self.urls count]; i++) {
+        for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
 	}
 
 	if (self.data_object.pass_6 == TRUE) {
-		self.data_object.full_search_str = @"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22";
-		[self.urls addObject:self.data_object.full_search_str];
-
-		for (int i = 0; i < [self.urls count]; i++) {
+		
+        [self.data_object.passWordLinkArray addObject:(NSString *)self.data_object.pass_6_str];
+        
+        for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
 	}
 
+    mutableArray = self.data_object.passWordLinkArray;
     
-    
-
-
-
-
-
-
+    return mutableArray;
 }
 
 @end

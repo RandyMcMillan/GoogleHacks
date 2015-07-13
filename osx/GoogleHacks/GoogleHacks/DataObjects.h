@@ -53,7 +53,7 @@
 @property (nonatomic, readwrite) BOOL	*pass_4;
 @property (nonatomic, readwrite) BOOL	*pass_5;
 @property (nonatomic, readwrite) BOOL	*pass_6;
-@property (nonatomic, retain) NSArray	*passWordLinkArray;
+@property (nonatomic, retain) NSMutableArray	*passWordLinkArray;
 @property (nonatomic, readwrite) NSURL	*pass_1_str;
 @property (nonatomic, readwrite) NSURL	*pass_2_str;
 @property (nonatomic, readwrite) NSURL	*pass_3_str;
