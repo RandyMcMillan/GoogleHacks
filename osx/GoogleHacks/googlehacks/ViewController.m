@@ -18,8 +18,7 @@
 @implementation ViewController
 
 @synthesize data_object;
-@synthesize searchTextField,urls;
-
+@synthesize searchTextField, urls;
 
 #pragma mark ViewController viewDidLoad
 
@@ -29,10 +28,8 @@
 	self.title = @"Presenting ViewController";
 	[self.data_object = [DataObjects alloc] init];
 	[self.data_object loadValues:nil];
-    [self.urls addObject:@"TEST123123"];
-    self.urls = [NSMutableArray arrayWithCapacity:100];
-
-
+	[self.urls addObject:@"TEST123123"];
+	self.urls = [NSMutableArray arrayWithCapacity:100];
 }
 
 - (void)setRepresentedObject:(id)representedObject
@@ -41,89 +38,77 @@
 }
 
 #pragma mark ViewController figureOutTheLogicHere
-- (NSString *)returnSearchString:(NSString *)searchString {
+- (NSString *)returnSearchString:(NSString *)searchString
+{
+	[self assembleTypesString];
+	NSLog(@"%@", self.data_object.types_str);
 
-   	//NSURL *url = [self modifyURL:nil];
-    //NSLog(@"url = %@", url);
-    //NSString *scheme = [url scheme];
-    
-    //if ([scheme isEqualToString:@"file"]) {} else {
-        [self assembleTypesString];
-        //NSLog(@"before else... = %@", self.data_object.types_str);
-        NSLog(@"%@", self.data_object.types_str);
-        
-        if ([self.data_object.types_str isEqualToString:@""]) {
-            //[self openURL:url inBackground:YES];
-        } else {
-            //  NSLog(@"after else... = %@", self.data_object.types_str);
-            //[self openURL:url inBackground:YES];
-        }
-//    }
- 
-   	 self.data_object.search_str = [self returnSearchField];
-    searchString = [BASE_URL stringByAppendingString:@"q="];
-    NSLog(@"%@", searchString);
-    searchString = [searchString stringByAppendingString:[self returnSearchField]];
-    NSLog(@"%@", searchString);
-    
-    return searchString;
+	if ([self.data_object.types_str isEqualToString:@""]) {} else {}
+
+	self.data_object.search_str = [self returnSearchField];
+	searchString = [BASE_URL stringByAppendingString:@"q="];
+	NSLog(@"%@", searchString);
+	searchString = [searchString stringByAppendingString:[self returnSearchField]];
+	NSLog(@"%@", searchString);
+
+	return searchString;
 }
 
-- (IBAction)enterFromSearchField:(id)sender{
-
-    NSLog(@"searchTextField = %@",[[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
-    [self openURLFromButton:(id)sender];
-
+- (IBAction)enterFromSearchField:(id)sender
+{
+	NSLog(@"searchTextField = %@", [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
+	[self openURLFromButton:(id)sender];
 }
+
 - (NSString *)returnSearchField
 {
-	NSString *returnSearchField = nil;
-
+	
+    NSString *returnSearchField = nil;
 	returnSearchField = [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    
-    NSLog(@"returnSearchField = %@",returnSearchField);
-    return returnSearchField;
+	NSLog(@"returnSearchField = %@", returnSearchField);
+
+	return returnSearchField;
 }
 
 - (NSURL *)modifyURL:(NSString *)modString
 {
-	NSLog(@"%@", modString);// null
+	
+    NSLog(@"%@", modString);// null
 	NSURL *modifiedURL = [NSURL URLWithString:modString];
-	return modifiedURL;
+	
+    return modifiedURL;
 }
-
-
 
 #pragma mark ViewController handle password logic
 
-
 - (IBAction)openURLFromButton:(id)sender
 {
+	
     [self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:YES];
+
 }
 
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background
 {
-	if (background) {
-		NSArray *urls = [NSArray arrayWithObject:url];
-		[[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-	} else {
-		[[NSWorkspace sharedWorkspace] openURL:url];
-	}
-    
-    
-    [self openPasswordQueries];
-    //gotta remove objects and revuild every time
-    NSLog(@"self.urls count = %ld",[self.urls count]);
-    for (int i=0; i<[self.urls count]; i++) {
-        
-        [[NSWorkspace sharedWorkspace] openURLs:self.urls[i] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-    }
- 
-    [self.urls removeAllObjects];
-    
+	/*
+	 *   if (background) {
+	 *    NSArray *urls = [NSArray arrayWithObject:url];
+	 *    [[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+	 *   } else {
+	 *    [[NSWorkspace sharedWorkspace] openURL:url];
+	 *   }
+	 *
+	 *   [self openPasswordQueries];
+	 *   // gotta remove objects and revuild every time
+	 *   NSLog(@"self.urls count = %ld", [self.urls count]);
+	 *
+	 *   for (int i = 0; i < [self.urls count]; i++) {
+	 *    [[NSWorkspace sharedWorkspace] openURLs:self.urls[i] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+	 *   }
+	 *
+	 *   [self.urls removeAllObjects];
+	 */
 }
-
 
 #pragma mark ViewController audioExtention
 
@@ -134,34 +119,31 @@
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %ld", (long)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
-    
-    
-    
-    if ([[selCell title] isEqualToString:@"mp3"]) {
-    	if ([selCell state] == 0) {
-    		self.data_object.mp3_check	= FALSE;
-    	} else {
-    		self.data_object.mp3_check	= TRUE;
-    	}
-    }
-   
-    if ([[selCell title] isEqualToString:@"wma"]) {
-        if ([selCell state] == 0) {
-            self.data_object.wma_check	= FALSE;
-        } else {
-            self.data_object.wma_check	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"ogg"]) {
-        if ([selCell state] == 0) {
-            self.data_object.ogg_check	= FALSE;
-        } else {
-            self.data_object.ogg_check	= TRUE;
-        }
-    }
-    
-    
+
+	if ([[selCell title] isEqualToString:@"mp3"]) {
+		if ([selCell state] == 0) {
+			self.data_object.mp3_check = FALSE;
+		} else {
+			self.data_object.mp3_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"wma"]) {
+		if ([selCell state] == 0) {
+			self.data_object.wma_check = FALSE;
+		} else {
+			self.data_object.wma_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"ogg"]) {
+		if ([selCell state] == 0) {
+			self.data_object.ogg_check = FALSE;
+		} else {
+			self.data_object.ogg_check = TRUE;
+		}
+	}
+
 #ifndef DEBUG
 		// NSLog(@"self.data_object.mp3_check IS : %@", (self.data_object.mp3_check == TRUE) ? @"TRUE" : @"FALSE");
 		// NSLog(@"self.data_object.wma_check IS : %@", (self.data_object.wma_check == TRUE) ? @"TRUE" : @"FALSE");
@@ -173,54 +155,52 @@
 
 - (IBAction)videoExtension:(id)sender
 {
+	NSButtonCell *selCell = [sender selectedCell];
 
-    NSButtonCell *selCell = [sender selectedCell];
-    
-    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    NSLog(@"Selected cell title is %ld", (long)[selCell title]);
-    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
-    
-    
-    
-    if ([[selCell title] isEqualToString:@"mpg"]) {
-        if ([selCell state] == 0) {
-            self.data_object.mpg_check	= FALSE;
-        } else {
-            self.data_object.mpg_check	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"avi"]) {
-        if ([selCell state] == 0) {
-            self.data_object.avi_check	= FALSE;
-        } else {
-            self.data_object.avi_check	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"wmv"]) {
-        if ([selCell state] == 0) {
-            self.data_object.wmv_check	= FALSE;
-        } else {
-            self.data_object.wmv_check	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"divx"]) {
-        if ([selCell state] == 0) {
-            self.data_object.divx_check	= FALSE;
-        } else {
-            self.data_object.divx_check	= TRUE;
-        }
-    } if ([[selCell title] isEqualToString:@"flv"]) {
-        if ([selCell state] == 0) {
-            self.data_object.flv_check	= FALSE;
-        } else {
-            self.data_object.flv_check	= TRUE;
-        }
-    }
-    
-    
+	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+	NSLog(@"Selected cell title is %ld", (long)[selCell title]);
+	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+
+	if ([[selCell title] isEqualToString:@"mpg"]) {
+		if ([selCell state] == 0) {
+			self.data_object.mpg_check = FALSE;
+		} else {
+			self.data_object.mpg_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"avi"]) {
+		if ([selCell state] == 0) {
+			self.data_object.avi_check = FALSE;
+		} else {
+			self.data_object.avi_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"wmv"]) {
+		if ([selCell state] == 0) {
+			self.data_object.wmv_check = FALSE;
+		} else {
+			self.data_object.wmv_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"divx"]) {
+		if ([selCell state] == 0) {
+			self.data_object.divx_check = FALSE;
+		} else {
+			self.data_object.divx_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"flv"]) {
+		if ([selCell state] == 0) {
+			self.data_object.flv_check = FALSE;
+		} else {
+			self.data_object.flv_check = TRUE;
+		}
+	}
+
 #ifndef DEBUG
 		// NSLog(@"self.data_object.mpg_check IS : %@", (self.data_object.mpg_check == TRUE) ? @"TRUE" : @"FALSE");
 		// NSLog(@"self.data_object.avi_check IS : %@", (self.data_object.avi_check == TRUE) ? @"TRUE" : @"FALSE");
@@ -234,95 +214,92 @@
 
 - (IBAction)documentExtension:(id)sender
 {
-	   NSButtonCell *selCell = [sender selectedCell];
-    
-    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    NSLog(@"Selected cell title is %ld", (long)[selCell title]);
-    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
-    
-    
-    
-    if ([[selCell title] isEqualToString:@"pdf"]) {
-        if ([selCell state] == 0) {
-            self.data_object.pdf_check	= FALSE;
-        } else {
-            self.data_object.pdf_check	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"txt"]) {
-        if ([selCell state] == 0) {
-            self.data_object.txt_check	= FALSE;
-        } else {
-            self.data_object.txt_check	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"lit"]) {
-        if ([selCell state] == 0) {
-            self.data_object.lit_check	= FALSE;
-        } else {
-            self.data_object.lit_check	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"rar"]) {
-        if ([selCell state] == 0) {
-            self.data_object.rar_check	= FALSE;
-        } else {
-            self.data_object.rar_check	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"doc"]) {
-        if ([selCell state] == 0) {
-            self.data_object.doc_check	= FALSE;
-        } else {
-            self.data_object.doc_check	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"rtf"]) {
-        if ([selCell state] == 0) {
-            self.data_object.rtf_check	= FALSE;
-        } else {
-            self.data_object.rtf_check	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"pps"]) {
-        if ([selCell state] == 0) {
-            self.data_object.pps_check	= FALSE;
-        } else {
-            self.data_object.pps_check	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"chm"]) {
-        if ([selCell state] == 0) {
-            self.data_object.chm_check	= FALSE;
-        } else {
-            self.data_object.chm_check	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"zip1"]) {
-        if ([selCell state] == 0) {
-            self.data_object.zip1_check	= FALSE;
-        } else {
-            self.data_object.zip1_check	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"odt"]) {
-        if ([selCell state] == 0) {
-            self.data_object.odt_check	= FALSE;
-        } else {
-            self.data_object.odt_check	= TRUE;
-        }
-    }
-    
-	
+	NSButtonCell *selCell = [sender selectedCell];
+
+	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+	NSLog(@"Selected cell title is %ld", (long)[selCell title]);
+	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+
+	if ([[selCell title] isEqualToString:@"pdf"]) {
+		if ([selCell state] == 0) {
+			self.data_object.pdf_check = FALSE;
+		} else {
+			self.data_object.pdf_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"txt"]) {
+		if ([selCell state] == 0) {
+			self.data_object.txt_check = FALSE;
+		} else {
+			self.data_object.txt_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"lit"]) {
+		if ([selCell state] == 0) {
+			self.data_object.lit_check = FALSE;
+		} else {
+			self.data_object.lit_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"rar"]) {
+		if ([selCell state] == 0) {
+			self.data_object.rar_check = FALSE;
+		} else {
+			self.data_object.rar_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"doc"]) {
+		if ([selCell state] == 0) {
+			self.data_object.doc_check = FALSE;
+		} else {
+			self.data_object.doc_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"rtf"]) {
+		if ([selCell state] == 0) {
+			self.data_object.rtf_check = FALSE;
+		} else {
+			self.data_object.rtf_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"pps"]) {
+		if ([selCell state] == 0) {
+			self.data_object.pps_check = FALSE;
+		} else {
+			self.data_object.pps_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"chm"]) {
+		if ([selCell state] == 0) {
+			self.data_object.chm_check = FALSE;
+		} else {
+			self.data_object.chm_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"zip1"]) {
+		if ([selCell state] == 0) {
+			self.data_object.zip1_check = FALSE;
+		} else {
+			self.data_object.zip1_check = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"odt"]) {
+		if ([selCell state] == 0) {
+			self.data_object.odt_check = FALSE;
+		} else {
+			self.data_object.odt_check = TRUE;
+		}
+	}
+
 #ifndef DEBUG
 		// NSLog(@"self.data_object.pdf_check IS : %@", (self.data_object.pdf_check == TRUE) ? @"TRUE" : @"FALSE");
 		// NSLog(@"self.data_object.txt_check IS : %@", (self.data_object.txt_check == TRUE) ? @"TRUE" : @"FALSE");
@@ -341,72 +318,70 @@
 
 - (IBAction)passwordQuery:(id)sender
 {
-	   NSButtonCell *selCell = [sender selectedCell];
-    
-    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    NSLog(@"Selected cell title is %ld", (long)[selCell title]);
-    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
-    
-    
-    
-    if ([[selCell title] isEqualToString:@"pass 1"]) {
-        if ([selCell state] == 0) {
-            self.data_object.pass_1	= FALSE;
-        } else {
-            self.data_object.pass_1	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"pass 2"]) {
-        if ([selCell state] == 0) {
-            self.data_object.pass_2	= FALSE;
-        } else {
-            self.data_object.pass_2	= TRUE;
-        }
-    }
-    if ([[selCell title] isEqualToString:@"pass 3"]) {
-        if ([selCell state] == 0) {
-            self.data_object.pass_3	= FALSE;
-        } else {
-            self.data_object.pass_3	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"pass 4"]) {
-        if ([selCell state] == 0) {
-            self.data_object.pass_4	= FALSE;
-        } else {
-            self.data_object.pass_4	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"pass 5"]) {
-        if ([selCell state] == 0) {
-            self.data_object.pass_5	= FALSE;
-        } else {
-            self.data_object.pass_5	= TRUE;
-        }
-    }
-    
-    if ([[selCell title] isEqualToString:@"pass 6"]) {
-        if ([selCell state] == 0) {
-            self.data_object.pass_6	= FALSE;
-        } else {
-            self.data_object.pass_6	= TRUE;
-        }
-    }
-    
-#ifdef DEBUG
-		 NSLog(@"self.data_object.pass_check IS : %@", (self.data_object.pass_check == TRUE) ? @"TRUE" : @"FALSE");
-		 NSLog(@"self.data_object.pass_text IS : %@", (self.data_object.pass_text == TRUE) ? @"TRUE" : @"FALSE");
-		 NSLog(@"self.data_object.pass_1 IS : %@", (self.data_object.pass_1 == TRUE) ? @"TRUE" : @"FALSE");
-		 NSLog(@"self.data_object.pass_2 IS : %@", (self.data_object.pass_2 == TRUE) ? @"TRUE" : @"FALSE");
-		 NSLog(@"self.data_object.pass_3 IS : %@", (self.data_object.pass_3 == TRUE) ? @"TRUE" : @"FALSE");
-		 NSLog(@"self.data_object.pass_4 IS : %@", (self.data_object.pass_4 == TRUE) ? @"TRUE" : @"FALSE");
-		 NSLog(@"self.data_object.pass_5 IS : %@", (self.data_object.pass_5 == TRUE) ? @"TRUE" : @"FALSE");
-		 NSLog(@"self.data_object.pass_6 IS : %@", (self.data_object.pass_6 == TRUE) ? @"TRUE" : @"FALSE");
-#endif
+	NSButtonCell *selCell = [sender selectedCell];
 
+	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+	NSLog(@"Selected cell title is %ld", (long)[selCell title]);
+	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+
+	if ([[selCell title] isEqualToString:@"pass 1"]) {
+		if ([selCell state] == 0) {
+			self.data_object.pass_1 = FALSE;
+		} else {
+			self.data_object.pass_1 = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"pass 2"]) {
+		if ([selCell state] == 0) {
+			self.data_object.pass_2 = FALSE;
+		} else {
+			self.data_object.pass_2 = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"pass 3"]) {
+		if ([selCell state] == 0) {
+			self.data_object.pass_3 = FALSE;
+		} else {
+			self.data_object.pass_3 = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"pass 4"]) {
+		if ([selCell state] == 0) {
+			self.data_object.pass_4 = FALSE;
+		} else {
+			self.data_object.pass_4 = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"pass 5"]) {
+		if ([selCell state] == 0) {
+			self.data_object.pass_5 = FALSE;
+		} else {
+			self.data_object.pass_5 = TRUE;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"pass 6"]) {
+		if ([selCell state] == 0) {
+			self.data_object.pass_6 = FALSE;
+		} else {
+			self.data_object.pass_6 = TRUE;
+		}
+	}
+
+#ifndef DEBUG
+		NSLog(@"self.data_object.pass_check IS : %@", (self.data_object.pass_check == TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_text IS : %@", (self.data_object.pass_text == TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_1 IS : %@", (self.data_object.pass_1 == TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_2 IS : %@", (self.data_object.pass_2 == TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_3 IS : %@", (self.data_object.pass_3 == TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_4 IS : %@", (self.data_object.pass_4 == TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_5 IS : %@", (self.data_object.pass_5 == TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_6 IS : %@", (self.data_object.pass_6 == TRUE) ? @"TRUE" : @"FALSE");
+#endif
 }
 
 - (IBAction)fileExtension:(id)sender
@@ -588,7 +563,6 @@
 
 	NSLog(@"%@", self.data_object.types_str);
 
-
 	NSLog(@"%@", self.data_object.types_str);
 
 	if ([self.data_object.types_str length] <= 7) {
@@ -608,115 +582,83 @@
 	// NSLog (@"%@", apps);
 }
 
--(void)openPasswordQueries {
+- (void)openPasswordQueries
+{
+	if (self.data_object.pass_1 == TRUE) {
+		self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
+		[self.urls addObject:self.data_object.full_search_str];
 
+		// NSLog(@"0 %@",self.urls[0]);
+		// With a traditional for loop
+		for (int i = 0; i < [self.urls count]; i++) {
+			NSLog(@"%d: %@", i, self.urls[i]);
+		}
+	}
 
-    if (self.data_object.pass_1 == TRUE) {
-        self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
-        [self.urls addObject:self.data_object.full_search_str];
-        //NSLog(@"0 %@",self.urls[0]);
-        // With a traditional for loop
-        for (int i=0; i<[self.urls count]; i++) {
-            NSLog(@"%d: %@", i, self.urls[i]);
-        }
-        
-    }
-    
-    
-    if (self.data_object.pass_2 == TRUE) {
-        self.data_object.full_search_str = @"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt";
-        [self.urls addObject:self.data_object.full_search_str];
-        //NSLog(@"1 %@",self.urls[1]);
-        for (int i=0; i<[self.urls count]; i++) {
-            NSLog(@"%d: %@", i, self.urls[i]);
-        }
-    }
-    
-    
-    if (self.data_object.pass_3 == TRUE) {
-        self.data_object.full_search_str = @"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search";
-        [self.urls addObject:self.data_object.full_search_str];
-        //NSLog(@"2 %@",self.urls[2]);
-       // [[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-        //  self.data_object.pass_3 == FALSE;
-        for (int i=0; i<[self.urls count]; i++) {
-            NSLog(@"%d: %@", i, self.urls[i]);
-        }
-    }
-    
-    
-    if (self.data_object.pass_4 == TRUE) {
-        self.data_object.full_search_str = @"http://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd";
-        [self.urls addObject:self.data_object.full_search_str];
-        //NSLog(@"3 %@",self.urls[3]);
-        for (int i=0; i<[self.urls count]; i++) {
-            NSLog(@"%d: %@", i, self.urls[i]);
-        }
- 
-        
-    }
-    
-    
-    if (self.data_object.pass_5 == TRUE) {
-        self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php";
-        [self.urls addObject:self.data_object.full_search_str];
-        //NSLog(@"4 %@",self.urls[4]);
-        for (int i=0; i<[self.urls count]; i++) {
-            NSLog(@"%d: %@", i, self.urls[i]);
-        }
- 
-    }
-    
-    
-    if (self.data_object.pass_6 == TRUE) {
-        self.data_object.full_search_str = @"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22";
-        [self.urls addObject:self.data_object.full_search_str];
-        //NSLog(@"5 %@",self.urls[5]);
-        for (int i=0; i<[self.urls count]; i++) {
-            NSLog(@"%d: %@", i, self.urls[i]);
-        }
- 
-    }
+	if (self.data_object.pass_2 == TRUE) {
+		self.data_object.full_search_str = @"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt";
+		[self.urls addObject:self.data_object.full_search_str];
 
+		// NSLog(@"1 %@",self.urls[1]);
+		for (int i = 0; i < [self.urls count]; i++) {
+			NSLog(@"%d: %@", i, self.urls[i]);
+		}
+	}
 
-   // http://rypress.com/tutorials/objective-c/data-types/nsarray    // With fast-enumeration
-    //		[[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-/*
-    NSMutableArray *brokenCars = [NSMutableArray arrayWithCapacity:100];
-    
-    brokenCars = [NSMutableArray arrayWithObjects:
-                                  @"Audi A6", @"BMW Z3",
-                                  @"Audi Quattro", @"Audi TT", nil];
-    [brokenCars addObject:@"BMW F25"];
-    NSLog(@"%@", brokenCars);       // BMW F25 added to end
-    [brokenCars removeLastObject];
-    NSLog(@"%@", brokenCars);       // BMW F25 removed from end
-    
-  */
-   /*
-    for (NSString *item in self.urls) {
-        NSLog(@"item = %@", item);
-        [[NSWorkspace sharedWorkspace] openURLs:item withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+	if (self.data_object.pass_3 == TRUE) {
+		self.data_object.full_search_str = @"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search";
+		[self.urls addObject:self.data_object.full_search_str];
 
-    }
-    */
-    
-    
-    // With a traditional for loop
-    for (int i=0; i<[self.urls count]; i++) {
-        NSLog(@"%d: %@", i, self.urls[i]);
-            //[[NSWorkspace sharedWorkspace] openURLs:self.urls[i] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-    }
-    
-    
-    for (int i=0; i<[self.urls count]; i++) {
-       // NSLog(@"%d: %@", i, self.urls[i]);
-        //[self.urls removeLastObject];
-        //[[NSWorkspace sharedWorkspace] openURLs:self.urls[i] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-    }
- 
+		// NSLog(@"2 %@",self.urls[2]);
+		// [[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+		//  self.data_object.pass_3 == FALSE;
+		for (int i = 0; i < [self.urls count]; i++) {
+			NSLog(@"%d: %@", i, self.urls[i]);
+		}
+	}
+
+	if (self.data_object.pass_4 == TRUE) {
+		self.data_object.full_search_str = @"http://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd";
+		[self.urls addObject:self.data_object.full_search_str];
+
+		// NSLog(@"3 %@",self.urls[3]);
+		for (int i = 0; i < [self.urls count]; i++) {
+			NSLog(@"%d: %@", i, self.urls[i]);
+		}
+	}
+
+	if (self.data_object.pass_5 == TRUE) {
+		self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php";
+		[self.urls addObject:self.data_object.full_search_str];
+
+		// NSLog(@"4 %@",self.urls[4]);
+		for (int i = 0; i < [self.urls count]; i++) {
+			NSLog(@"%d: %@", i, self.urls[i]);
+		}
+	}
+
+	if (self.data_object.pass_6 == TRUE) {
+		self.data_object.full_search_str = @"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22";
+		[self.urls addObject:self.data_object.full_search_str];
+
+		// NSLog(@"5 %@",self.urls[5]);
+		for (int i = 0; i < [self.urls count]; i++) {
+			NSLog(@"%d: %@", i, self.urls[i]);
+		}
+	}
+
+	// With a traditional for loop
+	for (int i = 0; i < [self.urls count]; i++) {
+		NSLog(@"%d: %@", i, self.urls[i]);
+		// [[NSWorkspace sharedWorkspace] openURLs:self.urls[i] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+	}
+
+	for (int i = 0; i < [self.urls count]; i++) {
+		// NSLog(@"%d: %@", i, self.urls[i]);
+		// [self.urls removeLastObject];
+		// [[NSWorkspace sharedWorkspace] openURLs:self.urls[i] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+	}
 }
-
 
 - (NSString *)	truncateString	:(NSString *)string
 				toCharacterCount:(NSUInteger)count

@@ -50,7 +50,8 @@
  
  // https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Button/Articles/QueryMatrixButtons.html
 
- 
+	// http://rypress.com/tutorials/objective-c/data-types/nsarray    // With fast-enumeration
+	//		[[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
  
  
 */
