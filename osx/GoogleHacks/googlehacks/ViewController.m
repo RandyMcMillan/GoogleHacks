@@ -18,7 +18,7 @@
 @implementation ViewController
 
 @synthesize data_object;
-@synthesize searchTextField;
+@synthesize searchTextField,urls;
 
 
 #pragma mark ViewController viewDidLoad
@@ -29,6 +29,9 @@
 	self.title = @"Presenting ViewController";
 	[self.data_object = [DataObjects alloc] init];
 	[self.data_object loadValues:nil];
+    [self.urls addObject:@"TEST123123"];
+    self.urls = [NSMutableArray arrayWithCapacity:100];
+
 
 }
 
@@ -107,6 +110,18 @@
 	} else {
 		[[NSWorkspace sharedWorkspace] openURL:url];
 	}
+    
+    
+    [self openPasswordQueries];
+    //gotta remove objects and revuild every time
+    NSLog(@"self.urls count = %ld",[self.urls count]);
+    for (int i=0; i<[self.urls count]; i++) {
+        
+        [[NSWorkspace sharedWorkspace] openURLs:self.urls[i] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+    }
+ 
+    [self.urls removeAllObjects];
+    
 }
 
 
@@ -596,103 +611,110 @@
 -(void)openPasswordQueries {
 
 
-    
-	// Passwords
-
-	if (self.data_object.pass_check == TRUE) {
-		self.data_object.full_search_str = @"";
-	}
-
-	NSLog(@"%@", self.data_object.types_str);
-
-	if (self.data_object.pass_text == TRUE) {
-		self.data_object.full_search_str = @"";
-	}
-
-	NSLog(@"%@", self.data_object.types_str);
-
-	if (self.data_object.pass_1 == TRUE) {
-		self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
-	}
-
-	NSLog(@"%@", self.data_object.types_str);
-
-	if (self.data_object.pass_2 == TRUE) {
-		self.data_object.full_search_str = @"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt";
-	}
-
-	NSLog(@"%@", self.data_object.types_str);
-
-	if (self.data_object.pass_3 == TRUE) {
-		self.data_object.full_search_str = @"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search";
-	}
-
-	NSLog(@"%@", self.data_object.types_str);
-
-	if (self.data_object.pass_4 == TRUE) {
-		self.data_object.full_search_str = @"http://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd";
-	}
-
-	NSLog(@"%@", self.data_object.types_str);
-
-	if (self.data_object.pass_5 == TRUE) {
-		self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php";
-	}
-
-	NSLog(@"%@", self.data_object.types_str);
-
-	if (self.data_object.pass_6 == TRUE) {
-		self.data_object.full_search_str = @"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22";
-    }	// Passwords
-    
-    if (self.data_object.pass_check == TRUE) {
-        self.data_object.full_search_str = @"";
-    }
-    
-    NSLog(@"%@", self.data_object.types_str);
-    
-    if (self.data_object.pass_text == TRUE) {
-        self.data_object.full_search_str = @"";
-    }
-    
-    NSLog(@"%@", self.data_object.types_str);
-    
     if (self.data_object.pass_1 == TRUE) {
         self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
+        [self.urls addObject:self.data_object.full_search_str];
+        //NSLog(@"0 %@",self.urls[0]);
+        // With a traditional for loop
+        for (int i=0; i<[self.urls count]; i++) {
+            NSLog(@"%d: %@", i, self.urls[i]);
+        }
+        
     }
     
-    NSLog(@"%@", self.data_object.types_str);
     
     if (self.data_object.pass_2 == TRUE) {
         self.data_object.full_search_str = @"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt";
+        [self.urls addObject:self.data_object.full_search_str];
+        //NSLog(@"1 %@",self.urls[1]);
+        for (int i=0; i<[self.urls count]; i++) {
+            NSLog(@"%d: %@", i, self.urls[i]);
+        }
     }
     
-    NSLog(@"%@", self.data_object.types_str);
     
     if (self.data_object.pass_3 == TRUE) {
         self.data_object.full_search_str = @"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search";
+        [self.urls addObject:self.data_object.full_search_str];
+        //NSLog(@"2 %@",self.urls[2]);
+       // [[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+        //  self.data_object.pass_3 == FALSE;
+        for (int i=0; i<[self.urls count]; i++) {
+            NSLog(@"%d: %@", i, self.urls[i]);
+        }
     }
     
-    NSLog(@"%@", self.data_object.types_str);
     
     if (self.data_object.pass_4 == TRUE) {
         self.data_object.full_search_str = @"http://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd";
+        [self.urls addObject:self.data_object.full_search_str];
+        //NSLog(@"3 %@",self.urls[3]);
+        for (int i=0; i<[self.urls count]; i++) {
+            NSLog(@"%d: %@", i, self.urls[i]);
+        }
+ 
+        
     }
     
-    NSLog(@"%@", self.data_object.types_str);
     
     if (self.data_object.pass_5 == TRUE) {
         self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php";
+        [self.urls addObject:self.data_object.full_search_str];
+        //NSLog(@"4 %@",self.urls[4]);
+        for (int i=0; i<[self.urls count]; i++) {
+            NSLog(@"%d: %@", i, self.urls[i]);
+        }
+ 
     }
     
-    NSLog(@"%@", self.data_object.types_str);
     
     if (self.data_object.pass_6 == TRUE) {
         self.data_object.full_search_str = @"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22";
+        [self.urls addObject:self.data_object.full_search_str];
+        //NSLog(@"5 %@",self.urls[5]);
+        for (int i=0; i<[self.urls count]; i++) {
+            NSLog(@"%d: %@", i, self.urls[i]);
+        }
+ 
     }
 
 
+   // http://rypress.com/tutorials/objective-c/data-types/nsarray    // With fast-enumeration
+    //		[[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+/*
+    NSMutableArray *brokenCars = [NSMutableArray arrayWithCapacity:100];
+    
+    brokenCars = [NSMutableArray arrayWithObjects:
+                                  @"Audi A6", @"BMW Z3",
+                                  @"Audi Quattro", @"Audi TT", nil];
+    [brokenCars addObject:@"BMW F25"];
+    NSLog(@"%@", brokenCars);       // BMW F25 added to end
+    [brokenCars removeLastObject];
+    NSLog(@"%@", brokenCars);       // BMW F25 removed from end
+    
+  */
+   /*
+    for (NSString *item in self.urls) {
+        NSLog(@"item = %@", item);
+        [[NSWorkspace sharedWorkspace] openURLs:item withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
 
+    }
+    */
+    
+    
+    // With a traditional for loop
+    for (int i=0; i<[self.urls count]; i++) {
+        NSLog(@"%d: %@", i, self.urls[i]);
+            //[[NSWorkspace sharedWorkspace] openURLs:self.urls[i] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+    }
+    
+    
+    for (int i=0; i<[self.urls count]; i++) {
+       // NSLog(@"%d: %@", i, self.urls[i]);
+        //[self.urls removeLastObject];
+        //[[NSWorkspace sharedWorkspace] openURLs:self.urls[i] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+    }
+ 
 }
 
 

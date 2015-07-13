@@ -30,5 +30,6 @@
 - (NSString *)truncateString:(NSString *)string toCharacterCount:(NSUInteger)count;
 @property (nonatomic, readwrite) DataObjects	*data_object;
 @property (nonatomic, readwrite) NSTextField	*searchTextField;
+@property (nonatomic, readwrite) NSMutableArray *urls;
 
 @end
