@@ -573,6 +573,12 @@
 		// https://bdpuqvsqmphctrcs.onion.to/data/
 	}
 
+    if ([self.data_object.types_str isEqualToString:@".divx%7C"]) {
+        
+        self.data_object.types_str = [self truncateString:self.data_object.types_str toCharacterCount:5];
+        
+    }
+    
 	NSLog(@"assembleTypesString");
 	NSLog(@"self.data_object.types_str = %@", self.data_object.types_str);
 

@@ -12,9 +12,9 @@
 
 // Search String
 
-@property (nonatomic, retain) NSString	*search_str;
-@property (nonatomic, retain) NSString	*full_search_str;
-@property (nonatomic, retain) NSString	*types_str;
+@property (nonatomic, retain) NSMutableString	*search_str;
+@property (nonatomic, retain) NSMutableString	*full_search_str;
+@property (nonatomic, retain) NSMutableString	*types_str;
 
 // Audio Files
 @property (nonatomic, retain) NSArray	*audioArray;
@@ -44,7 +44,7 @@
 @property (nonatomic, readwrite) BOOL	*flv_check;
 
 // Passwords
-@property (nonatomic, retain) NSArray	*passWordArray;
+@property (nonatomic, retain) NSArray	*passWordTitleArray;
 @property (nonatomic, readwrite) BOOL	*pass_check;
 @property (nonatomic, readwrite) BOOL	*pass_text;
 @property (nonatomic, readwrite) BOOL	*pass_1;

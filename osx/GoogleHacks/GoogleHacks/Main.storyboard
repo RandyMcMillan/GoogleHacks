@@ -776,9 +776,9 @@
                                 </connections>
                             </matrix>
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yte-9D-hsw">
-                                <rect key="frame" x="254" y="60" width="48" height="98"/>
+                                <rect key="frame" x="254" y="60" width="65" height="98"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                <size key="cellSize" width="53" height="18"/>
+                                <size key="cellSize" width="65" height="18"/>
                                 <size key="intercellSpacing" width="4" height="2"/>
                                 <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="9aw-GB-YeJ">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>

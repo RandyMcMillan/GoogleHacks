@@ -53,6 +53,10 @@
 	// http://rypress.com/tutorials/objective-c/data-types/nsarray    // With fast-enumeration
 	//		[[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
  
+
+ //NSMustableString
+ https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableString_Class/index.html#//apple_ref/occ/cl/NSMutableString
+ 
  
 */
 

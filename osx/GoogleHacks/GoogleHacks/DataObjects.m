@@ -46,7 +46,7 @@
 @synthesize flv_check;
 
 // Passwords
-@synthesize passWordArray;
+@synthesize passWordTitleArray;
 @synthesize pass_check;
 @synthesize pass_text;
 @synthesize pass_1;
@@ -89,11 +89,10 @@
 
 - (id)loadValues:(NSObject *)object
 {
-	// self.avi_check = FALSE;
 	// Search String
-	self.search_str			= BASE_URL;
-	self.full_search_str	= BASE_URL;
-	self.types_str			= @"";
+    [self.search_str setString:@""];
+    [self.full_search_str setString:@""];
+    [self.types_str setString:@""];
 
 	// Audio Files
 	self.audioArray = @[@".mp3",
@@ -144,7 +143,7 @@
 	self.flv_check	= FALSE;
 
 	// Passwords
-	self.passWordArray = @[@"pass 1",
+	self.passWordTitleArray = @[@"pass 1",
 	@"pass 2",
 	@"pass 3",
 	@"pass 4",
@@ -156,11 +155,11 @@
 	self.pass_text	= FALSE;
 
 	self.pass_1		= FALSE;
-	self.pass_5		= FALSE;
 	self.pass_2		= FALSE;
-	self.pass_6		= FALSE;
 	self.pass_3		= FALSE;
 	self.pass_4		= FALSE;
+	self.pass_5		= FALSE;
+	self.pass_6		= FALSE;
 	self.pass_1_str = [NSURL URLWithString:PASS_1_STR];
 	self.pass_2_str = [NSURL URLWithString:PASS_2_STR];
 	self.pass_3_str = [NSURL URLWithString:PASS_3_STR];
