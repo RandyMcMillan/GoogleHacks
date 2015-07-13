@@ -37,38 +37,31 @@
 	[super setRepresentedObject:representedObject];
 }
 
+#pragma mark ViewController figureOutTheLogicHere
 - (NSString *)returnSearchString:(NSString *)searchString {
 
+   	//NSURL *url = [self modifyURL:nil];
+    //NSLog(@"url = %@", url);
+    //NSString *scheme = [url scheme];
     
-#pragma mark ViewController figureOutTheLogicHere
-
-   	NSURL *url = [self modifyURL:nil];
-    NSLog(@"url = %@", url);
-    NSString *scheme = [url scheme];
-    
-    if ([scheme isEqualToString:@"file"]) {} else {
+    //if ([scheme isEqualToString:@"file"]) {} else {
         [self assembleTypesString];
-        NSLog(@"before else... = %@", self.data_object.types_str);
+        //NSLog(@"before else... = %@", self.data_object.types_str);
         NSLog(@"%@", self.data_object.types_str);
         
         if ([self.data_object.types_str isEqualToString:@""]) {
-            [self openURL:url inBackground:YES];
+            //[self openURL:url inBackground:YES];
         } else {
-            NSLog(@"after else... = %@", self.data_object.types_str);
-            [self openURL:url inBackground:YES];
+            //  NSLog(@"after else... = %@", self.data_object.types_str);
+            //[self openURL:url inBackground:YES];
         }
-    }
+//    }
  
-   	// self.data_object.search_str = [self returnSearchField];
-    //modString = [BASE_URL stringByAppendingString:@"q="];
-    //NSLog(@"%@", modString);
-    //modString = [modString stringByAppendingString:[self returnSearchField]];
-    //NSLog(@"%@", modString);
-    
-    // modString = [modString stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    // NSLog(@"%@",modString);
-    
-    
+   	 self.data_object.search_str = [self returnSearchField];
+    searchString = [BASE_URL stringByAppendingString:@"q="];
+    NSLog(@"%@", searchString);
+    searchString = [searchString stringByAppendingString:[self returnSearchField]];
+    NSLog(@"%@", searchString);
     
     return searchString;
 }
@@ -83,7 +76,8 @@
 	NSString *returnSearchField = nil;
 
 	returnSearchField = [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-	return returnSearchField;
+    NSLog(@"returnSearchField = %@",returnSearchField);
+    return returnSearchField;
 }
 
 - (NSURL *)modifyURL:(NSString *)modString
@@ -95,7 +89,7 @@
 
 - (IBAction)openURLFromButton:(id)sender
 {
-	[self openURL:[NSURL URLWithString:self.data_object.full_search_str] inBackground:YES];
+    [self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:YES];
 }
 
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background
