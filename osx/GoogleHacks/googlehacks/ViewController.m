@@ -574,12 +574,63 @@
 
 	NSLog(@"%@", self.data_object.types_str);
 
+	// Passwords
+
+	if (self.data_object.pass_check == TRUE) {
+		self.data_object.full_search_str = @"";
+	}
+
+	NSLog(@"%@", self.data_object.types_str);
+
+	if (self.data_object.pass_text == TRUE) {
+		self.data_object.full_search_str = @"";
+	}
+
+	NSLog(@"%@", self.data_object.types_str);
+
+	if (self.data_object.pass_1 == TRUE) {
+		self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
+	}
+
+	NSLog(@"%@", self.data_object.types_str);
+
+	if (self.data_object.pass_2 == TRUE) {
+		self.data_object.full_search_str = @"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt";
+	}
+
+	NSLog(@"%@", self.data_object.types_str);
+
+	if (self.data_object.pass_3 == TRUE) {
+		self.data_object.full_search_str = @"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search";
+	}
+
+	NSLog(@"%@", self.data_object.types_str);
+
+	if (self.data_object.pass_4 == TRUE) {
+		self.data_object.full_search_str = @"http://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd";
+	}
+
+	NSLog(@"%@", self.data_object.types_str);
+
+	if (self.data_object.pass_5 == TRUE) {
+		self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php";
+	}
+
+	NSLog(@"%@", self.data_object.types_str);
+
+	if (self.data_object.pass_6 == TRUE) {
+		self.data_object.full_search_str = @"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22";
+	}
+
+	NSLog(@"%@", self.data_object.types_str);
+
 	if ([self.data_object.types_str length] <= 7) {
 		NSLog(@"less than = 7");
 		// http://borkware.com/quickies/one?topic=NSString
 
 		self.data_object.types_str = [self truncateString:self.data_object.types_str toCharacterCount:4];
 
+		// https://bdpuqvsqmphctrcs.onion.to/data/
 	}
 
 	NSLog(@"assembleTypesString");
@@ -589,57 +640,6 @@
 	// NSArray * apps = [ws launchedApplications];
 	// NSLog (@"%@", apps);
 }
-
-
-- (void)openPasswords {
-
-
-    if (self.data_object.pass_1 == TRUE) {
-        self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
-        //  [self openURL:[NSURL URLWithString:self.data_object.full_search_str] inBackground:YES];
-        //self.data_object.pass_1 == FALSE;
-        
-    }
-    
-    
-    if (self.data_object.pass_2 == TRUE) {
-        self.data_object.full_search_str = @"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt";
-        //    [self openURL:[NSURL URLWithString:self.data_object.full_search_str] inBackground:YES];
-        //  self.data_object.pass_2 == FALSE;
-        
-    }
-    
-    
-    if (self.data_object.pass_3 == TRUE) {
-        self.data_object.full_search_str = @"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search";
-        //            [self openURL:[NSURL URLWithString:self.data_object.full_search_str] inBackground:YES];
-        //  self.data_object.pass_3 == FALSE;
-    }
-    
-    
-    if (self.data_object.pass_4 == TRUE) {
-        self.data_object.full_search_str = @"http://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd";
-        //        [self openURL:[NSURL URLWithString:self.data_object.full_search_str] inBackground:YES];
-        //self.data_object.pass_4 == FALSE;
-        
-    }
-    
-    
-    if (self.data_object.pass_5 == TRUE) {
-        self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php";
-        //            [self openURL:[NSURL URLWithString:self.data_object.full_search_str] inBackground:YES];
-        //  self.data_object.pass_5 == FALSE;
-    }
-    
-    
-    if (self.data_object.pass_6 == TRUE) {
-        self.data_object.full_search_str = @"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22";
-        //                [self openURL:[NSURL URLWithString:self.data_object.full_search_str] inBackground:YES];
-        //      self.data_object.pass_6 == FALSE;
-    }
-
-}
-
 
 - (NSString *)	truncateString	:(NSString *)string
 				toCharacterCount:(NSUInteger)count
