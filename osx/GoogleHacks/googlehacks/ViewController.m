@@ -18,7 +18,7 @@
 @implementation ViewController
 
 @synthesize searchTextField, urls, ws;
-@synthesize returnSearchString;
+@synthesize ReturnSearchString;
 
 #pragma mark ViewController viewDidLoad
 
@@ -28,7 +28,7 @@
 
 	[super viewDidLoad];
 	self.title = @"Presenting ViewController";
-	self.returnSearchString = [[ReturnSearchString alloc]init];
+	self.ReturnSearchString = [[ReturnSearchString alloc]init];
 	self.urls	= [NSMutableArray arrayWithCapacity:100];
 	self.ws		= [NSWorkspace sharedWorkspace];
 }
@@ -54,9 +54,11 @@
 	// [self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:YES];
 }
 
-- (void)openURL:(NSURL *)url inBackground:(BOOL)background
+- (void)openURL:(NSString *)url inBackground:(BOOL)background
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
+    [self.ReturnSearchString returnSearchString:nil];
+    
 }
 
 #pragma mark ViewController audioExtention
@@ -67,7 +69,7 @@
 	NSButtonCell *selCell = [sender selectedCell];
 
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell title is %ld", (long)[selCell title]);
+	NSLog(@"Selected cell title is %@", (NSMutableString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([[selCell title] isEqualToString:@"mp3"]) {
@@ -94,7 +96,7 @@
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	NSButtonCell *selCell = [sender selectedCell];
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell title is %ld", (long)[selCell title]);
+	NSLog(@"Selected cell title is %@", (NSMutableString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([[selCell title] isEqualToString:@"mpg"]) {
@@ -131,7 +133,7 @@
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	NSButtonCell *selCell = [sender selectedCell];
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell title is %ld", (long)[selCell title]);
+	NSLog(@"Selected cell title is %@", (NSMutableString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([[selCell title] isEqualToString:@"pdf"]) {

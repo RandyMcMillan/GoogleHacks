@@ -17,7 +17,7 @@
 - (IBAction)enterFromSearchField:(id)sender;
 // return URL recieve searchString
 
-- (void)openURL:(NSURL *)url inBackground:(BOOL)background;
+- (void)openURL:(NSString *)url inBackground:(BOOL)background;
 - (IBAction)openURLFromButton:(id)sender;
 - (IBAction)audioExtension:(id)sender;
 - (IBAction)videoExtension:(id)sender;
@@ -29,6 +29,6 @@
 @property (nonatomic, readwrite) NSMutableArray *urls;
 @property (nonatomic, strong) NSWorkspace		*ws;
 
-@property (nonatomic, retain) ReturnSearchString *returnSearchString;
+@property (nonatomic, retain) ReturnSearchString *ReturnSearchString;
 
 @end

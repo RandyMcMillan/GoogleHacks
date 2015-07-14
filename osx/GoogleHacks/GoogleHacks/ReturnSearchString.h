@@ -13,6 +13,7 @@
 
 - (void)assembleTypesString;
 
+- (NSMutableString *)returnSearchString:(NSMutableString *)mutableString;
 - (NSMutableArray *)returnPasswordLinkArray:(NSMutableArray *)mutableArray;
 - (NSString *)truncateString:(NSString *)string toCharacterCount:(NSUInteger)count;
 

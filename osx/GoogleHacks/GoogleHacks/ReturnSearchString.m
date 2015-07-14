@@ -17,6 +17,14 @@
 	[self.data_object loadValues:nil];
 }
 
+- (NSMutableString *)returnSearchString:(NSMutableString *)mutableString{
+
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
+    return mutableString;
+ 
+}
+
 - (NSMutableArray *)returnPasswordLinkArray:(NSMutableArray *)mutableArray
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
