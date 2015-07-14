@@ -54,12 +54,21 @@
 @property (nonatomic, readwrite) NSUInteger			*pass_5;
 @property (nonatomic, readwrite) NSUInteger			*pass_6;
 @property (nonatomic, retain) NSMutableArray	*passWordLinkArray;
+<<<<<<< HEAD
 @property (nonatomic, readwrite) NSString		*pass_1_str;
 @property (nonatomic, readwrite) NSString		*pass_2_str;
 @property (nonatomic, readwrite) NSString		*pass_3_str;
 @property (nonatomic, readwrite) NSString		*pass_4_str;
 @property (nonatomic, readwrite) NSString		*pass_5_str;
 @property (nonatomic, readwrite) NSString		*pass_6_str;
+=======
+@property (nonatomic, readwrite) NSURL	*pass_1_str;
+@property (nonatomic, readwrite) NSURL	*pass_2_str;
+@property (nonatomic, readwrite) NSURL	*pass_3_str;
+@property (nonatomic, readwrite) NSURL	*pass_4_str;
+@property (nonatomic, readwrite) NSURL	*pass_5_str;
+@property (nonatomic, readwrite) NSURL	*pass_6_str;
+>>>>>>> parent of 92e63e1... Begin Beter Data Structure MVC...
 
 @property (nonatomic, readwrite) NSUInteger	*method1_check;
 @property (nonatomic, readwrite) NSUInteger	*method2_check;

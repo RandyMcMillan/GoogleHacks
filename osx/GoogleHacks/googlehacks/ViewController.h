@@ -7,28 +7,43 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "ReturnSearchString.h"
+#import "DataObjects.h"
 
 @interface ViewController : NSViewController {
 	IBOutlet NSTextField	*searchTextField;
 	IBOutlet NSButton		*show;
 }
 
+<<<<<<< HEAD
 
 - (void)openURL:(NSString *)url inBackground:(BOOL)background;
 - (IBAction)enterFromButton:(id)sender;
 - (IBAction)enterFromSearchField:(id)sender;
+=======
+- (IBAction)enterFromSearchField:(id)sender;
+- (NSString *)returnSearchString:(NSString *)searchString;
+- (NSURL *)modifyURL:(NSString *)modString;
+- (void)openURL:(NSURL *)url inBackground:(BOOL)background;
+- (IBAction)openURLFromButton:(id)sender;
+>>>>>>> parent of 92e63e1... Begin Beter Data Structure MVC...
 - (IBAction)audioExtension:(id)sender;
 - (IBAction)videoExtension:(id)sender;
 - (IBAction)documentExtension:(id)sender;
 - (IBAction)passwordQuery:(id)sender;
 - (IBAction)fileExtension:(id)sender;
 - (IBAction)linkQuery:(id)sender;
+- (void)assembleTypesString;
+- (void)openPasswordQueries;
+- (NSString *)truncateString:(NSString *)string toCharacterCount:(NSUInteger)count;
+@property (nonatomic, readwrite) DataObjects	*data_object;
 @property (nonatomic, readwrite) NSTextField	*searchTextField;
 @property (nonatomic, readwrite) NSMutableString *url;
 @property (nonatomic, readwrite) NSMutableArray *urls;
 @property (nonatomic, strong) NSWorkspace		*ws;
+<<<<<<< HEAD
 @property (nonatomic, readwrite) NSMutableString *searchString;
 @property (nonatomic, retain) ReturnSearchString *ReturnSearchString;
+=======
+>>>>>>> parent of 92e63e1... Begin Beter Data Structure MVC...
 
 @end
