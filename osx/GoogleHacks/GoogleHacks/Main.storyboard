@@ -1028,38 +1028,53 @@
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zg7-WM-Ie0">
                                 <rect key="frame" x="279" y="262" width="61" height="18"/>
-                                <buttonCell key="cell" type="check" title="none" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="zfL-Ne-7YC">
+                                <buttonCell key="cell" type="check" title="none" bezelStyle="regularSquare" imagePosition="left" inset="2" id="zfL-Ne-7YC">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="method1:" target="XfG-lQ-9wD" id="978-vr-qPO"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C09-ti-cHC">
                                 <rect key="frame" x="279" y="242" width="61" height="18"/>
-                                <buttonCell key="cell" type="check" title="link" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="f3h-eI-evF">
+                                <buttonCell key="cell" type="check" title="link" bezelStyle="regularSquare" imagePosition="left" inset="2" id="f3h-eI-evF">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="method1:" target="XfG-lQ-9wD" id="YAs-Ii-sGf"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vx1-pt-s5m">
                                 <rect key="frame" x="281" y="222" width="65" height="18"/>
-                                <buttonCell key="cell" type="check" title="add url" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="qFZ-B4-7zm">
+                                <buttonCell key="cell" type="check" title="add url" bezelStyle="regularSquare" imagePosition="left" inset="2" id="qFZ-B4-7zm">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="method1:" target="XfG-lQ-9wD" id="rHe-wY-vfM"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ER5-Gf-iCG">
                                 <rect key="frame" x="277" y="200" width="65" height="18"/>
-                                <buttonCell key="cell" type="check" title="related" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="GId-SI-Pks">
+                                <buttonCell key="cell" type="check" title="related" bezelStyle="regularSquare" imagePosition="left" inset="2" id="GId-SI-Pks">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="method1:" target="XfG-lQ-9wD" id="aAC-Cr-6ox"/>
+                                </connections>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-Ba-k7K">
                                 <rect key="frame" x="277" y="171" width="61" height="18"/>
-                                <buttonCell key="cell" type="check" title="tools" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="MKg-Cl-YzW">
+                                <buttonCell key="cell" type="check" title="tools" bezelStyle="regularSquare" imagePosition="left" inset="2" id="MKg-Cl-YzW">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="method1:" target="XfG-lQ-9wD" id="PB8-0l-Xba"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>

@@ -24,6 +24,9 @@
 
 - (void)viewDidLoad
 {
+    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    
 	[super viewDidLoad];
 	self.title = @"Presenting ViewController";
 	[self.data_object = [DataObjects alloc] init];
@@ -35,12 +38,16 @@
 
 - (void)setRepresentedObject:(id)representedObject
 {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    
 	[super setRepresentedObject:representedObject];
 }
 
 #pragma mark ViewController figureOutTheLogicHere
 - (NSString *)returnSearchString:(NSString *)searchString
 {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	[self assembleTypesString];
 	NSLog(@"%@", self.data_object.types_str);
 
@@ -57,12 +64,15 @@
 
 - (IBAction)enterFromSearchField:(id)sender
 {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	NSLog(@"searchTextField = %@", [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
 	[self openURLFromButton:(id)sender];
 }
 
 - (NSString *)returnSearchField
-{
+{     NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	NSString *returnSearchField = nil;
 
 	returnSearchField = [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
@@ -73,6 +83,8 @@
 
 - (NSURL *)modifyURL:(NSString *)modString
 {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	NSLog(@"%@", modString);// null
 	NSURL *modifiedURL = [NSURL URLWithString:modString];
 
@@ -83,11 +95,15 @@
 
 - (IBAction)openURLFromButton:(id)sender
 {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	[self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:YES];
 }
 
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background
 {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	if (background) {
 		NSArray *urls = [NSArray arrayWithObject:url];
 		[self.ws openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
@@ -113,6 +129,8 @@
 
 - (IBAction)audioExtension:(id)sender	// sender is NSMatrix object
 {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	NSButtonCell *selCell = [sender selectedCell];
 
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
@@ -154,6 +172,8 @@
 
 - (IBAction)videoExtension:(id)sender
 {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	NSButtonCell *selCell = [sender selectedCell];
 
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
@@ -213,6 +233,8 @@
 
 - (IBAction)documentExtension:(id)sender
 {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	NSButtonCell *selCell = [sender selectedCell];
 
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
@@ -317,6 +339,9 @@
 
 - (IBAction)passwordQuery:(id)sender
 {
+    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	NSButtonCell *selCell = [sender selectedCell];
 
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
@@ -385,10 +410,12 @@
 
 - (IBAction)fileExtension:(id)sender
 {
-	NSButtonCell *selCell = [sender selectedCell];
-
-	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell title is %@", (id)[selCell title]);
+    
+    NSButtonCell *selCell = [sender selectedCell];
+    
+    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([selCell tag] == 0) {
 		// file ext
@@ -435,10 +462,12 @@
 
 - (IBAction)linkQuery:(id)sender
 {
-	NSButtonCell *selCell = [sender selectedCell];
-
-	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell title is %@", (id)[selCell title]);
+    
+    NSButtonCell *selCell = [sender selectedCell];
+    
+    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else {// NSLog(@"Error");
 	}
@@ -448,6 +477,9 @@
 
 - (void)assembleTypesString
 {
+    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	self.data_object.types_str = (NSMutableString *)@"";
 	// self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@"%7C"];
 
@@ -597,6 +629,9 @@
 - (NSString *)	truncateString	:(NSString *)string
 				toCharacterCount:(NSUInteger)count
 {
+    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	NSRange range = {0, MIN(string.length, count)};
 
 	range = [string rangeOfComposedCharacterSequencesForRange:range];
@@ -611,6 +646,10 @@
 
 - (void)openPasswordQueries
 {
+    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    
+
 	if (self.data_object.pass_1 == (signed char *)TRUE) {
 		self.data_object.full_search_str = (NSMutableString *)@"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
 		[self.urls addObject:self.data_object.full_search_str];
@@ -681,8 +720,23 @@
 	for (int i = 0; i < [self.urls count]; i++) {}
 }
 
-- (IBAction)method1:(id)sender {}
+- (IBAction)method1:(id)sender {
 
-- (IBAction)method2:(id)sender {}
+    NSButtonCell *selCell = [sender selectedCell];
+    
+    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+
+}
+
+- (IBAction)method2:(id)sender {
+
+    NSButtonCell *selCell = [sender selectedCell];
+    
+    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+}
 
 @end

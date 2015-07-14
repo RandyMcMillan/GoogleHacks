@@ -58,7 +58,7 @@
  *   //NSMustableString
  *   https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSMutableString_Class/index.html#//apple_ref/occ/cl/NSMutableString
  *
- *
+ * NSLog(@"%@", NSStringFromSelector(_cmd))
  */
 
 #endif
