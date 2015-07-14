@@ -32,7 +32,7 @@
 	[self.data_object = [DataObjects alloc] init];
 	[self.data_object loadValues:nil];
 	self.urls = [NSMutableArray arrayWithCapacity:100];
-	[self openPasswordQueries];
+	//[self openPasswordQueries];
 	self.ws = [NSWorkspace sharedWorkspace];
 }
 
@@ -111,11 +111,11 @@
 		[[NSWorkspace sharedWorkspace] openURL:url];
 	}
 
-	[self openPasswordQueries];
+	//[self openPasswordQueries];
 	// gotta remove objects and revuild every time
 	NSLog(@"self.urls count = %ld", [self.urls count]);
 
-	[[NSWorkspace sharedWorkspace] openURLs:[self.urls arrayByAddingObjectsFromArray:self.data_object.passWordLinkArray] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+	//[[NSWorkspace sharedWorkspace] openURLs:[self.urls arrayByAddingObjectsFromArray:self.data_object.passWordLinkArray] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
 
 	// for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
 	//   [[NSWorkspace sharedWorkspace] openURLs:[NSURL URLWithString:self.data_object.passWordLinkArray[i]] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
@@ -622,7 +622,6 @@
 
 	// [self.data_object.types_str deleteCharactersInRange:NSMakeRange(5, 6)];
 
-	NSLog(@"assembleTypesString");
 	NSLog(@"self.data_object.types_str = %@", self.data_object.types_str);
 }
 

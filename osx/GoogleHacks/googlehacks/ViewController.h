@@ -13,6 +13,7 @@
 	IBOutlet NSTextField	*searchTextField;
 	IBOutlet NSTextField	*urlLinkTextField;
 	IBOutlet NSButton		*show;
+	IBOutlet NSButton		*reset;
     //CheckBoxes
 	IBOutlet NSButton		*mp3;
 	IBOutlet NSButton		*wma;
@@ -44,7 +45,6 @@
 	IBOutlet NSButton		*addUrl;
 	IBOutlet NSButton		*related;
 	IBOutlet NSButton		*tools;
-	IBOutlet NSButton		*reset;
 }
 
 - (IBAction)enterFromSearchField:(id)sender;
