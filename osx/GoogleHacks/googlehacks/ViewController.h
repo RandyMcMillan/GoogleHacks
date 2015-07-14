@@ -11,6 +11,7 @@
 
 @interface ViewController : NSViewController {
 	IBOutlet NSTextField	*searchTextField;
+	IBOutlet NSTextField	*urlLinkTextField;
 	IBOutlet NSButton		*show;
     //CheckBoxes
 	IBOutlet NSButton		*mp3;

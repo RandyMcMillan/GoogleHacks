@@ -743,8 +743,53 @@
 
 - (IBAction)resetButtons:(id)sender {
 
+       NSLog(@"%@", NSStringFromSelector(_cmd));
     
-
+    NSButtonCell *selCell = [sender selectedCell];
+    
+    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+/*
+    for (Button *item in buttons) {
+        if (item == sender) {
+            item.selected = !item.selected;
+        } else {
+            item.button.selected = NO;
+        }
+    }
+ */
+    [mp3 setState:0];
+    [wma setState:0];
+    [ogg setState:0];
+    [mpg setState:0];
+    [avi setState:0];
+    [wmv setState:0];
+    [divx setState:0];
+    [flv setState:0];
+    [pdf setState:0];
+    [txt setState:0];
+    [lit setState:0];
+    [doc setState:0];
+    [rtf setState:0];
+    [pps setState:0];
+    [chm setState:0];
+    [odt setState:0];
+    [pass1 setState:0];
+    [pass2 setState:0];
+    [pass3 setState:0];
+    [pass4 setState:0];
+    [pass5 setState:0];
+    [pass6 setState:0];
+    [rar setState:0];
+    [zip setState:0];
+    [exe setState:0];
+    [ddl setState:0];
+    [link setState:0];
+    [addUrl setState:0];
+    [related setState:0];
+    [tools setState:0];
+    
 }
 
 @end
