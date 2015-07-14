@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		483E64FB1B4F575A00E4EA6C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 483E64FA1B4F575A00E4EA6C /* index.html */; };
+		487FE2AE1B548D3C0009DEA4 /* ReturnSearchString.m in Sources */ = {isa = PBXBuildFile; fileRef = 487FE2AD1B548D3C0009DEA4 /* ReturnSearchString.m */; };
 		489552541B4F148700CA90B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552531B4F148700CA90B6 /* AppDelegate.m */; };
 		489552561B4F148700CA90B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552551B4F148700CA90B6 /* main.m */; };
 		489552591B4F148700CA90B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552581B4F148700CA90B6 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* Begin PBXFileReference section */
 		483E64FA1B4F575A00E4EA6C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		4879F62E1B532B2D009A5585 /* NOTES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NOTES.h; sourceTree = "<group>"; };
+		487FE2AC1B548D3C0009DEA4 /* ReturnSearchString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnSearchString.h; sourceTree = "<group>"; };
+		487FE2AD1B548D3C0009DEA4 /* ReturnSearchString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnSearchString.m; sourceTree = "<group>"; };
 		4895524D1B4F148700CA90B6 /* GoogleHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489552511B4F148700CA90B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		489552521B4F148700CA90B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +82,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		487FE2AF1B548D5C0009DEA4 /* SecondWindow */ = {
+			isa = PBXGroup;
+			children = (
+				489552921B4F3C6200CA90B6 /* MyCustomAnimator.h */,
+				489552931B4F3C6200CA90B6 /* MyCustomAnimator.m */,
+				4895528D1B4F3C5600CA90B6 /* MyViewController.h */,
+				4895528E1B4F3C5600CA90B6 /* MyViewController.m */,
+				489552951B4F3CDA00CA90B6 /* MyView.h */,
+				489552961B4F3CDA00CA90B6 /* MyView.m */,
+			);
+			name = SecondWindow;
+			sourceTree = "<group>";
+		};
 		489552441B4F148700CA90B6 = {
 			isa = PBXGroup;
 			children = (
@@ -100,21 +116,18 @@
 		4895524F1B4F148700CA90B6 /* GoogleHacks */ = {
 			isa = PBXGroup;
 			children = (
-				4879F62E1B532B2D009A5585 /* NOTES.h */,
 				483E64FA1B4F575A00E4EA6C /* index.html */,
-				489552921B4F3C6200CA90B6 /* MyCustomAnimator.h */,
-				489552931B4F3C6200CA90B6 /* MyCustomAnimator.m */,
-				4895528D1B4F3C5600CA90B6 /* MyViewController.h */,
-				4895528E1B4F3C5600CA90B6 /* MyViewController.m */,
-				489552951B4F3CDA00CA90B6 /* MyView.h */,
-				489552961B4F3CDA00CA90B6 /* MyView.m */,
+				487FE2AF1B548D5C0009DEA4 /* SecondWindow */,
 				489552521B4F148700CA90B6 /* AppDelegate.h */,
 				489552531B4F148700CA90B6 /* AppDelegate.m */,
-				489552571B4F148700CA90B6 /* ViewController.h */,
-				489552581B4F148700CA90B6 /* ViewController.m */,
 				48CC88F91B508168004C4D90 /* Constants.h */,
 				489552761B4F153800CA90B6 /* DataObjects.h */,
 				489552771B4F153800CA90B6 /* DataObjects.m */,
+				489552571B4F148700CA90B6 /* ViewController.h */,
+				489552581B4F148700CA90B6 /* ViewController.m */,
+				487FE2AC1B548D3C0009DEA4 /* ReturnSearchString.h */,
+				487FE2AD1B548D3C0009DEA4 /* ReturnSearchString.m */,
+				4879F62E1B532B2D009A5585 /* NOTES.h */,
 				4895525D1B4F148700CA90B6 /* Images.xcassets */,
 				489552981B4F3F9200CA90B6 /* Main.storyboard */,
 				4895525A1B4F148700CA90B6 /* GoogleHacks.xcdatamodeld */,
@@ -206,7 +219,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 489552481B4F148700CA90B6 /* Build configuration list for PBXProject "googlehacks" */;
+			buildConfigurationList = 489552481B4F148700CA90B6 /* Build configuration list for PBXProject "GoogleHacks" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -257,6 +270,7 @@
 				489552971B4F3CDA00CA90B6 /* MyView.m in Sources */,
 				4895525C1B4F148700CA90B6 /* GoogleHacks.xcdatamodeld in Sources */,
 				489552781B4F153800CA90B6 /* DataObjects.m in Sources */,
+				487FE2AE1B548D3C0009DEA4 /* ReturnSearchString.m in Sources */,
 				489552941B4F3C6200CA90B6 /* MyCustomAnimator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,7 +442,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		489552481B4F148700CA90B6 /* Build configuration list for PBXProject "googlehacks" */ = {
+		489552481B4F148700CA90B6 /* Build configuration list for PBXProject "GoogleHacks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4895526E1B4F148800CA90B6 /* Debug */,

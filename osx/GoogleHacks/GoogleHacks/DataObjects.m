@@ -89,7 +89,9 @@
 
 - (id)loadValues:(NSObject *)object
 {
-	// Search String
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
+    // Search String
 	[self.search_str setString:@""];
 	[self.full_search_str setString:@""];
 	[self.types_str setString:@""];
@@ -160,12 +162,12 @@
 	self.pass_4		= FALSE;
 	self.pass_5		= FALSE;
 	self.pass_6		= FALSE;
-	self.pass_1_str = [NSURL URLWithString:PASS_1_STR];
-	self.pass_2_str = [NSURL URLWithString:PASS_2_STR];
-	self.pass_3_str = [NSURL URLWithString:PASS_3_STR];
-	self.pass_4_str = [NSURL URLWithString:PASS_4_STR];
-	self.pass_5_str = [NSURL URLWithString:PASS_5_STR];
-	self.pass_6_str = [NSURL URLWithString:PASS_6_STR];
+	self.pass_1_str = PASS_1_STR;
+	self.pass_2_str = PASS_2_STR;
+	self.pass_3_str = PASS_3_STR;
+	self.pass_4_str = PASS_4_STR;
+	self.pass_4_str = PASS_5_STR;
+	self.pass_4_str = PASS_6_STR;
 
 	self.passWordLinkArray = [NSMutableArray arrayWithObjects:
 		self.pass_1_str,
@@ -176,15 +178,6 @@
 		self.pass_6_str,
 		nil];
 
-	/*
-	 *   self.passWordLinkArray = @[self.pass_1_str,
-	 *   self.pass_2_str,
-	 *   self.pass_3_str,
-	 *   self.pass_4_str,
-	 *   self.pass_5_str,
-	 *   self.pass_6_str
-	 *   ];
-	 */
 	// Methods
 	self.method1_check	= FALSE;
 	self.method2_check	= FALSE;
@@ -221,6 +214,8 @@
 
 + (void)initialize
 {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	NSLog(@"DataObjects initialize");
 	// [self init];
 }
