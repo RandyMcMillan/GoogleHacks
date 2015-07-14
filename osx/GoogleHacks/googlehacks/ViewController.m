@@ -134,7 +134,7 @@
 	NSButtonCell *selCell = [sender selectedCell];
 
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell title is %ld", (long)[selCell title]);
+    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([[selCell title] isEqualToString:@"mp3"]) {
@@ -177,7 +177,7 @@
 	NSButtonCell *selCell = [sender selectedCell];
 
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell title is %ld", (long)[selCell title]);
+    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([[selCell title] isEqualToString:@"mpg"]) {
@@ -238,7 +238,7 @@
 	NSButtonCell *selCell = [sender selectedCell];
 
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell title is %ld", (long)[selCell title]);
+    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([[selCell title] isEqualToString:@"pdf"]) {
@@ -345,7 +345,7 @@
 	NSButtonCell *selCell = [sender selectedCell];
 
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell title is %ld", (long)[selCell title]);
+    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([[selCell title] isEqualToString:@"pass 1"]) {
