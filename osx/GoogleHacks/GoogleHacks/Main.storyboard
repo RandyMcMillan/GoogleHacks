@@ -852,7 +852,7 @@
                                 </connections>
                             </button>
                             <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I9u-cD-BSV">
-                                <rect key="frame" x="20" y="200" width="50" height="18"/>
+                                <rect key="frame" x="21" y="190" width="50" height="18"/>
                                 <buttonCell key="cell" type="check" title="mpg" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="b7V-h5-LJ7">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -862,7 +862,7 @@
                                 </connections>
                             </button>
                             <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-n9-xA5">
-                                <rect key="frame" x="21" y="171" width="40" height="18"/>
+                                <rect key="frame" x="21" y="166" width="40" height="18"/>
                                 <buttonCell key="cell" type="check" title="avi" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="QIK-Uk-DON">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -882,7 +882,7 @@
                                 </connections>
                             </button>
                             <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Bd-CE-a6f">
-                                <rect key="frame" x="22" y="116" width="48" height="18"/>
+                                <rect key="frame" x="22" y="114" width="48" height="18"/>
                                 <buttonCell key="cell" type="check" title="divx" bezelStyle="regularSquare" imagePosition="left" tag="1" inset="2" id="vu5-SL-How">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>

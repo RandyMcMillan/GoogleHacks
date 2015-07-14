@@ -18,7 +18,7 @@
 @implementation ViewController
 
 @synthesize searchTextField, url, urls, ws;
-@synthesize searchString,ReturnSearchString;
+@synthesize searchString, ReturnSearchString;
 
 #pragma mark ViewController viewDidLoad
 
@@ -45,8 +45,7 @@
 - (IBAction)enterFromSearchField:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-    [self enterFromButton:(id)sender];
-
+	[self enterFromButton:(id)sender];
 }
 
 - (IBAction)enterFromButton:(id)sender
@@ -58,9 +57,11 @@
 - (void)openURL:(NSMutableString *)mutableString inBackground:(BOOL)background
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-    mutableString = [self.ReturnSearchString returnSearchString:mutableString];
-    NSLog(@"url = %@",mutableString);
+
     
+	
+    mutableString = [self.ReturnSearchString returnSearchString:mutableString];
+	NSLog(@"url = %@", mutableString);
 }
 
 #pragma mark ViewController audioExtention
@@ -74,22 +75,34 @@
 	NSLog(@"Selected cell title is %@", (NSMutableString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
-	if ([[selCell title] isEqualToString:@"mp3"]) {
-		if ([selCell state] == 0) {} else {}
+	if ([[selCell title] isEqualToString:@"mpg"]) {
+		if ([selCell state] == 0) {
+			self.ReturnSearchString.data_object.mp3_check = 0;
+		} else {
+			self.ReturnSearchString.data_object.mp3_check = 1;
+		}
+	}
+
+	if ([[selCell title] isEqualToString:@"mpg"]) {
+		if ([selCell state] == 0) {
+			self.ReturnSearchString.data_object.mp3_check = 0;
+		} else {
+			self.ReturnSearchString.data_object.mp3_check = (int *)1;
+		}
 	}
 
 	if ([[selCell title] isEqualToString:@"wma"]) {
-		if ([selCell state] == 0) {} else {}
+		if ([selCell state] == 0) {
+			self.ReturnSearchString.data_object.wma_check = 0;
+		} else {
+			self.ReturnSearchString.data_object.wma_check = (int *)1;
+		}
 	}
+    [self.ReturnSearchString assembleTypesString];
 
-	if ([[selCell title] isEqualToString:@"ogg"]) {
-		if ([selCell state] == 0) {} else {}
-	}
 
-#ifndef DEBUG
-		// NSLog(@"self.data_object.mp3_check IS : %@", (self.data_object.mp3_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.wma_check IS : %@", (self.data_object.wma_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.ogg_check IS : %@", (self.data_object.ogg_check == TRUE) ? @"TRUE" : @"FALSE");
+#ifdef DEBUG
+		
 #endif
 }
 
@@ -102,23 +115,43 @@
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([[selCell title] isEqualToString:@"mpg"]) {
-		if ([selCell state] == 0) {} else {}
+		if ([selCell state] == 0) {
+			self.ReturnSearchString.data_object.mpg_check = 0;
+		} else {
+			self.ReturnSearchString.data_object.mpg_check = 1;
+		}
 	}
 
 	if ([[selCell title] isEqualToString:@"avi"]) {
-		if ([selCell state] == 0) {} else {}
+		if ([selCell state] == 0) {
+			self.ReturnSearchString.data_object.avi_check = 0;
+		} else {
+			self.ReturnSearchString.data_object.avi_check = (int *)1;
+		}
 	}
 
 	if ([[selCell title] isEqualToString:@"wmv"]) {
-		if ([selCell state] == 0) {} else {}
+		if ([selCell state] == 0) {
+			self.ReturnSearchString.data_object.wmv_check = 0;
+		} else {
+			self.ReturnSearchString.data_object.wmv_check = (int *)1;
+		}
 	}
 
 	if ([[selCell title] isEqualToString:@"divx"]) {
-		if ([selCell state] == 0) {} else {}
+		if ([selCell state] == 0) {
+			self.ReturnSearchString.data_object.divx_check = 0;
+		} else {
+			self.ReturnSearchString.data_object.divx_check = (int *)1;
+		}
 	}
 
 	if ([[selCell title] isEqualToString:@"flv"]) {
-		if ([selCell state] == 0) {} else {}
+		if ([selCell state] == 0) {
+			self.ReturnSearchString.data_object.flv_check = 0;
+		} else {
+			self.ReturnSearchString.data_object.flv_check = (int *)1;
+		}
 	}
 
 #ifndef DEBUG

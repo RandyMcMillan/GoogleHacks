@@ -13,7 +13,7 @@
 
 - (void)loadDataObject
 {
-	// [self.data_object init];
+	 [self.data_object init];
 	[self.data_object loadValues:nil];
 }
 
@@ -88,111 +88,111 @@
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	// Audio
-	if (self.data_object.mp3_check != FALSE) {
+	if (self.data_object.mp3_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".mp3%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.wma_check != FALSE) {
+	if (self.data_object.wma_check != 0) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".wma%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.ogg_check != FALSE) {
+	if (self.data_object.ogg_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".ogg%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
 	// Docs
-	if (self.data_object.pdf_check != FALSE) {
+	if (self.data_object.pdf_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".pdf%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.txt_check != FALSE) {
+	if (self.data_object.txt_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".txt%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.lit_check != FALSE) {
+	if (self.data_object.lit_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".lit%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.rar_check != FALSE) {
+	if (self.data_object.rar_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".rar%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.doc_check != FALSE) {
+	if (self.data_object.doc_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".doc%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.rtf_check != FALSE) {
+	if (self.data_object.rtf_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".rtf%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.pps_check != FALSE) {
+	if (self.data_object.pps_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".pps%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.chm_check != FALSE) {
+	if (self.data_object.chm_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".chm%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.zip1_check != FALSE) {
+	if (self.data_object.zip1_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".zip1%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.odt_check != FALSE) {
+	if (self.data_object.odt_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".odt%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
 	// Video
-	if (self.data_object.mpg_check != FALSE) {
+	if (self.data_object.mpg_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".mpg%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.avi_check != FALSE) {
+	if (self.data_object.avi_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".avi%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.wmv_check != FALSE) {
+	if (self.data_object.wmv_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".wmv%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.divx_check != FALSE) {
+	if (self.data_object.divx_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".divx%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.flv_check != FALSE) {
+	if (self.data_object.flv_check =1) {
 		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".flv%7C"];
 	}
 
