@@ -408,7 +408,7 @@
 #endif
 }
 
-- (IBAction)fileExtension:(id)sender
+- (IBAction)archives:(id)sender
 {
     
     NSButtonCell *selCell = [sender selectedCell];
@@ -462,7 +462,8 @@
 
 - (IBAction)linkQuery:(id)sender
 {
-    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+ 
     NSButtonCell *selCell = [sender selectedCell];
     
     NSLog(@"Selected cell is %ld", (long)[selCell tag]);
@@ -720,6 +721,7 @@
 }
 
 - (IBAction)method1:(id)sender {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 
     NSButtonCell *selCell = [sender selectedCell];
     
@@ -730,12 +732,19 @@
 }
 
 - (IBAction)method2:(id)sender {
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 
     NSButtonCell *selCell = [sender selectedCell];
     
     NSLog(@"Selected cell is %ld", (long)[selCell tag]);
     NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
     NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+}
+
+- (IBAction)resetButtons:(id)sender {
+
+    
+
 }
 
 @end

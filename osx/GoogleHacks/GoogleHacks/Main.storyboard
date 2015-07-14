@@ -651,7 +651,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="NSViewController Presentations" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="GoogleHacks" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES"/>
                         <rect key="contentRect" x="150" y="600" width="450" height="270"/>
@@ -849,13 +849,13 @@
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" title="Methods" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="u1Q-2R-dWu">
-                                <rect key="frame" x="323" y="178" width="103" height="125"/>
+                                <rect key="frame" x="323" y="76" width="117" height="227"/>
                                 <view key="contentView">
-                                    <rect key="frame" x="1" y="1" width="101" height="109"/>
+                                    <rect key="frame" x="1" y="1" width="115" height="211"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ER5-Gf-iCG">
-                                            <rect key="frame" x="15" y="37" width="65" height="18"/>
+                                            <rect key="frame" x="15" y="100" width="65" height="18"/>
                                             <buttonCell key="cell" type="check" title="related" bezelStyle="regularSquare" imagePosition="left" tag="29" inset="2" id="GId-SI-Pks">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -865,7 +865,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C09-ti-cHC">
-                                            <rect key="frame" x="15" y="83" width="61" height="18"/>
+                                            <rect key="frame" x="15" y="146" width="61" height="18"/>
                                             <buttonCell key="cell" type="check" title="link" bezelStyle="regularSquare" imagePosition="left" tag="27" inset="2" id="f3h-eI-evF">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -875,7 +875,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vx1-pt-s5m">
-                                            <rect key="frame" x="15" y="61" width="65" height="18"/>
+                                            <rect key="frame" x="15" y="124" width="65" height="18"/>
                                             <buttonCell key="cell" type="check" title="add url" bezelStyle="regularSquare" imagePosition="left" tag="28" inset="2" id="qFZ-B4-7zm">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -885,7 +885,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-Ba-k7K">
-                                            <rect key="frame" x="15" y="12" width="61" height="18"/>
+                                            <rect key="frame" x="15" y="75" width="61" height="18"/>
                                             <buttonCell key="cell" type="check" title="tools" bezelStyle="regularSquare" imagePosition="left" tag="30" inset="2" id="MKg-Cl-YzW">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -894,6 +894,14 @@
                                                 <action selector="method1:" target="XfG-lQ-9wD" id="PB8-0l-Xba"/>
                                             </connections>
                                         </button>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4xl-x5-VUc">
+                                            <rect key="frame" x="9" y="179" width="96" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" placeholderString="Link | Url " drawsBackground="YES" id="v6b-Gh-5ao">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
                                     </subviews>
                                 </view>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -906,43 +914,43 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="R8I-l5-bzs">
-                                            <rect key="frame" x="15" y="90" width="39" height="18"/>
+                                            <rect key="frame" x="16" y="86" width="39" height="18"/>
                                             <buttonCell key="cell" type="check" title="rar" bezelStyle="regularSquare" imagePosition="left" tag="23" inset="2" id="hIp-gA-EDR">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="documentExtension:" target="XfG-lQ-9wD" id="XK3-yE-DPb"/>
+                                                <action selector="archives:" target="XfG-lQ-9wD" id="WtO-la-pkF"/>
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" tag="17" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-bG-rbN">
-                                            <rect key="frame" x="15" y="73" width="40" height="18"/>
+                                            <rect key="frame" x="16" y="69" width="40" height="18"/>
                                             <buttonCell key="cell" type="check" title="zip" bezelStyle="regularSquare" imagePosition="left" tag="24" inset="2" id="HeF-2x-NI4">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="documentExtension:" target="XfG-lQ-9wD" id="GAy-OG-Y6j"/>
+                                                <action selector="archives:" target="XfG-lQ-9wD" id="Xz7-qP-Oe5"/>
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" tag="18" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xym-5D-Dyl">
-                                            <rect key="frame" x="15" y="34" width="42" height="18"/>
+                                            <rect key="frame" x="16" y="30" width="42" height="18"/>
                                             <buttonCell key="cell" type="check" title="ddl" bezelStyle="regularSquare" imagePosition="left" tag="26" inset="2" id="lii-Be-mVb">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="documentExtension:" target="XfG-lQ-9wD" id="yMS-TB-HeH"/>
+                                                <action selector="archives:" target="XfG-lQ-9wD" id="Ugn-c3-Abg"/>
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" tag="18" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRl-W0-aZm">
-                                            <rect key="frame" x="15" y="53" width="44" height="18"/>
+                                            <rect key="frame" x="16" y="49" width="44" height="18"/>
                                             <buttonCell key="cell" type="check" title="exe" bezelStyle="regularSquare" imagePosition="left" tag="25" inset="2" id="8W1-9z-QLX">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
                                             <connections>
-                                                <action selector="documentExtension:" target="XfG-lQ-9wD" id="PjB-Ci-NaX"/>
+                                                <action selector="archives:" target="XfG-lQ-9wD" id="Ted-2X-6S6"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -1051,10 +1059,51 @@
                                     <action selector="openURLFromButton:" target="XfG-lQ-9wD" id="GQL-ca-GGg"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z25-03-6nh">
+                                <rect key="frame" x="326" y="48" width="111" height="25"/>
+                                <buttonCell key="cell" type="squareTextured" title="Reset" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g4f-bx-qoV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="resetButtons:" target="XfG-lQ-9wD" id="gu9-U5-R4V"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="addUrl" destination="vx1-pt-s5m" id="bYB-at-bTq"/>
+                        <outlet property="avi" destination="kUg-n9-xA5" id="D8R-yp-bSD"/>
+                        <outlet property="chm" destination="uwJ-N2-1DL" id="DRQ-Tn-GIi"/>
+                        <outlet property="ddl" destination="xym-5D-Dyl" id="YxA-Bp-xeg"/>
+                        <outlet property="divx" destination="6Bd-CE-a6f" id="1mZ-ee-zkR"/>
+                        <outlet property="doc" destination="Fzz-hg-Swk" id="XPc-sP-bl8"/>
+                        <outlet property="exe" destination="GRl-W0-aZm" id="HuF-FL-q5a"/>
+                        <outlet property="flv" destination="4D5-Vc-zxf" id="y3C-PR-mKS"/>
+                        <outlet property="link" destination="C09-ti-cHC" id="U5e-yM-i4G"/>
+                        <outlet property="lit" destination="6PX-Ql-P6s" id="sW6-o8-4Oa"/>
+                        <outlet property="mp3" destination="oBu-p2-gqP" id="1hy-Vi-jPY"/>
+                        <outlet property="mpg" destination="I9u-cD-BSV" id="jZt-fw-9ZK"/>
+                        <outlet property="odt" destination="nsy-Vm-AfO" id="GiR-ax-r9H"/>
+                        <outlet property="ogg" destination="pVa-2H-WJC" id="hOR-Ay-DEl"/>
+                        <outlet property="pass1" destination="bbK-3B-km9" id="Xnv-qi-thP"/>
+                        <outlet property="pass2" destination="gBa-4z-SYw" id="QLo-Od-LIv"/>
+                        <outlet property="pass3" destination="Q1P-vV-IeF" id="TnL-qm-gCF"/>
+                        <outlet property="pass4" destination="rdI-KY-deR" id="U1l-g9-cF4"/>
+                        <outlet property="pass5" destination="Z90-pM-rUp" id="M0w-7a-pPF"/>
+                        <outlet property="pass6" destination="9ZT-P3-LrT" id="xTn-oB-gJx"/>
+                        <outlet property="pdf" destination="iec-UI-vx9" id="6H5-XL-K6K"/>
+                        <outlet property="pps" destination="sFC-eu-f5v" id="aQP-gU-I3M"/>
+                        <outlet property="rar" destination="R8I-l5-bzs" id="DzE-CU-5OS"/>
+                        <outlet property="related" destination="ER5-Gf-iCG" id="xtc-Fs-Uw8"/>
+                        <outlet property="reset" destination="z25-03-6nh" id="Wfh-mT-Olv"/>
+                        <outlet property="rtf" destination="c5l-bG-QbE" id="hgo-bc-FAT"/>
                         <outlet property="searchTextField" destination="4b6-s8-AX9" id="fd9-as-jr0"/>
+                        <outlet property="tools" destination="yAa-Ba-k7K" id="DAf-Ie-ZrA"/>
+                        <outlet property="txt" destination="QFn-5q-LIW" id="ke4-sI-DnO"/>
+                        <outlet property="wma" destination="NLc-CI-buq" id="Rcn-UX-flr"/>
+                        <outlet property="wmv" destination="JcC-H4-oBm" id="HAK-O6-b3N"/>
+                        <outlet property="zip" destination="Fea-bG-rbN" id="4be-Sk-PXn"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
