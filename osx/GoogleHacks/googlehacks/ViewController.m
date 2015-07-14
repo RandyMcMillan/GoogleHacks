@@ -17,7 +17,7 @@
 
 @implementation ViewController
 
-@synthesize searchTextField, urls, ws;
+@synthesize searchTextField, url, urls, ws;
 @synthesize searchString,ReturnSearchString;
 
 #pragma mark ViewController viewDidLoad
@@ -55,11 +55,11 @@
 	// [self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:YES];
 }
 
-- (void)openURL:(NSMutableString *)url inBackground:(BOOL)background
+- (void)openURL:(NSMutableString *)mutableString inBackground:(BOOL)background
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-    url = [self.ReturnSearchString returnSearchString:url];
-    NSLog(@"url = %@",url);
+    mutableString = [self.ReturnSearchString returnSearchString:mutableString];
+    NSLog(@"url = %@",mutableString);
     
 }
 

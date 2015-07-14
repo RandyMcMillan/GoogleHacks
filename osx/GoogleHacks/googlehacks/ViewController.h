@@ -25,6 +25,7 @@
 - (IBAction)fileExtension:(id)sender;
 - (IBAction)linkQuery:(id)sender;
 @property (nonatomic, readwrite) NSTextField	*searchTextField;
+@property (nonatomic, readwrite) NSMutableString *url;
 @property (nonatomic, readwrite) NSMutableArray *urls;
 @property (nonatomic, strong) NSWorkspace		*ws;
 @property (nonatomic, readwrite) NSMutableString *searchString;
