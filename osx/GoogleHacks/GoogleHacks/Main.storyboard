@@ -838,7 +838,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <action selector="enterFromSearchField:" target="XfG-lQ-9wD" id="gRu-m9-deo"/>
+                                    <action selector="enterFromSearchField:" target="XfG-lQ-9wD" id="H1a-sV-Dk6"/>
                                 </connections>
                             </textField>
                             <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pVa-2H-WJC">

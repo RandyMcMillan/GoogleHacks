@@ -18,7 +18,7 @@
 @implementation ViewController
 
 @synthesize searchTextField, urls, ws;
-@synthesize ReturnSearchString;
+@synthesize searchString,ReturnSearchString;
 
 #pragma mark ViewController viewDidLoad
 
@@ -34,30 +34,32 @@
 }
 
 #pragma mark ViewController figureOutTheLogicHere
-- (NSString *)returnSearchString:(NSString *)searchString
+- (NSString *)returnSearchString:(NSMutableString *)searchString
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	searchString = [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-	NSLog(@"%@", searchString);
-	return searchString;
+	self.searchString = (NSMutableString *)[[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+	NSLog(@"%@", self.searchString);
+	return self.searchString;
 }
 
 - (IBAction)enterFromSearchField:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	[self openURLFromButton:(id)sender];
+    [self enterFromButton:(id)sender];
+
 }
 
-- (IBAction)openURLFromButton:(id)sender
+- (IBAction)enterFromButton:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	// [self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:YES];
 }
 
-- (void)openURL:(NSString *)url inBackground:(BOOL)background
+- (void)openURL:(NSMutableString *)url inBackground:(BOOL)background
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-    [self.ReturnSearchString returnSearchString:nil];
+    url = [self.ReturnSearchString returnSearchString:url];
+    NSLog(@"url = %@",url);
     
 }
 
@@ -274,53 +276,5 @@
 
 	return trunc;
 }	// truncateString
-
-#pragma mark ViewController openPasswordQueries
-
-/*
- *   - (NSMutableArray *)returnPasswordLinkArray:(NSMutableArray *)mutableArray
- *   {
- *    if (self.data_object.pass_1 == TRUE) {
- *        [self.data_object.passWordLinkArray addObject:self.data_object.pass_1_str];
- *
- *    }
- *
- *    if (self.data_object.pass_2 == TRUE) {
- *        [self.data_object.passWordLinkArray addObject:self.data_object.pass_2_str];
- *
- *    }
- *
- *    if (self.data_object.pass_3 == TRUE) {
- *        [self.data_object.passWordLinkArray addObject:self.data_object.pass_3_str];
- *
- *    }
- *
- *    if (self.data_object.pass_4 == TRUE) {
- *        [self.data_object.passWordLinkArray addObject:self.data_object.pass_4_str];
- *
- *    }
- *
- *    if (self.data_object.pass_5 == TRUE) {
- *        [self.data_object.passWordLinkArray addObject:self.data_object.pass_5_str];
- *
- *    }
- *
- *    if (self.data_object.pass_6 == TRUE) {
- *
- *        [self.data_object.passWordLinkArray addObject:(NSString *)self.data_object.pass_6_str];
- *
- *    }
- *
- *
- *        for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
- *            //NSLog(@"%d: %@", i, self.data_object.passWordLinkArray[i]);
- *        }
- *
- *    mutableArray = self.data_object.passWordLinkArray;
- *
- *    return mutableArray;
- *   }
- *
- */
 
 @end

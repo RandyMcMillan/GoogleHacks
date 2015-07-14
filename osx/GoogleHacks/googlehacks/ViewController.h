@@ -14,11 +14,10 @@
 	IBOutlet NSButton		*show;
 }
 
-- (IBAction)enterFromSearchField:(id)sender;
-// return URL recieve searchString
 
 - (void)openURL:(NSString *)url inBackground:(BOOL)background;
-- (IBAction)openURLFromButton:(id)sender;
+- (IBAction)enterFromButton:(id)sender;
+- (IBAction)enterFromSearchField:(id)sender;
 - (IBAction)audioExtension:(id)sender;
 - (IBAction)videoExtension:(id)sender;
 - (IBAction)documentExtension:(id)sender;
@@ -28,7 +27,7 @@
 @property (nonatomic, readwrite) NSTextField	*searchTextField;
 @property (nonatomic, readwrite) NSMutableArray *urls;
 @property (nonatomic, strong) NSWorkspace		*ws;
-
+@property (nonatomic, readwrite) NSMutableString *searchString;
 @property (nonatomic, retain) ReturnSearchString *ReturnSearchString;
 
 @end
