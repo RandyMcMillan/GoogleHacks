@@ -23,6 +23,8 @@
 - (IBAction)videoExtension:(id)sender;
 - (IBAction)documentExtension:(id)sender;
 - (IBAction)passwordQuery:(id)sender;
+- (IBAction)method1:(id)sender;
+- (IBAction)method2:(id)sender;
 - (IBAction)fileExtension:(id)sender;
 - (IBAction)linkQuery:(id)sender;
 - (void)assembleTypesString;
