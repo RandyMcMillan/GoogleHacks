@@ -123,7 +123,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.mp3_check = FALSE;
 		} else {
-			self.data_object.mp3_check = TRUE;
+			self.data_object.mp3_check = (signed char *)TRUE;
 		}
 	}
 
@@ -131,7 +131,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.wma_check = FALSE;
 		} else {
-			self.data_object.wma_check = TRUE;
+			self.data_object.wma_check = (signed char *)TRUE;
 		}
 	}
 
@@ -139,14 +139,14 @@
 		if ([selCell state] == 0) {
 			self.data_object.ogg_check = FALSE;
 		} else {
-			self.data_object.ogg_check = TRUE;
+			self.data_object.ogg_check = (signed char *)TRUE;
 		}
 	}
 
-#ifndef DEBUG
-		// NSLog(@"self.data_object.mp3_check IS : %@", (self.data_object.mp3_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.wma_check IS : %@", (self.data_object.wma_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.ogg_check IS : %@", (self.data_object.ogg_check == TRUE) ? @"TRUE" : @"FALSE");
+#ifdef DEBUG
+		 NSLog(@"self.data_object.mp3_check IS : %@", (self.data_object.mp3_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.wma_check IS : %@", (self.data_object.wma_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.ogg_check IS : %@", (self.data_object.ogg_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
 #endif
 
 	[self assembleTypesString];
@@ -164,7 +164,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.mpg_check = FALSE;
 		} else {
-			self.data_object.mpg_check = TRUE;
+			self.data_object.mpg_check = (signed char *)TRUE;
 		}
 	}
 
@@ -172,7 +172,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.avi_check = FALSE;
 		} else {
-			self.data_object.avi_check = TRUE;
+			self.data_object.avi_check = (signed char *)TRUE;
 		}
 	}
 
@@ -180,7 +180,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.wmv_check = FALSE;
 		} else {
-			self.data_object.wmv_check = TRUE;
+			self.data_object.wmv_check = (signed char *)TRUE;
 		}
 	}
 
@@ -188,7 +188,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.divx_check = FALSE;
 		} else {
-			self.data_object.divx_check = TRUE;
+			self.data_object.divx_check = (signed char *)TRUE;
 		}
 	}
 
@@ -196,16 +196,16 @@
 		if ([selCell state] == 0) {
 			self.data_object.flv_check = FALSE;
 		} else {
-			self.data_object.flv_check = TRUE;
+			self.data_object.flv_check = (signed char *)TRUE;
 		}
 	}
 
 #ifndef DEBUG
-		// NSLog(@"self.data_object.mpg_check IS : %@", (self.data_object.mpg_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.avi_check IS : %@", (self.data_object.avi_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.wmv_check IS : %@", (self.data_object.wmv_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.divx_check IS : %@", (self.data_object.divx_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.flv_check IS : %@", (self.data_object.flv_check == TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.mpg_check IS : %@", (self.data_object.mpg_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.avi_check IS : %@", (self.data_object.avi_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.wmv_check IS : %@", (self.data_object.wmv_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.divx_check IS : %@", (self.data_object.divx_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.flv_check IS : %@", (self.data_object.flv_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
 #endif
 
 	[self assembleTypesString];
@@ -223,7 +223,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.pdf_check = FALSE;
 		} else {
-			self.data_object.pdf_check = TRUE;
+			self.data_object.pdf_check = (signed char *)TRUE;
 		}
 	}
 
@@ -231,7 +231,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.txt_check = FALSE;
 		} else {
-			self.data_object.txt_check = TRUE;
+			self.data_object.txt_check = (signed char *)TRUE;
 		}
 	}
 
@@ -239,7 +239,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.lit_check = FALSE;
 		} else {
-			self.data_object.lit_check = TRUE;
+			self.data_object.lit_check = (signed char *)TRUE;
 		}
 	}
 
@@ -247,7 +247,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.rar_check = FALSE;
 		} else {
-			self.data_object.rar_check = TRUE;
+			self.data_object.rar_check = (signed char *)TRUE;
 		}
 	}
 
@@ -255,7 +255,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.doc_check = FALSE;
 		} else {
-			self.data_object.doc_check = TRUE;
+			self.data_object.doc_check = (signed char *)TRUE;
 		}
 	}
 
@@ -263,7 +263,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.rtf_check = FALSE;
 		} else {
-			self.data_object.rtf_check = TRUE;
+			self.data_object.rtf_check = (signed char *)TRUE;
 		}
 	}
 
@@ -271,7 +271,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.pps_check = FALSE;
 		} else {
-			self.data_object.pps_check = TRUE;
+			self.data_object.pps_check = (signed char *)TRUE;
 		}
 	}
 
@@ -279,7 +279,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.chm_check = FALSE;
 		} else {
-			self.data_object.chm_check = TRUE;
+			self.data_object.chm_check = (signed char *)TRUE;
 		}
 	}
 
@@ -287,7 +287,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.zip1_check = FALSE;
 		} else {
-			self.data_object.zip1_check = TRUE;
+			self.data_object.zip1_check = (signed char *)TRUE;
 		}
 	}
 
@@ -295,21 +295,21 @@
 		if ([selCell state] == 0) {
 			self.data_object.odt_check = FALSE;
 		} else {
-			self.data_object.odt_check = TRUE;
+			self.data_object.odt_check = (signed char *)TRUE;
 		}
 	}
 
 #ifndef DEBUG
-		// NSLog(@"self.data_object.pdf_check IS : %@", (self.data_object.pdf_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.txt_check IS : %@", (self.data_object.txt_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.lit_check IS : %@", (self.data_object.lit_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.rar_check IS : %@", (self.data_object.rar_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.doc_check IS : %@", (self.data_object.doc_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.rtf_check IS : %@", (self.data_object.rtf_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.pps_check IS : %@", (self.data_object.pps_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.chm_check IS : %@", (self.data_object.chm_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.zip1_check IS : %@", (self.data_object.zip1_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.odt_check IS : %@", (self.data_object.odt_check == TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.pdf_check IS : %@", (self.data_object.pdf_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.txt_check IS : %@", (self.data_object.txt_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.lit_check IS : %@", (self.data_object.lit_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.rar_check IS : %@", (self.data_object.rar_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.doc_check IS : %@", (self.data_object.doc_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.rtf_check IS : %@", (self.data_object.rtf_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.pps_check IS : %@", (self.data_object.pps_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.chm_check IS : %@", (self.data_object.chm_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.zip1_check IS : %@", (self.data_object.zip1_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		 NSLog(@"self.data_object.odt_check IS : %@", (self.data_object.odt_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
 #endif
 
 	[self assembleTypesString];
@@ -327,7 +327,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.pass_1 = FALSE;
 		} else {
-			self.data_object.pass_1 = TRUE;
+			self.data_object.pass_1 = (signed char *)TRUE;
 		}
 	}
 
@@ -335,7 +335,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.pass_2 = FALSE;
 		} else {
-			self.data_object.pass_2 = TRUE;
+			self.data_object.pass_2 = (signed char *)TRUE;
 		}
 	}
 
@@ -343,7 +343,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.pass_3 = FALSE;
 		} else {
-			self.data_object.pass_3 = TRUE;
+			self.data_object.pass_3 = (signed char *)TRUE;
 		}
 	}
 
@@ -351,7 +351,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.pass_4 = FALSE;
 		} else {
-			self.data_object.pass_4 = TRUE;
+			self.data_object.pass_4 = (signed char *)TRUE;
 		}
 	}
 
@@ -359,7 +359,7 @@
 		if ([selCell state] == 0) {
 			self.data_object.pass_5 = FALSE;
 		} else {
-			self.data_object.pass_5 = TRUE;
+			self.data_object.pass_5 = (signed char *)TRUE;
 		}
 	}
 
@@ -367,19 +367,19 @@
 		if ([selCell state] == 0) {
 			self.data_object.pass_6 = FALSE;
 		} else {
-			self.data_object.pass_6 = TRUE;
+			self.data_object.pass_6 = (signed char *)TRUE;
 		}
 	}
 
 #ifndef DEBUG
-		NSLog(@"self.data_object.pass_check IS : %@", (self.data_object.pass_check == TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pass_text IS : %@", (self.data_object.pass_text == TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pass_1 IS : %@", (self.data_object.pass_1 == TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pass_2 IS : %@", (self.data_object.pass_2 == TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pass_3 IS : %@", (self.data_object.pass_3 == TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pass_4 IS : %@", (self.data_object.pass_4 == TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pass_5 IS : %@", (self.data_object.pass_5 == TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pass_6 IS : %@", (self.data_object.pass_6 == TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_check IS : %@", (self.data_object.pass_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_text IS : %@", (self.data_object.pass_text == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_1 IS : %@", (self.data_object.pass_1 == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_2 IS : %@", (self.data_object.pass_2 == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_3 IS : %@", (self.data_object.pass_3 == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_4 IS : %@", (self.data_object.pass_4 == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_5 IS : %@", (self.data_object.pass_5 == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.pass_6 IS : %@", (self.data_object.pass_6 == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
 #endif
 }
 
@@ -398,36 +398,36 @@
 		self.data_object.ddl_check	= FALSE;
 	} else if ([selCell tag] == 1) {
 		// file ext
-		self.data_object.exe_check	= TRUE;
+		self.data_object.exe_check	= (signed char *)TRUE;
 		self.data_object.rar_check1 = FALSE;
 		self.data_object.zip_check	= FALSE;
 		self.data_object.ddl_check	= FALSE;
 	} else if ([selCell tag] == 2) {
 		// file ext
 		self.data_object.exe_check	= FALSE;
-		self.data_object.rar_check1 = TRUE;
+		self.data_object.rar_check1 = (signed char *)TRUE;
 		self.data_object.zip_check	= FALSE;
 		self.data_object.ddl_check	= FALSE;
 	} else if ([selCell tag] == 3) {
 		// file ext
 		self.data_object.exe_check	= FALSE;
 		self.data_object.rar_check1 = FALSE;
-		self.data_object.zip_check	= TRUE;
+		self.data_object.zip_check	= (signed char *)TRUE;
 		self.data_object.ddl_check	= FALSE;
 	} else if ([selCell tag] == 4) {
 		// file ext
 		self.data_object.exe_check	= FALSE;
 		self.data_object.rar_check1 = FALSE;
 		self.data_object.zip_check	= FALSE;
-		self.data_object.ddl_check	= TRUE;
+		self.data_object.ddl_check	= (signed char *)TRUE;
 	} else {		// NSLog(@"Error");
 	}
 
 #ifndef DEBUG
-		// NSLog(@"self.data_object.exe_check IS : %@", (self.data_object.exe_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.rar_check1 IS : %@", (self.data_object.rar_check1 == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.zip_check IS : %@", (self.data_object.zip_check == TRUE) ? @"TRUE" : @"FALSE");
-		// NSLog(@"self.data_object.ddl_check IS : %@", (self.data_object.ddl_check == TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.exe_check IS : %@", (self.data_object.exe_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.rar_check1 IS : %@", (self.data_object.rar_check1 == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.zip_check IS : %@", (self.data_object.zip_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"self.data_object.ddl_check IS : %@", (self.data_object.ddl_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
 #endif
 
 	[self assembleTypesString];
@@ -452,111 +452,111 @@
 	// self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@"%7C"];
 
 	// Audio
-	if (self.data_object.mp3_check == TRUE) {
+	if (self.data_object.mp3_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".mp3%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.wma_check == TRUE) {
+	if (self.data_object.wma_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".wma%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.ogg_check == TRUE) {
+	if (self.data_object.ogg_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".ogg%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
 	// Docs
-	if (self.data_object.pdf_check == TRUE) {
+	if (self.data_object.pdf_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".pdf%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.txt_check == TRUE) {
+	if (self.data_object.txt_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".txt%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.lit_check == TRUE) {
+	if (self.data_object.lit_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".lit%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.rar_check == TRUE) {
+	if (self.data_object.rar_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".rar%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.doc_check == TRUE) {
+	if (self.data_object.doc_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".doc%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.rtf_check == TRUE) {
+	if (self.data_object.rtf_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".rtf%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.pps_check == TRUE) {
+	if (self.data_object.pps_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".pps%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.chm_check == TRUE) {
+	if (self.data_object.chm_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".chm%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.zip1_check == TRUE) {
+	if (self.data_object.zip1_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".zip1%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.odt_check == TRUE) {
+	if (self.data_object.odt_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".odt%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
 	// Video
-	if (self.data_object.mpg_check == TRUE) {
+	if (self.data_object.mpg_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".mpg%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.avi_check == TRUE) {
+	if (self.data_object.avi_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".avi%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.wmv_check == TRUE) {
+	if (self.data_object.wmv_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".wmv%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.divx_check == TRUE) {
+	if (self.data_object.divx_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".divx%7C"];
 	}
 
 	NSLog(@"%@", self.data_object.types_str);
 
-	if (self.data_object.flv_check == TRUE) {
+	if (self.data_object.flv_check == (signed char *)TRUE) {
 		self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@".flv%7C"];
 	}
 
@@ -611,7 +611,7 @@
 
 - (void)openPasswordQueries
 {
-	if (self.data_object.pass_1 == TRUE) {
+	if (self.data_object.pass_1 == (signed char *)TRUE) {
 		self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
 		[self.urls addObject:self.data_object.full_search_str];
 
@@ -622,7 +622,7 @@
 		}
 	}
 
-	if (self.data_object.pass_2 == TRUE) {
+	if (self.data_object.pass_2 == (signed char *)TRUE) {
 		self.data_object.full_search_str = @"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt";
 		[self.urls addObject:self.data_object.full_search_str];
 
@@ -632,7 +632,7 @@
 		}
 	}
 
-	if (self.data_object.pass_3 == TRUE) {
+	if (self.data_object.pass_3 == (signed char *)TRUE) {
 		self.data_object.full_search_str = @"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search";
 		[self.urls addObject:self.data_object.full_search_str];
 
@@ -644,7 +644,7 @@
 		}
 	}
 
-	if (self.data_object.pass_4 == TRUE) {
+	if (self.data_object.pass_4 == (signed char *)TRUE) {
 		self.data_object.full_search_str = @"http://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd";
 		[self.urls addObject:self.data_object.full_search_str];
 
@@ -654,7 +654,7 @@
 		}
 	}
 
-	if (self.data_object.pass_5 == TRUE) {
+	if (self.data_object.pass_5 == (signed char *)TRUE) {
 		self.data_object.full_search_str = @"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php";
 		[self.urls addObject:self.data_object.full_search_str];
 
@@ -664,7 +664,7 @@
 		}
 	}
 
-	if (self.data_object.pass_6 == TRUE) {
+	if (self.data_object.pass_6 == (signed char *)TRUE) {
 		self.data_object.full_search_str = @"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22";
 		[self.urls addObject:self.data_object.full_search_str];
 

@@ -778,7 +778,7 @@
                             <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yte-9D-hsw">
                                 <rect key="frame" x="254" y="60" width="65" height="98"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                <size key="cellSize" width="65" height="18"/>
+                                <size key="cellSize" width="53" height="18"/>
                                 <size key="intercellSpacing" width="4" height="2"/>
                                 <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="9aw-GB-YeJ">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -819,7 +819,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="audioExtension:" target="XfG-lQ-9wD" id="2hP-1y-r4f"/>
+                                    <action selector="audioExtension:" target="XfG-lQ-9wD" id="zwQ-eo-wOO"/>
                                 </connections>
                             </button>
                             <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NLc-CI-buq">
@@ -829,7 +829,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="audioExtension:" target="XfG-lQ-9wD" id="8tK-EH-LWy"/>
+                                    <action selector="audioExtension:" target="XfG-lQ-9wD" id="eB1-Ah-FOR"/>
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4b6-s8-AX9">
@@ -850,7 +850,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="audioExtension:" target="XfG-lQ-9wD" id="3KN-qY-feQ"/>
+                                    <action selector="audioExtension:" target="XfG-lQ-9wD" id="2fn-7O-DJL"/>
                                 </connections>
                             </button>
                             <button fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I9u-cD-BSV">
