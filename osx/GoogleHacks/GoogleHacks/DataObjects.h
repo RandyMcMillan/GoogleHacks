@@ -44,22 +44,22 @@
 @property (nonatomic, readwrite) BOOL	*flv_check;
 
 // Passwords
-@property (nonatomic, retain) NSArray	*passWordTitleArray;
-@property (nonatomic, readwrite) BOOL	*pass_check;
-@property (nonatomic, readwrite) BOOL	*pass_text;
-@property (nonatomic, readwrite) BOOL	*pass_1;
-@property (nonatomic, readwrite) BOOL	*pass_2;
-@property (nonatomic, readwrite) BOOL	*pass_3;
-@property (nonatomic, readwrite) BOOL	*pass_4;
-@property (nonatomic, readwrite) BOOL	*pass_5;
-@property (nonatomic, readwrite) BOOL	*pass_6;
+@property (nonatomic, retain) NSArray			*passWordTitleArray;
+@property (nonatomic, readwrite) BOOL			*pass_check;
+@property (nonatomic, readwrite) BOOL			*pass_text;
+@property (nonatomic, readwrite) BOOL			*pass_1;
+@property (nonatomic, readwrite) BOOL			*pass_2;
+@property (nonatomic, readwrite) BOOL			*pass_3;
+@property (nonatomic, readwrite) BOOL			*pass_4;
+@property (nonatomic, readwrite) BOOL			*pass_5;
+@property (nonatomic, readwrite) BOOL			*pass_6;
 @property (nonatomic, retain) NSMutableArray	*passWordLinkArray;
-@property (nonatomic, readwrite) NSString	*pass_1_str;
-@property (nonatomic, readwrite) NSString	*pass_2_str;
-@property (nonatomic, readwrite) NSString	*pass_3_str;
-@property (nonatomic, readwrite) NSString	*pass_4_str;
-@property (nonatomic, readwrite) NSString	*pass_5_str;
-@property (nonatomic, readwrite) NSString	*pass_6_str;
+@property (nonatomic, readwrite) NSString		*pass_1_str;
+@property (nonatomic, readwrite) NSString		*pass_2_str;
+@property (nonatomic, readwrite) NSString		*pass_3_str;
+@property (nonatomic, readwrite) NSString		*pass_4_str;
+@property (nonatomic, readwrite) NSString		*pass_5_str;
+@property (nonatomic, readwrite) NSString		*pass_6_str;
 
 @property (nonatomic, readwrite) BOOL	*method1_check;
 @property (nonatomic, readwrite) BOOL	*method2_check;

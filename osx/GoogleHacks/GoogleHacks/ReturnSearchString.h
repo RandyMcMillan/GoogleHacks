@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DataObjects.h"
 
-@interface ReturnSearchString : NSObject 
+@interface ReturnSearchString : NSObject
 
 - (void)assembleTypesString;
 
@@ -18,7 +18,7 @@
 
 - (void)loadDataObject;
 
-//DataObjects
+// DataObjects
 - (NSString *)parseAudioExts:(NSString *)string;
 - (NSString *)parseVideoExts:(NSString *)string;
 
@@ -26,11 +26,11 @@
 
 - (NSString *)parsePassWordStrings:(NSString *)string;
 
-//link//add url//related//tools
+// link//add url//related//tools
 - (NSString *)parseMethods:(NSString *)string;
 
 - (NSString *)parseFileExts:(NSString *)string;
 
-@property (nonatomic, readwrite) DataObjects	*data_object;
+@property (nonatomic, readwrite) DataObjects *data_object;
 
 @end

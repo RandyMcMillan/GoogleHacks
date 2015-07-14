@@ -89,9 +89,9 @@
 
 - (id)loadValues:(NSObject *)object
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 
-    // Search String
+	// Search String
 	[self.search_str setString:@""];
 	[self.full_search_str setString:@""];
 	[self.types_str setString:@""];
@@ -214,7 +214,7 @@
 
 + (void)initialize
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	NSLog(@"DataObjects initialize");
 	// [self init];
