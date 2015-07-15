@@ -47,11 +47,11 @@
 	IBOutlet NSButton		*tools;
 }
 
-- (IBAction)enterFromSearchField:(id)sender;
 - (NSString *)returnSearchString:(NSString *)searchString;
 - (NSURL *)modifyURL:(NSString *)modString;
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background;
-- (IBAction)openURLFromButton:(id)sender;
+- (IBAction)enterFromButton:(id)sender;
+- (IBAction)enterFromSearchField:(id)sender;
 - (IBAction)audioExtension:(id)sender;
 - (IBAction)videoExtension:(id)sender;
 - (IBAction)documentExtension:(id)sender;

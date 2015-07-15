@@ -17,57 +17,71 @@
 
 @implementation ViewController
 
-@synthesize data_object,types_str;
+@synthesize data_object, types_str;
 @synthesize searchTextField, urls, ws;
 
 #pragma mark ViewController viewDidLoad
 
 - (void)viewDidLoad
 {
-    
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	[super viewDidLoad];
 	self.title = @"Presenting ViewController";
 	[self.data_object = [DataObjects alloc] init];
 	[self.data_object loadValues:nil];
 	self.urls = [NSMutableArray arrayWithCapacity:100];
-	//[self openPasswordQueries];
-	self.ws = [NSWorkspace sharedWorkspace];
-    self.types_str = (NSMutableString *)self.data_object.types_str;
+	// [self openPasswordQueries];
+	self.ws			= [NSWorkspace sharedWorkspace];
+	self.types_str	= (NSMutableString *)self.data_object.types_str;
 }
 
 - (void)setRepresentedObject:(id)representedObject
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 	[super setRepresentedObject:representedObject];
 }
 
 #pragma mark ViewController figureOutTheLogicHere
+
 - (NSString *)returnSearchString:(NSString *)searchString
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	[self assembleTypesString];
+
 	if ([self.types_str isEqualToString:@""]) {} else {}
+
 	self.data_object.search_str = (NSMutableString *)[self returnSearchField];
-	searchString = [BASE_URL stringByAppendingString:@"q="];
-	searchString = [searchString stringByAppendingString:[self returnSearchField]];
+	searchString	= [BASE_URL stringByAppendingString:@"q="];
+	searchString	= [searchString stringByAppendingString:[self returnSearchField]];
 	NSLog(@"searchString = %@", searchString);
 
 	return searchString;
 }
 
+#pragma mark ViewController enterFromSearchField
+
 - (IBAction)enterFromSearchField:(id)sender
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 	NSLog(@"searchTextField = %@", [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
-	[self openURLFromButton:(id)sender];
+	[self enterFromButton:(id)sender];
 }
+
+#pragma mark ViewController enterFromButton
+
+- (IBAction)enterFromButton:(id)sender
+{
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	[self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
+}
+
+#pragma mark ViewController returnSearchField
 
 - (NSString *)returnSearchField
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 	NSString *returnSearchField = nil;
 	returnSearchField = [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 	NSLog(@"returnSearchField = %@", returnSearchField);
@@ -75,30 +89,30 @@
 	return returnSearchField;
 }
 
+#pragma mark ViewController modifyURL
+
 - (NSURL *)modifyURL:(NSString *)modString
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 	NSLog(@"%@", modString);// null
 	NSURL *modifiedURL = [NSURL URLWithString:modString];
 
 	return modifiedURL;
 }
 
-#pragma mark ViewController handle password logic
-
-- (IBAction)openURLFromButton:(id)sender
-{
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-	[self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:YES];
-}
+#pragma mark ViewController openURL
 
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 
+	// openURL:nil inBackground:YES;
+	// opens self.urls - an ARRAY OF URLS
+	// openURL:urlVariable inBackground:NO/nil
+	// opens a sent url
 	if (background) {
-		NSArray *urls = [NSArray arrayWithObject:url];
-		[self.ws openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+		// NSArray *urls = [NSArray arrayWithObject:url];
+		[self.ws openURLs:self.urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
 	} else {
 		[[NSWorkspace sharedWorkspace] openURL:url];
 	}
@@ -113,12 +127,12 @@
 
 - (IBAction)audioExtension:(id)sender	// sender is NSMatrix object
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	NSButtonCell *selCell = [sender selectedCell];
 
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([[selCell title] isEqualToString:@"mp3"]) {
@@ -154,13 +168,15 @@
 	[self assembleTypesString];
 }
 
+#pragma mark ViewController videoExtension
+
 - (IBAction)videoExtension:(id)sender
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	NSButtonCell *selCell = [sender selectedCell];
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([[selCell title] isEqualToString:@"mpg"]) {
@@ -214,13 +230,15 @@
 	[self assembleTypesString];
 }
 
+#pragma mark ViewController documentExtension
+
 - (IBAction)documentExtension:(id)sender
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	NSButtonCell *selCell = [sender selectedCell];
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([[selCell title] isEqualToString:@"pdf"]) {
@@ -319,15 +337,16 @@
 	[self assembleTypesString];
 }
 
+#pragma mark ViewController passwordQuery
+
 - (IBAction)passwordQuery:(id)sender
 {
-    
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	NSButtonCell *selCell = [sender selectedCell];
 
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([[selCell title] isEqualToString:@"pass 1"]) {
@@ -390,14 +409,15 @@
 #endif
 }
 
+#pragma mark ViewController archives
+
 - (IBAction)archives:(id)sender
 {
-    
-    NSButtonCell *selCell = [sender selectedCell];
-    
-    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
-    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+	NSButtonCell *selCell = [sender selectedCell];
+
+	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([selCell tag] == 0) {
 		// file ext
@@ -442,15 +462,17 @@
 	[self assembleTypesString];
 }
 
+#pragma mark ViewController linkQuery
+
 - (IBAction)linkQuery:(id)sender
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
- 
-    NSButtonCell *selCell = [sender selectedCell];
-    
-    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
-    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+
+	NSButtonCell *selCell = [sender selectedCell];
+
+	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else {// NSLog(@"Error");
 	}
@@ -458,10 +480,11 @@
 	[self assembleTypesString];
 }
 
+#pragma mark ViewController assembleTypesString
+
 - (void)assembleTypesString
 {
-    
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	self.types_str = (NSMutableString *)@"";
 	// self.types_str = [self.types_str stringByAppendingString:@"%7C"];
@@ -471,84 +494,83 @@
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".mp3%7C"];
 	}
 
-    if ([wma state] == TRUE) {
+	if ([wma state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".wma%7C"];
 	}
 
-
-    if ([ogg state] == TRUE) {
+	if ([ogg state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".ogg%7C"];
 	}
 
 	// Docs
-    if ([pdf state] == TRUE) {
+	if ([pdf state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".pdf%7C"];
 	}
 
-    if ([txt state] == TRUE) {
+	if ([txt state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".txt%7C"];
 	}
 
-    if ([lit state] == TRUE) {
+	if ([lit state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".lit%7C"];
 	}
 
-    if ([rar state] == TRUE) {
+	if ([rar state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".rar%7C"];
 	}
 
-    if ([doc state] == TRUE) {
+	if ([doc state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".doc%7C"];
 	}
 
-    if ([rtf state] == TRUE) {
+	if ([rtf state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".rtf%7C"];
 	}
 
-    if ([pps state] == TRUE) {
+	if ([pps state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".pps%7C"];
 	}
 
-    if ([chm state] == TRUE) {
+	if ([chm state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".chm%7C"];
 	}
 
-    if ([zip state] == TRUE) {
+	if ([zip state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".zip%7C"];
 	}
 
-    if ([odt state] == TRUE) {
+	if ([odt state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".odt%7C"];
 	}
 
 	// Video
-    if ([mpg state] == TRUE) {
+	if ([mpg state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".mpg%7C"];
 	}
 
-    if ([avi state] == TRUE) {
+	if ([avi state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".avi%7C"];
 	}
 
-    if ([wmv state] == TRUE) {
+	if ([wmv state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".wmv%7C"];
 	}
 
-    if ([divx state] == TRUE) {
+	if ([divx state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".divx%7C"];
 	}
 
-    if ([flv state] == TRUE) {
+	if ([flv state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".flv%7C"];
 	}
-    
-    if ([exe state] == TRUE) {
-        self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".exe%7C"];
-    }
-    
-    if ([ddl state] == TRUE) {
-        self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".ddl%7C"];
-    }
+
+	if ([exe state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".exe%7C"];
+	}
+
+	if ([ddl state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".ddl%7C"];
+	}
 
 	if ([self.types_str length] <= 7) {
 		NSLog(@"less than = 7");
@@ -565,11 +587,12 @@
 	NSLog(@"self.types_str = %@", self.types_str);
 }
 
+#pragma mark ViewController truncateString
+
 - (NSString *)	truncateString	:(NSString *)string
 				toCharacterCount:(NSUInteger)count
 {
-    
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	NSRange range = {0, MIN(string.length, count)};
 
@@ -583,11 +606,11 @@
 	return trunc;
 }	// truncateString
 
+#pragma mark ViewController openPasswordQueries
+
 - (void)openPasswordQueries
 {
-    
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	if (self.data_object.pass_1 == (signed char *)TRUE) {
 		self.data_object.full_search_str = (NSMutableString *)@"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
@@ -651,73 +674,78 @@
 	for (int i = 0; i < [self.urls count]; i++) {}
 }
 
-- (IBAction)method1:(id)sender {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+#pragma mark ViewController method1
 
-    NSButtonCell *selCell = [sender selectedCell];
-    
-    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
-    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+- (IBAction)method1:(id)sender
+{
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 
+	NSButtonCell *selCell = [sender selectedCell];
+
+	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 }
 
-- (IBAction)method2:(id)sender {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+#pragma mark ViewController method2
 
-    NSButtonCell *selCell = [sender selectedCell];
-    
-    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
-    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+- (IBAction)method2:(id)sender
+{
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+
+	NSButtonCell *selCell = [sender selectedCell];
+
+	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 }
 
-- (IBAction)resetButtons:(id)sender {
+#pragma mark ViewController resetButtons
 
-       NSLog(@"%@", NSStringFromSelector(_cmd));
-    
-    NSButtonCell *selCell = [sender selectedCell];
-    
-    NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-    NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
-    NSLog(@"Selected cell state is %ld", (long)[selCell state]);
-    
-    [mp3 setState:0];
-    [wma setState:0];
-    [ogg setState:0];
-    [mpg setState:0];
-    [avi setState:0];
-    [wmv setState:0];
-    [divx setState:0];
-    [flv setState:0];
-    [pdf setState:0];
-    [txt setState:0];
-    [lit setState:0];
-    [doc setState:0];
-    [rtf setState:0];
-    [pps setState:0];
-    [chm setState:0];
-    [odt setState:0];
-    [pass1 setState:0];
-    [pass2 setState:0];
-    [pass3 setState:0];
-    [pass4 setState:0];
-    [pass5 setState:0];
-    [pass6 setState:0];
-    [rar setState:0];
-    [zip setState:0];
-    [exe setState:0];
-    [ddl setState:0];
-    [link setState:0];
-    [addUrl setState:0];
-    [related setState:0];
-    [tools setState:0];
-   
-    
-    NSLog(@"self.types_str = %@", NSStringFromClass([self.types_str class]));
+- (IBAction)resetButtons:(id)sender
+{
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+
+	NSButtonCell *selCell = [sender selectedCell];
+
+	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+
+	[mp3 setState:0];
+	[wma setState:0];
+	[ogg setState:0];
+	[mpg setState:0];
+	[avi setState:0];
+	[wmv setState:0];
+	[divx setState:0];
+	[flv setState:0];
+	[pdf setState:0];
+	[txt setState:0];
+	[lit setState:0];
+	[doc setState:0];
+	[rtf setState:0];
+	[pps setState:0];
+	[chm setState:0];
+	[odt setState:0];
+	[pass1 setState:0];
+	[pass2 setState:0];
+	[pass3 setState:0];
+	[pass4 setState:0];
+	[pass5 setState:0];
+	[pass6 setState:0];
+	[rar setState:0];
+	[zip setState:0];
+	[exe setState:0];
+	[ddl setState:0];
+	[link setState:0];
+	[addUrl setState:0];
+	[related setState:0];
+	[tools setState:0];
+
+	NSLog(@"self.types_str = %@", NSStringFromClass([self.types_str class]));
 	self.types_str = (NSMutableString *)@"";
-    NSLog(@"self.types_str = %@",self.types_str);
-    
+	NSLog(@"self.types_str = %@", self.types_str);
 }
 
 @end
