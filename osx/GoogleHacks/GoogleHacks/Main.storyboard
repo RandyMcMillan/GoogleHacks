@@ -1130,17 +1130,17 @@
             <objects>
                 <viewController id="bp4-oP-OFF" customClass="MyViewController" sceneMemberID="viewController">
                     <view key="view" id="7eW-ts-DI0">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <webView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="koN-u1-9M5">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="360"/>
                                 <webPreferences key="preferences" defaultFontSize="12" defaultFixedFontSize="12" plugInsEnabled="NO" javaEnabled="NO">
                                     <nil key="identifier"/>
                                 </webPreferences>
                             </webView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDx-u3-0GW">
-                                <rect key="frame" x="197" y="18" width="116" height="25"/>
+                                <rect key="frame" x="167" y="18" width="116" height="25"/>
                                 <buttonCell key="cell" type="roundTextured" title="Round Textured" bezelStyle="texturedRounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oMk-9m-zK9">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
