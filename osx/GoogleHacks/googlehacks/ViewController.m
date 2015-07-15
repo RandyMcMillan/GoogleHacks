@@ -792,10 +792,9 @@
    
     
     NSLog(@"self.types_str = %@", NSStringFromClass([self.types_str class]));
-    
-    //[self.types_str setString:(NSMutableString *)@""];
 	self.types_str = (NSMutableString *)@"";
     NSLog(@"self.types_str = %@",self.types_str);
+    
 }
 
 @end
