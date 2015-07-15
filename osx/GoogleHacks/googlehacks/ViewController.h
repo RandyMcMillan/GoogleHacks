@@ -50,7 +50,7 @@
 - (NSString *)returnSearchString:(NSString *)searchString;
 - (NSURL *)modifyURL:(NSString *)modString;
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background;
-- (IBAction)enterFromButton:(id)sender;
+- (IBAction)pressSearchButton:(id)sender;
 - (IBAction)enterFromSearchField:(id)sender;
 - (IBAction)enterFromURLLinkField:(id)sender;
 - (IBAction)audioExtension:(id)sender;

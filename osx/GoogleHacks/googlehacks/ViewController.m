@@ -18,7 +18,7 @@
 @implementation ViewController
 
 @synthesize data_object, types_str;
-@synthesize searchTextField, urls, ws;
+@synthesize searchTextField, urlLinkTextField,urls, ws;
 
 #pragma mark ViewController viewDidLoad
 
@@ -48,8 +48,6 @@
 {
 
     //This method will handle more complex logic...
-    
-    
     NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	[self assembleTypesString];
@@ -69,9 +67,8 @@
 - (IBAction)enterFromSearchField:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	//NSLog(@"searchTextField = %@", [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
     //enterFromButton handles enterFrom logic
-    [self enterFromButton:(id)sender];
+    [self pressSearchButton:(id)sender];
     
 }
 
@@ -80,18 +77,22 @@
 - (IBAction)enterFromURLLinkField:(id)sender {
 
     NSLog(@"%@", NSStringFromSelector(_cmd));
-    //NSLog(@"URLLinkField = %@", [[self.urlLinkTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
     //enterFromButton handles enterFrom logic
-    [self enterFromButton:(id)sender];
+    [self pressSearchButton:(id)sender];
     
 }
 
 
 #pragma mark ViewController enterFromButton
 
-- (IBAction)enterFromButton:(id)sender
+- (IBAction)pressSearchButton:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
+ 	NSLog(@"returnSearchField = %@", [self returnSearchField]);
+    NSLog(@"returnURLLinkField = %@", [self returnURLLinkField]);
+
+    
+    
     //Basic openURL...
     //[self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
 
@@ -102,11 +103,8 @@
 - (NSString *)returnSearchField
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	NSString *returnSearchField = nil;
-	returnSearchField = [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-	NSLog(@"returnSearchField = %@", returnSearchField);
-
-	return returnSearchField;
+	NSLog(@"self.searchTextField = %@", [self.searchTextField stringValue]);
+    return [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 }
 
 #pragma mark ViewController returnURLLinkField
@@ -114,7 +112,7 @@
 - (NSString *)returnURLLinkField
 {
     NSLog(@"%@", NSStringFromSelector(_cmd));
-    NSLog(@"urlLinkTextField = %@", self.urlLinkTextField);
+    NSLog(@"self.urlLinkTextField = %@", [self.urlLinkTextField stringValue]);
     return [[self.urlLinkTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 }
 
