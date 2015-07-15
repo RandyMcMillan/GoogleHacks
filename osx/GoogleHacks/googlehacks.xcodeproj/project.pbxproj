@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480B411F1B56ADEF0014A6A3 /* 2000px-WMF-Agora-Settings_BCBCBC.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 480B411C1B56ADEF0014A6A3 /* 2000px-WMF-Agora-Settings_BCBCBC.svg.png */; };
+		480B41201B56ADEF0014A6A3 /* gear_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 480B411D1B56ADEF0014A6A3 /* gear_64.png */; };
+		480B41211B56ADEF0014A6A3 /* WMF-Agora-Settings_BCBCBC.svg in Resources */ = {isa = PBXBuildFile; fileRef = 480B411E1B56ADEF0014A6A3 /* WMF-Agora-Settings_BCBCBC.svg */; };
 		483E64FB1B4F575A00E4EA6C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 483E64FA1B4F575A00E4EA6C /* index.html */; };
 		489552541B4F148700CA90B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552531B4F148700CA90B6 /* AppDelegate.m */; };
 		489552561B4F148700CA90B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552551B4F148700CA90B6 /* main.m */; };
@@ -33,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		480B411C1B56ADEF0014A6A3 /* 2000px-WMF-Agora-Settings_BCBCBC.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2000px-WMF-Agora-Settings_BCBCBC.svg.png"; sourceTree = "<group>"; };
+		480B411D1B56ADEF0014A6A3 /* gear_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_64.png; sourceTree = "<group>"; };
+		480B411E1B56ADEF0014A6A3 /* WMF-Agora-Settings_BCBCBC.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "WMF-Agora-Settings_BCBCBC.svg"; sourceTree = "<group>"; };
 		483E64FA1B4F575A00E4EA6C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		4879F62E1B532B2D009A5585 /* NOTES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NOTES.h; sourceTree = "<group>"; };
 		4895524D1B4F148700CA90B6 /* GoogleHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +85,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		480B411B1B56ADEF0014A6A3 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				480B411C1B56ADEF0014A6A3 /* 2000px-WMF-Agora-Settings_BCBCBC.svg.png */,
+				480B411D1B56ADEF0014A6A3 /* gear_64.png */,
+				480B411E1B56ADEF0014A6A3 /* WMF-Agora-Settings_BCBCBC.svg */,
+			);
+			name = shared;
+			path = ../../../shared;
+			sourceTree = "<group>";
+		};
 		489552441B4F148700CA90B6 = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +143,7 @@
 		489552501B4F148700CA90B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				480B411B1B56ADEF0014A6A3 /* shared */,
 				4895529E1B4F444A00CA90B6 /* WebKit.framework */,
 				489552511B4F148700CA90B6 /* Info.plist */,
 				489552551B4F148700CA90B6 /* main.m */,
@@ -206,7 +224,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 489552481B4F148700CA90B6 /* Build configuration list for PBXProject "googlehacks" */;
+			buildConfigurationList = 489552481B4F148700CA90B6 /* Build configuration list for PBXProject "GoogleHacks" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -231,7 +249,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				483E64FB1B4F575A00E4EA6C /* index.html in Resources */,
+				480B411F1B56ADEF0014A6A3 /* 2000px-WMF-Agora-Settings_BCBCBC.svg.png in Resources */,
 				489552991B4F3F9200CA90B6 /* Main.storyboard in Resources */,
+				480B41201B56ADEF0014A6A3 /* gear_64.png in Resources */,
+				480B41211B56ADEF0014A6A3 /* WMF-Agora-Settings_BCBCBC.svg in Resources */,
 				4895525E1B4F148700CA90B6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,7 +449,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		489552481B4F148700CA90B6 /* Build configuration list for PBXProject "googlehacks" */ = {
+		489552481B4F148700CA90B6 /* Build configuration list for PBXProject "GoogleHacks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4895526E1B4F148800CA90B6 /* Debug */,
