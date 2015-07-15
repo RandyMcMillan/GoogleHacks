@@ -68,5 +68,6 @@
 @property (nonatomic, readwrite) NSTextField	*searchTextField;
 @property (nonatomic, readwrite) NSMutableArray *urls;
 @property (nonatomic, strong) NSWorkspace		*ws;
+@property (nonatomic,readwrite)NSMutableString *types_str;
 
 @end

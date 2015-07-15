@@ -12,9 +12,9 @@
 
 // Search String
 
-@property (nonatomic, retain) NSMutableString	*search_str;
-@property (nonatomic, retain) NSMutableString	*full_search_str;
-@property (nonatomic, retain) NSMutableString	*types_str;
+@property (nonatomic, readwrite) NSMutableString	*search_str;
+@property (nonatomic, readwrite) NSMutableString	*full_search_str;
+@property (nonatomic, readwrite) NSMutableString	*types_str;
 
 // Audio Files
 @property (nonatomic, retain) NSArray	*audioArray;
