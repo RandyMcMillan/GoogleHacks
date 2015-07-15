@@ -40,7 +40,6 @@
 - (void)setRepresentedObject:(id)representedObject
 {
     NSLog(@"%@", NSStringFromSelector(_cmd));
-    
 	[super setRepresentedObject:representedObject];
 }
 
@@ -50,15 +49,11 @@
     NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	[self assembleTypesString];
-//	NSLog(@"%@", self.types_str);
-
 	if ([self.types_str isEqualToString:@""]) {} else {}
-
 	self.data_object.search_str = (NSMutableString *)[self returnSearchField];
 	searchString = [BASE_URL stringByAppendingString:@"q="];
-	NSLog(@"%@", searchString);
 	searchString = [searchString stringByAppendingString:[self returnSearchField]];
-	NSLog(@"%@", searchString);
+	NSLog(@"searchString = %@", searchString);
 
 	return searchString;
 }
@@ -66,16 +61,14 @@
 - (IBAction)enterFromSearchField:(id)sender
 {
     NSLog(@"%@", NSStringFromSelector(_cmd));
-
 	NSLog(@"searchTextField = %@", [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
 	[self openURLFromButton:(id)sender];
 }
 
 - (NSString *)returnSearchField
-{     NSLog(@"%@", NSStringFromSelector(_cmd));
-
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 	NSString *returnSearchField = nil;
-
 	returnSearchField = [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 	NSLog(@"returnSearchField = %@", returnSearchField);
 
@@ -85,7 +78,6 @@
 - (NSURL *)modifyURL:(NSString *)modString
 {
     NSLog(@"%@", NSStringFromSelector(_cmd));
-
 	NSLog(@"%@", modString);// null
 	NSURL *modifiedURL = [NSURL URLWithString:modString];
 
@@ -97,7 +89,6 @@
 - (IBAction)openURLFromButton:(id)sender
 {
     NSLog(@"%@", NSStringFromSelector(_cmd));
-
 	[self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:YES];
 }
 
@@ -112,15 +103,7 @@
 		[[NSWorkspace sharedWorkspace] openURL:url];
 	}
 
-	//[self openPasswordQueries];
-	// gotta remove objects and revuild every time
 	NSLog(@"self.urls count = %ld", [self.urls count]);
-
-	//[[NSWorkspace sharedWorkspace] openURLs:[self.urls arrayByAddingObjectsFromArray:self.data_object.passWordLinkArray] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-
-	// for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
-	//   [[NSWorkspace sharedWorkspace] openURLs:[NSURL URLWithString:self.data_object.passWordLinkArray[i]] withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-	// }
 	NSLog(@"self.urls count = %ld", [self.urls count]);
 
 	[self.urls removeAllObjects];
@@ -176,7 +159,6 @@
     NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	NSButtonCell *selCell = [sender selectedCell];
-
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
     NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
@@ -237,7 +219,6 @@
     NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	NSButtonCell *selCell = [sender selectedCell];
-
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
     NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
@@ -490,138 +471,96 @@
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".mp3%7C"];
 	}
 
-//	NSLog(@"%@", self.types_str);
-
     if ([wma state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".wma%7C"];
 	}
 
-//	NSLog(@"%@", self.types_str);
 
     if ([ogg state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".ogg%7C"];
 	}
-
-//	NSLog(@"%@", self.types_str);
 
 	// Docs
     if ([pdf state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".pdf%7C"];
 	}
 
-//	NSLog(@"%@", self.types_str);
-
     if ([txt state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".txt%7C"];
 	}
-
-//	NSLog(@"%@", self.types_str);
 
     if ([lit state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".lit%7C"];
 	}
 
-//	NSLog(@"%@", self.types_str);
-
     if ([rar state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".rar%7C"];
 	}
-
-//	NSLog(@"%@", self.types_str);
 
     if ([doc state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".doc%7C"];
 	}
 
-//	NSLog(@"%@", self.types_str);
-
     if ([rtf state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".rtf%7C"];
 	}
-
-//	NSLog(@"%@", self.types_str);
 
     if ([pps state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".pps%7C"];
 	}
 
-//	NSLog(@"%@", self.types_str);
-
     if ([chm state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".chm%7C"];
 	}
-
-//	NSLog(@"%@", self.types_str);
 
     if ([zip state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".zip%7C"];
 	}
 
-//	NSLog(@"%@", self.types_str);
-
     if ([odt state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".odt%7C"];
 	}
-
-//	NSLog(@"%@", self.types_str);
 
 	// Video
     if ([mpg state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".mpg%7C"];
 	}
 
-//	NSLog(@"%@", self.types_str);
-
     if ([avi state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".avi%7C"];
 	}
-
-//	NSLog(@"%@", self.types_str);
 
     if ([wmv state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".wmv%7C"];
 	}
 
-//	NSLog(@"%@", self.types_str);
-
     if ([divx state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".divx%7C"];
 	}
 
-//	NSLog(@"%@", self.types_str);
-
     if ([flv state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".flv%7C"];
 	}
-
-//	NSLog(@"%@", self.types_str);
-
-//	NSLog(@"%@", self.types_str);
+    
+    if ([exe state] == TRUE) {
+        self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".exe%7C"];
+    }
+    
+    if ([ddl state] == TRUE) {
+        self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".ddl%7C"];
+    }
 
 	if ([self.types_str length] <= 7) {
 		NSLog(@"less than = 7");
 		// http://borkware.com/quickies/one?topic=NSString
 
 		self.types_str = (NSMutableString *)[self truncateString:self.types_str toCharacterCount:4];
-
 		// https://bdpuqvsqmphctrcs.onion.to/data/
 	}
 
 	if ([self.types_str isEqualToString:@".divx%7C"]) {
 		self.types_str = (NSMutableString *)[self truncateString:self.types_str toCharacterCount:5];
 	}
-
-//	NSInteger *capacity = (long *)[self.types_str length];
-//	NSLog(@"capacity = %i", (int)capacity);
-//	NSMutableString *temp = [NSMutableString stringWithCapacity:(NSUInteger)capacity];
-//	NSLog(@"temp.length = %lx", temp.length);
-//	[temp setString:self.types_str];
-	//[temp replaceCharactersInRange:NSMakeRange(0, 0) withString:@"Exige"];
-//	NSLog(@"%@", temp);									// Lotus Exige
-//	[temp deleteCharactersInRange:NSMakeRange(0, 0)];
-//	NSLog(@"%@", temp);									// Lotus
-
-	// [self.types_str deleteCharactersInRange:NSMakeRange(5, 6)];
 
 	NSLog(@"self.types_str = %@", self.types_str);
 }
@@ -654,8 +593,6 @@
 		self.data_object.full_search_str = (NSMutableString *)@"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
 		[self.urls addObject:self.data_object.full_search_str];
 
-		// NSLog(@"0 %@",self.urls[0]);
-		// With a traditional for loop
 		for (int i = 0; i < [self.urls count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
@@ -665,7 +602,6 @@
 		self.data_object.full_search_str = (NSMutableString *)@"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt";
 		[self.urls addObject:self.data_object.full_search_str];
 
-		// NSLog(@"1 %@",self.urls[1]);
 		for (int i = 0; i < [self.urls count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
@@ -675,9 +611,6 @@
 		self.data_object.full_search_str = (NSMutableString *)@"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search";
 		[self.urls addObject:self.data_object.full_search_str];
 
-		// NSLog(@"2 %@",self.urls[2]);
-		// [[NSWorkspace sharedWorkspace] openURLs:urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-		//  self.data_object.pass_3 == FALSE;
 		for (int i = 0; i < [self.urls count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
@@ -687,7 +620,6 @@
 		self.data_object.full_search_str = (NSMutableString *)@"http://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd";
 		[self.urls addObject:self.data_object.full_search_str];
 
-		// NSLog(@"3 %@",self.urls[3]);
 		for (int i = 0; i < [self.urls count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
@@ -697,7 +629,6 @@
 		self.data_object.full_search_str = (NSMutableString *)@"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php";
 		[self.urls addObject:self.data_object.full_search_str];
 
-		// NSLog(@"4 %@",self.urls[4]);
 		for (int i = 0; i < [self.urls count]; i++) {
 			NSLog(@"%d: %@", i, self.urls[i]);
 		}
@@ -750,15 +681,7 @@
     NSLog(@"Selected cell is %ld", (long)[selCell tag]);
     NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
     NSLog(@"Selected cell state is %ld", (long)[selCell state]);
-/*
-    for (Button *item in buttons) {
-        if (item == sender) {
-            item.selected = !item.selected;
-        } else {
-            item.button.selected = NO;
-        }
-    }
- */
+    
     [mp3 setState:0];
     [wma setState:0];
     [ogg setState:0];

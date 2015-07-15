@@ -676,8 +676,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4b6-s8-AX9">
-                                <rect key="frame" x="31" y="318" width="389" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Search String" drawsBackground="YES" id="lWf-Ix-SDJ">
+                                <rect key="frame" x="7" y="318" width="300" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Search String" drawsBackground="YES" id="lWf-Ix-SDJ">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -687,7 +687,7 @@
                                 </connections>
                             </textField>
                             <box autoresizesSubviews="NO" fixedFrame="YES" title="Documents" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="MXo-VM-xwu">
-                                <rect key="frame" x="118" y="16" width="90" height="287"/>
+                                <rect key="frame" x="108" y="16" width="90" height="287"/>
                                 <view key="contentView">
                                     <rect key="frame" x="1" y="1" width="88" height="271"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -778,7 +778,7 @@
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" title="Password" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="lmS-I5-ds3">
-                                <rect key="frame" x="220" y="149" width="90" height="154"/>
+                                <rect key="frame" x="212" y="149" width="90" height="154"/>
                                 <view key="contentView">
                                     <rect key="frame" x="1" y="1" width="88" height="138"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -849,13 +849,13 @@
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" title="Methods" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="u1Q-2R-dWu">
-                                <rect key="frame" x="323" y="76" width="117" height="227"/>
+                                <rect key="frame" x="312" y="122" width="128" height="181"/>
                                 <view key="contentView">
-                                    <rect key="frame" x="1" y="1" width="115" height="211"/>
+                                    <rect key="frame" x="1" y="1" width="126" height="165"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ER5-Gf-iCG">
-                                            <rect key="frame" x="15" y="100" width="65" height="18"/>
+                                            <rect key="frame" x="15" y="54" width="65" height="18"/>
                                             <buttonCell key="cell" type="check" title="related" bezelStyle="regularSquare" imagePosition="left" tag="29" inset="2" id="GId-SI-Pks">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -865,7 +865,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C09-ti-cHC">
-                                            <rect key="frame" x="15" y="146" width="61" height="18"/>
+                                            <rect key="frame" x="15" y="100" width="61" height="18"/>
                                             <buttonCell key="cell" type="check" title="link" bezelStyle="regularSquare" imagePosition="left" tag="27" inset="2" id="f3h-eI-evF">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -875,7 +875,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vx1-pt-s5m">
-                                            <rect key="frame" x="15" y="124" width="65" height="18"/>
+                                            <rect key="frame" x="15" y="78" width="65" height="18"/>
                                             <buttonCell key="cell" type="check" title="add url" bezelStyle="regularSquare" imagePosition="left" tag="28" inset="2" id="qFZ-B4-7zm">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -885,7 +885,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-Ba-k7K">
-                                            <rect key="frame" x="15" y="75" width="61" height="18"/>
+                                            <rect key="frame" x="15" y="29" width="61" height="18"/>
                                             <buttonCell key="cell" type="check" title="tools" bezelStyle="regularSquare" imagePosition="left" tag="30" inset="2" id="MKg-Cl-YzW">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -894,21 +894,13 @@
                                                 <action selector="method1:" target="XfG-lQ-9wD" id="PB8-0l-Xba"/>
                                             </connections>
                                         </button>
-                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4xl-x5-VUc">
-                                            <rect key="frame" x="9" y="179" width="96" height="22"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" placeholderString="Link | Url " drawsBackground="YES" id="v6b-Gh-5ao">
-                                                <font key="font" metaFont="system"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                        </textField>
                                     </subviews>
                                 </view>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" title="Archives" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="pjN-fU-KWZ">
-                                <rect key="frame" x="220" y="16" width="90" height="128"/>
+                                <rect key="frame" x="212" y="16" width="90" height="128"/>
                                 <view key="contentView">
                                     <rect key="frame" x="1" y="1" width="88" height="112"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -959,7 +951,7 @@
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
                             <box fixedFrame="YES" title="Audio/Video" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="2Rd-SG-hU8">
-                                <rect key="frame" x="17" y="16" width="90" height="287"/>
+                                <rect key="frame" x="4" y="16" width="90" height="287"/>
                                 <view key="contentView">
                                     <rect key="frame" x="1" y="1" width="88" height="271"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1050,7 +1042,7 @@
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKe-5m-kVo">
-                                <rect key="frame" x="326" y="18" width="111" height="25"/>
+                                <rect key="frame" x="315" y="18" width="122" height="25"/>
                                 <buttonCell key="cell" type="squareTextured" title="Search" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gj3-1g-1zQ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1060,13 +1052,34 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z25-03-6nh">
-                                <rect key="frame" x="326" y="48" width="111" height="25"/>
+                                <rect key="frame" x="315" y="48" width="122" height="25"/>
                                 <buttonCell key="cell" type="squareTextured" title="Reset" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" allowsMixedState="YES" imageScaling="proportionallyDown" inset="2" id="g4f-bx-qoV">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="resetButtons:" target="XfG-lQ-9wD" id="gu9-U5-R4V"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEj-KR-4Go">
+                                <rect key="frame" x="315" y="318" width="122" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" state="on" borderStyle="bezel" placeholderString="URL | Link" drawsBackground="YES" id="Zkl-0P-a1a">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="enterFromSearchField:" target="XfG-lQ-9wD" id="hf7-pG-ngN"/>
+                                </connections>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SxU-u0-OSH">
+                                <rect key="frame" x="315" y="78" width="122" height="25"/>
+                                <buttonCell key="cell" type="squareTextured" title="Settings" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" allowsMixedState="YES" imageScaling="proportionallyDown" inset="2" id="aVV-mo-pnU">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="bp4-oP-OFF" kind="sheet" id="YDd-0k-bIi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1101,11 +1114,11 @@
                         <outlet property="searchTextField" destination="4b6-s8-AX9" id="fd9-as-jr0"/>
                         <outlet property="tools" destination="yAa-Ba-k7K" id="DAf-Ie-ZrA"/>
                         <outlet property="txt" destination="QFn-5q-LIW" id="ke4-sI-DnO"/>
-                        <outlet property="urlLinkTextField" destination="4xl-x5-VUc" id="vax-FH-ChJ"/>
                         <outlet property="view" destination="m2S-Jp-Qdl" id="7U6-cg-HaG"/>
                         <outlet property="wma" destination="NLc-CI-buq" id="Rcn-UX-flr"/>
                         <outlet property="wmv" destination="JcC-H4-oBm" id="HAK-O6-b3N"/>
                         <outlet property="zip" destination="Fea-bG-rbN" id="4be-Sk-PXn"/>
+                        <segue destination="bp4-oP-OFF" kind="sheet" id="rOg-9R-t2H"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1149,4 +1162,7 @@
             <point key="canvasLocation" x="604" y="670"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="rOg-9R-t2H"/>
+    </inferredMetricsTieBreakers>
 </document>
