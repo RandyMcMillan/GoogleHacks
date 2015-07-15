@@ -47,24 +47,26 @@
 	IBOutlet NSButton		*tools;
 }
 
+- (IBAction)pressSearchButton:(id)sender;
+- (IBAction)enterFromSearchField:(id)sender;
+- (IBAction)enterFromURLLinkField:(id)sender;
 - (NSString *)returnSearchString:(NSString *)searchString;
 - (NSURL *)modifyURL:(NSString *)modString;
 - (void)openURL:(NSURL *)url inBackground:(BOOL)background;
-- (IBAction)enterFromButton:(id)sender;
-- (IBAction)enterFromSearchField:(id)sender;
-- (IBAction)enterFromURLLinkField:(id)sender;
+
 - (IBAction)audioExtension:(id)sender;
 - (IBAction)videoExtension:(id)sender;
 - (IBAction)documentExtension:(id)sender;
 - (IBAction)passwordQuery:(id)sender;
-- (IBAction)method1:(id)sender;
-- (IBAction)method2:(id)sender;
 - (IBAction)archives:(id)sender;
 - (IBAction)linkQuery:(id)sender;
-- (IBAction)resetButtons:(id)sender;
 - (void)assembleTypesString;
-- (void)openPasswordQueries;
 - (NSString *)truncateString:(NSString *)string toCharacterCount:(NSUInteger)count;
+- (void)openPasswordQueries;
+- (IBAction)method1:(id)sender;
+- (IBAction)method2:(id)sender;
+- (IBAction)resetButtons:(id)sender;
+
 @property (nonatomic, readwrite) DataObjects	*data_object;
 @property (nonatomic, readwrite) NSTextField	*searchTextField;
 @property (nonatomic, readwrite) NSTextField	*urlLinkTextField;

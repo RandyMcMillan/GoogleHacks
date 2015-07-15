@@ -1047,7 +1047,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="openURLFromButton:" target="XfG-lQ-9wD" id="GQL-ca-GGg"/>
+                                    <action selector="pressSearchButton:" target="XfG-lQ-9wD" id="Njr-tm-8WO"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z25-03-6nh">
