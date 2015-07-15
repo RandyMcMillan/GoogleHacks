@@ -46,7 +46,11 @@
 
 - (NSString *)returnSearchString:(NSString *)searchString
 {
-	NSLog(@"%@", NSStringFromSelector(_cmd));
+
+    //This method will handle more complex logic...
+    
+    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	[self assembleTypesString];
 
@@ -65,16 +69,32 @@
 - (IBAction)enterFromSearchField:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	NSLog(@"searchTextField = %@", [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
-	[self enterFromButton:(id)sender];
+	//NSLog(@"searchTextField = %@", [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
+    //enterFromButton handles enterFrom logic
+    [self enterFromButton:(id)sender];
+    
 }
+
+#pragma mark ViewController enterFromURLLinkField
+
+- (IBAction)enterFromURLLinkField:(id)sender {
+
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    //NSLog(@"URLLinkField = %@", [[self.urlLinkTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"]);
+    //enterFromButton handles enterFrom logic
+    [self enterFromButton:(id)sender];
+    
+}
+
 
 #pragma mark ViewController enterFromButton
 
 - (IBAction)enterFromButton:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	[self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
+    //Basic openURL...
+    //[self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
+
 }
 
 #pragma mark ViewController returnSearchField
@@ -87,6 +107,15 @@
 	NSLog(@"returnSearchField = %@", returnSearchField);
 
 	return returnSearchField;
+}
+
+#pragma mark ViewController returnURLLinkField
+
+- (NSString *)returnURLLinkField
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSLog(@"urlLinkTextField = %@", self.urlLinkTextField);
+    return [[self.urlLinkTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 }
 
 #pragma mark ViewController modifyURL

@@ -1068,7 +1068,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
-                                    <action selector="enterFromSearchField:" target="XfG-lQ-9wD" id="hf7-pG-ngN"/>
+                                    <action selector="enterFromURLLinkField:" target="XfG-lQ-9wD" id="tgx-Dt-fPR"/>
                                 </connections>
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SxU-u0-OSH">
@@ -1113,6 +1113,7 @@
                         <outlet property="searchTextField" destination="4b6-s8-AX9" id="fd9-as-jr0"/>
                         <outlet property="tools" destination="yAa-Ba-k7K" id="DAf-Ie-ZrA"/>
                         <outlet property="txt" destination="QFn-5q-LIW" id="ke4-sI-DnO"/>
+                        <outlet property="urlLinkTextField" destination="hEj-KR-4Go" id="wNV-nP-Ohw"/>
                         <outlet property="view" destination="m2S-Jp-Qdl" id="7U6-cg-HaG"/>
                         <outlet property="wma" destination="NLc-CI-buq" id="Rcn-UX-flr"/>
                         <outlet property="wmv" destination="JcC-H4-oBm" id="HAK-O6-b3N"/>
