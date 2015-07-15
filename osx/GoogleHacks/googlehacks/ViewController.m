@@ -17,7 +17,7 @@
 
 @implementation ViewController
 
-@synthesize data_object;
+@synthesize data_object,types_str;
 @synthesize searchTextField, urls, ws;
 
 #pragma mark ViewController viewDidLoad
@@ -34,6 +34,7 @@
 	self.urls = [NSMutableArray arrayWithCapacity:100];
 	//[self openPasswordQueries];
 	self.ws = [NSWorkspace sharedWorkspace];
+    self.types_str = (NSMutableString *)self.data_object.types_str;
 }
 
 - (void)setRepresentedObject:(id)representedObject
@@ -49,9 +50,9 @@
     NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	[self assembleTypesString];
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if ([self.data_object.types_str isEqualToString:@""]) {} else {}
+	if ([self.types_str isEqualToString:@""]) {} else {}
 
 	self.data_object.search_str = (NSMutableString *)[self returnSearchField];
 	searchString = [BASE_URL stringByAppendingString:@"q="];
@@ -481,148 +482,148 @@
     
     NSLog(@"%@", NSStringFromSelector(_cmd));
 
-	self.data_object.types_str = (NSMutableString *)@"";
-	// self.data_object.types_str = [self.data_object.types_str stringByAppendingString:@"%7C"];
+	self.types_str = (NSMutableString *)@"";
+	// self.types_str = [self.types_str stringByAppendingString:@"%7C"];
 
 	// Audio
-	if (self.data_object.mp3_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".mp3%7C"];
+	if ([mp3 state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".mp3%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.wma_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".wma%7C"];
+    if ([wma state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".wma%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.ogg_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".ogg%7C"];
+    if ([ogg state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".ogg%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
 	// Docs
-	if (self.data_object.pdf_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".pdf%7C"];
+    if ([pdf state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".pdf%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.txt_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".txt%7C"];
+    if ([txt state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".txt%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.lit_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".lit%7C"];
+    if ([lit state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".lit%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.rar_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".rar%7C"];
+    if ([rar state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".rar%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.doc_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".doc%7C"];
+    if ([doc state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".doc%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.rtf_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".rtf%7C"];
+    if ([rtf state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".rtf%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.pps_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".pps%7C"];
+    if ([pps state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".pps%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.chm_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".chm%7C"];
+    if ([chm state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".chm%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.zip1_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".zip1%7C"];
+    if ([zip state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".zip%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.odt_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".odt%7C"];
+    if ([odt state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".odt%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
 	// Video
-	if (self.data_object.mpg_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".mpg%7C"];
+    if ([mpg state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".mpg%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.avi_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".avi%7C"];
+    if ([avi state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".avi%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.wmv_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".wmv%7C"];
+    if ([wmv state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".wmv%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.divx_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".divx%7C"];
+    if ([divx state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".divx%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if (self.data_object.flv_check == (signed char *)TRUE) {
-		self.data_object.types_str = (NSMutableString *)[self.data_object.types_str stringByAppendingString:@".flv%7C"];
+    if ([flv state] == TRUE) {
+		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".flv%7C"];
 	}
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-//	NSLog(@"%@", self.data_object.types_str);
+//	NSLog(@"%@", self.types_str);
 
-	if ([self.data_object.types_str length] <= 7) {
+	if ([self.types_str length] <= 7) {
 		NSLog(@"less than = 7");
 		// http://borkware.com/quickies/one?topic=NSString
 
-		self.data_object.types_str = (NSMutableString *)[self truncateString:self.data_object.types_str toCharacterCount:4];
+		self.types_str = (NSMutableString *)[self truncateString:self.types_str toCharacterCount:4];
 
 		// https://bdpuqvsqmphctrcs.onion.to/data/
 	}
 
-	if ([self.data_object.types_str isEqualToString:@".divx%7C"]) {
-		self.data_object.types_str = (NSMutableString *)[self truncateString:self.data_object.types_str toCharacterCount:5];
+	if ([self.types_str isEqualToString:@".divx%7C"]) {
+		self.types_str = (NSMutableString *)[self truncateString:self.types_str toCharacterCount:5];
 	}
 
-//	NSInteger *capacity = (long *)[self.data_object.types_str length];
+//	NSInteger *capacity = (long *)[self.types_str length];
 //	NSLog(@"capacity = %i", (int)capacity);
 //	NSMutableString *temp = [NSMutableString stringWithCapacity:(NSUInteger)capacity];
 //	NSLog(@"temp.length = %lx", temp.length);
-//	[temp setString:self.data_object.types_str];
+//	[temp setString:self.types_str];
 	//[temp replaceCharactersInRange:NSMakeRange(0, 0) withString:@"Exige"];
 //	NSLog(@"%@", temp);									// Lotus Exige
 //	[temp deleteCharactersInRange:NSMakeRange(0, 0)];
 //	NSLog(@"%@", temp);									// Lotus
 
-	// [self.data_object.types_str deleteCharactersInRange:NSMakeRange(5, 6)];
+	// [self.types_str deleteCharactersInRange:NSMakeRange(5, 6)];
 
-	NSLog(@"self.data_object.types_str = %@", self.data_object.types_str);
+	NSLog(@"self.types_str = %@", self.types_str);
 }
 
 - (NSString *)	truncateString	:(NSString *)string
@@ -788,7 +789,13 @@
     [addUrl setState:0];
     [related setState:0];
     [tools setState:0];
+   
     
+    NSLog(@"self.types_str = %@", NSStringFromClass([self.types_str class]));
+    
+    //[self.types_str setString:(NSMutableString *)@""];
+	self.types_str = (NSMutableString *)@"";
+    NSLog(@"self.types_str = %@",self.types_str);
 }
 
 @end
