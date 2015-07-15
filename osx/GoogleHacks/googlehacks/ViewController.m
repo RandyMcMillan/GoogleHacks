@@ -541,6 +541,14 @@
     if ([flv state] == TRUE) {
 		self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".flv%7C"];
 	}
+    
+    if ([exe state] == TRUE) {
+        self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".exe%7C"];
+    }
+    
+    if ([ddl state] == TRUE) {
+        self.types_str = (NSMutableString *)[self.types_str stringByAppendingString:@".ddl%7C"];
+    }
 
 	if ([self.types_str length] <= 7) {
 		NSLog(@"less than = 7");
