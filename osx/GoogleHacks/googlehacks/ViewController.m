@@ -18,7 +18,7 @@
 @implementation ViewController
 
 @synthesize data_object, types_str;
-@synthesize searchTextField, urlLinkTextField,urls, ws;
+@synthesize searchTextField, urlLinkTextField, urls, ws;
 
 #pragma mark ViewController viewDidLoad
 
@@ -42,24 +42,18 @@
 	[super setRepresentedObject:representedObject];
 }
 
-#pragma mark ViewController figureOutTheLogicHere
+#pragma mark ViewController enterFromButton <---all roads lead here
 
-- (NSString *)returnSearchString:(NSString *)searchString
+- (IBAction)pressSearchButton:(id)sender
 {
-
-    //This method will handle more complex logic...
-    NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"returnSearchField = %@", [self returnSearchField]);
+	NSLog(@"returnURLLinkField = %@", [self returnURLLinkField]);
 
 	[self assembleTypesString];
 
-	if ([self.types_str isEqualToString:@""]) {} else {}
-
-	self.data_object.search_str = (NSMutableString *)[self returnSearchField];
-	searchString	= [BASE_URL stringByAppendingString:@"q="];
-	searchString	= [searchString stringByAppendingString:[self returnSearchField]];
-	NSLog(@"searchString = %@", searchString);
-
-	return searchString;
+	// Basic openURL...
+	// [self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
 }
 
 #pragma mark ViewController enterFromSearchField
@@ -67,35 +61,17 @@
 - (IBAction)enterFromSearchField:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-    //enterFromButton handles enterFrom logic
-    [self pressSearchButton:(id)sender];
-    
+	// enterFromButton handles enterFrom logic
+	[self pressSearchButton:(id)sender];
 }
 
 #pragma mark ViewController enterFromURLLinkField
 
-- (IBAction)enterFromURLLinkField:(id)sender {
-
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    //enterFromButton handles enterFrom logic
-    [self pressSearchButton:(id)sender];
-    
-}
-
-
-#pragma mark ViewController enterFromButton
-
-- (IBAction)pressSearchButton:(id)sender
+- (IBAction)enterFromURLLinkField:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
- 	NSLog(@"returnSearchField = %@", [self returnSearchField]);
-    NSLog(@"returnURLLinkField = %@", [self returnURLLinkField]);
-
-    
-    
-    //Basic openURL...
-    //[self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
-
+	// enterFromButton handles enterFrom logic
+	[self pressSearchButton:(id)sender];
 }
 
 #pragma mark ViewController returnSearchField
@@ -104,16 +80,30 @@
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	NSLog(@"self.searchTextField = %@", [self.searchTextField stringValue]);
-    return [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+	return [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 }
 
 #pragma mark ViewController returnURLLinkField
 
 - (NSString *)returnURLLinkField
 {
-    NSLog(@"%@", NSStringFromSelector(_cmd));
-    NSLog(@"self.urlLinkTextField = %@", [self.urlLinkTextField stringValue]);
-    return [[self.urlLinkTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+	NSLog(@"self.urlLinkTextField = %@", [self.urlLinkTextField stringValue]);
+	return [[self.urlLinkTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+}
+
+#pragma mark ViewController figureOutTheLogicHere
+
+- (NSString *)returnSearchString:(NSString *)searchString
+{
+	// This method will handle more complex logic...
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+
+	searchString	= [BASE_URL stringByAppendingString:@"q="];
+	searchString	= [searchString stringByAppendingString:[self returnSearchField]];
+	NSLog(@"searchString = %@", searchString);
+
+	return searchString;
 }
 
 #pragma mark ViewController modifyURL
@@ -162,34 +152,16 @@
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
-	if ([[selCell title] isEqualToString:@"mp3"]) {
-		if ([selCell state] == 0) {
-			self.data_object.mp3_check = FALSE;
-		} else {
-			self.data_object.mp3_check = (signed char *)TRUE;
-		}
-	}
+	if ([mp3 state] == (long)TRUE) {} else {}
 
-	if ([[selCell title] isEqualToString:@"wma"]) {
-		if ([selCell state] == 0) {
-			self.data_object.wma_check = FALSE;
-		} else {
-			self.data_object.wma_check = (signed char *)TRUE;
-		}
-	}
+	if ([wma state] == (long)TRUE) {} else {}
 
-	if ([[selCell title] isEqualToString:@"ogg"]) {
-		if ([selCell state] == 0) {
-			self.data_object.ogg_check = FALSE;
-		} else {
-			self.data_object.ogg_check = (signed char *)TRUE;
-		}
-	}
+	if ([ogg state] == (long)TRUE) {} else {}
 
 #ifdef DEBUG
-		NSLog(@"self.data_object.mp3_check IS : %@", (self.data_object.mp3_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.wma_check IS : %@", (self.data_object.wma_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.ogg_check IS : %@", (self.data_object.ogg_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[mp3 state] IS : %@", ([pdf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[wma state] IS : %@", ([txt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[ogg state] IS : %@", ([lit state] == (long)TRUE) ? @"TRUE" : @"FALSE");
 #endif
 
 	[self assembleTypesString];
@@ -202,56 +174,24 @@
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	NSButtonCell *selCell = [sender selectedCell];
+
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
-	if ([[selCell title] isEqualToString:@"mpg"]) {
-		if ([selCell state] == 0) {
-			self.data_object.mpg_check = FALSE;
-		} else {
-			self.data_object.mpg_check = (signed char *)TRUE;
-		}
-	}
+	if ([mpg state] == (long)TRUE) {} else {}
 
-	if ([[selCell title] isEqualToString:@"avi"]) {
-		if ([selCell state] == 0) {
-			self.data_object.avi_check = FALSE;
-		} else {
-			self.data_object.avi_check = (signed char *)TRUE;
-		}
-	}
+	if ([avi state] == (long)TRUE) {} else {}
 
-	if ([[selCell title] isEqualToString:@"wmv"]) {
-		if ([selCell state] == 0) {
-			self.data_object.wmv_check = FALSE;
-		} else {
-			self.data_object.wmv_check = (signed char *)TRUE;
-		}
-	}
+	if ([wmv state] == (long)TRUE) {} else {}
 
-	if ([[selCell title] isEqualToString:@"divx"]) {
-		if ([selCell state] == 0) {
-			self.data_object.divx_check = FALSE;
-		} else {
-			self.data_object.divx_check = (signed char *)TRUE;
-		}
-	}
+	if ([divx state] == (long)TRUE) {} else {}
 
-	if ([[selCell title] isEqualToString:@"flv"]) {
-		if ([selCell state] == 0) {
-			self.data_object.flv_check = FALSE;
-		} else {
-			self.data_object.flv_check = (signed char *)TRUE;
-		}
-	}
-
-#ifndef DEBUG
-		NSLog(@"self.data_object.mpg_check IS : %@", (self.data_object.mpg_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.avi_check IS : %@", (self.data_object.avi_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.wmv_check IS : %@", (self.data_object.wmv_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.divx_check IS : %@", (self.data_object.divx_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.flv_check IS : %@", (self.data_object.flv_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+#ifdef DEBUG
+		NSLog(@"[mpg state] IS : %@", ([doc state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[avi state] IS : %@", ([rtf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[wmv state] IS : %@", ([pps state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[divx state] IS : %@", ([chm state] == (long)TRUE) ? @"TRUE" : @"FALSE");
 #endif
 
 	[self assembleTypesString];
@@ -264,101 +204,36 @@
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 
 	NSButtonCell *selCell = [sender selectedCell];
+
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
-	if ([[selCell title] isEqualToString:@"pdf"]) {
-		if ([selCell state] == 0) {
-			self.data_object.pdf_check = FALSE;
-		} else {
-			self.data_object.pdf_check = (signed char *)TRUE;
-		}
-	}
+	if ([pdf state] == (long)TRUE) {} else {}
 
-	if ([[selCell title] isEqualToString:@"txt"]) {
-		if ([selCell state] == 0) {
-			self.data_object.txt_check = FALSE;
-		} else {
-			self.data_object.txt_check = (signed char *)TRUE;
-		}
-	}
+	if ([txt state] == (long)TRUE) {} else {}
 
-	if ([[selCell title] isEqualToString:@"lit"]) {
-		if ([selCell state] == 0) {
-			self.data_object.lit_check = FALSE;
-		} else {
-			self.data_object.lit_check = (signed char *)TRUE;
-		}
-	}
+	if ([lit state] == (long)TRUE) {} else {}
 
-	if ([[selCell title] isEqualToString:@"rar"]) {
-		if ([selCell state] == 0) {
-			self.data_object.rar_check = FALSE;
-		} else {
-			self.data_object.rar_check = (signed char *)TRUE;
-		}
-	}
+	if ([doc state] == (long)TRUE) {} else {}
 
-	if ([[selCell title] isEqualToString:@"doc"]) {
-		if ([selCell state] == 0) {
-			self.data_object.doc_check = FALSE;
-		} else {
-			self.data_object.doc_check = (signed char *)TRUE;
-		}
-	}
+	if ([rtf state] == (long)TRUE) {} else {}
 
-	if ([[selCell title] isEqualToString:@"rtf"]) {
-		if ([selCell state] == 0) {
-			self.data_object.rtf_check = FALSE;
-		} else {
-			self.data_object.rtf_check = (signed char *)TRUE;
-		}
-	}
+	if ([pps state] == (long)TRUE) {} else {}
 
-	if ([[selCell title] isEqualToString:@"pps"]) {
-		if ([selCell state] == 0) {
-			self.data_object.pps_check = FALSE;
-		} else {
-			self.data_object.pps_check = (signed char *)TRUE;
-		}
-	}
+	if ([chm state] == (long)TRUE) {} else {}
 
-	if ([[selCell title] isEqualToString:@"chm"]) {
-		if ([selCell state] == 0) {
-			self.data_object.chm_check = FALSE;
-		} else {
-			self.data_object.chm_check = (signed char *)TRUE;
-		}
-	}
+	if ([odt state] == (long)TRUE) {} else {}
 
-	if ([[selCell title] isEqualToString:@"zip1"]) {
-		if ([selCell state] == 0) {
-			self.data_object.zip1_check = FALSE;
-		} else {
-			self.data_object.zip1_check = (signed char *)TRUE;
-		}
-	}
-
-	if ([[selCell title] isEqualToString:@"odt"]) {
-		if ([selCell state] == 0) {
-			self.data_object.odt_check = FALSE;
-		} else {
-			self.data_object.odt_check = (signed char *)TRUE;
-		}
-	}
-
-#ifndef DEBUG
-		NSLog(@"self.data_object.pdf_check IS : %@", (self.data_object.pdf_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.txt_check IS : %@", (self.data_object.txt_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.lit_check IS : %@", (self.data_object.lit_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.rar_check IS : %@", (self.data_object.rar_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.doc_check IS : %@", (self.data_object.doc_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.rtf_check IS : %@", (self.data_object.rtf_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pps_check IS : %@", (self.data_object.pps_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.chm_check IS : %@", (self.data_object.chm_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.zip1_check IS : %@", (self.data_object.zip1_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.odt_check IS : %@", (self.data_object.odt_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+#ifdef DEBUG
+		NSLog(@"[pdf state] IS : %@", ([pdf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[txt state] IS : %@", ([txt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[lit state] IS : %@", ([lit state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[doc state] IS : %@", ([doc state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[rtf state] IS : %@", ([rtf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[pps state] IS : %@", ([pps state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[chm state] IS : %@", ([chm state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[odt state] IS : %@", ([odt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
 #endif
 
 	[self assembleTypesString];
@@ -375,115 +250,115 @@
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+	// if ([germanMakes containsObject:@"BMW"]) {
 
-	if ([[selCell title] isEqualToString:@"pass 1"]) {
-		if ([selCell state] == 0) {
-			self.data_object.pass_1 = FALSE;
-		} else {
-			self.data_object.pass_1 = (signed char *)TRUE;
+	if ([pass1 state] == (long)TRUE) {
+		if (![self.urls containsObject:(NSMutableString *)PASS_1_STR]) {
+			[self.urls addObject:(NSMutableString *)PASS_1_STR];
 		}
+	} else {
+		[self.urls removeObjectIdenticalTo:(NSMutableString *)PASS_1_STR];
 	}
 
-	if ([[selCell title] isEqualToString:@"pass 2"]) {
-		if ([selCell state] == 0) {
-			self.data_object.pass_2 = FALSE;
-		} else {
-			self.data_object.pass_2 = (signed char *)TRUE;
+	if ([pass2 state] == (long)TRUE) {
+		if (![self.urls containsObject:(NSMutableString *)PASS_2_STR]) {
+			[self.urls addObject:(NSMutableString *)PASS_2_STR];
 		}
+	} else {
+		[self.urls removeObjectIdenticalTo:(NSMutableString *)PASS_2_STR];
 	}
 
-	if ([[selCell title] isEqualToString:@"pass 3"]) {
-		if ([selCell state] == 0) {
-			self.data_object.pass_3 = FALSE;
-		} else {
-			self.data_object.pass_3 = (signed char *)TRUE;
+	if ([pass3 state] == (long)TRUE) {
+		if (![self.urls containsObject:(NSMutableString *)PASS_3_STR]) {
+			[self.urls addObject:(NSMutableString *)PASS_3_STR];
 		}
+	} else {
+		[self.urls removeObjectIdenticalTo:(NSMutableString *)PASS_3_STR];
 	}
 
-	if ([[selCell title] isEqualToString:@"pass 4"]) {
-		if ([selCell state] == 0) {
-			self.data_object.pass_4 = FALSE;
-		} else {
-			self.data_object.pass_4 = (signed char *)TRUE;
+	if ([pass4 state] == (long)TRUE) {
+		if (![self.urls containsObject:(NSMutableString *)PASS_4_STR]) {
+			[self.urls addObject:(NSMutableString *)PASS_4_STR];
 		}
+	} else {
+		[self.urls removeObjectIdenticalTo:(NSMutableString *)PASS_4_STR];
 	}
 
-	if ([[selCell title] isEqualToString:@"pass 5"]) {
-		if ([selCell state] == 0) {
-			self.data_object.pass_5 = FALSE;
-		} else {
-			self.data_object.pass_5 = (signed char *)TRUE;
+	if ([pass5 state] == (long)TRUE) {
+		if (![self.urls containsObject:(NSMutableString *)PASS_5_STR]) {
+			[self.urls addObject:(NSMutableString *)PASS_5_STR];
 		}
+	} else {
+		[self.urls removeObjectIdenticalTo:(NSMutableString *)PASS_5_STR];
 	}
 
-	if ([[selCell title] isEqualToString:@"pass 6"]) {
-		if ([selCell state] == 0) {
-			self.data_object.pass_6 = FALSE;
-		} else {
-			self.data_object.pass_6 = (signed char *)TRUE;
+	if ([pass6 state] == (long)TRUE) {
+		if (![self.urls containsObject:(NSMutableString *)PASS_6_STR]) {
+			[self.urls addObject:(NSMutableString *)PASS_6_STR];
 		}
+	} else {
+		[self.urls removeObjectIdenticalTo:(NSMutableString *)PASS_6_STR];
 	}
 
-#ifndef DEBUG
-		NSLog(@"self.data_object.pass_check IS : %@", (self.data_object.pass_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pass_text IS : %@", (self.data_object.pass_text == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pass_1 IS : %@", (self.data_object.pass_1 == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pass_2 IS : %@", (self.data_object.pass_2 == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pass_3 IS : %@", (self.data_object.pass_3 == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pass_4 IS : %@", (self.data_object.pass_4 == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pass_5 IS : %@", (self.data_object.pass_5 == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.pass_6 IS : %@", (self.data_object.pass_6 == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+#ifdef DEBUG
+		NSLog(@"[pass1 state] IS : %@", ([pass1 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[pass2 state] IS : %@", ([pass2 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[pass3 state] IS : %@", ([pass3 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[pass4 state] IS : %@", ([pass4 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[pass5 state] IS : %@", ([pass5 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[pass6 state] IS : %@", ([pass6 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
 #endif
+
+	// With a traditional for loop
+	for (int i = 0; i < [self.urls count]; i++) {
+		NSLog(@"self.urls[%d]: %@", i, (NSMutableString *)self.urls[i]);
+	}
+}
+
+#pragma mark ViewController openPasswordQueries
+
+- (void)openPasswordQueries
+{
+	NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
 #pragma mark ViewController archives
 
 - (IBAction)archives:(id)sender
 {
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+
 	NSButtonCell *selCell = [sender selectedCell];
 
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
-	if ([selCell tag] == 0) {
-		// file ext
-		self.data_object.exe_check	= FALSE;
-		self.data_object.rar_check1 = FALSE;
-		self.data_object.zip_check	= FALSE;
-		self.data_object.ddl_check	= FALSE;
-	} else if ([selCell tag] == 1) {
-		// file ext
-		self.data_object.exe_check	= (signed char *)TRUE;
-		self.data_object.rar_check1 = FALSE;
-		self.data_object.zip_check	= FALSE;
-		self.data_object.ddl_check	= FALSE;
-	} else if ([selCell tag] == 2) {
-		// file ext
-		self.data_object.exe_check	= FALSE;
-		self.data_object.rar_check1 = (signed char *)TRUE;
-		self.data_object.zip_check	= FALSE;
-		self.data_object.ddl_check	= FALSE;
-	} else if ([selCell tag] == 3) {
-		// file ext
-		self.data_object.exe_check	= FALSE;
-		self.data_object.rar_check1 = FALSE;
-		self.data_object.zip_check	= (signed char *)TRUE;
-		self.data_object.ddl_check	= FALSE;
-	} else if ([selCell tag] == 4) {
-		// file ext
-		self.data_object.exe_check	= FALSE;
-		self.data_object.rar_check1 = FALSE;
-		self.data_object.zip_check	= FALSE;
-		self.data_object.ddl_check	= (signed char *)TRUE;
-	} else {		// NSLog(@"Error");
-	}
+	if ([pdf state] == (long)TRUE) {} else {}
 
-#ifndef DEBUG
-		NSLog(@"self.data_object.exe_check IS : %@", (self.data_object.exe_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.rar_check1 IS : %@", (self.data_object.rar_check1 == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.zip_check IS : %@", (self.data_object.zip_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"self.data_object.ddl_check IS : %@", (self.data_object.ddl_check == (signed char *)TRUE) ? @"TRUE" : @"FALSE");
+	if ([txt state] == (long)TRUE) {} else {}
+
+	if ([lit state] == (long)TRUE) {} else {}
+
+	if ([doc state] == (long)TRUE) {} else {}
+
+	if ([rtf state] == (long)TRUE) {} else {}
+
+	if ([pps state] == (long)TRUE) {} else {}
+
+	if ([chm state] == (long)TRUE) {} else {}
+
+	if ([odt state] == (long)TRUE) {} else {}
+
+#ifdef DEBUG
+		NSLog(@"[pdf state] IS : %@", ([pdf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[txt state] IS : %@", ([txt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[lit state] IS : %@", ([lit state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[doc state] IS : %@", ([doc state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[rtf state] IS : %@", ([rtf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[pps state] IS : %@", ([pps state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[chm state] IS : %@", ([chm state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[odt state] IS : %@", ([odt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
 #endif
 
 	[self assembleTypesString];
@@ -501,8 +376,32 @@
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
-	if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else if ([selCell tag] == 0) {} else {// NSLog(@"Error");
-	}
+	if ([pdf state] == (long)TRUE) {} else {}
+
+	if ([txt state] == (long)TRUE) {} else {}
+
+	if ([lit state] == (long)TRUE) {} else {}
+
+	if ([doc state] == (long)TRUE) {} else {}
+
+	if ([rtf state] == (long)TRUE) {} else {}
+
+	if ([pps state] == (long)TRUE) {} else {}
+
+	if ([chm state] == (long)TRUE) {} else {}
+
+	if ([odt state] == (long)TRUE) {} else {}
+
+#ifdef DEBUG
+		NSLog(@"[pdf state] IS : %@", ([pdf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[txt state] IS : %@", ([txt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[lit state] IS : %@", ([lit state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[doc state] IS : %@", ([doc state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[rtf state] IS : %@", ([rtf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[pps state] IS : %@", ([pps state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[chm state] IS : %@", ([chm state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+		NSLog(@"[odt state] IS : %@", ([odt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+#endif
 
 	[self assembleTypesString];
 }
@@ -600,7 +499,7 @@
 	}
 
 	if ([self.types_str length] <= 7) {
-		NSLog(@"less than = 7");
+		// NSLog(@"less than = 7");
 		// http://borkware.com/quickies/one?topic=NSString
 
 		self.types_str = (NSMutableString *)[self truncateString:self.types_str toCharacterCount:4];
@@ -611,7 +510,7 @@
 		self.types_str = (NSMutableString *)[self truncateString:self.types_str toCharacterCount:5];
 	}
 
-	NSLog(@"self.types_str = %@", self.types_str);
+	NSLog(@"self.types_str = %@", (NSString *)self.types_str);
 }
 
 #pragma mark ViewController truncateString
@@ -632,74 +531,6 @@
 
 	return trunc;
 }	// truncateString
-
-#pragma mark ViewController openPasswordQueries
-
-- (void)openPasswordQueries
-{
-	NSLog(@"%@", NSStringFromSelector(_cmd));
-
-	if (self.data_object.pass_1 == (signed char *)TRUE) {
-		self.data_object.full_search_str = (NSMutableString *)@"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified";
-		[self.urls addObject:self.data_object.full_search_str];
-
-		for (int i = 0; i < [self.urls count]; i++) {
-			NSLog(@"%d: %@", i, self.urls[i]);
-		}
-	}
-
-	if (self.data_object.pass_2 == (signed char *)TRUE) {
-		self.data_object.full_search_str = (NSMutableString *)@"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt";
-		[self.urls addObject:self.data_object.full_search_str];
-
-		for (int i = 0; i < [self.urls count]; i++) {
-			NSLog(@"%d: %@", i, self.urls[i]);
-		}
-	}
-
-	if (self.data_object.pass_3 == (signed char *)TRUE) {
-		self.data_object.full_search_str = (NSMutableString *)@"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search";
-		[self.urls addObject:self.data_object.full_search_str];
-
-		for (int i = 0; i < [self.urls count]; i++) {
-			NSLog(@"%d: %@", i, self.urls[i]);
-		}
-	}
-
-	if (self.data_object.pass_4 == (signed char *)TRUE) {
-		self.data_object.full_search_str = (NSMutableString *)@"http://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd";
-		[self.urls addObject:self.data_object.full_search_str];
-
-		for (int i = 0; i < [self.urls count]; i++) {
-			NSLog(@"%d: %@", i, self.urls[i]);
-		}
-	}
-
-	if (self.data_object.pass_5 == (signed char *)TRUE) {
-		self.data_object.full_search_str = (NSMutableString *)@"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php";
-		[self.urls addObject:self.data_object.full_search_str];
-
-		for (int i = 0; i < [self.urls count]; i++) {
-			NSLog(@"%d: %@", i, self.urls[i]);
-		}
-	}
-
-	if (self.data_object.pass_6 == (signed char *)TRUE) {
-		self.data_object.full_search_str = (NSMutableString *)@"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22";
-		[self.urls addObject:self.data_object.full_search_str];
-
-		for (int i = 0; i < [self.urls count]; i++) {
-			NSLog(@"%d: %@", i, self.urls[i]);
-		}
-	}
-
-	// With a traditional for loop
-	for (int i = 0; i < [self.data_object.passWordLinkArray count]; i++) {
-		NSLog(@"self.data_object.passWordLinkArray[%d]: %@", i, self.data_object.passWordLinkArray[i]);
-	}
-
-	for (int i = 0; i < [self.urls count]; i++) {}
-}
 
 #pragma mark ViewController method1
 
@@ -770,8 +601,16 @@
 	[related setState:0];
 	[tools setState:0];
 
-	NSLog(@"self.types_str = %@", NSStringFromClass([self.types_str class]));
-	self.types_str = (NSMutableString *)@"";
+	// NSLog(@"self.types_str = %@", NSStringFromClass([self.types_str class]));
+	self.types_str	= (NSMutableString *)@"";
+	self.types_str	= (NSMutableString *)@"";
+
+	// if (!self.urls) {
+	//	self.urls = [[NSMutableArray alloc] init];
+	// } else {
+	[self.urls removeAllObjects];
+	// }
+
 	NSLog(@"self.types_str = %@", self.types_str);
 }
 
