@@ -67,10 +67,13 @@
 - (IBAction)method2:(id)sender;
 - (IBAction)resetButtons:(id)sender;
 
+- (void)openAppleScript:(NSString *)scriptName;
+
 @property (nonatomic, readwrite) DataObjects	*data_object;
 @property (nonatomic, readwrite) NSTextField	*searchTextField;
 @property (nonatomic, readwrite) NSTextField	*urlLinkTextField;
 @property (nonatomic, readwrite) NSMutableArray *urls;
+@property (nonatomic, readwrite) NSMutableArray *passWordUrls;
 @property (nonatomic, strong) NSWorkspace		*ws;
 @property (nonatomic,readwrite)NSMutableString *types_str;
 
