@@ -10,6 +10,8 @@
 #define googlehacks_NOTES_h
 
 /*
+ 
+ 
  *
  *
  * // http://stackoverflow.com/questions/2503372/how-to-close-all-or-only-some-tabs-in-safari-using-applescript
