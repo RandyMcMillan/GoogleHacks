@@ -12,7 +12,17 @@
 /*
  *
  *
- *
+ * // http://stackoverflow.com/questions/2503372/how-to-close-all-or-only-some-tabs-in-safari-using-applescript
+   // http://stackoverflow.com/questions/4909702/run-applescript-from-cocoa-application
+ 
+ NSString* path = [[NSBundle mainBundle] pathForResource:@"ScriptName" ofType:@"scpt"];
+ NSURL* url = [NSURL fileURLWithPath:path];NSDictionary* errors = [NSDictionary dictionary];
+ NSAppleScript* appleScript = [[NSAppleScript alloc] initWithContentsOfURL:url error:&errors];
+ [appleScript executeAndReturnError:nil];
+ [appleScript release];
+ 
+ 
+ 
  *    // https://support.google.com/websearch/answer/2466433?hl=en
  *    // http://www.google.com/translate?hl=&sl=en&tl=en&u=%20randymcmillan.net&sandbox=1
  *    // http://www.google.com/translate?hl=&sl=da&tl=de&u=%20randymcmillan.net&sandbox=1

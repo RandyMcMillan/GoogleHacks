@@ -18,7 +18,7 @@
 @implementation ViewController
 
 @synthesize data_object, types_str;
-@synthesize searchTextField, urlLinkTextField, urls, ws;
+@synthesize searchTextField, urlLinkTextField, urls, passWordUrls, ws;
 
 #pragma mark ViewController viewDidLoad
 
@@ -30,7 +30,8 @@
 	self.title = @"Presenting ViewController";
 	[self.data_object = [DataObjects alloc] init];
 	[self.data_object loadValues:nil];
-	self.urls = [NSMutableArray arrayWithCapacity:100];
+	self.urls = [NSMutableArray arrayWithCapacity:100];//may use 4 when all done...we'll see
+	self.passWordUrls = [NSMutableArray arrayWithCapacity:10];//never uses more than one...
 	// [self openPasswordQueries];
 	self.ws			= [NSWorkspace sharedWorkspace];
 	self.types_str	= (NSMutableString *)self.data_object.types_str;
@@ -50,11 +51,12 @@
 	NSLog(@"returnSearchField = %@", [self returnSearchField]);
 	NSLog(@"returnURLLinkField = %@", [self returnURLLinkField]);
 
-	// testing
 	[self openPasswordQueries];
-
 	[self assembleTypesString];
 
+    [self.urls addObjectsFromArray:self.passWordUrls];
+    [self openURL:self.urls inBackground:YES];
+    
 	// Basic openURL...
 	// [self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
 }
@@ -125,6 +127,9 @@
 // Opens a URL in the default browser in background or foreground
 - (void)openURL:(NSString *)url inBackground:(BOOL)background
 {
+
+    [self openAppleScript:(NSString *)@"SafariCloseAllWindows"];
+    
     if (background) {
         //NSArray* urls = [NSArray arrayWithArray:self.urls];
         [[NSWorkspace sharedWorkspace] openURLs:(NSArray *)self.urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
@@ -136,6 +141,19 @@
 	NSLog(@"self.urls count = %ld", [self.urls count]);
 
 	[self.urls removeAllObjects];
+}
+
+
+#pragma mark ViewController openAppleScript
+
+- (void)openAppleScript:(NSString *)scriptName {
+    
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSString* path = [[NSBundle mainBundle] pathForResource:scriptName ofType:@"scpt"];
+    NSURL* url = [NSURL fileURLWithPath:path];NSDictionary* errors = [NSDictionary dictionary];
+    NSAppleScript* appleScript = [[NSAppleScript alloc] initWithContentsOfURL:url error:&errors];
+    [appleScript executeAndReturnError:nil];
+
 }
 
 #pragma mark ViewController audioExtention
@@ -250,55 +268,68 @@
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 	// if ([germanMakes containsObject:@"BMW"]) {
 
-	if ([pass1 state] == (long)TRUE) {
-		if (![self.urls containsObject:[NSURL URLWithString:@"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified"]]) {
-			[self.urls addObject:[NSURL URLWithString:@"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified"]];
+    [self.passWordUrls removeAllObjects];
+
+    if ((long)[selCell tag] == 0) {
+        
+        [self.passWordUrls removeAllObjects];
+    
+    }
+    
+    
+    for (int i = 0; i < [self.passWordUrls count]; i++) {
+        NSLog(@"self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
+    }
+    
+	if ((long)[selCell tag] == 1) {
+		if (![self.passWordUrls containsObject:[NSURL URLWithString:@"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified"]]) {
+			[self.passWordUrls addObject:[NSURL URLWithString:@"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified"]];
 		}
 	} else {
-		[self.urls removeObjectIdenticalTo:[NSURL URLWithString:@"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified"]];
+		[self.passWordUrls removeObjectIdenticalTo:[NSURL URLWithString:@"http://www.google.com/search?q=intitle%3A%22Index+of%22+passwords+modified"]];
 	}
 
-	if ([pass2 state] == (long)TRUE) {
-		if (![self.urls containsObject:[NSURL URLWithString:@"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt"]]) {
-			[self.urls addObject:[NSURL URLWithString:@"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt"]];
+    if ((long)[selCell tag] == 2) {
+		if (![self.passWordUrls containsObject:[NSURL URLWithString:@"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt"]]) {
+			[self.passWordUrls addObject:[NSURL URLWithString:@"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt"]];
 		}
 	} else {
-		[self.urls removeObjectIdenticalTo:[NSURL URLWithString:@"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt"]];
+        [self.passWordUrls removeObjectIdenticalTo:[NSURL URLWithString:@"http://www.google.com/search?hl=en&q=allinurl%3Aauth_user_file.txt"]];
 	}
 
-	if ([pass3 state] == (long)TRUE) {
-		if (![self.urls containsObject:[NSURL URLWithString:@"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search"]]) {
-			[self.urls addObject:[NSURL URLWithString:@"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search"]];
+    if ((long)[selCell tag] == 3) {
+		if (![self.passWordUrls containsObject:[NSURL URLWithString:@"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search"]]) {
+			[self.passWordUrls addObject:[NSURL URLWithString:@"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search"]];
 		}
 	} else {
-		[self.urls removeObjectIdenticalTo:[NSURL URLWithString:@"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search"]];
+        [self.passWordUrls removeObjectIdenticalTo:[NSURL URLWithString:@"http://www.google.com/search?q=inurl%3Apasslist.txt&btnG=Search"]];
 	}
 
-	if ([pass4 state] == (long)TRUE) {
-		if (![self.urls containsObject:[NSURL URLWithString:@"ttp://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd"]]) {
-			[self.urls addObject:[NSURL URLWithString:@"ttp://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd"]];
+    if ((long)[selCell tag] == 4) {
+		if (![self.passWordUrls containsObject:[NSURL URLWithString:@"http://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd"]]) {
+			[self.passWordUrls addObject:[NSURL URLWithString:@"http://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd"]];
 		}
 	} else {
-		[self.urls removeObjectIdenticalTo:[NSURL URLWithString:@"ttp://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd"]];
+        [self.passWordUrls removeObjectIdenticalTo:[NSURL URLWithString:@"ttp://www.google.com/search?q=%22%23+-FrontPage-%22+inurl%3Aservice.pwd"]];
 	}
 
-	if ([pass5 state] == (long)TRUE) {
-		if (![self.urls containsObject:[NSURL URLWithString:@"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php"]]) {
-			[self.urls addObject:[NSURL URLWithString:@"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php"]];
+    if ((long)[selCell tag] == 5) {
+		if (![self.passWordUrls containsObject:[NSURL URLWithString:@"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php"]]) {
+			[self.passWordUrls addObject:[NSURL URLWithString:@"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php"]];
 		}
 	} else {
-		[self.urls removeObjectIdenticalTo:[NSURL URLWithString:@"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php"]];
+        [self.passWordUrls removeObjectIdenticalTo:[NSURL URLWithString:@"http://www.google.com/search?q=intitle%3A%22Index+of%22+config.php"]];
 	}
 
-	if ([pass6 state] == (long)TRUE) {
-		if (![self.urls containsObject:[NSURL URLWithString:@"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22"]]) {
-			[self.urls addObject:[NSURL URLWithString:@"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22"]];
+    if ((long)[selCell tag] == 6) {
+		if (![self.passWordUrls containsObject:[NSURL URLWithString:@"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22"]]) {
+			[self.passWordUrls addObject:[NSURL URLWithString:@"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22"]];
 		}
 	} else {
-		[self.urls removeObjectIdenticalTo:[NSURL URLWithString:@"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22"]];
+        [self.passWordUrls removeObjectIdenticalTo:[NSURL URLWithString:@"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22"]];
 	}
 
-#ifdef DEBUG
+#ifndef DEBUG
 		NSLog(@"[pass1 state] IS : %@", ([pass1 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
 		NSLog(@"[pass2 state] IS : %@", ([pass2 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
 		NSLog(@"[pass3 state] IS : %@", ([pass3 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
@@ -308,8 +339,8 @@
 #endif
 
 	// With a traditional for loop
-	for (int i = 0; i < [self.urls count]; i++) {
-		NSLog(@"self.urls[%d]: %@", i, (NSMutableString *)self.urls[i]);
+	for (int i = 0; i < [self.passWordUrls count]; i++) {
+		NSLog(@"self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
 	}
 }
 
@@ -587,13 +618,16 @@
 	[pps setState:0];
 	[chm setState:0];
 	[odt setState:0];
-	[pass1 setState:0];
-	[pass2 setState:0];
-	[pass3 setState:0];
-	[pass4 setState:0];
-	[pass5 setState:0];
-	[pass6 setState:0];
-	[rar setState:0];
+	
+    //[pass1 setState:0];
+	//[pass2 setState:0];
+	//[pass3 setState:0];
+	//[pass4 setState:0];
+	//[pass5 setState:0];
+	//[pass6 setState:0];
+	
+    
+    [rar setState:0];
 	[zip setState:0];
 	[exe setState:0];
 	[ddl setState:0];
@@ -603,7 +637,6 @@
 	[tools setState:0];
 
 	// NSLog(@"self.types_str = %@", NSStringFromClass([self.types_str class]));
-	self.types_str	= (NSMutableString *)@"";
 	self.types_str	= (NSMutableString *)@"";
 
 	// if (!self.urls) {

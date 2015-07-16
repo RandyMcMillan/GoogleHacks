@@ -776,77 +776,6 @@
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
-                            <box autoresizesSubviews="NO" fixedFrame="YES" title="Password" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="lmS-I5-ds3">
-                                <rect key="frame" x="212" y="149" width="90" height="154"/>
-                                <view key="contentView">
-                                    <rect key="frame" x="1" y="1" width="88" height="138"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <button fixedFrame="YES" tag="21" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1P-vV-IeF">
-                                            <rect key="frame" x="15" y="70" width="63" height="18"/>
-                                            <buttonCell key="cell" type="check" title="pass 3" bezelStyle="regularSquare" imagePosition="left" tag="19" inset="2" id="S6S-aW-62Z">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="passwordQuery:" target="XfG-lQ-9wD" id="95c-cC-Z7B"/>
-                                            </connections>
-                                        </button>
-                                        <button fixedFrame="YES" tag="22" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rdI-KY-deR">
-                                            <rect key="frame" x="15" y="52" width="63" height="18"/>
-                                            <buttonCell key="cell" type="check" title="pass 4" bezelStyle="regularSquare" imagePosition="left" tag="20" inset="2" id="YVj-w5-WUZ">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="passwordQuery:" target="XfG-lQ-9wD" id="8Zj-IU-agC"/>
-                                            </connections>
-                                        </button>
-                                        <button fixedFrame="YES" tag="23" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z90-pM-rUp">
-                                            <rect key="frame" x="15" y="32" width="63" height="18"/>
-                                            <buttonCell key="cell" type="check" title="pass 5" bezelStyle="regularSquare" imagePosition="left" tag="21" inset="2" id="jgZ-PI-Fnk">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="passwordQuery:" target="XfG-lQ-9wD" id="v9N-zt-izf"/>
-                                            </connections>
-                                        </button>
-                                        <button fixedFrame="YES" tag="19" translatesAutoresizingMaskIntoConstraints="NO" id="bbK-3B-km9">
-                                            <rect key="frame" x="15" y="112" width="63" height="18"/>
-                                            <buttonCell key="cell" type="check" title="pass 1" bezelStyle="regularSquare" imagePosition="left" tag="17" inset="2" id="whB-jZ-qMV">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="passwordQuery:" target="XfG-lQ-9wD" id="ahJ-gh-Sue"/>
-                                            </connections>
-                                        </button>
-                                        <button fixedFrame="YES" tag="20" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBa-4z-SYw">
-                                            <rect key="frame" x="15" y="89" width="63" height="18"/>
-                                            <buttonCell key="cell" type="check" title="pass 2" bezelStyle="regularSquare" imagePosition="left" tag="18" inset="2" id="zIP-Kg-7dM">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="passwordQuery:" target="XfG-lQ-9wD" id="QWr-BC-qgm"/>
-                                            </connections>
-                                        </button>
-                                        <button fixedFrame="YES" tag="24" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ZT-P3-LrT">
-                                            <rect key="frame" x="15" y="12" width="63" height="18"/>
-                                            <buttonCell key="cell" type="check" title="pass 6" bezelStyle="regularSquare" imagePosition="left" tag="22" inset="2" id="WS5-iF-5pY">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="passwordQuery:" target="XfG-lQ-9wD" id="t6W-JE-REI"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                </view>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" title="Methods" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="u1Q-2R-dWu">
                                 <rect key="frame" x="318" y="122" width="128" height="181"/>
                                 <view key="contentView">
@@ -899,13 +828,13 @@
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" title="Archives" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="pjN-fU-KWZ">
-                                <rect key="frame" x="212" y="3" width="90" height="137"/>
+                                <rect key="frame" x="212" y="3" width="90" height="121"/>
                                 <view key="contentView">
-                                    <rect key="frame" x="1" y="1" width="88" height="121"/>
+                                    <rect key="frame" x="1" y="1" width="88" height="105"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="R8I-l5-bzs">
-                                            <rect key="frame" x="16" y="95" width="39" height="18"/>
+                                            <rect key="frame" x="16" y="79" width="39" height="18"/>
                                             <buttonCell key="cell" type="check" title="rar" bezelStyle="regularSquare" imagePosition="left" tag="23" inset="2" id="hIp-gA-EDR">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -915,7 +844,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" tag="17" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-bG-rbN">
-                                            <rect key="frame" x="16" y="78" width="40" height="18"/>
+                                            <rect key="frame" x="16" y="62" width="40" height="18"/>
                                             <buttonCell key="cell" type="check" title="zip" bezelStyle="regularSquare" imagePosition="left" tag="24" inset="2" id="HeF-2x-NI4">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -925,7 +854,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" tag="18" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xym-5D-Dyl">
-                                            <rect key="frame" x="16" y="39" width="42" height="18"/>
+                                            <rect key="frame" x="16" y="23" width="42" height="18"/>
                                             <buttonCell key="cell" type="check" title="ddl" bezelStyle="regularSquare" imagePosition="left" tag="26" inset="2" id="lii-Be-mVb">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -935,7 +864,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" tag="18" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRl-W0-aZm">
-                                            <rect key="frame" x="16" y="58" width="44" height="18"/>
+                                            <rect key="frame" x="16" y="42" width="44" height="18"/>
                                             <buttonCell key="cell" type="check" title="exe" bezelStyle="regularSquare" imagePosition="left" tag="25" inset="2" id="8W1-9z-QLX">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -1081,6 +1010,83 @@
                                     <segue destination="bp4-oP-OFF" kind="sheet" id="YDd-0k-bIi"/>
                                 </connections>
                             </button>
+                            <box autoresizesSubviews="NO" fixedFrame="YES" title="Password" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="lmS-I5-ds3">
+                                <rect key="frame" x="212" y="128" width="90" height="171"/>
+                                <view key="contentView">
+                                    <rect key="frame" x="1" y="1" width="88" height="155"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VY8-Tw-r9G">
+                                            <rect key="frame" x="10" y="10" width="68" height="138"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="63" height="18"/>
+                                            <size key="intercellSpacing" width="4" height="2"/>
+                                            <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="Xxb-12-WsB">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <cells>
+                                                <column>
+                                                    <buttonCell type="radio" title="off" imagePosition="left" alignment="left" state="on" inset="2" id="o1L-1D-44N">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <connections>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="uXY-kV-uwf"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="pass 1" imagePosition="left" alignment="left" tag="1" inset="2" id="kdw-cs-aQl">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <connections>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="uWM-2e-ypV"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="pass 2" imagePosition="left" alignment="left" tag="2" inset="2" id="di7-b8-gYl">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <connections>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="Za4-m2-Si3"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="pass 3" imagePosition="left" alignment="left" tag="3" inset="2" id="dtC-kP-Tje">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <connections>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="8Og-Oz-AKS"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="pass 4" imagePosition="left" alignment="left" tag="4" inset="2" id="E0a-K3-ha9">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <connections>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="GAI-ZR-p83"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="pass 5" imagePosition="left" alignment="left" tag="5" inset="2" id="K72-JN-Hh9">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <connections>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="3wE-dW-qUP"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="pass 6" imagePosition="left" alignment="left" tag="6" inset="2" id="qVt-4l-aqA">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <connections>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="NY5-40-q5f"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                </column>
+                                            </cells>
+                                            <connections>
+                                                <action selector="passwordQuery:" target="XfG-lQ-9wD" id="hki-UQ-r7v"/>
+                                            </connections>
+                                        </matrix>
+                                    </subviews>
+                                </view>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </box>
                         </subviews>
                     </view>
                     <connections>
@@ -1098,12 +1104,6 @@
                         <outlet property="mpg" destination="I9u-cD-BSV" id="jZt-fw-9ZK"/>
                         <outlet property="odt" destination="nsy-Vm-AfO" id="GiR-ax-r9H"/>
                         <outlet property="ogg" destination="pVa-2H-WJC" id="hOR-Ay-DEl"/>
-                        <outlet property="pass1" destination="bbK-3B-km9" id="Xnv-qi-thP"/>
-                        <outlet property="pass2" destination="gBa-4z-SYw" id="QLo-Od-LIv"/>
-                        <outlet property="pass3" destination="Q1P-vV-IeF" id="TnL-qm-gCF"/>
-                        <outlet property="pass4" destination="rdI-KY-deR" id="U1l-g9-cF4"/>
-                        <outlet property="pass5" destination="Z90-pM-rUp" id="M0w-7a-pPF"/>
-                        <outlet property="pass6" destination="9ZT-P3-LrT" id="xTn-oB-gJx"/>
                         <outlet property="pdf" destination="iec-UI-vx9" id="6H5-XL-K6K"/>
                         <outlet property="pps" destination="sFC-eu-f5v" id="aQP-gU-I3M"/>
                         <outlet property="rar" destination="R8I-l5-bzs" id="DzE-CU-5OS"/>
