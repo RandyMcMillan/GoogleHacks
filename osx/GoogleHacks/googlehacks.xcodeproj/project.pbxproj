@@ -11,6 +11,7 @@
 		480B41201B56ADEF0014A6A3 /* gear_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 480B411D1B56ADEF0014A6A3 /* gear_64.png */; };
 		480B41211B56ADEF0014A6A3 /* WMF-Agora-Settings_BCBCBC.svg in Resources */ = {isa = PBXBuildFile; fileRef = 480B411E1B56ADEF0014A6A3 /* WMF-Agora-Settings_BCBCBC.svg */; };
 		483E64FB1B4F575A00E4EA6C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 483E64FA1B4F575A00E4EA6C /* index.html */; };
+		4889696A1B57395800F4BC9A /* GogleHacksHelp.html in Resources */ = {isa = PBXBuildFile; fileRef = 488969691B57395800F4BC9A /* GogleHacksHelp.html */; };
 		489552541B4F148700CA90B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552531B4F148700CA90B6 /* AppDelegate.m */; };
 		489552561B4F148700CA90B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552551B4F148700CA90B6 /* main.m */; };
 		489552591B4F148700CA90B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552581B4F148700CA90B6 /* ViewController.m */; };
@@ -41,6 +42,7 @@
 		480B411E1B56ADEF0014A6A3 /* WMF-Agora-Settings_BCBCBC.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "WMF-Agora-Settings_BCBCBC.svg"; sourceTree = "<group>"; };
 		483E64FA1B4F575A00E4EA6C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		4879F62E1B532B2D009A5585 /* NOTES.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NOTES.h; sourceTree = "<group>"; };
+		488969691B57395800F4BC9A /* GogleHacksHelp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = GogleHacksHelp.html; path = GoogleHacks/GogleHacksHelp.html; sourceTree = SOURCE_ROOT; };
 		4895524D1B4F148700CA90B6 /* GoogleHacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleHacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		489552511B4F148700CA90B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		489552521B4F148700CA90B6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 			path = ../../../shared;
 			sourceTree = "<group>";
 		};
+		488967761B5734CD00F4BC9A /* GoogleHacks.help */ = {
+			isa = PBXGroup;
+			children = (
+				488969691B57395800F4BC9A /* GogleHacksHelp.html */,
+			);
+			path = GoogleHacks.help;
+			sourceTree = "<group>";
+		};
 		489552441B4F148700CA90B6 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		489552501B4F148700CA90B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				488967761B5734CD00F4BC9A /* GoogleHacks.help */,
 				480B411B1B56ADEF0014A6A3 /* shared */,
 				4895529E1B4F444A00CA90B6 /* WebKit.framework */,
 				489552511B4F148700CA90B6 /* Info.plist */,
@@ -231,6 +242,39 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
+				ca,
+				cs,
+				da,
+				de,
+				el,
+				es,
+				es_MX,
+				fi,
+				fr,
+				he,
+				hr,
+				hu,
+				id,
+				it,
+				ja,
+				ko,
+				ms,
+				nl,
+				no,
+				pl,
+				pt,
+				pt_PT,
+				ro,
+				ru,
+				sk,
+				sv,
+				th,
+				tr,
+				uk,
+				vi,
+				zh_CN,
+				zh_TW,
 			);
 			mainGroup = 489552441B4F148700CA90B6;
 			productRefGroup = 4895524E1B4F148700CA90B6 /* Products */;
@@ -252,6 +296,7 @@
 				480B411F1B56ADEF0014A6A3 /* 2000px-WMF-Agora-Settings_BCBCBC.svg.png in Resources */,
 				489552991B4F3F9200CA90B6 /* Main.storyboard in Resources */,
 				480B41201B56ADEF0014A6A3 /* gear_64.png in Resources */,
+				4889696A1B57395800F4BC9A /* GogleHacksHelp.html in Resources */,
 				480B41211B56ADEF0014A6A3 /* WMF-Agora-Settings_BCBCBC.svg in Resources */,
 				4895525E1B4F148700CA90B6 /* Images.xcassets in Resources */,
 			);
