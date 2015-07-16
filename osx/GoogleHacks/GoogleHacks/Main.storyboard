@@ -979,9 +979,9 @@
                                     <action selector="pressSearchButton:" target="XfG-lQ-9wD" id="Njr-tm-8WO"/>
                                 </connections>
                             </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z25-03-6nh">
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z25-03-6nh">
                                 <rect key="frame" x="321" y="96" width="122" height="25"/>
-                                <buttonCell key="cell" type="squareTextured" title="Reset" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" allowsMixedState="YES" imageScaling="proportionallyDown" inset="2" id="g4f-bx-qoV">
+                                <buttonCell key="cell" type="squareTextured" title="Reset" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g4f-bx-qoV">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>

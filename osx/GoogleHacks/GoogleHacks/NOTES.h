@@ -11,7 +11,19 @@
 
 /*
  
+https://github.com/search?utf8=✓&q=applescripts+safari&type=Repositories&ref=searchresults
  
+ https://github.com/abbeycode/AppleScripts/blob/master/Scripts/Applications/Safari/Open%20in%20Chrome.applescript
+ 
+ https://github.com/abbeycode/AppleScripts/blob/master/Scripts/Libraries/Safari.applescript
+ 
+ https://github.com/ramkam/safari_to_pdf
+ 
+ https://github.com/gallybattat/open-safari-url-in-google-chrome
+ 
+ 
+ 
+ https://github.com/samowitsch/url-browser
  *
  *
  * // http://stackoverflow.com/questions/2503372/how-to-close-all-or-only-some-tabs-in-safari-using-applescript

@@ -329,14 +329,6 @@
         [self.passWordUrls removeObjectIdenticalTo:[NSURL URLWithString:@"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22"]];
 	}
 
-#ifndef DEBUG
-		NSLog(@"[pass1 state] IS : %@", ([pass1 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[pass2 state] IS : %@", ([pass2 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[pass3 state] IS : %@", ([pass3 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[pass4 state] IS : %@", ([pass4 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[pass5 state] IS : %@", ([pass5 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[pass6 state] IS : %@", ([pass6 state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-#endif
 
 	// With a traditional for loop
 	for (int i = 0; i < [self.passWordUrls count]; i++) {
