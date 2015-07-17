@@ -17,7 +17,7 @@
 
 @implementation ViewController
 
-@synthesize data_object, typesString;
+@synthesize data_object, typesString, typesStringArray;
 @synthesize searchTextField, urlLinkTextField, urls, passWordUrls, ws;
 
 #pragma mark ViewController viewDidLoad
@@ -32,6 +32,7 @@
 	[self.data_object loadValues:nil];
 	self.urls			= [NSMutableArray arrayWithCapacity:100];	// may use 4 when all done...we'll see
 	self.passWordUrls	= [NSMutableArray arrayWithCapacity:10];	// never uses more than one...
+    self.typesStringArray = [NSMutableArray arrayWithCapacity:100];
 	// [self openPasswordQueries];
 	self.ws			= [NSWorkspace sharedWorkspace];
 	self.typesString	= (NSMutableString *)self.data_object.types_str;
@@ -55,7 +56,22 @@
 	[self assembleTypesString];
 
 	[self.urls addObjectsFromArray:self.passWordUrls];
-	[self openURL:self.urls inBackground:YES];
+    [self.urls addObjectsFromArray:self.typesStringArray];
+    
+    
+    for (int i = 0; i < [self.passWordUrls count]; i++) {
+        NSLog(@"self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
+    }
+    
+        for (int i = 0; i < [self.typesStringArray count]; i++) {
+        NSLog(@"self.typesStringArray[%d]: %@", i, (NSMutableString *)self.typesStringArray[i]);
+    }
+    
+        for (int i = 0; i < [self.urls count]; i++) {
+        NSLog(@"self.urls[%d]: %@", i, (NSMutableString *)self.urls[i]);
+    }
+
+    [self openURL:self.urls inBackground:YES];
 
 	// Basic openURL...
 	// [self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
@@ -525,7 +541,36 @@
 	if ([self.typesString isEqualToString:@".divx%7C"]) {
 		self.typesString = (NSMutableString *)[self truncateString:self.typesString toCharacterCount:5];
 	}
+    
+    [self.typesStringArray removeAllObjects];
+    
+  //  NSString *tempString = [NSMutableString stringWithString:@"http://www.google.com/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28' +types+ '%29+%22'+search_str+'%22"];
+    
+    
+    
+    NSMutableString *tempString =
+    [[NSMutableString alloc]initWithString:@"http://www.google.com/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28' +types+ '%29+%22'+search_str+'%22"];
+    
+    NSLog(@"tempString = %@\n\n",tempString);
+   // tempString = [NSString stringByReplacingOccurrencesOfString:@"+types+" withString:self.typesString];
+    
+    tempString = (NSMutableString *)[tempString stringByReplacingOccurrencesOfString:@"+types+" withString:tempString];
+   
+    NSLog(@"tempString = %@\n\n",tempString);
 
+    tempString = (NSMutableString *)[tempString stringByReplacingOccurrencesOfString:@"+search_str+" withString:[self returnSearchField]];
+    
+    NSLog(@"tempString = %@\n\n",tempString);
+
+    
+    
+    //[self.typesStringArray addObject:[NSURL URLWithString:(NSString *)tempString]];
+
+    
+    
+    
+    
+    
 	NSLog(@"self.typesString = %@", (NSString *)self.typesString);
 }
 
@@ -625,7 +670,13 @@
 	// if (!self.urls) {
 	//	self.urls = [[NSMutableArray alloc] init];
 	// } else {
-	[self.urls removeAllObjects];
+	
+    
+    [self.urls removeAllObjects];
+    [self.typesStringArray removeAllObjects];
+    
+    
+    
 	// }
 
 	NSLog(@"self.typesString = %@", self.typesString);
