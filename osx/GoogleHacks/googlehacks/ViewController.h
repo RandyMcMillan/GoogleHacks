@@ -75,6 +75,6 @@
 @property (nonatomic, readwrite) NSMutableArray *urls;
 @property (nonatomic, readwrite) NSMutableArray *passWordUrls;
 @property (nonatomic, strong) NSWorkspace		*ws;
-@property (nonatomic,readwrite)NSMutableString *types_str;
+@property (nonatomic,readwrite)NSMutableString *typesString;
 
 @end
