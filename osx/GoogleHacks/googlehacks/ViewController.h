@@ -18,11 +18,15 @@
 	IBOutlet NSButton		*mp3;
 	IBOutlet NSButton		*wma;
 	IBOutlet NSButton		*ogg;
+   	IBOutlet NSButton		*mid;
+ 
+    //
 	IBOutlet NSButton		*mpg;
 	IBOutlet NSButton		*avi;
 	IBOutlet NSButton		*wmv;
 	IBOutlet NSButton		*divx;
 	IBOutlet NSButton		*flv;
+    //
 	IBOutlet NSButton		*pdf;
 	IBOutlet NSButton		*txt;
 	IBOutlet NSButton		*lit;
@@ -31,17 +35,20 @@
 	IBOutlet NSButton		*pps;
 	IBOutlet NSButton		*chm;
 	IBOutlet NSButton		*odt;
-	IBOutlet NSButton		*pass1;
+	//
+    IBOutlet NSButton		*pass1;
 	IBOutlet NSButton		*pass2;
 	IBOutlet NSButton		*pass3;
 	IBOutlet NSButton		*pass4;
 	IBOutlet NSButton		*pass5;
 	IBOutlet NSButton		*pass6;
-	IBOutlet NSButton		*rar;
+	//
+    IBOutlet NSButton		*rar;
 	IBOutlet NSButton		*zip;
 	IBOutlet NSButton		*exe;
 	IBOutlet NSButton		*ddl;
-	IBOutlet NSButton		*link;
+	//
+    IBOutlet NSButton		*link;
 	IBOutlet NSButton		*addUrl;
 	IBOutlet NSButton		*related;
 	IBOutlet NSButton		*tools;
@@ -75,6 +82,7 @@
 @property (nonatomic, readwrite) NSMutableArray *urls;
 @property (nonatomic, readwrite) NSMutableArray *passWordUrls;
 @property (nonatomic, strong) NSWorkspace		*ws;
-@property (nonatomic,readwrite)NSMutableString *types_str;
+@property (nonatomic,readwrite)NSMutableString *typesString;
+@property (nonatomic, readwrite)NSMutableArray *typesStringArray;
 
 @end
