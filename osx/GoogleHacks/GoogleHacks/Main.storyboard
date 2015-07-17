@@ -885,7 +885,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <button fixedFrame="YES" tag="7" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Bd-CE-a6f">
-                                            <rect key="frame" x="15" y="108" width="48" height="18"/>
+                                            <rect key="frame" x="15" y="64" width="48" height="18"/>
                                             <buttonCell key="cell" type="check" title="divx" bezelStyle="regularSquare" imagePosition="left" tag="7" inset="2" id="vu5-SL-How">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -895,7 +895,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" tag="6" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JcC-H4-oBm">
-                                            <rect key="frame" x="15" y="140" width="51" height="18"/>
+                                            <rect key="frame" x="15" y="96" width="51" height="18"/>
                                             <buttonCell key="cell" type="check" title="wmv" bezelStyle="regularSquare" imagePosition="left" tag="6" inset="2" id="44e-Tn-ODN">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -905,7 +905,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" tag="4" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I9u-cD-BSV">
-                                            <rect key="frame" x="15" y="187" width="50" height="18"/>
+                                            <rect key="frame" x="15" y="143" width="50" height="18"/>
                                             <buttonCell key="cell" type="check" title="mpg" bezelStyle="regularSquare" imagePosition="left" tag="4" inset="2" id="b7V-h5-LJ7">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -915,7 +915,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" tag="5" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kUg-n9-xA5">
-                                            <rect key="frame" x="15" y="163" width="40" height="18"/>
+                                            <rect key="frame" x="15" y="119" width="40" height="18"/>
                                             <buttonCell key="cell" type="check" title="avi" bezelStyle="regularSquare" imagePosition="left" tag="5" inset="2" id="QIK-Uk-DON">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -962,6 +962,16 @@
                                             </buttonCell>
                                             <connections>
                                                 <action selector="videoExtension:" target="XfG-lQ-9wD" id="LJv-Ua-bzf"/>
+                                            </connections>
+                                        </button>
+                                        <button fixedFrame="YES" tag="3" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MW3-hC-qXn">
+                                            <rect key="frame" x="16" y="186" width="45" height="18"/>
+                                            <buttonCell key="cell" type="check" title="mid" bezelStyle="regularSquare" imagePosition="left" tag="3" inset="2" id="MYi-uV-2mb">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="audioExtension:" target="XfG-lQ-9wD" id="Rgh-DB-MEJ"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -1100,6 +1110,7 @@
                         <outlet property="flv" destination="4D5-Vc-zxf" id="y3C-PR-mKS"/>
                         <outlet property="link" destination="C09-ti-cHC" id="U5e-yM-i4G"/>
                         <outlet property="lit" destination="6PX-Ql-P6s" id="sW6-o8-4Oa"/>
+                        <outlet property="mid" destination="MW3-hC-qXn" id="eHK-8d-d92"/>
                         <outlet property="mp3" destination="oBu-p2-gqP" id="1hy-Vi-jPY"/>
                         <outlet property="mpg" destination="I9u-cD-BSV" id="jZt-fw-9ZK"/>
                         <outlet property="odt" destination="nsy-Vm-AfO" id="GiR-ax-r9H"/>

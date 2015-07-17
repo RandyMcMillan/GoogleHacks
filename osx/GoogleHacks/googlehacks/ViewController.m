@@ -354,6 +354,94 @@
 	[self openURL:(NSURL *)[self returnSearchString:nil] inBackground:YES];
 }
 
+
+
+
+
+
+
+
+
+
+
+/*
+ 
+ 
+ 
+ ElseIf RadioButton6.value = TRUE  Then
+ if index_check.value = TRUE Then
+ full_search_str="http://www.google.com/search?q=site%3A" + search_str
+ elseif related_check.value=true then
+ full_search_str="http://www.google.com/search?q=related%3A" + search_str
+ elseif  addurl_check.value=true then
+ full_search_str="http://www.google.com/addurl?q="+ search_str +"&hl=en&dqq="
+ elseif  link_check.value=true then
+ full_search_str="http://www.google.com/search?q=link%3A" + search_str
+ elseif map_check.value=true then
+ full_search_str="http://www.google.com/search?q=view%3Amap+" + search_str
+
+ 
+ 
+ */
+
+
+/*
+ 
+ 
+ end if
+ ElseIf RadioButton4.value = TRUE  Then
+ if method1_check.value = TRUE Then
+ full_search_str="http://www.google.com/translate?langpair=en|en&u=" + search_str
+ 
+ end if
+ if method2_check.value = TRUE Then
+ full_search_str="http://www.google.com/gwt/n?u=http%3A%2F%2F" + search_str
+ 
+ end if
+ 
+ 
+ ElseIf RadioButton7.value = TRUE  Then
+ full_search_str="http://www.google.com/search?q=site%3Awww.lyrics.com " + search_str
+ ElseIf RadioButton8.value = TRUE  Then
+ full_search_str="http://www.google.com/search?hl=en&q=" + search_str +"+site%3Ahttp%3A%2F%2Fwww.searchfreefonts.com%2Ffont+OR+site%3Awww.dafont.com+OR+site%3Ahttp%3A%2F%2Fwww.searchfreefonts.com%2F+++-comments+-categories.php+-comment.php" + search_str
+ Elseif RadioButton9.value=True Then
+ if exe_check.value = TRUE Then
+ types = types+".exe%7C"
+
+ 
+ 
+ 
+ 
+ ElseIf RadioButton7.value = TRUE  Then
+ full_search_str="http://www.google.com/search?q=site%3Awww.lyrics.com " + search_str
+ ElseIf RadioButton8.value = TRUE  Then
+ full_search_str="http://www.google.com/search?hl=en&q=" + search_str +"+site%3Ahttp%3A%2F%2Fwww.searchfreefonts.com%2Ffont+OR+site%3Awww.dafont.com+OR+site%3Ahttp%3A%2F%2Fwww.searchfreefonts.com%2F+++-comments+-categories.php+-comment.php" + search_str
+ Elseif RadioButton9.value=True Then
+ if exe_check.value = TRUE Then
+ types = types+".exe%7C"
+
+Window1.rbfrm 
+ LINE 2256
+ 
+ full_search_str="http://web.archive.org/web/*///http://" +search_str
+
+
+
+/*
+ 
+ElseIf RadioButton12.value = TRUE  Then
+full_search_str="http://www.google.com/search?q=" +search_str+ "&btnG=Search&q=%28&q=bigupload.com%2Fd+%7C&q=filefactory.com%2Ffile+%7C&q=dl-1.free.fr+%7C&q=gigasize.com%2Fget.php+%7C&q=d01.megashares.com%2F%3Fd01+%7C&q=megaupload.com%2F%3Fd+%7C&q=rapidshare.com%2Ffiles+%7C&q=rapidshare.de%2Ffiles+%7C&q=rapidupload.com%2Fd.php+%7C&q=sendspace.com%2Ffile+%7C&q=sexuploader.com%2F%3Fd+%7C&q=uploading.com%2F%3Fget+%7C&q=uploadport.com%2Frequest%2F%3Ffid+%7C&q=zupload.com%2Fdownload.php+%7C&q=%29"
+
+End If
+
+
+
+
+
+
+ */
+
+
 #pragma mark ViewController archives
 
 - (IBAction)archives:(id)sender
@@ -459,6 +547,10 @@
 	if ([ogg state] == TRUE) {
 		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".ogg%7C"];
 	}
+    
+    if ([mid state] == TRUE) {
+        self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".mid%7C"];
+    }
 
 	// Docs
 	if ([pdf state] == TRUE) {
@@ -624,7 +716,8 @@
 	[mp3 setState:0];
 	[wma setState:0];
 	[ogg setState:0];
-	[mpg setState:0];
+    [mid setState:0];
+    [mpg setState:0];
 	[avi setState:0];
 	[wmv setState:0];
 	[divx setState:0];
