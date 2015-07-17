@@ -546,32 +546,22 @@
     
   //  NSString *tempString = [NSMutableString stringWithString:@"http://www.google.com/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28' +types+ '%29+%22'+search_str+'%22"];
     
-    
+   	NSLog(@"self.typesString = %@", (NSString *)self.typesString);
+ 
     
     NSMutableString *tempString =
-    [[NSMutableString alloc]initWithString:@"http://www.google.com/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28' +types+ '%29+%22'+search_str+'%22"];
+    [[NSMutableString alloc]initWithString:@"http://www.google.com/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28"];
+     
+     tempString = (NSMutableString *)[tempString stringByAppendingString:self.typesString];
+     tempString = (NSMutableString *)[tempString stringByAppendingString:@"%29+%22"];
+     tempString = (NSMutableString *)[tempString stringByAppendingString:[self returnSearchField]];
+     tempString = (NSMutableString *)[tempString stringByAppendingString:@"%22"];
+ 
+    NSLog(@"LINE:560 \n tempString = %@\n",tempString);
     
-    NSLog(@"tempString = %@\n\n",tempString);
-   // tempString = [NSString stringByReplacingOccurrencesOfString:@"+types+" withString:self.typesString];
-    
-    tempString = (NSMutableString *)[tempString stringByReplacingOccurrencesOfString:@"+types+" withString:tempString];
-   
-    NSLog(@"tempString = %@\n\n",tempString);
-
-    tempString = (NSMutableString *)[tempString stringByReplacingOccurrencesOfString:@"+search_str+" withString:[self returnSearchField]];
-    
-    NSLog(@"tempString = %@\n\n",tempString);
-
+    [self.typesStringArray addObject:[NSURL URLWithString:(NSString *)tempString]];
     
     
-    //[self.typesStringArray addObject:[NSURL URLWithString:(NSString *)tempString]];
-
-    
-    
-    
-    
-    
-	NSLog(@"self.typesString = %@", (NSString *)self.typesString);
 }
 
 #pragma mark ViewController truncateString
