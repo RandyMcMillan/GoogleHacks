@@ -674,17 +674,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="360"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4b6-s8-AX9">
-                                <rect key="frame" x="7" y="318" width="300" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Search String" drawsBackground="YES" id="lWf-Ix-SDJ">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <action selector="enterFromSearchField:" target="XfG-lQ-9wD" id="gRu-m9-deo"/>
-                                </connections>
-                            </textField>
                             <box autoresizesSubviews="NO" fixedFrame="YES" title="Documents" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="MXo-VM-xwu">
                                 <rect key="frame" x="108" y="3" width="90" height="296"/>
                                 <view key="contentView">
@@ -752,7 +741,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="Fzz-hg-Swk">
-                                            <rect key="frame" x="15" y="174" width="46" height="18"/>
+                                            <rect key="frame" x="16" y="193" width="46" height="18"/>
                                             <buttonCell key="cell" type="check" title="doc" bezelStyle="regularSquare" imagePosition="left" tag="12" inset="2" id="7ab-js-l31">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -769,6 +758,16 @@
                                             </buttonCell>
                                             <connections>
                                                 <action selector="documentExtension:" target="XfG-lQ-9wD" id="Bbf-gE-roO"/>
+                                            </connections>
+                                        </button>
+                                        <button fixedFrame="YES" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="aF4-S0-NDI">
+                                            <rect key="frame" x="16" y="173" width="53" height="18"/>
+                                            <buttonCell key="cell" type="check" title="docx" bezelStyle="regularSquare" imagePosition="left" tag="12" inset="2" id="3XY-Eq-7d9">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="documentExtension:" target="XfG-lQ-9wD" id="Kuw-Ho-ho2"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -955,7 +954,7 @@
                                             </connections>
                                         </button>
                                         <button fixedFrame="YES" tag="8" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4D5-Vc-zxf">
-                                            <rect key="frame" x="16" y="21" width="36" height="18"/>
+                                            <rect key="frame" x="16" y="43" width="36" height="18"/>
                                             <buttonCell key="cell" type="check" title="flv" bezelStyle="regularSquare" imagePosition="left" tag="8" inset="2" id="AqA-kA-ahl">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
@@ -972,6 +971,16 @@
                                             </buttonCell>
                                             <connections>
                                                 <action selector="audioExtension:" target="XfG-lQ-9wD" id="Rgh-DB-MEJ"/>
+                                            </connections>
+                                        </button>
+                                        <button fixedFrame="YES" tag="8" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WiX-1f-Orl">
+                                            <rect key="frame" x="16" y="12" width="38" height="18"/>
+                                            <buttonCell key="cell" type="check" title="gif" bezelStyle="regularSquare" imagePosition="left" tag="8" inset="2" id="NKq-UE-dnH">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="videoExtension:" target="XfG-lQ-9wD" id="VgU-31-4jd"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -1097,6 +1106,25 @@
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ba6-2Y-Tpn">
+                                <rect key="frame" x="259" y="318" width="40" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString=".ext" drawsBackground="YES" id="Lf7-JY-8Qv">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4b6-s8-AX9">
+                                <rect key="frame" x="7" y="318" width="235" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Search String" drawsBackground="YES" id="lWf-Ix-SDJ">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="enterFromSearchField:" target="XfG-lQ-9wD" id="gRu-m9-deo"/>
+                                </connections>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -1106,8 +1134,10 @@
                         <outlet property="ddl" destination="xym-5D-Dyl" id="YxA-Bp-xeg"/>
                         <outlet property="divx" destination="6Bd-CE-a6f" id="1mZ-ee-zkR"/>
                         <outlet property="doc" destination="Fzz-hg-Swk" id="XPc-sP-bl8"/>
+                        <outlet property="docx" destination="aF4-S0-NDI" id="eqe-RH-hMN"/>
                         <outlet property="exe" destination="GRl-W0-aZm" id="HuF-FL-q5a"/>
                         <outlet property="flv" destination="4D5-Vc-zxf" id="y3C-PR-mKS"/>
+                        <outlet property="gif" destination="WiX-1f-Orl" id="qGC-lE-isb"/>
                         <outlet property="link" destination="C09-ti-cHC" id="U5e-yM-i4G"/>
                         <outlet property="lit" destination="6PX-Ql-P6s" id="sW6-o8-4Oa"/>
                         <outlet property="mid" destination="MW3-hC-qXn" id="eHK-8d-d92"/>

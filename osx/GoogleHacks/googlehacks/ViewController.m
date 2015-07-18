@@ -18,7 +18,7 @@
 @implementation ViewController
 
 @synthesize data_object, typesString, typesStringArray;
-@synthesize searchTextField, urlLinkTextField, urls, passWordUrls, ws;
+@synthesize searchTextField, urlLinkTextField, urls, passWordUrls, ws,customExtTextField;
 
 #pragma mark ViewController viewDidLoad
 
@@ -71,7 +71,7 @@
         NSLog(@"self.urls[%d]: %@", i, (NSMutableString *)self.urls[i]);
     }
 
-    [self openURL:self.urls inBackground:YES];
+    [self openURL:nil inBackground:YES];
 
 	// Basic openURL...
 	// [self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
@@ -93,6 +93,15 @@
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	// enterFromButton handles enterFrom logic
 	[self pressSearchButton:(id)sender];
+}
+
+#pragma mark ViewController enterFromCustomExtField
+
+- (IBAction)enterFromCustomExtField:(id)sender
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    // enterFromButton handles enterFrom logic
+    [self pressSearchButton:(id)sender];
 }
 
 #pragma mark ViewController returnSearchField
@@ -215,12 +224,19 @@
 	if ([wmv state] == (long)TRUE) {} else {}
 
 	if ([divx state] == (long)TRUE) {} else {}
+    
+    if ([flv state] == (long)TRUE) {} else {}
+    
+    if ([gif state] == (long)TRUE) {} else {}
 
 #ifdef DEBUG
 		NSLog(@"[mpg state] IS : %@", ([doc state] == (long)TRUE) ? @"TRUE" : @"FALSE");
 		NSLog(@"[avi state] IS : %@", ([rtf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
 		NSLog(@"[wmv state] IS : %@", ([pps state] == (long)TRUE) ? @"TRUE" : @"FALSE");
 		NSLog(@"[divx state] IS : %@", ([chm state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"[flv state] IS : %@", ([pps state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+    NSLog(@"[gif state] IS : %@", ([pps state] == (long)TRUE) ? @"TRUE" : @"FALSE");
+
 #endif
 
 	[self assembleTypesString];
@@ -572,6 +588,10 @@ End If
 	if ([doc state] == TRUE) {
 		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".doc%7C"];
 	}
+    
+    if ([docx state] == TRUE) {
+        self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".docx%7C"];
+    }
 
 	if ([rtf state] == TRUE) {
 		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".rtf%7C"];
@@ -613,6 +633,12 @@ End If
 	if ([flv state] == TRUE) {
 		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".flv%7C"];
 	}
+    
+   	if ([gif state] == TRUE) {
+        self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".gif%7C"];
+    }
+    
+ 
 
 	if ([exe state] == TRUE) {
 		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".exe%7C"];
@@ -630,7 +656,7 @@ End If
 		// https://bdpuqvsqmphctrcs.onion.to/data/
 	}
 
-	if ([self.typesString isEqualToString:@".divx%7C"]) {
+	if ([self.typesString isEqualToString:@".divx%7C"]||[self.typesString isEqualToString:@".docx%7C"]) {
 		self.typesString = (NSMutableString *)[self truncateString:self.typesString toCharacterCount:5];
 	}
     
@@ -640,7 +666,7 @@ End If
     
    	NSLog(@"self.typesString = %@", (NSString *)self.typesString);
  
-    
+   ///ADD LOGIC HERE TO CATCH BLANK SEARCH FIELD AND NO check BOXES to create generic open to https://www.google.com
     NSMutableString *tempString =
     [[NSMutableString alloc]initWithString:@"http://www.google.com/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28"];
      
@@ -722,6 +748,7 @@ End If
 	[wmv setState:0];
 	[divx setState:0];
 	[flv setState:0];
+    [gif setState:0];
 	[pdf setState:0];
 	[txt setState:0];
 	[lit setState:0];

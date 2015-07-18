@@ -11,7 +11,8 @@
 
 @interface ViewController : NSViewController {
 	IBOutlet NSTextField	*searchTextField;
-	IBOutlet NSTextField	*urlLinkTextField;
+    IBOutlet NSTextField	*urlLinkTextField;
+	IBOutlet NSTextField	*customExtTextField;
 	IBOutlet NSButton		*show;
 	IBOutlet NSButton		*reset;
     //CheckBoxes
@@ -26,11 +27,13 @@
 	IBOutlet NSButton		*wmv;
 	IBOutlet NSButton		*divx;
 	IBOutlet NSButton		*flv;
+    IBOutlet NSButton       *gif;
     //
 	IBOutlet NSButton		*pdf;
 	IBOutlet NSButton		*txt;
 	IBOutlet NSButton		*lit;
 	IBOutlet NSButton		*doc;
+	IBOutlet NSButton		*docx;
 	IBOutlet NSButton		*rtf;
 	IBOutlet NSButton		*pps;
 	IBOutlet NSButton		*chm;
@@ -79,6 +82,7 @@
 @property (nonatomic, readwrite) DataObjects	*data_object;
 @property (nonatomic, readwrite) NSTextField	*searchTextField;
 @property (nonatomic, readwrite) NSTextField	*urlLinkTextField;
+@property (nonatomic, readwrite) NSTextField	*customExtTextField;
 @property (nonatomic, readwrite) NSMutableArray *urls;
 @property (nonatomic, readwrite) NSMutableArray *passWordUrls;
 @property (nonatomic, strong) NSWorkspace		*ws;
