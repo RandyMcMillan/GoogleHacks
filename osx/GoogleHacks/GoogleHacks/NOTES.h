@@ -34,6 +34,10 @@ https://github.com/search?utf8=✓&q=applescripts+safari&type=Repositories&ref=s
  NSAppleScript* appleScript = [[NSAppleScript alloc] initWithContentsOfURL:url error:&errors];
  [appleScript executeAndReturnError:nil];
  [appleScript release];
+
+ 
+ //NS MAtrix https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSMatrix_Class/index.html#//apple_ref/occ/instm/NSMatrix/setState:atRow:column:
+ 
  
  
  

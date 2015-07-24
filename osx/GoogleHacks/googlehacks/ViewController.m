@@ -64,10 +64,14 @@
 	NSLog(@"returnSearchField = %@", [self returnSearchField]);
 	NSLog(@"returnURLLinkField = %@", [self returnURLLinkField]);
     
-	//[self openPasswordQueries];
-	[self assembleTypesString];
-	[self.urls addObjectsFromArray:self.passWordUrls];//move later to openPasswordQueries
+	
+    
+    //[self openPasswordQueries];
+	[self assembleTypesString];//populates self.typesStringArray
     [self.urls addObjectsFromArray:self.typesStringArray];
+    [self.urls addObjectsFromArray:self.passWordUrls];//move later to openPasswordQueries
+    
+    
     
     for (int i = 0; i < [self.passWordUrls count]; i++) {
         NSLog(@"self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
@@ -86,6 +90,8 @@
     //[self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
 
 }
+
+#pragma mark ViewController pressSearchButton <---all roads lead here
 
 
 
@@ -272,33 +278,6 @@
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
-
-	if ([pdf state] == (long)TRUE) {} else {}
-
-	if ([txt state] == (long)TRUE) {} else {}
-
-	if ([lit state] == (long)TRUE) {} else {}
-
-	if ([doc state] == (long)TRUE) {} else {}
-
-	if ([rtf state] == (long)TRUE) {} else {}
-
-	if ([pps state] == (long)TRUE) {} else {}
-
-	if ([chm state] == (long)TRUE) {} else {}
-
-	if ([odt state] == (long)TRUE) {} else {}
-
-#ifdef DEBUG
-		NSLog(@"[pdf state] IS : %@", ([pdf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[txt state] IS : %@", ([txt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[lit state] IS : %@", ([lit state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[doc state] IS : %@", ([doc state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[rtf state] IS : %@", ([rtf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[pps state] IS : %@", ([pps state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[chm state] IS : %@", ([chm state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[odt state] IS : %@", ([odt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-#endif
 
 	[self assembleTypesString];
 }
@@ -489,32 +468,6 @@ End If
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
-	if ([pdf state] == (long)TRUE) {} else {}
-
-	if ([txt state] == (long)TRUE) {} else {}
-
-	if ([lit state] == (long)TRUE) {} else {}
-
-	if ([doc state] == (long)TRUE) {} else {}
-
-	if ([rtf state] == (long)TRUE) {} else {}
-
-	if ([pps state] == (long)TRUE) {} else {}
-
-	if ([chm state] == (long)TRUE) {} else {}
-
-	if ([odt state] == (long)TRUE) {} else {}
-
-#ifdef DEBUG
-		NSLog(@"[pdf state] IS : %@", ([pdf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[txt state] IS : %@", ([txt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[lit state] IS : %@", ([lit state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[doc state] IS : %@", ([doc state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[rtf state] IS : %@", ([rtf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[pps state] IS : %@", ([pps state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[chm state] IS : %@", ([chm state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[odt state] IS : %@", ([odt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-#endif
 
 	[self assembleTypesString];
 }
@@ -530,33 +483,6 @@ End If
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
-
-	if ([pdf state] == (long)TRUE) {} else {}
-
-	if ([txt state] == (long)TRUE) {} else {}
-
-	if ([lit state] == (long)TRUE) {} else {}
-
-	if ([doc state] == (long)TRUE) {} else {}
-
-	if ([rtf state] == (long)TRUE) {} else {}
-
-	if ([pps state] == (long)TRUE) {} else {}
-
-	if ([chm state] == (long)TRUE) {} else {}
-
-	if ([odt state] == (long)TRUE) {} else {}
-
-#ifdef DEBUG
-		NSLog(@"[pdf state] IS : %@", ([pdf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[txt state] IS : %@", ([txt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[lit state] IS : %@", ([lit state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[doc state] IS : %@", ([doc state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[rtf state] IS : %@", ([rtf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[pps state] IS : %@", ([pps state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[chm state] IS : %@", ([chm state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[odt state] IS : %@", ([odt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-#endif
 
 	[self assembleTypesString];
 }
@@ -774,6 +700,15 @@ End If
 	[chm setState:0];
 	[odt setState:0];
 
+    
+    //passwordMatrix
+    [passwordMatrix setState:true atRow:0 column:0];
+    [self.passWordUrls removeAllObjects];
+    // just checking
+    for (int i = 0; i < [self.passWordUrls count]; i++) {
+        NSLog(@"LINE:706 self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
+    }
+    
 	// [pass1 setState:0];
 	// [pass2 setState:0];
 	// [pass3 setState:0];

@@ -1145,6 +1145,7 @@
                         <outlet property="mpg" destination="I9u-cD-BSV" id="jZt-fw-9ZK"/>
                         <outlet property="odt" destination="nsy-Vm-AfO" id="GiR-ax-r9H"/>
                         <outlet property="ogg" destination="pVa-2H-WJC" id="hOR-Ay-DEl"/>
+                        <outlet property="passwordMatrix" destination="VY8-Tw-r9G" id="nsu-oR-IAL"/>
                         <outlet property="pdf" destination="iec-UI-vx9" id="6H5-XL-K6K"/>
                         <outlet property="pps" destination="sFC-eu-f5v" id="aQP-gU-I3M"/>
                         <outlet property="rar" destination="R8I-l5-bzs" id="DzE-CU-5OS"/>

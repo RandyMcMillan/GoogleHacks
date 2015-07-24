@@ -39,6 +39,8 @@
 	IBOutlet NSButton		*chm;
 	IBOutlet NSButton		*odt;
 	//
+    IBOutlet NSMatrix *passwordMatrix;
+    //
     IBOutlet NSButton		*pass1;
 	IBOutlet NSButton		*pass2;
 	IBOutlet NSButton		*pass3;
