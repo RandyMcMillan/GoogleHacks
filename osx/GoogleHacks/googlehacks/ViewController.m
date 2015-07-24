@@ -33,7 +33,6 @@
 	self.urls			= [NSMutableArray arrayWithCapacity:100];	// may use 4 when all done...we'll see
 	self.passWordUrls	= [NSMutableArray arrayWithCapacity:10];	// never uses more than one...
     self.typesStringArray = [NSMutableArray arrayWithCapacity:100];
-	// [self openPasswordQueries];
 	self.ws			= [NSWorkspace sharedWorkspace];
 	self.typesString	= (NSMutableString *)self.data_object.types_str;
 }
@@ -53,7 +52,7 @@
 	NSLog(@"returnURLLinkField = %@", [self returnURLLinkField]);
 
 	[self openPasswordQueries];
-	//[self assembleTypesString];//turn off while TS passwords
+	[self assembleTypesString];
 
 	[self.urls addObjectsFromArray:self.passWordUrls];//move later to openPasswordQueries
     [self.urls addObjectsFromArray:self.typesStringArray];
@@ -660,7 +659,6 @@ End If
 		self.typesString = (NSMutableString *)[self truncateString:self.typesString toCharacterCount:5];
 	}
     
-    [self.typesStringArray removeAllObjects];
     
   //  NSString *tempString = [NSMutableString stringWithString:@"http://www.google.com/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28' +types+ '%29+%22'+search_str+'%22"];
     
@@ -676,7 +674,7 @@ End If
      tempString = (NSMutableString *)[tempString stringByAppendingString:@"%22"];
  
     NSLog(@"LINE:560 \n tempString = %@\n",tempString);
-    
+    [self.typesStringArray removeAllObjects];
     [self.typesStringArray addObject:[NSURL URLWithString:(NSString *)tempString]];
     
     
