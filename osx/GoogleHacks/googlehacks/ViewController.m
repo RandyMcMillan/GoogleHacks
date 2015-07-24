@@ -53,10 +53,10 @@
 	NSLog(@"returnURLLinkField = %@", [self returnURLLinkField]);
 
 	[self openPasswordQueries];
-	[self assembleTypesString];
+	//[self assembleTypesString];//turn off while TS passwords
 
-	[self.urls addObjectsFromArray:self.passWordUrls];
-    [self.urls addObjectsFromArray:self.typesStringArray];
+	[self.urls addObjectsFromArray:self.passWordUrls];//move later to openPasswordQueries
+    //[self.urls addObjectsFromArray:self.typesStringArray];
     
     
     for (int i = 0; i < [self.passWordUrls count]; i++) {
@@ -64,7 +64,7 @@
     }
     
         for (int i = 0; i < [self.typesStringArray count]; i++) {
-        NSLog(@"self.typesStringArray[%d]: %@", i, (NSMutableString *)self.typesStringArray[i]);
+      //  NSLog(@"self.typesStringArray[%d]: %@", i, (NSMutableString *)self.typesStringArray[i]);
     }
     
         for (int i = 0; i < [self.urls count]; i++) {
@@ -304,7 +304,7 @@
 	}
 
 	for (int i = 0; i < [self.passWordUrls count]; i++) {
-		NSLog(@"self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
+		NSLog(@"LINE:307 self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
 	}
 
 	if ((long)[selCell tag] == 1) {
@@ -366,8 +366,8 @@
 - (void)openPasswordQueries
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSLog(@"self.passWordUrls count = %ld",[self.passWordUrls count]);
 
-	[self openURL:(NSURL *)[self returnSearchString:nil] inBackground:YES];
 }
 
 

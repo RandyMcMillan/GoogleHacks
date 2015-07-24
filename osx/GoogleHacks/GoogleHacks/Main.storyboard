@@ -1050,28 +1050,28 @@
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                         <connections>
-                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="uXY-kV-uwf"/>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="WO6-ge-zCI"/>
                                                         </connections>
                                                     </buttonCell>
                                                     <buttonCell type="radio" title="pass 1" imagePosition="left" alignment="left" tag="1" inset="2" id="kdw-cs-aQl">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                         <connections>
-                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="uWM-2e-ypV"/>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="pwM-oo-eIJ"/>
                                                         </connections>
                                                     </buttonCell>
                                                     <buttonCell type="radio" title="pass 2" imagePosition="left" alignment="left" tag="2" inset="2" id="di7-b8-gYl">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                         <connections>
-                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="Za4-m2-Si3"/>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="rDV-4k-9Iv"/>
                                                         </connections>
                                                     </buttonCell>
                                                     <buttonCell type="radio" title="pass 3" imagePosition="left" alignment="left" tag="3" inset="2" id="dtC-kP-Tje">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                         <connections>
-                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="8Og-Oz-AKS"/>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="WKV-pu-CR5"/>
                                                         </connections>
                                                     </buttonCell>
                                                     <buttonCell type="radio" title="pass 4" imagePosition="left" alignment="left" tag="4" inset="2" id="E0a-K3-ha9">
@@ -1085,14 +1085,14 @@
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                         <connections>
-                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="3wE-dW-qUP"/>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="snw-Rv-5Pi"/>
                                                         </connections>
                                                     </buttonCell>
                                                     <buttonCell type="radio" title="pass 6" imagePosition="left" alignment="left" tag="6" inset="2" id="qVt-4l-aqA">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                         <connections>
-                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="NY5-40-q5f"/>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="sPf-kW-4ne"/>
                                                         </connections>
                                                     </buttonCell>
                                                 </column>
