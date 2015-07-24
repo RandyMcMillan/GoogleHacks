@@ -43,54 +43,61 @@
 	[super setRepresentedObject:representedObject];
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 #pragma mark ViewController pressSearchButton <---all roads lead here
 
 - (IBAction)pressSearchButton:(id)sender
 {
-	
     
     NSLog(@"%@", NSStringFromSelector(_cmd));
 	NSLog(@"returnSearchField = %@", [self returnSearchField]);
 	NSLog(@"returnURLLinkField = %@", [self returnURLLinkField]);
-
-    
     
 	//[self openPasswordQueries];
 	[self assembleTypesString];
-
-    
-    
 	[self.urls addObjectsFromArray:self.passWordUrls];//move later to openPasswordQueries
     [self.urls addObjectsFromArray:self.typesStringArray];
-    
-    
-    
     
     for (int i = 0; i < [self.passWordUrls count]; i++) {
         NSLog(@"self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
     }
     
         for (int i = 0; i < [self.typesStringArray count]; i++) {
-      //  NSLog(@"self.typesStringArray[%d]: %@", i, (NSMutableString *)self.typesStringArray[i]);
+      //NSLog(@"self.typesStringArray[%d]: %@", i, (NSMutableString *)self.typesStringArray[i]);
     }
     
         for (int i = 0; i < [self.urls count]; i++) {
         NSLog(@"self.urls[%d]: %@", i, (NSMutableString *)self.urls[i]);
     }
 
-    
-    
-    
-    
-  //  [self openURL:nil inBackground:YES];
-
-	// Basic openURL...
-	// [self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
-
-    
-    
+    //[self openURL:nil inBackground:YES];
+    //Basic openURL...
+    //[self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 #pragma mark ViewController enterFromSearchField
 
@@ -137,17 +144,15 @@
 	return [[self.urlLinkTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 }
 
-#pragma mark ViewController figureOutTheLogicHere
+#pragma mark ViewController returnSearchString
 
 - (NSString *)returnSearchString:(NSString *)searchString
 {
 	// This method will handle more complex logic...
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-
 	searchString	= [BASE_URL stringByAppendingString:@"q="];
 	searchString	= [searchString stringByAppendingString:[self returnSearchField]];
 	NSLog(@"searchString = %@", searchString);
-
 	return searchString;
 }
 
@@ -158,7 +163,6 @@
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	NSLog(@"%@", modString);// null
 	NSURL *modifiedURL = [NSURL URLWithString:modString];
-
 	return modifiedURL;
 }
 
