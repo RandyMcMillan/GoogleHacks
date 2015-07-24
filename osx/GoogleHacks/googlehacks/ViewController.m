@@ -43,19 +43,27 @@
 	[super setRepresentedObject:representedObject];
 }
 
-#pragma mark ViewController enterFromButton <---all roads lead here
+#pragma mark ViewController pressSearchButton <---all roads lead here
 
 - (IBAction)pressSearchButton:(id)sender
 {
-	NSLog(@"%@", NSStringFromSelector(_cmd));
+	
+    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 	NSLog(@"returnSearchField = %@", [self returnSearchField]);
 	NSLog(@"returnURLLinkField = %@", [self returnURLLinkField]);
 
-	[self openPasswordQueries];
+    
+    
+	//[self openPasswordQueries];
 	[self assembleTypesString];
 
+    
+    
 	[self.urls addObjectsFromArray:self.passWordUrls];//move later to openPasswordQueries
     [self.urls addObjectsFromArray:self.typesStringArray];
+    
+    
     
     
     for (int i = 0; i < [self.passWordUrls count]; i++) {
@@ -70,10 +78,18 @@
         NSLog(@"self.urls[%d]: %@", i, (NSMutableString *)self.urls[i]);
     }
 
-    [self openURL:nil inBackground:YES];
+    
+    
+    
+    
+  //  [self openURL:nil inBackground:YES];
 
 	// Basic openURL...
 	// [self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
+
+    
+    
+
 }
 
 #pragma mark ViewController enterFromSearchField
@@ -637,8 +653,6 @@ End If
         self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".gif%7C"];
     }
     
- 
-
 	if ([exe state] == TRUE) {
 		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".exe%7C"];
 	}
@@ -673,7 +687,7 @@ End If
      tempString = (NSMutableString *)[tempString stringByAppendingString:(NSString *)[self returnSearchField]];
      tempString = (NSMutableString *)[tempString stringByAppendingString:@"%22"];
  
-    NSLog(@"LINE:560 \n tempString = %@\n",tempString);
+    NSLog(@"LINE:674 \n tempString = %@\n",tempString);
     [self.typesStringArray removeAllObjects];
     [self.typesStringArray addObject:[NSURL URLWithString:(NSString *)tempString]];
     
