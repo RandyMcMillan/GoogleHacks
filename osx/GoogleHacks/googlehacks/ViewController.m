@@ -28,13 +28,13 @@
 
 	[super viewDidLoad];
 	self.title = @"Presenting ViewController";
-	[self.data_object = [DataObjects alloc] init];
+	[self.data_object   = [DataObjects alloc] init];
 	[self.data_object loadValues:nil];
-	self.urls			= [NSMutableArray arrayWithCapacity:100];	// may use 4 when all done...we'll see
-	self.passWordUrls	= [NSMutableArray arrayWithCapacity:10];	// never uses more than one...
-    self.typesStringArray = [NSMutableArray arrayWithCapacity:100];
-	self.ws			= [NSWorkspace sharedWorkspace];
-	self.typesString	= (NSMutableString *)self.data_object.types_str;
+	self.urls               = [NSMutableArray arrayWithCapacity:100];
+	self.passWordUrls       = [NSMutableArray arrayWithCapacity:10];
+    self.typesStringArray   = [NSMutableArray arrayWithCapacity:100];
+	self.ws                 = [NSWorkspace sharedWorkspace];
+	self.typesString        = (NSMutableString *)self.data_object.types_str;
 }
 
 - (void)setRepresentedObject:(id)representedObject
