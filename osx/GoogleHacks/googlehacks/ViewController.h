@@ -75,7 +75,7 @@
 - (void)openPasswordQueries;
 - (IBAction)method1:(id)sender;
 - (IBAction)method2:(id)sender;
-- (IBAction)resetButtons:(id)sender;
+- (IBAction)resetAll:(id)sender;
 
 - (void)openAppleScript:(NSString *)scriptName;
 

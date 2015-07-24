@@ -56,7 +56,7 @@
 	//[self assembleTypesString];//turn off while TS passwords
 
 	[self.urls addObjectsFromArray:self.passWordUrls];//move later to openPasswordQueries
-    //[self.urls addObjectsFromArray:self.typesStringArray];
+    [self.urls addObjectsFromArray:self.typesStringArray];
     
     
     for (int i = 0; i < [self.passWordUrls count]; i++) {
@@ -672,7 +672,7 @@ End If
      
      tempString = (NSMutableString *)[tempString stringByAppendingString:self.typesString];
      tempString = (NSMutableString *)[tempString stringByAppendingString:@"%29+%22"];
-     tempString = (NSMutableString *)[tempString stringByAppendingString:[self returnSearchField]];
+     tempString = (NSMutableString *)[tempString stringByAppendingString:(NSString *)[self returnSearchField]];
      tempString = (NSMutableString *)[tempString stringByAppendingString:@"%22"];
  
     NSLog(@"LINE:560 \n tempString = %@\n",tempString);
@@ -729,7 +729,7 @@ End If
 
 #pragma mark ViewController resetButtons
 
-- (IBAction)resetButtons:(id)sender
+- (IBAction)resetAll:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 
@@ -775,7 +775,7 @@ End If
 	[tools setState:0];
 
 	// NSLog(@"self.typesString = %@", NSStringFromClass([self.typesString class]));
-	self.typesString = (NSMutableString *)@"";
+    //	self.typesString = (NSMutableString *)@"";
 
 	// if (!self.urls) {
 	//	self.urls = [[NSMutableArray alloc] init];
@@ -783,13 +783,15 @@ End If
 	
     
     [self.urls removeAllObjects];
-    [self.typesStringArray removeAllObjects];
+    
+    self.searchTextField.stringValue = [NSMutableString stringWithString:@""];
+  //  [self.typesStringArray removeAllObjects];
     
     
     
 	// }
 
-	NSLog(@"self.typesString = %@", self.typesString);
+	//NSLog(@"self.typesString = %@", self.typesString);
 }
 
 @end
