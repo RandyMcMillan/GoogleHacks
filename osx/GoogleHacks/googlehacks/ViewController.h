@@ -81,6 +81,11 @@
 
 - (void)openAppleScript:(NSString *)scriptName;
 
+- (NSString *)returnCustomExtTextField;
+- (NSString *)returnURLLinkField;
+
+
+
 @property (nonatomic, readwrite) DataObjects	*data_object;
 @property (nonatomic, readwrite) NSTextField	*searchTextField;
 @property (nonatomic, readwrite) NSTextField	*urlLinkTextField;

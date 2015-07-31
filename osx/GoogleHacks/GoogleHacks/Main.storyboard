@@ -1113,6 +1113,9 @@
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="enterFromCustomExtField:" target="XfG-lQ-9wD" id="ciw-xb-sB0"/>
+                                </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4b6-s8-AX9">
                                 <rect key="frame" x="7" y="318" width="235" height="22"/>
@@ -1131,6 +1134,7 @@
                         <outlet property="addUrl" destination="vx1-pt-s5m" id="bYB-at-bTq"/>
                         <outlet property="avi" destination="kUg-n9-xA5" id="D8R-yp-bSD"/>
                         <outlet property="chm" destination="uwJ-N2-1DL" id="DRQ-Tn-GIi"/>
+                        <outlet property="customExtTextField" destination="Ba6-2Y-Tpn" id="7Ae-hO-DRY"/>
                         <outlet property="ddl" destination="xym-5D-Dyl" id="YxA-Bp-xeg"/>
                         <outlet property="divx" destination="6Bd-CE-a6f" id="1mZ-ee-zkR"/>
                         <outlet property="doc" destination="Fzz-hg-Swk" id="XPc-sP-bl8"/>

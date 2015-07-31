@@ -102,7 +102,25 @@
 
 #pragma mark ViewController pressSearchButton <---all roads lead here
 
+#pragma mark ViewController openURL
 
+// Opens a URL in the default browser in background or foreground
+- (void)openURL:(NSString *)url inBackground:(BOOL)background
+{
+	[self openAppleScript:(NSString *)@"SafariCloseAllWindows"];
+
+	if (background) {
+		// NSArray* urls = [NSArray arrayWithArray:self.urls];
+		[[NSWorkspace sharedWorkspace] openURLs:(NSArray *)self.urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+	} else {
+		[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
+	}
+
+	//NSLog(@"self.urls count = %ld", [self.urls count]);
+	//NSLog(@"self.urls count = %ld", [self.urls count]);
+
+	[self.urls removeAllObjects];
+}
 
 
 
@@ -159,6 +177,17 @@
 	return [[self.urlLinkTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 }
 
+#pragma mark ViewController customExtTextField
+
+- (NSString *)returnCustomExtTextField
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    //NSLog(@"self.urlLinkTextField = %@", [self.urlLinkTextField stringValue]);
+    return [[self.customExtTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+}
+
+
+
 #pragma mark ViewController returnSearchString
 
 - (NSString *)returnSearchString:(NSString *)searchString
@@ -181,25 +210,7 @@
 	return modifiedURL;
 }
 
-#pragma mark ViewController openURL
 
-// Opens a URL in the default browser in background or foreground
-- (void)openURL:(NSString *)url inBackground:(BOOL)background
-{
-	[self openAppleScript:(NSString *)@"SafariCloseAllWindows"];
-
-	if (background) {
-		// NSArray* urls = [NSArray arrayWithArray:self.urls];
-		[[NSWorkspace sharedWorkspace] openURLs:(NSArray *)self.urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-	} else {
-		[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
-	}
-
-	//NSLog(@"self.urls count = %ld", [self.urls count]);
-	//NSLog(@"self.urls count = %ld", [self.urls count]);
-
-	[self.urls removeAllObjects];
-}
 
 #pragma mark ViewController openAppleScript
 
@@ -491,6 +502,15 @@ End If
 	self.typesString = (NSMutableString *)@"";
 	// self.typesString = [self.typesString stringByAppendingString:@"%7C"];
 
+    
+    
+    //Custom .ext from ext field
+    NSLog(@"LINE:508 [self.customExtTextField stringValue] = %@",[self.customExtTextField stringValue]);
+    if ([[self.customExtTextField stringValue] isEqualToString:@""]) {
+        //
+    }
+    
+    
 	// Audio
 	if ([mp3 state] == TRUE) {
 		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".mp3%7C"];
