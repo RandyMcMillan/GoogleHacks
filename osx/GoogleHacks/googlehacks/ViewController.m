@@ -506,9 +506,18 @@ End If
     
     //Custom .ext from ext field
     NSLog(@"LINE:508 [self.customExtTextField stringValue] = %@",[self.customExtTextField stringValue]);
-    if ([[self.customExtTextField stringValue] isEqualToString:@""]) {
-        //
-    }
+    if (![[self.customExtTextField stringValue] isEqualToString:@""]) {
+        NSLog(@"LINE:510 not equal to ... ");
+        
+        self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@"."];
+        
+		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:[self.customExtTextField stringValue]];
+        self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@"%7C"];
+       
+}
+
+        NSLog(@"LINE:527 self.typeString = %@",self.typesString);
+    
     
     
 	// Audio
@@ -621,7 +630,7 @@ End If
     
   //  NSString *tempString = [NSMutableString stringWithString:@"http://www.google.com/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28' +types+ '%29+%22'+search_str+'%22"];
     
-   	NSLog(@"LINE: 603 self.typesString = %@", (NSString *)self.typesString);
+   	NSLog(@"LINE: 641 self.typesString = %@", (NSString *)self.typesString);
  
    ///ADD LOGIC HERE TO CATCH BLANK SEARCH FIELD AND NO check BOXES to create generic open to https://www.google.com
     NSMutableString *tempString =
@@ -635,7 +644,8 @@ End If
     //NSLog(@"LINE:628 \n tempString = %@\n",tempString);
     [self.typesStringArray removeAllObjects];
     
-    if ([mp3 state] ||
+    if (![[self.customExtTextField stringValue] isEqualToString:@""] ||
+        [mp3 state] ||
         [wma state] ||
         [ogg state] ||
         [mid state] ||
