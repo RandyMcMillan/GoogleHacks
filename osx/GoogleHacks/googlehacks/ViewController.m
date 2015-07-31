@@ -508,8 +508,15 @@ End If
     NSLog(@"LINE:508 [self.customExtTextField stringValue] = %@",[self.customExtTextField stringValue]);
     if (![[self.customExtTextField stringValue] isEqualToString:@""]) {
         NSLog(@"LINE:510 not equal to ... ");
+       
+        NSString *firstLetter = [[self.customExtTextField stringValue] substringToIndex:1];
+        NSLog(@"firstLetter = %@",firstLetter);
         
+        if (![firstLetter isEqualToString:@"."]) {
+            
         self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@"."];
+        
+        }
         
 		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:[self.customExtTextField stringValue]];
         self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@"%7C"];
@@ -798,6 +805,8 @@ End If
     [self.urls removeAllObjects];
     
     self.searchTextField.stringValue = [NSMutableString stringWithString:@""];
+    self.customExtTextField.stringValue = [NSMutableString stringWithString:@""];
+
   //  [self.typesStringArray removeAllObjects];
     
     
