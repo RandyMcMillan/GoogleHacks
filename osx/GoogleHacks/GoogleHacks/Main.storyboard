@@ -989,7 +989,7 @@
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKe-5m-kVo">
-                                <rect key="frame" x="321" y="68" width="122" height="25"/>
+                                <rect key="frame" x="321" y="33" width="122" height="60"/>
                                 <buttonCell key="cell" type="squareTextured" title="Search" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gj3-1g-1zQ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -1187,6 +1187,16 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="dismiss:" target="bp4-oP-OFF" id="kOE-I3-LZP"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tz7-YG-oqP">
+                                <rect key="frame" x="321" y="33" width="122" height="25"/>
+                                <buttonCell key="cell" type="squareTextured" title="Reset Safari" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="d7U-qF-ZyK">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name="HelveticaNeue"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="resetSafari:" target="bp4-oP-OFF" id="fMd-iB-rZO"/>
                                 </connections>
                             </button>
                         </subviews>

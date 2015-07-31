@@ -10,6 +10,7 @@
 		480B411F1B56ADEF0014A6A3 /* 2000px-WMF-Agora-Settings_BCBCBC.svg.png in Resources */ = {isa = PBXBuildFile; fileRef = 480B411C1B56ADEF0014A6A3 /* 2000px-WMF-Agora-Settings_BCBCBC.svg.png */; };
 		480B41201B56ADEF0014A6A3 /* gear_64.png in Resources */ = {isa = PBXBuildFile; fileRef = 480B411D1B56ADEF0014A6A3 /* gear_64.png */; };
 		480B41211B56ADEF0014A6A3 /* WMF-Agora-Settings_BCBCBC.svg in Resources */ = {isa = PBXBuildFile; fileRef = 480B411E1B56ADEF0014A6A3 /* WMF-Agora-Settings_BCBCBC.svg */; };
+		480E2DB01B6C27FD004F5CB1 /* ResetSafari.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 480E2DAF1B6C27FD004F5CB1 /* ResetSafari.scpt */; };
 		482476561B58536C0024C741 /* SafariCloseAllWindows.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 482476551B58536C0024C741 /* SafariCloseAllWindows.scpt */; };
 		4824769A1B585FE20024C741 /* image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 482476991B585FE20024C741 /* image.xcassets */; };
 		483E64FB1B4F575A00E4EA6C /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 483E64FA1B4F575A00E4EA6C /* index.html */; };
@@ -41,6 +42,7 @@
 		480B411C1B56ADEF0014A6A3 /* 2000px-WMF-Agora-Settings_BCBCBC.svg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2000px-WMF-Agora-Settings_BCBCBC.svg.png"; sourceTree = "<group>"; };
 		480B411D1B56ADEF0014A6A3 /* gear_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_64.png; sourceTree = "<group>"; };
 		480B411E1B56ADEF0014A6A3 /* WMF-Agora-Settings_BCBCBC.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "WMF-Agora-Settings_BCBCBC.svg"; sourceTree = "<group>"; };
+		480E2DAF1B6C27FD004F5CB1 /* ResetSafari.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = ResetSafari.scpt; sourceTree = "<group>"; };
 		482476551B58536C0024C741 /* SafariCloseAllWindows.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = SafariCloseAllWindows.scpt; sourceTree = "<group>"; };
 		482476991B585FE20024C741 /* image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = image.xcassets; path = ../../../shared/GoogleHacksIcons/Newer/image.xcassets; sourceTree = "<group>"; };
 		483E64FA1B4F575A00E4EA6C /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				482476991B585FE20024C741 /* image.xcassets */,
 				482476551B58536C0024C741 /* SafariCloseAllWindows.scpt */,
+				480E2DAF1B6C27FD004F5CB1 /* ResetSafari.scpt */,
 				488967761B5734CD00F4BC9A /* GoogleHacks.help */,
 				480B411B1B56ADEF0014A6A3 /* shared */,
 				4895529E1B4F444A00CA90B6 /* WebKit.framework */,
@@ -300,6 +303,7 @@
 				482476561B58536C0024C741 /* SafariCloseAllWindows.scpt in Resources */,
 				489552991B4F3F9200CA90B6 /* Main.storyboard in Resources */,
 				480B41201B56ADEF0014A6A3 /* gear_64.png in Resources */,
+				480E2DB01B6C27FD004F5CB1 /* ResetSafari.scpt in Resources */,
 				4824769A1B585FE20024C741 /* image.xcassets in Resources */,
 				4889696A1B57395800F4BC9A /* GogleHacksHelp.html in Resources */,
 				480B41211B56ADEF0014A6A3 /* WMF-Agora-Settings_BCBCBC.svg in Resources */,

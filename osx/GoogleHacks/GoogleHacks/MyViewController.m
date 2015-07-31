@@ -62,4 +62,26 @@
 	[windowScriptObject setValue:self forKey:@"app"];
 }
 
+
+- (IBAction)resetSafari:(id)sender {
+    
+   
+	[self openAppleScript:(NSString *)@"SafariCloseAllWindows"];
+    [self openAppleScript:(NSString *)@"ResetSafari"];
+    
+    
+}
+
+#pragma mark ViewController openAppleScript
+
+- (void)openAppleScript:(NSString *)scriptName
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSString		*path			= [[NSBundle mainBundle] pathForResource:scriptName ofType:@"scpt"];
+    NSURL			*openUrl			= [NSURL fileURLWithPath:path]; NSDictionary *errors = [NSDictionary dictionary];
+    NSAppleScript	*appleScript	= [[NSAppleScript alloc] initWithContentsOfURL:openUrl error:&errors];
+    [appleScript executeAndReturnError:nil];
+}
+
+
 @end

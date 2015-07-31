@@ -22,5 +22,6 @@
 
 - (NSString *)appURL;
 - (IBAction)changeGreeting:(id)sender;
-
+- (IBAction)resetSafari:(id)sender;
+- (void)openAppleScript:(NSString *)scriptName;
 @end
