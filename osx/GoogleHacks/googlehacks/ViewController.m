@@ -651,9 +651,6 @@ End If
         for (int i = 0; i < [self.typesStringArray count]; i++) {
             NSLog(@"______________LINE: 652 self.typesStringArray[%d]: %@ \n\n", i, (NSMutableString *)self.typesStringArray[i]);
         }
-        
-        
-    
     }
     
 }
