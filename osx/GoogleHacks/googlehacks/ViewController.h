@@ -64,7 +64,7 @@
 - (IBAction)enterFromURLLinkField:(id)sender;
 - (NSString *)returnSearchString:(NSString *)searchString;
 - (NSURL *)modifyURL:(NSString *)modString;
-- (void)openURL:(NSURL *)url inBackground:(BOOL)background;
+- (void)openURL:(NSString *)url inBackground:(BOOL)background;
 
 - (IBAction)audioExtension:(id)sender;
 - (IBAction)videoExtension:(id)sender;

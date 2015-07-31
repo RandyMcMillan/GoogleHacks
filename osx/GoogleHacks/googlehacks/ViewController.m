@@ -94,7 +94,8 @@
     }else{
     
         //Basic openURL...
-    //[self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
+    NSLog(@"LINE:97 [self returnSearchString:nil] = %@",[self returnSearchString:nil]);
+    [self openURL:[self returnSearchString:nil] inBackground:NO];
     
     }
 }
@@ -164,7 +165,7 @@
 {
 	// This method will handle more complex logic...
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	searchString	= [BASE_URL stringByAppendingString:@"q="];
+	searchString	= [@"https://www.google.com/search?" stringByAppendingString:@"q="];
 	searchString	= [searchString stringByAppendingString:[self returnSearchField]];
 	//NSLog(@"searchString = %@", searchString);
 	return searchString;
