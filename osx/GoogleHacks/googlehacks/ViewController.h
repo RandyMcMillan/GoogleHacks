@@ -11,7 +11,8 @@
 
 @interface ViewController : NSViewController {
 	IBOutlet NSTextField	*searchTextField;
-	IBOutlet NSTextField	*urlLinkTextField;
+    IBOutlet NSTextField	*urlLinkTextField;
+	IBOutlet NSTextField	*customExtTextField;
 	IBOutlet NSButton		*show;
 	IBOutlet NSButton		*reset;
     //CheckBoxes
@@ -26,16 +27,20 @@
 	IBOutlet NSButton		*wmv;
 	IBOutlet NSButton		*divx;
 	IBOutlet NSButton		*flv;
+    IBOutlet NSButton       *gif;
     //
 	IBOutlet NSButton		*pdf;
 	IBOutlet NSButton		*txt;
 	IBOutlet NSButton		*lit;
 	IBOutlet NSButton		*doc;
+	IBOutlet NSButton		*docx;
 	IBOutlet NSButton		*rtf;
 	IBOutlet NSButton		*pps;
 	IBOutlet NSButton		*chm;
 	IBOutlet NSButton		*odt;
 	//
+    IBOutlet NSMatrix *passwordMatrix;
+    //
     IBOutlet NSButton		*pass1;
 	IBOutlet NSButton		*pass2;
 	IBOutlet NSButton		*pass3;
@@ -59,7 +64,7 @@
 - (IBAction)enterFromURLLinkField:(id)sender;
 - (NSString *)returnSearchString:(NSString *)searchString;
 - (NSURL *)modifyURL:(NSString *)modString;
-- (void)openURL:(NSURL *)url inBackground:(BOOL)background;
+- (void)openURL:(NSString *)url inBackground:(BOOL)background;
 
 - (IBAction)audioExtension:(id)sender;
 - (IBAction)videoExtension:(id)sender;
@@ -72,13 +77,19 @@
 - (void)openPasswordQueries;
 - (IBAction)method1:(id)sender;
 - (IBAction)method2:(id)sender;
-- (IBAction)resetButtons:(id)sender;
+- (IBAction)resetAll:(id)sender;
 
 - (void)openAppleScript:(NSString *)scriptName;
+
+- (NSString *)returnCustomExtTextField;
+- (NSString *)returnURLLinkField;
+
+
 
 @property (nonatomic, readwrite) DataObjects	*data_object;
 @property (nonatomic, readwrite) NSTextField	*searchTextField;
 @property (nonatomic, readwrite) NSTextField	*urlLinkTextField;
+@property (nonatomic, readwrite) NSTextField	*customExtTextField;
 @property (nonatomic, readwrite) NSMutableArray *urls;
 @property (nonatomic, readwrite) NSMutableArray *passWordUrls;
 @property (nonatomic, strong) NSWorkspace		*ws;

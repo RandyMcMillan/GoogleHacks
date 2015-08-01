@@ -1,4 +1,4 @@
-//
+
 //  ViewController.m
 //  GoogleHacks
 //
@@ -18,7 +18,7 @@
 @implementation ViewController
 
 @synthesize data_object, typesString, typesStringArray;
-@synthesize searchTextField, urlLinkTextField, urls, passWordUrls, ws;
+@synthesize searchTextField, urlLinkTextField, urls, passWordUrls, ws,customExtTextField;
 
 #pragma mark ViewController viewDidLoad
 
@@ -28,14 +28,13 @@
 
 	[super viewDidLoad];
 	self.title = @"Presenting ViewController";
-	[self.data_object = [DataObjects alloc] init];
+	[self.data_object   = [DataObjects alloc] init];
 	[self.data_object loadValues:nil];
-	self.urls			= [NSMutableArray arrayWithCapacity:100];	// may use 4 when all done...we'll see
-	self.passWordUrls	= [NSMutableArray arrayWithCapacity:10];	// never uses more than one...
-    self.typesStringArray = [NSMutableArray arrayWithCapacity:100];
-	// [self openPasswordQueries];
-	self.ws			= [NSWorkspace sharedWorkspace];
-	self.typesString	= (NSMutableString *)self.data_object.types_str;
+	self.urls               = [NSMutableArray arrayWithCapacity:100];
+	self.passWordUrls       = [NSMutableArray arrayWithCapacity:10];
+    self.typesStringArray   = [NSMutableArray arrayWithCapacity:100];
+	self.ws                 = [NSWorkspace sharedWorkspace];
+	self.typesString        = (NSMutableString *)self.data_object.types_str;
 }
 
 - (void)setRepresentedObject:(id)representedObject
@@ -44,38 +43,94 @@
 	[super setRepresentedObject:representedObject];
 }
 
-#pragma mark ViewController enterFromButton <---all roads lead here
+
+
+
+
+
+
+
+
+
+
+
+
+#pragma mark ViewController pressSearchButton <---all roads lead here
 
 - (IBAction)pressSearchButton:(id)sender
 {
-	NSLog(@"%@", NSStringFromSelector(_cmd));
-	NSLog(@"returnSearchField = %@", [self returnSearchField]);
-	NSLog(@"returnURLLinkField = %@", [self returnURLLinkField]);
-
-	[self openPasswordQueries];
-	[self assembleTypesString];
-
-	[self.urls addObjectsFromArray:self.passWordUrls];
+    
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+	//NSLog(@"returnSearchField = %@", [self returnSearchField]);
+	//NSLog(@"returnURLLinkField = %@", [self returnURLLinkField]);
+    
+	
+    
+    //[self openPasswordQueries];
+	[self assembleTypesString];//populates self.typesStringArray
     [self.urls addObjectsFromArray:self.typesStringArray];
+    [self.urls addObjectsFromArray:self.passWordUrls];//move later to openPasswordQueries
+    
     
     
     for (int i = 0; i < [self.passWordUrls count]; i++) {
-        NSLog(@"self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
+        //NSLog(@"self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
     }
     
         for (int i = 0; i < [self.typesStringArray count]; i++) {
-        NSLog(@"self.typesStringArray[%d]: %@", i, (NSMutableString *)self.typesStringArray[i]);
+      ////NSLog(@"self.typesStringArray[%d]: %@", i, (NSMutableString *)self.typesStringArray[i]);
     }
     
         for (int i = 0; i < [self.urls count]; i++) {
-        NSLog(@"self.urls[%d]: %@", i, (NSMutableString *)self.urls[i]);
+        //NSLog(@"self.urls[%d]: %@", i, (NSMutableString *)self.urls[i]);
     }
 
-    [self openURL:self.urls inBackground:YES];
-
-	// Basic openURL...
-	// [self openURL:[NSURL URLWithString:[self returnSearchString:nil]] inBackground:NO];
+    
+    //NSLog(@"[self.urls count] = %ld",(unsigned long)[self.urls count]);
+    if ([self.urls count]>0){
+    
+    [self openURL:nil inBackground:YES];
+    
+    }else{
+    
+        //Basic openURL...
+    NSLog(@"LINE:97 [self returnSearchString:nil] = %@",[self returnSearchString:nil]);
+    [self openURL:[self returnSearchString:nil] inBackground:NO];
+    
+    }
 }
+
+#pragma mark ViewController pressSearchButton <---all roads lead here
+
+#pragma mark ViewController openURL
+
+// Opens a URL in the default browser in background or foreground
+- (void)openURL:(NSString *)url inBackground:(BOOL)background
+{
+	[self openAppleScript:(NSString *)@"SafariCloseAllWindows"];
+
+	if (background) {
+		// NSArray* urls = [NSArray arrayWithArray:self.urls];
+		[[NSWorkspace sharedWorkspace] openURLs:(NSArray *)self.urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+	} else {
+		[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
+	}
+
+	//NSLog(@"self.urls count = %ld", [self.urls count]);
+	//NSLog(@"self.urls count = %ld", [self.urls count]);
+
+	[self.urls removeAllObjects];
+}
+
+
+
+
+
+
+
+
+
+
 
 #pragma mark ViewController enterFromSearchField
 
@@ -95,12 +150,21 @@
 	[self pressSearchButton:(id)sender];
 }
 
+#pragma mark ViewController enterFromCustomExtField
+
+- (IBAction)enterFromCustomExtField:(id)sender
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    // enterFromButton handles enterFrom logic
+    [self pressSearchButton:(id)sender];
+}
+
 #pragma mark ViewController returnSearchField
 
 - (NSString *)returnSearchField
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	NSLog(@"self.searchTextField = %@", [self.searchTextField stringValue]);
+	//NSLog(@"self.searchTextField = %@", [self.searchTextField stringValue]);
 	return [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 }
 
@@ -109,21 +173,30 @@
 - (NSString *)returnURLLinkField
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	NSLog(@"self.urlLinkTextField = %@", [self.urlLinkTextField stringValue]);
+	//NSLog(@"self.urlLinkTextField = %@", [self.urlLinkTextField stringValue]);
 	return [[self.urlLinkTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 }
 
-#pragma mark ViewController figureOutTheLogicHere
+#pragma mark ViewController customExtTextField
+
+- (NSString *)returnCustomExtTextField
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    //NSLog(@"self.urlLinkTextField = %@", [self.urlLinkTextField stringValue]);
+    return [[self.customExtTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+}
+
+
+
+#pragma mark ViewController returnSearchString
 
 - (NSString *)returnSearchString:(NSString *)searchString
 {
 	// This method will handle more complex logic...
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-
-	searchString	= [BASE_URL stringByAppendingString:@"q="];
+	searchString	= [@"https://www.google.com/search?" stringByAppendingString:@"q="];
 	searchString	= [searchString stringByAppendingString:[self returnSearchField]];
-	NSLog(@"searchString = %@", searchString);
-
+	//NSLog(@"searchString = %@", searchString);
 	return searchString;
 }
 
@@ -132,31 +205,12 @@
 - (NSURL *)modifyURL:(NSString *)modString
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	NSLog(@"%@", modString);// null
+	//NSLog(@"%@", modString);// null
 	NSURL *modifiedURL = [NSURL URLWithString:modString];
-
 	return modifiedURL;
 }
 
-#pragma mark ViewController openURL
 
-// Opens a URL in the default browser in background or foreground
-- (void)openURL:(NSString *)url inBackground:(BOOL)background
-{
-	[self openAppleScript:(NSString *)@"SafariCloseAllWindows"];
-
-	if (background) {
-		// NSArray* urls = [NSArray arrayWithArray:self.urls];
-		[[NSWorkspace sharedWorkspace] openURLs:(NSArray *)self.urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-	} else {
-		[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
-	}
-
-	NSLog(@"self.urls count = %ld", [self.urls count]);
-	NSLog(@"self.urls count = %ld", [self.urls count]);
-
-	[self.urls removeAllObjects];
-}
 
 #pragma mark ViewController openAppleScript
 
@@ -177,9 +231,9 @@
 
 	NSButtonCell *selCell = [sender selectedCell];
 
-	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
-	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+	//NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+	//NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+	//NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([mp3 state] == (long)TRUE) {} else {}
 
@@ -187,11 +241,6 @@
 
 	if ([ogg state] == (long)TRUE) {} else {}
 
-#ifdef DEBUG
-		NSLog(@"[mp3 state] IS : %@", ([pdf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[wma state] IS : %@", ([txt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[ogg state] IS : %@", ([lit state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-#endif
 
 	[self assembleTypesString];
 }
@@ -204,9 +253,9 @@
 
 	NSButtonCell *selCell = [sender selectedCell];
 
-	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
-	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
+	//NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+	//NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+	//NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
 	if ([mpg state] == (long)TRUE) {} else {}
 
@@ -215,13 +264,11 @@
 	if ([wmv state] == (long)TRUE) {} else {}
 
 	if ([divx state] == (long)TRUE) {} else {}
+    
+    if ([flv state] == (long)TRUE) {} else {}
+    
+    if ([gif state] == (long)TRUE) {} else {}
 
-#ifdef DEBUG
-		NSLog(@"[mpg state] IS : %@", ([doc state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[avi state] IS : %@", ([rtf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[wmv state] IS : %@", ([pps state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[divx state] IS : %@", ([chm state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-#endif
 
 	[self assembleTypesString];
 }
@@ -237,33 +284,6 @@
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
-
-	if ([pdf state] == (long)TRUE) {} else {}
-
-	if ([txt state] == (long)TRUE) {} else {}
-
-	if ([lit state] == (long)TRUE) {} else {}
-
-	if ([doc state] == (long)TRUE) {} else {}
-
-	if ([rtf state] == (long)TRUE) {} else {}
-
-	if ([pps state] == (long)TRUE) {} else {}
-
-	if ([chm state] == (long)TRUE) {} else {}
-
-	if ([odt state] == (long)TRUE) {} else {}
-
-#ifdef DEBUG
-		NSLog(@"[pdf state] IS : %@", ([pdf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[txt state] IS : %@", ([txt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[lit state] IS : %@", ([lit state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[doc state] IS : %@", ([doc state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[rtf state] IS : %@", ([rtf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[pps state] IS : %@", ([pps state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[chm state] IS : %@", ([chm state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[odt state] IS : %@", ([odt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-#endif
 
 	[self assembleTypesString];
 }
@@ -288,7 +308,7 @@
 	}
 
 	for (int i = 0; i < [self.passWordUrls count]; i++) {
-		NSLog(@"self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
+		//NSLog(@"LINE:307 self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
 	}
 
 	if ((long)[selCell tag] == 1) {
@@ -341,7 +361,7 @@
 
 	// With a traditional for loop
 	for (int i = 0; i < [self.passWordUrls count]; i++) {
-		NSLog(@"self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
+		//NSLog(@"self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
 	}
 }
 
@@ -350,8 +370,8 @@
 - (void)openPasswordQueries
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
+    //NSLog(@"self.passWordUrls count = %ld",[self.passWordUrls count]);
 
-	[self openURL:(NSURL *)[self returnSearchString:nil] inBackground:YES];
 }
 
 
@@ -454,32 +474,6 @@ End If
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
-	if ([pdf state] == (long)TRUE) {} else {}
-
-	if ([txt state] == (long)TRUE) {} else {}
-
-	if ([lit state] == (long)TRUE) {} else {}
-
-	if ([doc state] == (long)TRUE) {} else {}
-
-	if ([rtf state] == (long)TRUE) {} else {}
-
-	if ([pps state] == (long)TRUE) {} else {}
-
-	if ([chm state] == (long)TRUE) {} else {}
-
-	if ([odt state] == (long)TRUE) {} else {}
-
-#ifdef DEBUG
-		NSLog(@"[pdf state] IS : %@", ([pdf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[txt state] IS : %@", ([txt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[lit state] IS : %@", ([lit state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[doc state] IS : %@", ([doc state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[rtf state] IS : %@", ([rtf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[pps state] IS : %@", ([pps state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[chm state] IS : %@", ([chm state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[odt state] IS : %@", ([odt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-#endif
 
 	[self assembleTypesString];
 }
@@ -496,33 +490,6 @@ End If
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 
-	if ([pdf state] == (long)TRUE) {} else {}
-
-	if ([txt state] == (long)TRUE) {} else {}
-
-	if ([lit state] == (long)TRUE) {} else {}
-
-	if ([doc state] == (long)TRUE) {} else {}
-
-	if ([rtf state] == (long)TRUE) {} else {}
-
-	if ([pps state] == (long)TRUE) {} else {}
-
-	if ([chm state] == (long)TRUE) {} else {}
-
-	if ([odt state] == (long)TRUE) {} else {}
-
-#ifdef DEBUG
-		NSLog(@"[pdf state] IS : %@", ([pdf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[txt state] IS : %@", ([txt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[lit state] IS : %@", ([lit state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[doc state] IS : %@", ([doc state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[rtf state] IS : %@", ([rtf state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[pps state] IS : %@", ([pps state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[chm state] IS : %@", ([chm state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-		NSLog(@"[odt state] IS : %@", ([odt state] == (long)TRUE) ? @"TRUE" : @"FALSE");
-#endif
-
 	[self assembleTypesString];
 }
 
@@ -535,6 +502,31 @@ End If
 	self.typesString = (NSMutableString *)@"";
 	// self.typesString = [self.typesString stringByAppendingString:@"%7C"];
 
+    
+    
+    //Custom .ext from ext field
+    NSLog(@"LINE:508 [self.customExtTextField stringValue] = %@",[self.customExtTextField stringValue]);
+    if (![[self.customExtTextField stringValue] isEqualToString:@""]) {
+        NSLog(@"LINE:510 not equal to ... ");
+       
+        NSString *firstLetter = [[self.customExtTextField stringValue] substringToIndex:1];
+        NSLog(@"firstLetter = %@",firstLetter);
+        
+        if (![firstLetter isEqualToString:@"."]) {
+            
+        self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@"."];
+        
+        }
+        
+		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:[self.customExtTextField stringValue]];
+        self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@"%7C"];
+       
+}
+
+        NSLog(@"LINE:527 self.typeString = %@",self.typesString);
+    
+    
+    
 	// Audio
 	if ([mp3 state] == TRUE) {
 		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".mp3%7C"];
@@ -572,6 +564,10 @@ End If
 	if ([doc state] == TRUE) {
 		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".doc%7C"];
 	}
+    
+    if ([docx state] == TRUE) {
+        self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".docx%7C"];
+    }
 
 	if ([rtf state] == TRUE) {
 		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".rtf%7C"];
@@ -613,7 +609,11 @@ End If
 	if ([flv state] == TRUE) {
 		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".flv%7C"];
 	}
-
+    
+   	if ([gif state] == TRUE) {
+        self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".gif%7C"];
+    }
+    
 	if ([exe state] == TRUE) {
 		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@".exe%7C"];
 	}
@@ -630,29 +630,93 @@ End If
 		// https://bdpuqvsqmphctrcs.onion.to/data/
 	}
 
-	if ([self.typesString isEqualToString:@".divx%7C"]) {
+	if ([self.typesString isEqualToString:@".divx%7C"]||[self.typesString isEqualToString:@".docx%7C"]) {
 		self.typesString = (NSMutableString *)[self truncateString:self.typesString toCharacterCount:5];
 	}
     
-    [self.typesStringArray removeAllObjects];
     
   //  NSString *tempString = [NSMutableString stringWithString:@"http://www.google.com/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28' +types+ '%29+%22'+search_str+'%22"];
     
-   	NSLog(@"self.typesString = %@", (NSString *)self.typesString);
+   	NSLog(@"LINE: 641 self.typesString = %@", (NSString *)self.typesString);
  
+   ///ADD LOGIC HERE TO CATCH BLANK SEARCH FIELD AND NO check BOXES to create generic open to https://www.google.com
+    
     
     NSMutableString *tempString =
-    [[NSMutableString alloc]initWithString:@"http://www.google.com/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28"];
-     
+    [[NSMutableString alloc]initWithString:@"http://www.google.com/search?hl=en&q="];
+   
+    
+    if (![[self.urlLinkTextField stringValue] isEqualToString:@""]) {
+
+        tempString = (NSMutableString *)[tempString stringByAppendingString:@"-inurl%3A%28"];
+ 
+        tempString = (NSMutableString *)[tempString stringByAppendingString:[self.urlLinkTextField stringValue]];
+    
+        tempString = (NSMutableString *)[tempString stringByAppendingString:@"%29"];
+
+    }else{
+
+        tempString = (NSMutableString *)[tempString stringByAppendingString:@"-inurl%3A%28htm%7Chtml%7Cphp%29"];
+ 
+    }
+    
+    
+//    tempString = (NSMutableString *)[tempString stringByAppendingString: ];
+    
+    
+    tempString = (NSMutableString *)[tempString stringByAppendingString:@"+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28"];
+ 
+    
+    
      tempString = (NSMutableString *)[tempString stringByAppendingString:self.typesString];
      tempString = (NSMutableString *)[tempString stringByAppendingString:@"%29+%22"];
-     tempString = (NSMutableString *)[tempString stringByAppendingString:[self returnSearchField]];
+     tempString = (NSMutableString *)[tempString stringByAppendingString:(NSString *)[self returnSearchField]];
      tempString = (NSMutableString *)[tempString stringByAppendingString:@"%22"];
  
-    NSLog(@"LINE:560 \n tempString = %@\n",tempString);
+    //NSLog(@"LINE:628 \n tempString = %@\n",tempString);
+    [self.typesStringArray removeAllObjects];
     
+    if (
+        ![[self.customExtTextField stringValue] isEqualToString:@""] ||
+        ![[self.urlLinkTextField stringValue] isEqualToString:@""] ||
+        [mp3 state] ||
+        [wma state] ||
+        [ogg state] ||
+        [mid state] ||
+        [mpg state] ||
+        [avi state] ||
+        [wmv state] ||
+        [divx state] ||
+        [flv state] ||
+        [gif state] ||
+        [pdf state] ||
+        [txt state] ||
+        [lit state] ||
+        [doc state] ||
+        [docx state] ||
+        [rtf state] ||
+        [pps state] ||
+        [chm state] ||
+        [odt state] ||
+       //Archives
+        [rar state] ||
+        [zip state] ||
+        [exe state] ||
+        [ddl state] ||
+       //Methods
+        [link state] ||
+        [addUrl state] ||
+        [related state] ||
+        [tools state]
+        ) {
+        
+        
     [self.typesStringArray addObject:[NSURL URLWithString:(NSString *)tempString]];
-    
+   
+        for (int i = 0; i < [self.typesStringArray count]; i++) {
+            NSLog(@"______________LINE: 652 self.typesStringArray[%d]: %@ \n\n", i, (NSMutableString *)self.typesStringArray[i]);
+        }
+    }
     
 }
 
@@ -703,7 +767,7 @@ End If
 
 #pragma mark ViewController resetButtons
 
-- (IBAction)resetButtons:(id)sender
+- (IBAction)resetAll:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 
@@ -722,6 +786,7 @@ End If
 	[wmv setState:0];
 	[divx setState:0];
 	[flv setState:0];
+    [gif setState:0];
 	[pdf setState:0];
 	[txt setState:0];
 	[lit setState:0];
@@ -731,6 +796,15 @@ End If
 	[chm setState:0];
 	[odt setState:0];
 
+    
+    //passwordMatrix
+    [passwordMatrix setState:true atRow:0 column:0];
+    [self.passWordUrls removeAllObjects];
+    // just checking
+    for (int i = 0; i < [self.passWordUrls count]; i++) {
+        NSLog(@"LINE:706 self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
+    }
+    
 	// [pass1 setState:0];
 	// [pass2 setState:0];
 	// [pass3 setState:0];
@@ -748,7 +822,7 @@ End If
 	[tools setState:0];
 
 	// NSLog(@"self.typesString = %@", NSStringFromClass([self.typesString class]));
-	self.typesString = (NSMutableString *)@"";
+    //	self.typesString = (NSMutableString *)@"";
 
 	// if (!self.urls) {
 	//	self.urls = [[NSMutableArray alloc] init];
@@ -756,13 +830,17 @@ End If
 	
     
     [self.urls removeAllObjects];
-    [self.typesStringArray removeAllObjects];
+    
+    self.searchTextField.stringValue = [NSMutableString stringWithString:@""];
+    self.customExtTextField.stringValue = [NSMutableString stringWithString:@""];
+
+  //  [self.typesStringArray removeAllObjects];
     
     
     
 	// }
 
-	NSLog(@"self.typesString = %@", self.typesString);
+	//NSLog(@"self.typesString = %@", self.typesString);
 }
 
 @end
