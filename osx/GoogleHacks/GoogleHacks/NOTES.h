@@ -58,7 +58,9 @@ https://github.com/samowitsch/url-browser
  *    // https://www.google.com/maps/@37.0625,-95.677068,4z
  *    // Do any additional setup after loading the view.
  *
- *
+ // http://en.osdn.jp/projects/sfnet_ghh/
+ 
+ // https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Strings/Articles/CreatingStrings.html#//apple_ref/doc/uid/20000148-CJBCJHHI*
  *
  *   // full_search_str ="http://www.google.com/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28" +types+ "%29+%22"+search_str+"%22"
  *
