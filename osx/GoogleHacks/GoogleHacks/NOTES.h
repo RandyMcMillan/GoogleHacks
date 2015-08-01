@@ -10,7 +10,7 @@
 #define googlehacks_NOTES_h
 
 /*
- 
+http://123to100.blogspot.com/2009/02/google-hacking-code.html 
 https://github.com/search?utf8=✓&q=applescripts+safari&type=Repositories&ref=searchresults
  
  https://github.com/abbeycode/AppleScripts/blob/master/Scripts/Applications/Safari/Open%20in%20Chrome.applescript
