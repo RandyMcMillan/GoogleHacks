@@ -640,9 +640,34 @@ End If
    	NSLog(@"LINE: 641 self.typesString = %@", (NSString *)self.typesString);
  
    ///ADD LOGIC HERE TO CATCH BLANK SEARCH FIELD AND NO check BOXES to create generic open to https://www.google.com
+    
+    
     NSMutableString *tempString =
-    [[NSMutableString alloc]initWithString:@"http://www.google.com/search?hl=en&q=-inurl%3A%28htm%7Chtml%7Cphp%29+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28"];
-     
+    [[NSMutableString alloc]initWithString:@"http://www.google.com/search?hl=en&q="];
+   
+    
+    if (![[self.urlLinkTextField stringValue] isEqualToString:@""]) {
+
+        tempString = (NSMutableString *)[tempString stringByAppendingString:@"-inurl%3A%28"];
+ 
+        tempString = (NSMutableString *)[tempString stringByAppendingString:[self.urlLinkTextField stringValue]];
+    
+        tempString = (NSMutableString *)[tempString stringByAppendingString:@"%29"];
+
+    }else{
+
+        tempString = (NSMutableString *)[tempString stringByAppendingString:@"-inurl%3A%28htm%7Chtml%7Cphp%29"];
+ 
+    }
+    
+    
+//    tempString = (NSMutableString *)[tempString stringByAppendingString: ];
+    
+    
+    tempString = (NSMutableString *)[tempString stringByAppendingString:@"+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28"];
+ 
+    
+    
      tempString = (NSMutableString *)[tempString stringByAppendingString:self.typesString];
      tempString = (NSMutableString *)[tempString stringByAppendingString:@"%29+%22"];
      tempString = (NSMutableString *)[tempString stringByAppendingString:(NSString *)[self returnSearchField]];
@@ -651,7 +676,9 @@ End If
     //NSLog(@"LINE:628 \n tempString = %@\n",tempString);
     [self.typesStringArray removeAllObjects];
     
-    if (![[self.customExtTextField stringValue] isEqualToString:@""] ||
+    if (
+        ![[self.customExtTextField stringValue] isEqualToString:@""] ||
+        ![[self.urlLinkTextField stringValue] isEqualToString:@""] ||
         [mp3 state] ||
         [wma state] ||
         [ogg state] ||

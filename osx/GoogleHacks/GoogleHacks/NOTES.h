@@ -22,6 +22,7 @@ https://github.com/search?utf8=✓&q=applescripts+safari&type=Repositories&ref=s
  https://github.com/gallybattat/open-safari-url-in-google-chrome
  
  
+https://github.com/samowitsch/url-browser 
  
  https://github.com/samowitsch/url-browser
  *
