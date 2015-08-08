@@ -5,9 +5,6 @@
 //  Created by Randy McMillan on 7/9/15.
 //  Copyright (c) 2015 Randy McMillan. All rights reserved.
 //
-// http://en.osdn.jp/projects/sfnet_ghh/
-
-// https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/Strings/Articles/CreatingStrings.html#//apple_ref/doc/uid/20000148-CJBCJHHI
 
 #import "ViewController.h"
 #import "MyViewController.h"
@@ -17,7 +14,7 @@
 
 @implementation ViewController
 
-@synthesize data_object, typesString, typesStringArray;
+@synthesize data_object, typesString, typesStringArray,intitleTextField;
 @synthesize searchTextField, urlLinkTextField, urls, passWordUrls, ws,customExtTextField;
 
 #pragma mark ViewController viewDidLoad
@@ -44,34 +41,18 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 #pragma mark ViewController pressSearchButton <---all roads lead here
 
 - (IBAction)pressSearchButton:(id)sender
 {
     
     NSLog(@"%@", NSStringFromSelector(_cmd));
-	//NSLog(@"returnSearchField = %@", [self returnSearchField]);
-	//NSLog(@"returnURLLinkField = %@", [self returnURLLinkField]);
+	NSLog(@"returnSearchField = %@", [self returnSearchField]);
+	NSLog(@"returnURLLinkField = %@", [self returnURLLinkField]);
     
-	
-    
-    //[self openPasswordQueries];
 	[self assembleTypesString];//populates self.typesStringArray
     [self.urls addObjectsFromArray:self.typesStringArray];
-    [self.urls addObjectsFromArray:self.passWordUrls];//move later to openPasswordQueries
-    
-    
+    [self.urls addObjectsFromArray:self.passWordUrls];
     
     for (int i = 0; i < [self.passWordUrls count]; i++) {
         //NSLog(@"self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
@@ -84,16 +65,15 @@
         for (int i = 0; i < [self.urls count]; i++) {
         //NSLog(@"self.urls[%d]: %@", i, (NSMutableString *)self.urls[i]);
     }
-
     
     //NSLog(@"[self.urls count] = %ld",(unsigned long)[self.urls count]);
     if ([self.urls count]>0){
     
     [self openURL:nil inBackground:YES];
     
-    }else{
+    } else {
     
-        //Basic openURL...
+    //Basic openURL...
     NSLog(@"LINE:97 [self returnSearchString:nil] = %@",[self returnSearchString:nil]);
     [self openURL:[self returnSearchString:nil] inBackground:NO];
     
@@ -110,34 +90,23 @@
 	[self openAppleScript:(NSString *)@"SafariCloseAllWindows"];
 
 	if (background) {
-		// NSArray* urls = [NSArray arrayWithArray:self.urls];
-		[[NSWorkspace sharedWorkspace] openURLs:(NSArray *)self.urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
-	} else {
-		[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
-	}
-
-	//NSLog(@"self.urls count = %ld", [self.urls count]);
-	//NSLog(@"self.urls count = %ld", [self.urls count]);
+		
+        [[NSWorkspace sharedWorkspace] openURLs:(NSArray *)self.urls withAppBundleIdentifier:nil options:NSWorkspaceLaunchWithoutActivation additionalEventParamDescriptor:nil launchIdentifiers:nil];
+	
+    } else {
+	
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:url]];
+	
+    }
 
 	[self.urls removeAllObjects];
 }
-
-
-
-
-
-
-
-
-
-
 
 #pragma mark ViewController enterFromSearchField
 
 - (IBAction)enterFromSearchField:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	// enterFromButton handles enterFrom logic
 	[self pressSearchButton:(id)sender];
 }
 
@@ -146,7 +115,6 @@
 - (IBAction)enterFromURLLinkField:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	// enterFromButton handles enterFrom logic
 	[self pressSearchButton:(id)sender];
 }
 
@@ -155,8 +123,17 @@
 - (IBAction)enterFromCustomExtField:(id)sender
 {
     NSLog(@"%@", NSStringFromSelector(_cmd));
-    // enterFromButton handles enterFrom logic
     [self pressSearchButton:(id)sender];
+}
+
+#pragma mark ViewController enterInTitleTextField
+
+- (IBAction)enterInTitleTextField:(id)sender {
+
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    [self pressSearchButton:(id)sender];
+    
+
 }
 
 #pragma mark ViewController returnSearchField
@@ -164,7 +141,6 @@
 - (NSString *)returnSearchField
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	//NSLog(@"self.searchTextField = %@", [self.searchTextField stringValue]);
 	return [[self.searchTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 }
 
@@ -173,7 +149,6 @@
 - (NSString *)returnURLLinkField
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	//NSLog(@"self.urlLinkTextField = %@", [self.urlLinkTextField stringValue]);
 	return [[self.urlLinkTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 }
 
@@ -182,11 +157,16 @@
 - (NSString *)returnCustomExtTextField
 {
     NSLog(@"%@", NSStringFromSelector(_cmd));
-    //NSLog(@"self.urlLinkTextField = %@", [self.urlLinkTextField stringValue]);
     return [[self.customExtTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
 }
 
+#pragma mark ViewController returnInTitleTextField
 
+- (NSString *)returnInTitleTextField
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+    return [[self.intitleTextField stringValue] stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+}
 
 #pragma mark ViewController returnSearchString
 
@@ -196,7 +176,6 @@
 	NSLog(@"%@", NSStringFromSelector(_cmd));
 	searchString	= [@"https://www.google.com/search?" stringByAppendingString:@"q="];
 	searchString	= [searchString stringByAppendingString:[self returnSearchField]];
-	//NSLog(@"searchString = %@", searchString);
 	return searchString;
 }
 
@@ -205,7 +184,6 @@
 - (NSURL *)modifyURL:(NSString *)modString
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-	//NSLog(@"%@", modString);// null
 	NSURL *modifiedURL = [NSURL URLWithString:modString];
 	return modifiedURL;
 }
@@ -231,18 +209,14 @@
 
 	NSButtonCell *selCell = [sender selectedCell];
 
-	//NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	//NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
-	//NSLog(@"Selected cell state is %ld", (long)[selCell state]);
-
+	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 	if ([mp3 state] == (long)TRUE) {} else {}
-
 	if ([wma state] == (long)TRUE) {} else {}
-
 	if ([ogg state] == (long)TRUE) {} else {}
-
-
-	[self assembleTypesString];
+	
+    [self assembleTypesString];
 }
 
 #pragma mark ViewController videoExtension
@@ -250,25 +224,16 @@
 - (IBAction)videoExtension:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-
 	NSButtonCell *selCell = [sender selectedCell];
-
-	//NSLog(@"Selected cell is %ld", (long)[selCell tag]);
-	//NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
-	//NSLog(@"Selected cell state is %ld", (long)[selCell state]);
-
+	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
+	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
+	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
 	if ([mpg state] == (long)TRUE) {} else {}
-
 	if ([avi state] == (long)TRUE) {} else {}
-
 	if ([wmv state] == (long)TRUE) {} else {}
-
 	if ([divx state] == (long)TRUE) {} else {}
-    
     if ([flv state] == (long)TRUE) {} else {}
-    
     if ([gif state] == (long)TRUE) {} else {}
-
 
 	[self assembleTypesString];
 }
@@ -278,9 +243,7 @@
 - (IBAction)documentExtension:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-
 	NSButtonCell *selCell = [sender selectedCell];
-
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
@@ -293,13 +256,10 @@
 - (IBAction)passwordQuery:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-
 	NSButtonCell *selCell = [sender selectedCell];
-
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
-	// if ([germanMakes containsObject:@"BMW"]) {
 
 	[self.passWordUrls removeAllObjects];
 
@@ -359,7 +319,6 @@
 		[self.passWordUrls removeObjectIdenticalTo:[NSURL URLWithString:@"http://www.google.com/search?q=%22http%3A%2F%2F*%3A*%40%22"]];
 	}
 
-	// With a traditional for loop
 	for (int i = 0; i < [self.passWordUrls count]; i++) {
 		//NSLog(@"self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
 	}
@@ -370,23 +329,9 @@
 - (void)openPasswordQueries
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-    //NSLog(@"self.passWordUrls count = %ld",[self.passWordUrls count]);
-
 }
 
-
-
-
-
-
-
-
-
-
-
 /*
- 
- 
  
  ElseIf RadioButton6.value = TRUE  Then
  if index_check.value = TRUE Then
@@ -399,14 +344,10 @@
  full_search_str="http://www.google.com/search?q=link%3A" + search_str
  elseif map_check.value=true then
  full_search_str="http://www.google.com/search?q=view%3Amap+" + search_str
-
- 
  
  */
 
-
 /*
- 
  
  end if
  ElseIf RadioButton4.value = TRUE  Then
@@ -419,7 +360,6 @@
  
  end if
  
- 
  ElseIf RadioButton7.value = TRUE  Then
  full_search_str="http://www.google.com/search?q=site%3Awww.lyrics.com " + search_str
  ElseIf RadioButton8.value = TRUE  Then
@@ -427,10 +367,6 @@
  Elseif RadioButton9.value=True Then
  if exe_check.value = TRUE Then
  types = types+".exe%7C"
-
- 
- 
- 
  
  ElseIf RadioButton7.value = TRUE  Then
  full_search_str="http://www.google.com/search?q=site%3Awww.lyrics.com " + search_str
@@ -445,20 +381,12 @@ Window1.rbfrm
  
  full_search_str="http://web.archive.org/web/*///http://" +search_str
 
-
-
 /*
  
 ElseIf RadioButton12.value = TRUE  Then
 full_search_str="http://www.google.com/search?q=" +search_str+ "&btnG=Search&q=%28&q=bigupload.com%2Fd+%7C&q=filefactory.com%2Ffile+%7C&q=dl-1.free.fr+%7C&q=gigasize.com%2Fget.php+%7C&q=d01.megashares.com%2F%3Fd01+%7C&q=megaupload.com%2F%3Fd+%7C&q=rapidshare.com%2Ffiles+%7C&q=rapidshare.de%2Ffiles+%7C&q=rapidupload.com%2Fd.php+%7C&q=sendspace.com%2Ffile+%7C&q=sexuploader.com%2F%3Fd+%7C&q=uploading.com%2F%3Fget+%7C&q=uploadport.com%2Frequest%2F%3Ffid+%7C&q=zupload.com%2Fdownload.php+%7C&q=%29"
 
 End If
-
-
-
-
-
-
  */
 
 
@@ -467,13 +395,10 @@ End If
 - (IBAction)archives:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-
 	NSButtonCell *selCell = [sender selectedCell];
-
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
-
 
 	[self assembleTypesString];
 }
@@ -483,9 +408,7 @@ End If
 - (IBAction)linkQuery:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-
 	NSButtonCell *selCell = [sender selectedCell];
-
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
@@ -498,11 +421,8 @@ End If
 - (void)assembleTypesString
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-
 	self.typesString = (NSMutableString *)@"";
 	// self.typesString = [self.typesString stringByAppendingString:@"%7C"];
-
-    
     
     //Custom .ext from ext field
     NSLog(@"LINE:508 [self.customExtTextField stringValue] = %@",[self.customExtTextField stringValue]);
@@ -511,21 +431,16 @@ End If
        
         NSString *firstLetter = [[self.customExtTextField stringValue] substringToIndex:1];
         NSLog(@"firstLetter = %@",firstLetter);
-        
         if (![firstLetter isEqualToString:@"."]) {
-            
         self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@"."];
         
         }
         
 		self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:[self.customExtTextField stringValue]];
         self.typesString = (NSMutableString *)[self.typesString stringByAppendingString:@"%7C"];
-       
 }
 
         NSLog(@"LINE:527 self.typeString = %@",self.typesString);
-    
-    
     
 	// Audio
 	if ([mp3 state] == TRUE) {
@@ -654,24 +569,36 @@ End If
     
         tempString = (NSMutableString *)[tempString stringByAppendingString:@"%29"];
 
-    }else{
+    } else {
+
 
         tempString = (NSMutableString *)[tempString stringByAppendingString:@"-inurl%3A%28htm%7Chtml%7Cphp%29"];
  
     }
     
     
+    if (![[self.intitleTextField stringValue] isEqualToString:@""]) {
+        
+        tempString = (NSMutableString *)[tempString stringByAppendingString:@"+intitle%3A"];
+        
+        tempString = (NSMutableString *)[tempString stringByAppendingString:[self returnInTitleTextField]];
+        
+        tempString = (NSMutableString *)[tempString stringByAppendingString:@"+%2B%22"];
+        
+    } else {
+        
+        
+        tempString = (NSMutableString *)[tempString stringByAppendingString:@"+intitle%3A%22index+of%22+%2B%22"];
+        
+    }
+    
 //    tempString = (NSMutableString *)[tempString stringByAppendingString: ];
     
-    
-    tempString = (NSMutableString *)[tempString stringByAppendingString:@"+intitle%3A%22index+of%22+%2B%22last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28"];
- 
-    
-    
-     tempString = (NSMutableString *)[tempString stringByAppendingString:self.typesString];
-     tempString = (NSMutableString *)[tempString stringByAppendingString:@"%29+%22"];
-     tempString = (NSMutableString *)[tempString stringByAppendingString:(NSString *)[self returnSearchField]];
-     tempString = (NSMutableString *)[tempString stringByAppendingString:@"%22"];
+    tempString = (NSMutableString *)[tempString stringByAppendingString:@"last+modified%22+%2B%22parent+directory%22+%2Bdescription+%2Bsize+%2B%28"];
+    tempString = (NSMutableString *)[tempString stringByAppendingString:self.typesString];
+    tempString = (NSMutableString *)[tempString stringByAppendingString:@"%29+%22"];
+    tempString = (NSMutableString *)[tempString stringByAppendingString:(NSString *)[self returnSearchField]];
+    tempString = (NSMutableString *)[tempString stringByAppendingString:@"%22"];
  
     //NSLog(@"LINE:628 \n tempString = %@\n",tempString);
     [self.typesStringArray removeAllObjects];
@@ -679,6 +606,7 @@ End If
     if (
         ![[self.customExtTextField stringValue] isEqualToString:@""] ||
         ![[self.urlLinkTextField stringValue] isEqualToString:@""] ||
+        ![[self.intitleTextField stringValue] isEqualToString:@""] ||
         [mp3 state] ||
         [wma state] ||
         [ogg state] ||
@@ -726,9 +654,7 @@ End If
 				toCharacterCount:(NSUInteger)count
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-
 	NSRange range = {0, MIN(string.length, count)};
-
 	range = [string rangeOfComposedCharacterSequencesForRange:range];
 	NSString *trunc = [string substringWithRange:range];
 
@@ -744,9 +670,7 @@ End If
 - (IBAction)method1:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-
 	NSButtonCell *selCell = [sender selectedCell];
-
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
@@ -757,9 +681,7 @@ End If
 - (IBAction)method2:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-
 	NSButtonCell *selCell = [sender selectedCell];
-
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
@@ -770,9 +692,7 @@ End If
 - (IBAction)resetAll:(id)sender
 {
 	NSLog(@"%@", NSStringFromSelector(_cmd));
-
 	NSButtonCell *selCell = [sender selectedCell];
-
 	NSLog(@"Selected cell is %ld", (long)[selCell tag]);
 	NSLog(@"Selected cell title is %@", (NSString *)[selCell title]);
 	NSLog(@"Selected cell state is %ld", (long)[selCell state]);
@@ -805,13 +725,6 @@ End If
         NSLog(@"LINE:706 self.passWordUrls[%d]: %@", i, (NSMutableString *)self.passWordUrls[i]);
     }
     
-	// [pass1 setState:0];
-	// [pass2 setState:0];
-	// [pass3 setState:0];
-	// [pass4 setState:0];
-	// [pass5 setState:0];
-	// [pass6 setState:0];
-
 	[rar setState:0];
 	[zip setState:0];
 	[exe setState:0];
@@ -821,26 +734,11 @@ End If
 	[related setState:0];
 	[tools setState:0];
 
-	// NSLog(@"self.typesString = %@", NSStringFromClass([self.typesString class]));
-    //	self.typesString = (NSMutableString *)@"";
-
-	// if (!self.urls) {
-	//	self.urls = [[NSMutableArray alloc] init];
-	// } else {
-	
-    
     [self.urls removeAllObjects];
-    
     self.searchTextField.stringValue = [NSMutableString stringWithString:@""];
     self.customExtTextField.stringValue = [NSMutableString stringWithString:@""];
+    self.intitleTextField.stringValue = [NSMutableString stringWithString:@""];
 
-  //  [self.typesStringArray removeAllObjects];
-    
-    
-    
-	// }
-
-	//NSLog(@"self.typesString = %@", self.typesString);
 }
 
 @end

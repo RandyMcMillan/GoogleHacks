@@ -13,6 +13,7 @@
 	IBOutlet NSTextField	*searchTextField;
     IBOutlet NSTextField	*urlLinkTextField;
 	IBOutlet NSTextField	*customExtTextField;
+	IBOutlet NSTextField	*intitleTextField;
 	IBOutlet NSButton		*show;
 	IBOutlet NSButton		*reset;
     //CheckBoxes
@@ -62,7 +63,9 @@
 - (IBAction)pressSearchButton:(id)sender;
 - (IBAction)enterFromSearchField:(id)sender;
 - (IBAction)enterFromURLLinkField:(id)sender;
+- (IBAction)enterInTitleTextField:(id)sender;
 - (NSString *)returnSearchString:(NSString *)searchString;
+- (NSString *)returnInTitleTextField;
 - (NSURL *)modifyURL:(NSString *)modString;
 - (void)openURL:(NSString *)url inBackground:(BOOL)background;
 
@@ -86,14 +89,15 @@
 
 
 
-@property (nonatomic, readwrite) DataObjects	*data_object;
-@property (nonatomic, readwrite) NSTextField	*searchTextField;
-@property (nonatomic, readwrite) NSTextField	*urlLinkTextField;
-@property (nonatomic, readwrite) NSTextField	*customExtTextField;
-@property (nonatomic, readwrite) NSMutableArray *urls;
-@property (nonatomic, readwrite) NSMutableArray *passWordUrls;
-@property (nonatomic, strong) NSWorkspace		*ws;
-@property (nonatomic,readwrite)NSMutableString *typesString;
-@property (nonatomic, readwrite)NSMutableArray *typesStringArray;
+@property (nonatomic, readwrite) DataObjects        *data_object;
+@property (nonatomic, readwrite) NSTextField        *searchTextField;
+@property (nonatomic, readwrite) NSTextField        *urlLinkTextField;
+@property (nonatomic, readwrite) NSTextField        *customExtTextField;
+@property (nonatomic, readwrite) NSTextField        *intitleTextField;
+@property (nonatomic, readwrite) NSMutableArray     *urls;
+@property (nonatomic, readwrite) NSMutableArray     *passWordUrls;
+@property (nonatomic,    strong) NSWorkspace        *ws;
+@property (nonatomic,readwrite)  NSMutableString    *typesString;
+@property (nonatomic, readwrite) NSMutableArray     *typesStringArray;
 
 @end

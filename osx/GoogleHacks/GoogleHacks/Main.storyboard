@@ -10,9 +10,9 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="TestOSXApp" id="1Xt-HY-uBw">
+                            <menuItem title="GoogleHacks" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="TestOSXApp" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="GoogleHacks" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
                                         <menuItem title="About TestOSXApp" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -627,7 +627,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="TestOSXApp Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="GoogleHacks Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -652,11 +652,9 @@
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="GoogleHacks" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES"/>
-                        <rect key="contentRect" x="150" y="600" width="450" height="270"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="125" y="600" width="800" height="235"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <value key="minSize" type="size" width="800" height="235"/>
-                        <value key="maxSize" type="size" width="800" height="235"/>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -675,7 +673,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box autoresizesSubviews="NO" fixedFrame="YES" title="Documents" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="MXo-VM-xwu">
-                                <rect key="frame" x="201" y="53" width="135" height="134"/>
+                                <rect key="frame" x="201" y="45" width="135" height="134"/>
                                 <view key="contentView">
                                     <rect key="frame" x="1" y="1" width="133" height="118"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -776,7 +774,7 @@
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
                             <box autoresizesSubviews="NO" fixedFrame="YES" title="Methods" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="u1Q-2R-dWu">
-                                <rect key="frame" x="509" y="62" width="99" height="125"/>
+                                <rect key="frame" x="509" y="54" width="99" height="125"/>
                                 <view key="contentView">
                                     <rect key="frame" x="1" y="1" width="97" height="109"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -826,8 +824,277 @@
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKe-5m-kVo">
+                                <rect key="frame" x="618" y="12" width="172" height="132"/>
+                                <buttonCell key="cell" type="squareTextured" title="Search" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gj3-1g-1zQ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="pressSearchButton:" target="XfG-lQ-9wD" id="Njr-tm-8WO"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z25-03-6nh">
+                                <rect key="frame" x="618" y="149" width="172" height="25"/>
+                                <buttonCell key="cell" type="squareTextured" title="Reset All" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g4f-bx-qoV">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="resetAll:" target="XfG-lQ-9wD" id="24U-a0-Xe7"/>
+                                </connections>
+                            </button>
+                            <box autoresizesSubviews="NO" fixedFrame="YES" title="Password" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="lmS-I5-ds3">
+                                <rect key="frame" x="417" y="8" width="90" height="171"/>
+                                <view key="contentView">
+                                    <rect key="frame" x="1" y="1" width="88" height="155"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VY8-Tw-r9G">
+                                            <rect key="frame" x="10" y="10" width="68" height="138"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            <size key="cellSize" width="63" height="18"/>
+                                            <size key="intercellSpacing" width="4" height="2"/>
+                                            <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="Xxb-12-WsB">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <cells>
+                                                <column>
+                                                    <buttonCell type="radio" title="off" imagePosition="left" alignment="left" state="on" inset="2" id="o1L-1D-44N">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <connections>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="WO6-ge-zCI"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="pass 1" imagePosition="left" alignment="left" tag="1" inset="2" id="kdw-cs-aQl">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <connections>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="pwM-oo-eIJ"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="pass 2" imagePosition="left" alignment="left" tag="2" inset="2" id="di7-b8-gYl">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <connections>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="rDV-4k-9Iv"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="pass 3" imagePosition="left" alignment="left" tag="3" inset="2" id="dtC-kP-Tje">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <connections>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="WKV-pu-CR5"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="pass 4" imagePosition="left" alignment="left" tag="4" inset="2" id="E0a-K3-ha9">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <connections>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="GAI-ZR-p83"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="pass 5" imagePosition="left" alignment="left" tag="5" inset="2" id="K72-JN-Hh9">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <connections>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="snw-Rv-5Pi"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                    <buttonCell type="radio" title="pass 6" imagePosition="left" alignment="left" tag="6" inset="2" id="qVt-4l-aqA">
+                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                        <connections>
+                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="sPf-kW-4ne"/>
+                                                        </connections>
+                                                    </buttonCell>
+                                                </column>
+                                            </cells>
+                                            <connections>
+                                                <action selector="passwordQuery:" target="XfG-lQ-9wD" id="hki-UQ-r7v"/>
+                                            </connections>
+                                        </matrix>
+                                    </subviews>
+                                </view>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </box>
+                            <box autoresizesSubviews="NO" fixedFrame="YES" title="Archives" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="pjN-fU-KWZ">
+                                <rect key="frame" x="338" y="45" width="77" height="134"/>
+                                <view key="contentView">
+                                    <rect key="frame" x="1" y="1" width="75" height="118"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button fixedFrame="YES" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="R8I-l5-bzs">
+                                            <rect key="frame" x="15" y="92" width="39" height="18"/>
+                                            <buttonCell key="cell" type="check" title="rar" bezelStyle="regularSquare" imagePosition="left" tag="23" inset="2" id="hIp-gA-EDR">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="archives:" target="XfG-lQ-9wD" id="WtO-la-pkF"/>
+                                            </connections>
+                                        </button>
+                                        <button fixedFrame="YES" tag="17" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-bG-rbN">
+                                            <rect key="frame" x="15" y="73" width="40" height="18"/>
+                                            <buttonCell key="cell" type="check" title="zip" bezelStyle="regularSquare" imagePosition="left" tag="24" inset="2" id="HeF-2x-NI4">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="archives:" target="XfG-lQ-9wD" id="Xz7-qP-Oe5"/>
+                                            </connections>
+                                        </button>
+                                        <button fixedFrame="YES" tag="18" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xym-5D-Dyl">
+                                            <rect key="frame" x="15" y="36" width="42" height="18"/>
+                                            <buttonCell key="cell" type="check" title="ddl" bezelStyle="regularSquare" imagePosition="left" tag="26" inset="2" id="lii-Be-mVb">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="archives:" target="XfG-lQ-9wD" id="Ugn-c3-Abg"/>
+                                            </connections>
+                                        </button>
+                                        <button fixedFrame="YES" tag="18" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRl-W0-aZm">
+                                            <rect key="frame" x="15" y="55" width="44" height="18"/>
+                                            <buttonCell key="cell" type="check" title="exe" bezelStyle="regularSquare" imagePosition="left" tag="25" inset="2" id="8W1-9z-QLX">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="archives:" target="XfG-lQ-9wD" id="Ted-2X-6S6"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </box>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SxU-u0-OSH">
+                                <rect key="frame" x="6" y="6" width="20" height="20"/>
+                                <buttonCell key="cell" type="bevel" bezelStyle="circular" image="2000px-WMF-Agora-Settings_BCBCBC.svg" imagePosition="overlaps" alignment="center" controlSize="small" state="on" allowsMixedState="YES" imageScaling="proportionallyDown" inset="2" id="aVV-mo-pnU">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="smallSystem"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="bp4-oP-OFF" kind="sheet" id="YDd-0k-bIi"/>
+                                </connections>
+                            </button>
+                            <box autoresizesSubviews="NO" fixedFrame="YES" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="Ata-CA-RCB">
+                                <rect key="frame" x="6" y="182" width="787" height="62"/>
+                                <view key="contentView">
+                                    <rect key="frame" x="1" y="1" width="785" height="46"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEj-KR-4Go">
+                                            <rect key="frame" x="53" y="14" width="89" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" state="on" borderStyle="bezel" placeholderString="htm|html|php" drawsBackground="YES" id="Zkl-0P-a1a">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="enterFromURLLinkField:" target="XfG-lQ-9wD" id="tgx-Dt-fPR"/>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ba6-2Y-Tpn">
+                                            <rect key="frame" x="615" y="14" width="40" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString=".ext" drawsBackground="YES" id="Lf7-JY-8Qv">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="enterFromCustomExtField:" target="XfG-lQ-9wD" id="ciw-xb-sB0"/>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4b6-s8-AX9">
+                                            <rect key="frame" x="670" y="14" width="99" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Search String" drawsBackground="YES" id="lWf-Ix-SDJ">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="enterFromSearchField:" target="XfG-lQ-9wD" id="gRu-m9-deo"/>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pUh-vi-vBQ">
+                                            <rect key="frame" x="10" y="14" width="48" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" title="-inurl:(" id="PVp-Hd-Kmt">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="40W-s2-xoy">
+                                            <rect key="frame" x="142" y="14" width="12" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" title=")" id="2Dp-pL-SnO">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lsa-Zs-5Ns">
+                                            <rect key="frame" x="263" y="14" width="342" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="+&quot;last modified&quot;+&quot;parent directory&quot;+description+size+" drawsBackground="YES" id="4i3-Cc-B0K">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Dx-3J-Hdn">
+                                            <rect key="frame" x="606" y="14" width="16" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" title="(" id="47L-hW-r06">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vbo-Mq-TDM">
+                                            <rect key="frame" x="655" y="14" width="25" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" title=") &quot;" id="3xS-YB-qzx">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Bp-oF-Y3s">
+                                            <rect key="frame" x="148" y="14" width="56" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" title="intitle:" placeholderString="" id="XQV-Rn-vPP">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tPb-01-7vb">
+                                            <rect key="frame" x="191" y="14" width="70" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="&quot;index of&quot;" drawsBackground="YES" id="Hpg-1v-C6c">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="enterInTitleTextField:" target="XfG-lQ-9wD" id="58s-xB-4kK"/>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcl-mk-u0Q">
+                                            <rect key="frame" x="768" y="14" width="14" height="22"/>
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" title="&quot;" id="vjt-Pu-Rz6">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                </view>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </box>
                             <box fixedFrame="YES" title="Audio/Video" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="2Rd-SG-hU8">
-                                <rect key="frame" x="19" y="53" width="180" height="134"/>
+                                <rect key="frame" x="3" y="45" width="180" height="134"/>
                                 <view key="contentView">
                                     <rect key="frame" x="1" y="1" width="178" height="118"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -937,269 +1204,6 @@
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </box>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKe-5m-kVo">
-                                <rect key="frame" x="618" y="12" width="172" height="132"/>
-                                <buttonCell key="cell" type="squareTextured" title="Search" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gj3-1g-1zQ">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="pressSearchButton:" target="XfG-lQ-9wD" id="Njr-tm-8WO"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z25-03-6nh">
-                                <rect key="frame" x="657" y="149" width="133" height="25"/>
-                                <buttonCell key="cell" type="squareTextured" title="Reset All" bezelStyle="texturedSquare" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="g4f-bx-qoV">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="resetAll:" target="XfG-lQ-9wD" id="24U-a0-Xe7"/>
-                                </connections>
-                            </button>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hEj-KR-4Go">
-                                <rect key="frame" x="63" y="195" width="89" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" state="on" borderStyle="bezel" placeholderString="htm|html|php" drawsBackground="YES" id="Zkl-0P-a1a">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <action selector="enterFromURLLinkField:" target="XfG-lQ-9wD" id="tgx-Dt-fPR"/>
-                                </connections>
-                            </textField>
-                            <box autoresizesSubviews="NO" fixedFrame="YES" title="Password" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="lmS-I5-ds3">
-                                <rect key="frame" x="417" y="16" width="90" height="171"/>
-                                <view key="contentView">
-                                    <rect key="frame" x="1" y="1" width="88" height="155"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autorecalculatesCellSize="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VY8-Tw-r9G">
-                                            <rect key="frame" x="10" y="10" width="68" height="138"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="cellSize" width="63" height="18"/>
-                                            <size key="intercellSpacing" width="4" height="2"/>
-                                            <buttonCell key="prototype" type="radio" title="Radio" imagePosition="left" alignment="left" inset="2" id="Xxb-12-WsB">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <cells>
-                                                <column>
-                                                    <buttonCell type="radio" title="off" imagePosition="left" alignment="left" state="on" inset="2" id="o1L-1D-44N">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="WO6-ge-zCI"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                    <buttonCell type="radio" title="pass 1" imagePosition="left" alignment="left" tag="1" inset="2" id="kdw-cs-aQl">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="pwM-oo-eIJ"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                    <buttonCell type="radio" title="pass 2" imagePosition="left" alignment="left" tag="2" inset="2" id="di7-b8-gYl">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="rDV-4k-9Iv"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                    <buttonCell type="radio" title="pass 3" imagePosition="left" alignment="left" tag="3" inset="2" id="dtC-kP-Tje">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="WKV-pu-CR5"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                    <buttonCell type="radio" title="pass 4" imagePosition="left" alignment="left" tag="4" inset="2" id="E0a-K3-ha9">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="GAI-ZR-p83"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                    <buttonCell type="radio" title="pass 5" imagePosition="left" alignment="left" tag="5" inset="2" id="K72-JN-Hh9">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="snw-Rv-5Pi"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                    <buttonCell type="radio" title="pass 6" imagePosition="left" alignment="left" tag="6" inset="2" id="qVt-4l-aqA">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                        <connections>
-                                                            <action selector="passwordQuery:" target="XfG-lQ-9wD" id="sPf-kW-4ne"/>
-                                                        </connections>
-                                                    </buttonCell>
-                                                </column>
-                                            </cells>
-                                            <connections>
-                                                <action selector="passwordQuery:" target="XfG-lQ-9wD" id="hki-UQ-r7v"/>
-                                            </connections>
-                                        </matrix>
-                                    </subviews>
-                                </view>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </box>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ba6-2Y-Tpn">
-                                <rect key="frame" x="625" y="195" width="40" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString=".ext" drawsBackground="YES" id="Lf7-JY-8Qv">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <action selector="enterFromCustomExtField:" target="XfG-lQ-9wD" id="ciw-xb-sB0"/>
-                                </connections>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4b6-s8-AX9">
-                                <rect key="frame" x="680" y="195" width="99" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Search String" drawsBackground="YES" id="lWf-Ix-SDJ">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                                <connections>
-                                    <action selector="enterFromSearchField:" target="XfG-lQ-9wD" id="gRu-m9-deo"/>
-                                </connections>
-                            </textField>
-                            <box autoresizesSubviews="NO" fixedFrame="YES" title="Archives" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="pjN-fU-KWZ">
-                                <rect key="frame" x="338" y="53" width="77" height="134"/>
-                                <view key="contentView">
-                                    <rect key="frame" x="1" y="1" width="75" height="118"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <button fixedFrame="YES" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="R8I-l5-bzs">
-                                            <rect key="frame" x="15" y="92" width="39" height="18"/>
-                                            <buttonCell key="cell" type="check" title="rar" bezelStyle="regularSquare" imagePosition="left" tag="23" inset="2" id="hIp-gA-EDR">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="archives:" target="XfG-lQ-9wD" id="WtO-la-pkF"/>
-                                            </connections>
-                                        </button>
-                                        <button fixedFrame="YES" tag="17" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fea-bG-rbN">
-                                            <rect key="frame" x="15" y="73" width="40" height="18"/>
-                                            <buttonCell key="cell" type="check" title="zip" bezelStyle="regularSquare" imagePosition="left" tag="24" inset="2" id="HeF-2x-NI4">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="archives:" target="XfG-lQ-9wD" id="Xz7-qP-Oe5"/>
-                                            </connections>
-                                        </button>
-                                        <button fixedFrame="YES" tag="18" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xym-5D-Dyl">
-                                            <rect key="frame" x="15" y="36" width="42" height="18"/>
-                                            <buttonCell key="cell" type="check" title="ddl" bezelStyle="regularSquare" imagePosition="left" tag="26" inset="2" id="lii-Be-mVb">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="archives:" target="XfG-lQ-9wD" id="Ugn-c3-Abg"/>
-                                            </connections>
-                                        </button>
-                                        <button fixedFrame="YES" tag="18" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GRl-W0-aZm">
-                                            <rect key="frame" x="15" y="55" width="44" height="18"/>
-                                            <buttonCell key="cell" type="check" title="exe" bezelStyle="regularSquare" imagePosition="left" tag="25" inset="2" id="8W1-9z-QLX">
-                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                <font key="font" metaFont="system"/>
-                                            </buttonCell>
-                                            <connections>
-                                                <action selector="archives:" target="XfG-lQ-9wD" id="Ted-2X-6S6"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                </view>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </box>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pUh-vi-vBQ">
-                                <rect key="frame" x="20" y="195" width="48" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" title="-inurl:(" id="PVp-Hd-Kmt">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="40W-s2-xoy">
-                                <rect key="frame" x="152" y="195" width="12" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" title=")" id="2Dp-pL-SnO">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lsa-Zs-5Ns">
-                                <rect key="frame" x="273" y="195" width="342" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="+&quot;last modified&quot;+&quot;parent directory&quot;+description+size+" drawsBackground="YES" id="4i3-Cc-B0K">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Dx-3J-Hdn">
-                                <rect key="frame" x="616" y="195" width="16" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" title="(" id="47L-hW-r06">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vbo-Mq-TDM">
-                                <rect key="frame" x="665" y="195" width="25" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" title=") &quot;" id="3xS-YB-qzx">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Bp-oF-Y3s">
-                                <rect key="frame" x="158" y="195" width="56" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" title="intitle:&quot;" placeholderString="" id="XQV-Rn-vPP">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkH-qK-LPX">
-                                <rect key="frame" x="264" y="195" width="18" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" title="&quot;" placeholderString="" id="NVK-7R-6u2">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tPb-01-7vb">
-                                <rect key="frame" x="206" y="195" width="57" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" refusesFirstResponder="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="index of" drawsBackground="YES" id="Hpg-1v-C6c">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcl-mk-u0Q">
-                                <rect key="frame" x="778" y="195" width="14" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" title="&quot;" id="vjt-Pu-Rz6">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SxU-u0-OSH">
-                                <rect key="frame" x="6" y="6" width="20" height="20"/>
-                                <buttonCell key="cell" type="bevel" bezelStyle="circular" image="2000px-WMF-Agora-Settings_BCBCBC.svg" imagePosition="overlaps" alignment="center" controlSize="small" state="on" allowsMixedState="YES" imageScaling="proportionallyDown" inset="2" id="aVV-mo-pnU">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="smallSystem"/>
-                                </buttonCell>
-                                <connections>
-                                    <segue destination="bp4-oP-OFF" kind="sheet" id="YDd-0k-bIi"/>
-                                </connections>
-                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -1214,6 +1218,7 @@
                         <outlet property="exe" destination="GRl-W0-aZm" id="HuF-FL-q5a"/>
                         <outlet property="flv" destination="4D5-Vc-zxf" id="y3C-PR-mKS"/>
                         <outlet property="gif" destination="WiX-1f-Orl" id="qGC-lE-isb"/>
+                        <outlet property="intitleTextField" destination="tPb-01-7vb" id="aPV-8u-YLl"/>
                         <outlet property="link" destination="C09-ti-cHC" id="U5e-yM-i4G"/>
                         <outlet property="lit" destination="6PX-Ql-P6s" id="sW6-o8-4Oa"/>
                         <outlet property="mid" destination="MW3-hC-qXn" id="eHK-8d-d92"/>
@@ -1236,12 +1241,11 @@
                         <outlet property="wma" destination="NLc-CI-buq" id="Rcn-UX-flr"/>
                         <outlet property="wmv" destination="JcC-H4-oBm" id="HAK-O6-b3N"/>
                         <outlet property="zip" destination="Fea-bG-rbN" id="4be-Sk-PXn"/>
-                        <segue destination="bp4-oP-OFF" kind="sheet" id="rOg-9R-t2H"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="324.5" y="541.5"/>
+            <point key="canvasLocation" x="71" y="511.5"/>
         </scene>
         <!--My View Controller-->
         <scene sceneID="LtM-Yz-Kl7">
@@ -1280,13 +1284,10 @@
                 <customObject id="Fii-g5-G37" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="H3i-Ll-dnk" customClass="DataObjects"/>
             </objects>
-            <point key="canvasLocation" x="1133" y="541.5"/>
+            <point key="canvasLocation" x="930" y="511.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="2000px-WMF-Agora-Settings_BCBCBC.svg" width="2000" height="2000"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="rOg-9R-t2H"/>
-    </inferredMetricsTieBreakers>
 </document>
