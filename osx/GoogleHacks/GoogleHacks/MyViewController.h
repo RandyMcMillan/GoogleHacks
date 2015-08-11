@@ -23,5 +23,6 @@
 - (NSString *)appURL;
 - (IBAction)changeGreeting:(id)sender;
 - (IBAction)resetSafari:(id)sender;
+- (IBAction)openMyPayPal:(id)sender;
 - (void)openAppleScript:(NSString *)scriptName;
 @end
