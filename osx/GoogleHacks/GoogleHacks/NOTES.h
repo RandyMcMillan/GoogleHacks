@@ -10,6 +10,14 @@
 #define googlehacks_NOTES_h
 
 /*
+ 
+ 
+https://www.exploit-db.com/google-hacking-database/
+ 
+ https://www.exploit-db.com/ghdb/550/
+ 
+ https://www.exploit-db.com/ghdb/4033/
+ 
 http://123to100.blogspot.com/2009/02/google-hacking-code.html 
 https://github.com/search?utf8=✓&q=applescripts+safari&type=Repositories&ref=searchresults
  
