@@ -26,6 +26,8 @@
 		489552971B4F3CDA00CA90B6 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 489552961B4F3CDA00CA90B6 /* MyView.m */; };
 		489552991B4F3F9200CA90B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 489552981B4F3F9200CA90B6 /* Main.storyboard */; };
 		4895529F1B4F444A00CA90B6 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4895529E1B4F444A00CA90B6 /* WebKit.framework */; };
+		48F368EC1B7AB31900B0E309 /* donate1.png in Resources */ = {isa = PBXBuildFile; fileRef = 48F368EB1B7AB31900B0E309 /* donate1.png */; };
+		48F368EE1B7ABA0F00B0E309 /* OpenMyPaypal.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 48F368ED1B7ABA0F00B0E309 /* OpenMyPaypal.scpt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		489552981B4F3F9200CA90B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4895529E1B4F444A00CA90B6 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		48CC88F91B508168004C4D90 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		48F368EB1B7AB31900B0E309 /* donate1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = donate1.png; path = ../../../shared/donate1.png; sourceTree = "<group>"; };
+		48F368ED1B7ABA0F00B0E309 /* OpenMyPaypal.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = OpenMyPaypal.scpt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 		489552501B4F148700CA90B6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				48F368ED1B7ABA0F00B0E309 /* OpenMyPaypal.scpt */,
+				48F368EB1B7AB31900B0E309 /* donate1.png */,
 				482476991B585FE20024C741 /* image.xcassets */,
 				482476551B58536C0024C741 /* SafariCloseAllWindows.scpt */,
 				480E2DAF1B6C27FD004F5CB1 /* ResetSafari.scpt */,
@@ -300,12 +306,14 @@
 			files = (
 				483E64FB1B4F575A00E4EA6C /* index.html in Resources */,
 				480B411F1B56ADEF0014A6A3 /* 2000px-WMF-Agora-Settings_BCBCBC.svg.png in Resources */,
+				48F368EE1B7ABA0F00B0E309 /* OpenMyPaypal.scpt in Resources */,
 				482476561B58536C0024C741 /* SafariCloseAllWindows.scpt in Resources */,
 				489552991B4F3F9200CA90B6 /* Main.storyboard in Resources */,
 				480B41201B56ADEF0014A6A3 /* gear_64.png in Resources */,
 				480E2DB01B6C27FD004F5CB1 /* ResetSafari.scpt in Resources */,
 				4824769A1B585FE20024C741 /* image.xcassets in Resources */,
 				4889696A1B57395800F4BC9A /* GogleHacksHelp.html in Resources */,
+				48F368EC1B7AB31900B0E309 /* donate1.png in Resources */,
 				480B41211B56ADEF0014A6A3 /* WMF-Agora-Settings_BCBCBC.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

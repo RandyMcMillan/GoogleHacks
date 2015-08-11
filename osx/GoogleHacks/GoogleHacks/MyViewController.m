@@ -44,8 +44,13 @@
 {
 	// return [[[NSBundle mainBundle] URLForResource:@"http://www.google" withExtension:@"html"] absoluteString];
 
-	self.baseURL	= [NSURL URLWithString:@"file:///path/to/web_root/"];
-	self.url		= [NSURL URLWithString:@"folder/file.html" relativeToURL:self.baseURL];
+//	self.baseURL	= [NSURL URLWithString:@"file:///path/to/web_root/"];
+//	self.url		= [NSURL URLWithString:@"folder/file.html" relativeToURL:self.baseURL];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
+    self.url = [NSURL fileURLWithPath:path];
+    [[self.webView mainFrame] loadRequest:[NSURLRequest requestWithURL:self.url]];
+
 	NSURL *absURL = [self.url absoluteURL];
 	NSLog(@"absURL = %@", absURL);
 	NSString *getURL = [NSString stringWithContentsOfURL:absURL encoding:1000 error:nil];
@@ -83,5 +88,10 @@
     [appleScript executeAndReturnError:nil];
 }
 
+- (IBAction)openMyPayPal:(id)sender{
+
+    [self openAppleScript:(NSString *)@"OpenMyPaypal"];
+
+}
 
 @end
