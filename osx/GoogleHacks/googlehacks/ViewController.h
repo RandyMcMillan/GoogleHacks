@@ -86,6 +86,7 @@
 
 - (NSString *)returnCustomExtTextField;
 - (NSString *)returnURLLinkField;
+- (void)logAppInfo;
 
 
 
