@@ -37,15 +37,17 @@
     
 }
 
-- (void)logAppInfo{
-    
+- (void)logAppInfo
+{
+   
+	NSLog(@"%@", NSStringFromSelector(_cmd));
     NSDictionary *appInfo = [[NSBundle mainBundle] infoDictionary];
     NSString *versionStr = [NSString stringWithFormat:@"%@ (%@)",
                             [appInfo objectForKey:@"CFBundleShortVersionString"],
                             [appInfo objectForKey:@"CFBundleVersion"]];
      NSLog(@"Look in Build Settings Run Script for related code");
-     NSLog(@"%@",appInfo);
-     NSLog(@"%@",versionStr);
+     NSLog(@"appInfo = %@",appInfo);
+     NSLog(@"versionStr = %@",versionStr);
 
 }
 
