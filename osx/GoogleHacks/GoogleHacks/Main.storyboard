@@ -1099,7 +1099,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EjT-kO-QFf">
-                                <rect key="frame" x="9" y="62" width="781" height="104"/>
+                                <rect key="frame" x="9" y="63" width="781" height="122"/>
                                 <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="donate1" imagePosition="overlaps" alignment="center" refusesFirstResponder="YES" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="koc-Vi-LKg">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>

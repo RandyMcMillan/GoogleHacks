@@ -201,6 +201,7 @@
 				489552491B4F148700CA90B6 /* Sources */,
 				4895524A1B4F148700CA90B6 /* Frameworks */,
 				4895524B1B4F148700CA90B6 /* Resources */,
+				488EC2641B7C61E200485CDB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -326,6 +327,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		488EC2641B7C61E200485CDB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# $git clone https://gist.github.com/1089407.git\n# to your ~/\n# ~/1089407\n~/1089407/version.sh --set --plist-path \\\n\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\" --quiet";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		489552491B4F148700CA90B6 /* Sources */ = {

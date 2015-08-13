@@ -32,6 +32,23 @@
     self.typesStringArray   = [NSMutableArray arrayWithCapacity:100];
 	self.ws                 = [NSWorkspace sharedWorkspace];
 	self.typesString        = (NSMutableString *)self.data_object.types_str;
+    
+    [self logAppInfo];
+    
+}
+
+- (void)logAppInfo
+{
+   
+	NSLog(@"%@", NSStringFromSelector(_cmd));
+    NSDictionary *appInfo = [[NSBundle mainBundle] infoDictionary];
+    NSString *versionStr = [NSString stringWithFormat:@"%@ (%@)",
+                            [appInfo objectForKey:@"CFBundleShortVersionString"],
+                            [appInfo objectForKey:@"CFBundleVersion"]];
+     NSLog(@"Look in Build Settings Run Script for related code");
+     NSLog(@"appInfo = %@",appInfo);
+     NSLog(@"versionStr = %@",versionStr);
+
 }
 
 - (void)setRepresentedObject:(id)representedObject
