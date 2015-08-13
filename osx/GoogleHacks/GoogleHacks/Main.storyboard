@@ -14,7 +14,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="GoogleHacks" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About TestOSXApp" id="5kV-Vb-QxS">
+                                        <menuItem title="About GoogleHacks" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -28,7 +28,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide TestOSXApp" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide GoogleHacks" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -1099,7 +1099,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EjT-kO-QFf">
-                                <rect key="frame" x="9" y="63" width="781" height="122"/>
+                                <rect key="frame" x="9" y="62" width="781" height="104"/>
                                 <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" image="donate1" imagePosition="overlaps" alignment="center" refusesFirstResponder="YES" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="koc-Vi-LKg">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
