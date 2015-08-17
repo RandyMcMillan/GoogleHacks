@@ -10,6 +10,10 @@
 #define googlehacks_NOTES_h
 
 /*
+https://www.google.com/search?q=intitle:%22index%20of%22%20intext:%22.ds_store%22&gws_rd=ssl 
+ 
+ https://www.exploit-db.com/ghdb/3914/
+ 
  
  
 https://www.exploit-db.com/google-hacking-database/
